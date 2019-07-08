@@ -1,0 +1,88 @@
+type Schema {
+    mutation: Mutation
+    query: Query
+}
+
+type Device {
+    id: ID!
+    temperature: [TemperatureSensor!]!
+    location: [LocationSensor!]!
+    network: NetworkInfo!
+    sim: SIMInfo!
+    info: DeviceInfo!
+}
+
+type NetworkInfo {
+    currentBand: Int!
+    supportedBands: [Int!]!
+    areaCode: Int!
+    mccmnc: Int!
+    ipAddress: String!
+    ueMode:Int!
+    cellID:Int!
+    networkMode: NetworkMode!
+}
+
+type DeviceInfo {
+    modemFirmware: String!
+    batteryVoltage: Int!
+    board: String!
+    appVersion: String!
+    appName: String!
+}
+
+type SIMInfo {
+    uiccMode: Int!
+    iccid: String!
+}
+
+enum NetworkMode {
+    # LTE-M GPS
+    ltem_gps
+    simulated
+}
+
+enum SensorType {
+    temp
+    location_gps
+    location_lte
+}
+
+type SensorConfig {
+    interval: Int!
+}
+
+input SensorConfigUpdate {
+    interval: Int!
+}
+
+type TemperatureSensor {
+    id: ID!
+    type: SensorType!
+    config: SensorConfig!
+    temperature: Int!
+    timestamp: String!
+}
+
+type LocationSensor {
+    id: ID!
+    type: SensorType!
+    config: SensorConfig!
+    location: String!
+    timestamp: String!
+}
+
+type DevicesQueryResult {
+    nextStartKey: ID
+    items: [Device!]!
+}
+
+type Query {
+    devices(startKey: ID): DevicesQueryResult!
+    device(id: ID!): Device
+}
+
+type Mutation {
+    updateSensorConfiguration(deviceId: ID!, sensorId: ID!, config: SensorConfigUpdate!): Boolean
+    updateFirmware(deviceId: ID!, firmware: String!): Boolean
+}
