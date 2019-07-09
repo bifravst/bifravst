@@ -10,6 +10,17 @@ type Device {
     network: NetworkInfo!
     sim: SIMInfo!
     info: DeviceInfo!
+    connected: Boolean!
+    # Returns historical device information
+    history(inclusiveStartDate: String!, exclusiveEndDate: String!, startKey: ID): DeviceHistory!
+}
+
+type DeviceHistory {
+    temperature: [TemperatureSensor!]!
+    location: [LocationSensor!]!
+    network: [NetworkInfo!]!
+    sim: [SIMInfo!]!
+    info: [DeviceInfo!]!
 }
 
 type NetworkInfo {
