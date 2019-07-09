@@ -1,0 +1,58 @@
+{
+  "name": "@bifravst/bifravst",
+  "version": "0.0.0-development",
+  "description": "Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bifravst/bifravst.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bifravst/bifravst/issues"
+  },
+  "homepage": "https://github.com/bifravst/bifravst#readme",
+  "keywords": [
+    "Cloud",
+    "IoT",
+    "AssetTracker",
+    "NordicSemiconductor"
+  ],
+  "author": "Nordic Semiconductor ",
+  "license": "MIT",
+  "dependencies": {
+    "chance": "^1.0.18",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-angular": "^8.0.0",
+    "@nrfcloud/tslint-config": "^3.10.0",
+    "@types/chance": "^1.0.5",
+    "@types/node": "^12.6.1",
+    "@types/uuid": "^3.4.5",
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "tslint --project ./tsconfig.json --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  }
+}
