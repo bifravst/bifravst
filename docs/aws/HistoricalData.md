@@ -1,6 +1,10 @@
 # Storage of Historical Data
 
-Use [AWS Athena](https://docs.aws.amazon.com/athena/latest/ug/what-is.html).
+Use [AWS Athena](https://docs.aws.amazon.com/athena/latest/ug/what-is.html) to analyze historical data. This offers developers a flexible schema through creation of tables nevertheless which is however instant and they are immediately available for querying. This offers and advantage over storing IoT messages in DynamoDB which works with a fixed schema and can't be quickly optimized for querying data where the structure is not known.
+
+AWS Athena does not perform well when working with many small files (generally less than 128 MB, for example if every messages comes from AWS IoT and is stored in individual files). Therefore there needs to be a process to concatenate individual files into bigger archive files.
+
+![Pipeline](./AWS%20Historical%20Data%20Pipieline.jpg)
 
 ## Evalutation
 
