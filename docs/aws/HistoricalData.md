@@ -6,7 +6,7 @@ AWS Athena does not perform well when working with many small files (generally l
 
 ![Pipeline](./AWS%20Historical%20Data%20Pipieline.jpg)
 
-## Evalutation
+## Evaluation
 
 Using 1,000,000 temperature readings in per-month JSON files over 6 months stored on S3.
 
