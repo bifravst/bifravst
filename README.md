@@ -61,12 +61,14 @@ Support for cloud providers is planned be implemented in this order:
 
 You can get in touch by creating an issue in this repository, or via [DevZone](https://devzone.nordicsemi.com/), please use the tag [bifravst](https://devzone.nordicsemi.com/search?q=bifravst) to mark your questions.
 
-## Acknowledgments
+---
 
-*Nyancat GIF by [ElKay on Know Your Meme](https://knowyourmeme.com/photos/480551-nyan-cat)*
+<small>
 
-*Amazon Web Services, the aws logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries.*
-
-*Google and the Google logo are registered trademarks of Google LLC.*
-
+**Acknowledgments**  
+*Nyancat GIF by [ElKay on Know Your Meme](https://knowyourmeme.com/photos/480551-nyan-cat).*  
+*Amazon Web Services, the aws logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries.*  
+*Google and the Google logo are registered trademarks of Google LLC.*  
 *Microsoft and Azure are registered trademarks of Microsoft Corporation in the United States and/or other countries.*
+
+</small>
