@@ -13,13 +13,13 @@ You can get in touch by creating an issue in this repository, or via [DevZone](h
 
 ## Vision
 
-*Bifravst :rainbow:* aims to provide a concrete end-to-end sample for an IoT product in the asset tracker space, a *Cat Tracker*. 
+*Bifravst* aims to provide a concrete end-to-end sample for an IoT product in the asset tracker space, a *Cat Tracker*. 
 
 ![Bifravst: Cat Tracker IoT example](./docs/avatar.png)
 
-**With *Bifravst :rainbow:* developers are able set up their devices using their cloud provider and start developing custom firmware for their prototype within minutes.**
+**With *Bifravst* developers are able set up their devices using their cloud provider and start developing custom firmware for their prototype within minutes.**
 
-*Bifravst :rainbow:* aims to provide answers and best practices to these questions:
+*Bifravst* aims to provide answers and best practices to these questions:
 
 - *How can I connect Nordic's long-range chips to my cloud provider?*
 - *How do devices send data into the cloud?*
@@ -29,9 +29,9 @@ You can get in touch by creating an issue in this repository, or via [DevZone](h
 
 ### Comparison to nRF Connect for Cloud
 
-*Bifravst :rainbow:* does not aim to replace or superseed nRF Connect for Cloud. It has a distinctly different scope:
+*Bifravst* does not aim to replace or superseed nRF Connect for Cloud. It has a distinctly different scope:
 
-|   | [nRF Connect for Cloud](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud) | *Bifravst :rainbow:* |
+|   | [nRF Connect for Cloud](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud) | *Bifravst* |
 |---|-----------------------|----------|
 | **Development model** | Closed | Open |
 | **License** | Commercial | Open Source |
@@ -42,11 +42,11 @@ You can get in touch by creating an issue in this repository, or via [DevZone](h
 
 ### Core principles
 
-*Bifravst :rainbow:* is built around the following principles:
+*Bifravst* is built around the following principles:
 
-- *teach through showing*: all samples are build to solve a concrete use-case (a *Cat Tracker*) instead of providing generic or abstract solutions. *Bifravst :rainbow:* is not a framework, but a real application.
-- *err on the side of security*: *Bifravst :rainbow:* follows the most robust security recommendations of the respective cloud provider.
-- *single tenancy*: *Bifravst :rainbow:* implements a scenario in which all authenticated users can be trusted to access all devices. This is a typical scenario in IIoT products and simplifies the onboarding of new devices.
+- *teach through showing*: all samples are build to solve a concrete use-case (a *Cat Tracker*) instead of providing generic or abstract solutions. *Bifravst* is not a framework, but a real application.
+- *err on the side of security*: *Bifravst* follows the most robust security recommendations of the respective cloud provider.
+- *single tenancy*: *Bifravst* implements a scenario in which all authenticated users can be trusted to access all devices. This is a typical scenario in IIoT products and simplifies the onboarding of new devices.
 - *limited scalability*: This examples are intended for the small scale prototyping of IoT products (around 100 devices) with a quick turnaround for the user and for them to evaluate the necessary software components and processes.
 - *cloud native*: build the sample following the respective cloud providers best practices.
 
