@@ -6,7 +6,7 @@
 
 *Bifravst :rainbow:* aims to provide a concrete end-to-end sample for an IoT product in the asset tracker space, a *Cat Tracker*. 
 
-![Bifravst: Cat Tracker IoT example](./docs/nyancat.gif)
+![Bifravst: Cat Tracker IoT example](./docs/avatar.png)
 
 **With *Bifravst :rainbow:* developers are able set up their devices using their cloud provider and start developing custom firmware for their prototype within minutes.**
 
@@ -66,7 +66,8 @@ You can get in touch by creating an issue in this repository, or via [DevZone](h
 <small>
 
 **Acknowledgments**  
-*Nyancat GIF by [ElKay on Know Your Meme](https://knowyourmeme.com/photos/480551-nyan-cat).*  
+*Nyan Cat by [Christopher Torres](https://www.youtube.com/watch?v=QH2-TGUlwu4).*  
+*Northern Lighs by [Naian Wang](https://unsplash.com/photos/F9wrh2miJLA)*.  
 *Amazon Web Services, the aws logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries.*  
 *Google and the Google logo are registered trademarks of Google LLC.*  
 *Microsoft and Azure are registered trademarks of Microsoft Corporation in the United States and/or other countries.*
