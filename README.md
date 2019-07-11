@@ -2,6 +2,15 @@
 
 > Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.
 
+[![{DevZone Community](https://img.shields.io/badge/%7BDevZone-community-brightgreen.svg)](https://devzone.nordicsemi.com/search?q=bifravst)
+[![Spectrum Chat](https://img.shields.io/badge/Spectrum-chat-blue.svg)](https://spectrum.chat/bifravst)
+
+<small>
+
+You can get in touch by creating an issue in this repository, or via [DevZone](https://devzone.nordicsemi.com/), please use the tag [bifravst](https://devzone.nordicsemi.com/search?q=bifravst) to mark your questions. There is also [a chat on Spectrum](https://spectrum.chat/bifravst).
+
+</small>
+
 ## Vision
 
 *Bifravst :rainbow:* aims to provide a concrete end-to-end sample for an IoT product in the asset tracker space, a *Cat Tracker*. 
@@ -56,10 +65,6 @@ Support for cloud providers is planned be implemented in this order:
 1. Amazon Web Services
 1. Google Cloud
 1. Alibaba Cloud
-
-## Contact
-
-You can get in touch by creating an issue in this repository, or via [DevZone](https://devzone.nordicsemi.com/), please use the tag [bifravst](https://devzone.nordicsemi.com/search?q=bifravst) to mark your questions.
 
 ---
 
