@@ -5,11 +5,11 @@
 [![{DevZone Community](https://img.shields.io/badge/%7BDevZone-community-brightgreen.svg)](https://devzone.nordicsemi.com/search?q=bifravst)
 [![Spectrum Chat](https://img.shields.io/badge/Spectrum-chat-blue.svg)](https://spectrum.chat/bifravst)
 
-<small>
+:construction: Development progress is managed in [this GitHub Project](https://github.com/orgs/bifravst/projects/1).
 
-You can get in touch by creating an issue in this repository, or via [DevZone](https://devzone.nordicsemi.com/), please use the tag [bifravst](https://devzone.nordicsemi.com/search?q=bifravst) to mark your questions. There is also [a chat on Spectrum](https://spectrum.chat/bifravst).
-
-</small>
+:question: You can get in touch by [creating an issue in this repository](https://github.com/bifravst/bifravst/issues/new),  
+or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst](https://devzone.nordicsemi.com/search?q=bifravst) to mark your questions).  
+:speech_balloon: There is also [a chat on Spectrum](https://spectrum.chat/bifravst).
 
 ## Vision
 
@@ -68,13 +68,9 @@ Support for cloud providers is planned be implemented in this order:
 
 ---
 
-<small>
-
 **Acknowledgments**  
 *Nyan Cat by [Christopher Torres](https://www.youtube.com/watch?v=QH2-TGUlwu4).*  
 *Northern Lighs by [Naian Wang](https://unsplash.com/photos/F9wrh2miJLA)*.  
 *Amazon Web Services, the aws logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries.*  
 *Google and the Google logo are registered trademarks of Google LLC.*  
 *Microsoft and Azure are registered trademarks of Microsoft Corporation in the United States and/or other countries.*
-
-</small>
