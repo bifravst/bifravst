@@ -39,6 +39,7 @@ or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst]
 | **Feature set** | Generalized, large | Specialized, small |
 | **Hosting** | managed | self-hosted |
 | **No. of devices** | unlimited | ~100 |
+| **User Interface** | Desktop-Browsers, REST API | Mobile first web-app |
 
 ### Core principles
 
