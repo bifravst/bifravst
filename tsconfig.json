@@ -1,18 +1,22 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es2017",
-        "lib": [
-            "es2017"
-        ],
-        "strict": true,
-        "outDir": "dist/",
-        "declaration": false,
-        "skipLibCheck": true,
-        "noUnusedParameters": true,
-        "noUnusedLocals": true
-    },
-    "include": [
-        "**/*.ts"
-    ]
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es2018",
+		"lib": [
+			"es2018"
+		],
+		"strict": true,
+		"outDir": "dist/",
+		"declaration": false,
+		"skipLibCheck": true,
+		"noUnusedParameters": true,
+		"noUnusedLocals": true,
+		"noImplicitThis": true,
+		"noImplicitReturns": true,
+		"removeComments": true,
+		"noFallthroughCasesInSwitch": true
+	},
+	"include": [
+		"**/*.ts"
+	]
 }
