@@ -1,7 +1,7 @@
 {
   "name": "@bifravst/bifravst",
   "version": "0.0.0-development",
-  "description": "Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.",
+  "description": "Bifravst aims to provide a concrete end-to-end sample for an IoT product in the asset tracker space, a Cat Tracker.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/bifravst/bifravst/issues"
   },
-  "homepage": "https://github.com/bifravst/bifravst#readme",
+  "homepage": "https://bifravst.gitbook.io/bifravst/v/saga/",
   "keywords": [
     "Cloud",
     "IoT",

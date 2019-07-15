@@ -1,4 +1,4 @@
-# *Bifravst :rainbow:*
+# *Bifravst 🌈*
 
 > Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.
 
@@ -11,11 +11,11 @@
 [![{DevZone Community](https://img.shields.io/badge/%7BDevZone-community-brightgreen.svg)](https://devzone.nordicsemi.com/search?q=bifravst)
 [![Spectrum Chat](https://img.shields.io/badge/Spectrum-chat-blue.svg)](https://spectrum.chat/bifravst)
 
-:construction: Development progress is managed in [this GitHub Project](https://github.com/orgs/bifravst/projects/1).
+🚧 Development progress is managed in [this GitHub Project](https://github.com/orgs/bifravst/projects/1).
 
-:question: You can get in touch by [creating an issue in this repository](https://github.com/bifravst/bifravst/issues/new),  
+❓ You can get in touch by [creating an issue in this repository](https://github.com/bifravst/bifravst/issues/new),  
 or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst](https://devzone.nordicsemi.com/search?q=bifravst) to mark your questions).  
-:speech_balloon: There is also [a chat on Spectrum](https://spectrum.chat/bifravst).
+💬 There is also [a chat on Spectrum](https://spectrum.chat/bifravst).
 
 ## Vision
 
