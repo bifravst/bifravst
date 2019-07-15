@@ -19,7 +19,7 @@
     "AssetTracker",
     "NordicSemiconductor"
   ],
-  "author": "Nordic Semiconductor ",
+  "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "MIT",
   "dependencies": {
     "chance": "^1.0.18",
