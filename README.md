@@ -46,6 +46,8 @@ or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst]
 | **Hosting** | managed | self-hosted |
 | **No. of devices** | unlimited | ~100 |
 | **User Interface** | Desktop-Browsers, REST API | Mobile first web-app |
+| **Cloud Tenancy** | multi | single |
+| **Integration of Cloud resources** | custom | native |
 
 ### Core principles
 
@@ -69,7 +71,7 @@ The reference single page application (SPA) will be developed using [create-reac
 
 Support for cloud providers is planned be implemented in this order:
 
-1. Amazon Web Services
+1. [Amazon Web Services](./docs/aws/GettingStarted.md)
 1. Google Cloud
 1. Alibaba Cloud
 
