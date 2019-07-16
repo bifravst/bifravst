@@ -1,4 +1,4 @@
-# Bifravst on AWS
+# Bifravst on AWS: Getting started
 
 ## Clone the project and install dependencies
 
