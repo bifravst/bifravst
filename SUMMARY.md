@@ -1,4 +1,4 @@
-# Summary 🐈📍
+# Summary
 
 ## Bifravst on AWS
 

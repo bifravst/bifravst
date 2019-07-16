@@ -1,4 +1,4 @@
-# *Bifravst 🐈📍*
+# *Bifravst*
 
 > Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.
 
