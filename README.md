@@ -21,7 +21,7 @@ or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst]
 
 *Bifravst* aims to provide a concrete end-to-end sample for an IoT product in the asset tracker space, a *Cat Tracker*. 
 
-![Bifravst: Cat Tracker IoT example](./docs/avatar.png)
+![Bifravst: Cat Tracker IoT example](./docs/logo-with-text.png)
 
 **With *Bifravst* developers are able set up their devices using their cloud provider and start developing custom firmware for their prototype within minutes.**
 
@@ -79,7 +79,9 @@ Support for cloud providers is planned be implemented in this order:
 
 **Acknowledgments**  
 *Nyan Cat by [Christopher Torres](https://www.youtube.com/watch?v=QH2-TGUlwu4).*  
-*Northern Lighs by [Naian Wang](https://unsplash.com/photos/F9wrh2miJLA)*.  
+*Northern Lighs by [Naian Wang](https://unsplash.com/photos/F9wrh2miJLA).*  
+*Pin Icon created by Nun from the Noun Project.*  
+*Cat Icon created by Focus Lab from the Noun Project.*  
 *Amazon Web Services, the aws logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries.*  
 *Google and the Google logo are registered trademarks of Google LLC.*  
 *Microsoft and Azure are registered trademarks of Microsoft Corporation in the United States and/or other countries.*
