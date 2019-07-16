@@ -2,7 +2,7 @@
 
 ## Clone the project and install dependencies
 
-Clone the latest version of the [bifravst-aws](https://github.com/bifravst/aws) project and install the dependencies:
+Clone the latest version of the [aws](https://github.com/bifravst/aws) project and install the dependencies:
 
 	git clone https://github.com/bifravst/aws.git bifravst-aws
 	cd bifravst-aws
