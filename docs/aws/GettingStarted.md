@@ -43,3 +43,6 @@ This step sets up the necessary resources in your AWS account:
 
 CDK will present you with a list of permission changes to your account, you need to review them carefully everytime you make changes to your set-up. You can however skip this step if you are adventurous: `npc cdk deploy --require-approval never`. 
 🤞
+## Next: deploy the web application
+
+You can now [deploy the web application](../app/AWS.md).

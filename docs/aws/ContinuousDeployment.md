@@ -23,4 +23,4 @@ You need to store this token in AWS ParameterStore which is a **one-time** manua
 
 Now you can set up the continuous deployment:
 
-	npx cdk -a 'node dist/cloudformation-cd.js' deploy
+	npx cdk -a 'node dist/cdk/cloudformation-cd.js' deploy
