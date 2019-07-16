@@ -27,10 +27,10 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-angular": "^8.0.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-angular": "^8.1.0",
     "@types/chance": "^1.0.5",
-    "@types/node": "^12.6.1",
+    "@types/node": "^12.6.3",
     "@types/uuid": "^3.4.5",
     "@typescript-eslint/eslint-plugin": "^1.12.0",
     "@typescript-eslint/parser": "^1.12.0",
