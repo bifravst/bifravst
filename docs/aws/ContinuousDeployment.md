@@ -6,7 +6,9 @@ For this to work you need to fork the source code in order to register the webho
 
 After forking, make sure to update the `repository.url` in your forks `package.json`.
 
-This will set up a CodePipeline project which triggers a CodeBuild project for every push to the `saga` branch. You can configure the branch in the `deploy.branch` property of the `package.json`. The CodeBuild project updates the CloudFormation stack which contains the Bifravst resources. 
+This will set up a CodePipeline which triggers a CodeBuild project for every push to the `saga` branch. You can configure the branch in the `deploy.branch` property of the `package.json`. The CodeBuild project updates the CloudFormation stack which contains the Bifravst resources.
+
+A second CodePipeline will be set up for the web app which triggers a CodeBuild project for every push to the `saga` branch. You can configure the repository URL and the branch for the web app in the `deploy.app` property of the `package.json`. The CodeBuild project updates the web app deployment on the S3 bucket.
 
 ## Provide GitHub credentials
 
