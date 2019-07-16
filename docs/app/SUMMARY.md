@@ -1,8 +1,13 @@
 # Cat Tracker Web Application
 
-* [Getting Started](./GettingStarted.md)
-* [Customizing the app](./Customizing.md)
+## Installation
 
-# AWS
+* [Getting Started](./GettingStarted.md)
+
+## AWS
 
 * [Deploying to AWS](./AWS.md)
+
+## Features
+
+* [Customizing the app](./Customizing.md)
