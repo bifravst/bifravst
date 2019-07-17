@@ -41,7 +41,7 @@
 			"error"
 		],
 		"@typescript-eslint/no-type-alias": [
-			"error"
+			"off"
 		],
 		"@typescript-eslint/no-unnecessary-type-assertion": [
 			"error"
@@ -92,6 +92,13 @@
 					"requireLast": false
 				}
 			}
+		],
+		"@typescript-eslint/prefer-interface": [
+			"off"
+		],
+		"@typescript-eslint/consistent-type-definitions": [
+			"error",
+			"type"
 		]
 	}
 }
