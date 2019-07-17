@@ -3,6 +3,7 @@
 ## Bifravst on AWS
 
 * [Getting Started](./docs/aws/GettingStarted.md)
+* [Device Credentials](./docs/aws/DeviceCredentials.md)
 * [Continuous Deployment](./docs/aws/ContinuousDeployment.md)
 * [Historical Data](./docs/aws/HistoricalData.md)
 

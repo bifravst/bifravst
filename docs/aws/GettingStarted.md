@@ -39,10 +39,12 @@ AWS_ACCOUNT=<your AWS Account ID>
 
 This step sets up the necessary resources in your AWS account:
 
+    npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' deploy
     npx cdk deploy
 
-CDK will present you with a list of permission changes to your account, you need to review them carefully everytime you make changes to your set-up. You can however skip this step if you are adventurous: `npc cdk deploy --require-approval never`. 
+CDK will present you with a list of permission changes to your account, you need to review them carefully everytime you make changes to your set-up. You can however skip this step if you are adventurous: `npx cdk deploy --require-approval never`. 
 🤞
-## Next: deploy the web application
+## What's next:
 
-You can now [deploy the web application](../app/AWS.md).
+You can now [deploy the web application](../app/AWS.md)  
+and [provision credentials to your devices](./DeviceCredentials.md).
