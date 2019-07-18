@@ -17,3 +17,11 @@ Run the script to generate and register a CA certificate in your AWS account:
 Run this script to generate a certificate for a new device:
 
 	node dist/scripts/generate-device-certificate.ts
+
+## Connect with the device
+
+Run this script to connect to the broker using the previously generated certificate:
+
+	node dist/scripts/connect.js <id of your device>
+
+This script also provides a browser-based UI which you can use to simulate sensor data.
