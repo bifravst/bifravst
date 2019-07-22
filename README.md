@@ -72,6 +72,7 @@ The reference single page application (SPA) will be developed using [create-reac
 Support for cloud providers is planned be implemented in this order:
 
 1. [Amazon Web Services](./docs/aws/GettingStarted.md)
+1. Amazon Web Services UDP+CoAP support (using a bridge, e.g. [Eclipse Californium](https://github.com/eclipse/californium))
 1. Google Cloud
 1. Alibaba Cloud
 
