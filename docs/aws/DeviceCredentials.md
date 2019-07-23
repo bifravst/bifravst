@@ -16,7 +16,7 @@ Run the script to generate and register a CA certificate in your AWS account:
 
 Run this script to generate a certificate for a new device:
 
-	node dist/scripts/generate-device-certificate.ts
+	node dist/scripts/generate-device-certificate.js
 
 ## Connect with the device
 
