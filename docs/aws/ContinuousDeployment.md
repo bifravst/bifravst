@@ -8,7 +8,7 @@ After forking, make sure to update the `repository.url` in your forks `package.j
 
 This will set up a CodePipeline which triggers a CodeBuild project for every push to the `saga` branch. You can configure the branch in the `deploy.branch` property of the `package.json`. The CodeBuild project updates the CloudFormation stack which contains the Bifravst resources.
 
-A second CodePipeline will be set up for the web app which triggers a CodeBuild project for every push to the `saga` branch. You can configure the repository URL and the branch for the web app in the `deploy.app` property of the `package.json`. The CodeBuild project updates the web app deployment on the S3 bucket.
+A second CodePipeline will be set up for the web app which triggers a CodeBuild project for every push to the `saga` branch. You can configure the repository URL and the branch for the web app in the `deploy.webApp` property of the `package.json`. The CodeBuild project updates the web app deployment on the S3 bucket.
 
 ## Provide GitHub credentials
 
