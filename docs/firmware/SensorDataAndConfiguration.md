@@ -1,6 +1,4 @@
-# Firmware
-
-## Sensor Data and Configuration
+# Sensor Data and Configuration
 
 The data published by the device and the configuration options are described in detail in [this JSON schema file](./schema.json). See [this JSON document](./state.json) for an example device state.
 

@@ -12,3 +12,7 @@
 * [Getting Started](./docs/app/GettingStarted.md)
 * [Deploying to AWS](./docs/app/AWS.md)
 * [Customizing the app](./docs/app/Customizing.md)
+
+## Cat Tracker Firmware
+
+* [Sensor Data and Configuration](docs/firmware/SensorDataAndConfiguration.md)
