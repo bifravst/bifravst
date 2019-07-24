@@ -39,6 +39,10 @@ jobs:
           command: npx tsc
 
       - run:
+          name: Run tests
+          command: npm test
+
+      - run:
           when: on_success
           name: Upload lockfile
           command: npx greenkeeper-lockfile-upload

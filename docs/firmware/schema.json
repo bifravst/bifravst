@@ -1,0 +1,146 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/schema.json",
+	"title": "Bifravst Firmware Sensor Data and Configuration",
+	"description": "Describes the data published by the device and its configuration options.",
+	"type": "object",
+	"properties": {
+		"cfg": {
+			"description": "Configures the device",
+			"type": "object",
+			"properties": {
+				"act": {
+					"description": "Whether to enable the active mode",
+					"type": "boolean"
+				},
+				"actwt": {
+					"description": "In active mode: wait this amount of seconds until sending the next update. The actual interval will be this time plus the time it takes to get a GPS fix.",
+					"type": "integer",
+					"minimum": 1
+				},
+				"mvres": {
+					"description": "(movement resolution) In passive mode: Time in seconds to wait after detecting movement",
+					"type": "integer",
+					"minimum": 1
+				},
+				"mvt": {
+					"description": "(movement timeout) In passive mode: Send update at least this often (in seconds)",
+					"type": "integer",
+					"minimum": 1
+				},
+				"gpst": {
+					"description": "GPS treshold (in seconds): timeout for GPS fix",
+					"type": "integer",
+					"minimum": 1
+				}
+			},
+			"required": [
+				"act",
+				"actwt",
+				"mvres",
+				"mvt",
+				"gpst"
+			]
+		},
+		"bat": {
+			"description": "The battery reading",
+			"type": "object",
+			"properties": {
+				"v": {
+					"description": "Battery value as send from the modem",
+					"type": "integer",
+					"minimum": 1
+				},
+				"ts": {
+					"description": "Timestamp with millisecond precision and timezone",
+					"type": "string",
+					"pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
+				}
+			},
+			"required": [
+				"v",
+				"ts"
+			]
+		},
+		"acc": {
+			"description": "The accelerometer reading",
+			"type": "object",
+			"properties": {
+				"v": {
+					"description": "Accelerometer reading: x,y,z",
+					"type": "array",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 3,
+					"maxItems": 3
+				},
+				"ts": {
+					"description": "Timestamp with millisecond precision and timezone",
+					"type": "string",
+					"pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
+				}
+			},
+			"required": [
+				"v",
+				"ts"
+			]
+		},
+		"gps": {
+			"description": "The GPS reading",
+			"type": "object",
+			"properties": {
+				"v": {
+					"type": "object",
+					"properties": {
+						"lng": {
+							"description": "Longitude",
+							"type": "number"
+						},
+						"lat": {
+							"description": "Latitude",
+							"type": "number"
+						},
+						"acc": {
+							"description": "Accuracy",
+							"type": "integer",
+							"minimum": 0
+						},
+						"alt": {
+							"description": "Altitude",
+							"type": "number"
+						},
+						"spd": {
+							"description": "Speed",
+							"type": "number"
+						},
+						"hdg": {
+							"description": "Heading",
+							"type": "number"
+						}
+					},
+					"required": [
+						"lng",
+						"lat",
+						"acc",
+						"alt",
+						"spd",
+						"hdg"
+					]
+				},
+				"ts": {
+					"description": "Timestamp with millisecond precision and timezone",
+					"type": "string",
+					"pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
+				}
+			},
+			"required": [
+				"v",
+				"ts"
+			]
+		}
+	},
+	"required": [
+		"cfg"
+	]
+}

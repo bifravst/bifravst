@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "Bifravst aims to provide a concrete end-to-end sample for an IoT product in the asset tracker space, a Cat Tracker.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test -n \"$SKIP_TESTS\" && true || jest"
   },
   "repository": {
     "type": "git",
@@ -29,22 +29,27 @@
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-angular": "^8.1.0",
+    "@types/ajv": "^1.0.0",
     "@types/chance": "^1.0.5",
+    "@types/jest": "^24.0.15",
     "@types/node": "^12.6.8",
     "@types/uuid": "^3.4.5",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
+    "ajv": "^6.10.2",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "husky": "^3.0.1",
+    "jest": "^24.8.0",
     "lint-staged": "^9.2.0",
     "prettier": "^1.18.0",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -e",
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm test"
     }
   },
   "lint-staged": {
@@ -66,5 +71,23 @@
       "@semantic-release/release-notes-generator",
       "@semantic-release/github"
     ]
+  },
+  "jest": {
+    "testURL": "http://localhost",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": ".+\\.spec\\.ts$",
+    "globals": {
+      "ts-jest": {
+        "diagnostics": true
+      }
+    }
   }
 }
