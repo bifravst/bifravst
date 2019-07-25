@@ -5,6 +5,7 @@
 * [Getting Started](./docs/aws/GettingStarted.md)
 * [Device Credentials](./docs/aws/DeviceCredentials.md)
 * [Continuous Deployment](./docs/aws/ContinuousDeployment.md)
+* [Authentication](./docs/aws/Authentication.md)
 * [Historical Data](./docs/aws/HistoricalData.md)
 
 ## Cat Tracker Web Application
