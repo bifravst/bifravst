@@ -66,7 +66,7 @@ or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst]
 
 The cloud and web application will be developed using [TypeScript](https://www.typescriptlang.org/) (a typed superset of JavaScript). JavaScript is the most popular language according to a [2019 Stack Overflow survey](https://insights.stackoverflow.com/survey/2019#technology). All (or at least most) cloud providers provide SDKs in JavaScript.
 
-The reference single page application (SPA) will be developed using [create-react-app](https://github.com/facebook/create-react-app).
+The reference single-page application (SPA) will be developed using [create-react-app](https://github.com/facebook/create-react-app).
 
 ### Supported Cloud Providers
 

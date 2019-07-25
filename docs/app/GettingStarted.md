@@ -1,6 +1,6 @@
 # Getting started
 
-The Cat Tracker Web Application is a reference single page application (SPA) developed using [create-react-app](https://github.com/facebook/create-react-app) in [TypeScript](https://www.typescriptlang.org/).
+The Cat Tracker Web Application is a reference single-page application (SPA) developed using [create-react-app](https://github.com/facebook/create-react-app) in [TypeScript](https://www.typescriptlang.org/).
 
 ## Clone the project and install dependencies
 
