@@ -23,7 +23,7 @@ or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst]
 
 ![Bifravst: Cat Tracker IoT example](./docs/logo-with-text.png)
 
-**With *Bifravst* developers are able set up their devices using their cloud provider and start developing custom firmware for their prototype within minutes.**
+**With *Bifravst* developers are able to set up their devices using their cloud provider and start developing custom firmware for their prototype within minutes.**
 
 *Bifravst* aims to provide answers and best practices to these questions:
 
