@@ -32,6 +32,12 @@
                     "description": "GPS treshold (in seconds): timeout for GPS fix",
                     "type": "integer",
                     "minimum": 1
+                },
+                "acct": {
+                    "description": "Accelerometer threshold: minimal value for and accelerometer reading to be considered movement",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
                 }
             },
             "required": [
@@ -39,7 +45,8 @@
                 "actwt",
                 "mvres",
                 "mvt",
-                "gpst"
+                "gpst",
+                "acct"
             ]
         },
         "bat": {

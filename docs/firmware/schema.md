@@ -144,11 +144,28 @@ Configures the device
 
 | Property | Type    | Required     |
 | -------- | ------- | ------------ |
+| `acct`   | number  | **Required** |
 | `act`    | boolean | **Required** |
 | `actwt`  | integer | **Required** |
 | `gpst`   | integer | **Required** |
 | `mvres`  | integer | **Required** |
 | `mvt`    | integer | **Required** |
+
+#### acct
+
+Accelerometer threshold: minimal value for and accelerometer reading to be considered movement
+
+`acct`
+
+- is **required**
+- type: `number`
+
+##### acct Type
+
+`number`
+
+- minimum value: `0`
+- maximum value: `1`
 
 #### act
 

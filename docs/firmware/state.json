@@ -27,6 +27,7 @@
 		"act": false,
 		"actwt": 60,
 		"mvres": 60,
-		"mvt": 3600
+		"mvt": 3600,
+		"acct": 0.25
 	}
 }
