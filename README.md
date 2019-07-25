@@ -23,15 +23,17 @@ or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst]
 
 ![Bifravst: Cat Tracker IoT example](./docs/logo-with-text.png)
 
-**With *Bifravst* developers are able to set up their devices using their cloud provider and start developing custom firmware for their prototype within minutes.**
+**With *Bifravst* developers are enabled to set up a real world IoT solution using their cloud provider and start adapting the sample firmware and software for their use case within minutes.**
 
 *Bifravst* aims to provide answers and best practices to these questions:
 
 - *How can I connect Nordic's long-range chips to my cloud provider?*
 - *How do devices send data into the cloud?*
 - *How can data be sent to the devices?*
-- *How do can users and other services interact with devices?*
+- *How can users and other services interact with devices?*
 - *How can I update the application firmware of my devices while they are deployed in the field?*
+
+*Bifravst* is licensed under the [MIT license](./LICENSE). 
 
 ### Comparison to nRF Connect for Cloud
 
@@ -44,7 +46,6 @@ or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst]
 | **Cloud vendor support** | AWS Only | Multiple |
 | **Feature set** | Generalized, large | Specialized, small |
 | **Hosting** | managed | self-hosted |
-| **No. of devices** | unlimited | ~100 |
 | **User Interface** | Desktop-Browsers, REST API | Mobile first web-app |
 | **Cloud Tenancy** | multi | single |
 | **Integration of Cloud resources** | custom | native |
@@ -53,17 +54,17 @@ or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst]
 
 *Bifravst* is built around the following principles:
 
-- *teach through showing*: all samples are build to solve a concrete use-case (a *Cat Tracker*) instead of providing generic or abstract solutions. *Bifravst* is not a framework, but a real application.
+- *teach through showing*: all samples are designed to solve a concrete use-case (a *Cat Tracker*) instead of providing generic or abstract solutions. *Bifravst* is not a framework, but a real application.
 - *err on the side of security*: *Bifravst* follows the most robust security recommendations of the respective cloud provider.
 - *single tenancy*: *Bifravst* implements a scenario in which all authenticated users can be trusted to access all devices. This is a typical scenario in IIoT products and simplifies the onboarding of new devices.
-- *limited scalability*: This examples are intended for the small scale prototyping of IoT products (around 100 devices) with a quick turnaround for the user and for them to evaluate the necessary software components and processes.
-- *cloud native*: build the sample following the respective cloud providers best practices.
+- *serverless*: *Bifravst* uses a serverless architecture as much as possible to have near zero costs for the operation during development but provide horizontal scaling resources to be used in a production system if needed.
+- *cloud native*: *Bifravst* samples are designed following the respective cloud providers' best practices to reduce development efforts due to abstraction. 
 
 ### System overview and technical considerations
 
 ![System overview](./docs/System%20overview.jpg)
 
-The cloud and web application will be developed using [TypeScript](https://www.typescriptlang.org/)  (a typed superset of JavaScript). JavaScript is the most popular language according to a [2019 Stack Overflow survey](https://insights.stackoverflow.com/survey/2019#technology). All (or at least most) cloud providers provide SDKs in JavaScript.
+The cloud and web application will be developed using [TypeScript](https://www.typescriptlang.org/) (a typed superset of JavaScript). JavaScript is the most popular language according to a [2019 Stack Overflow survey](https://insights.stackoverflow.com/survey/2019#technology). All (or at least most) cloud providers provide SDKs in JavaScript.
 
 The reference single page application (SPA) will be developed using [create-react-app](https://github.com/facebook/create-react-app).
 
