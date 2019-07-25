@@ -1,6 +1,6 @@
 # Sensor Data and Configuration
 
-The data published by the device and the configuration options are described in detail in [this JSON schema file](./schema.json). See [this JSON document](./state.json) for an example device state.
+The data published by the device and the configuration options are described in detail in [this JSON schema file](./schema.json). See [this JSON document](./state.json) for an example device state. A human-friendly documentation of the schema is available [here](./schema.md).
 
 ## Tracking Modes
 
