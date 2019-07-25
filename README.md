@@ -46,7 +46,7 @@ or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst]
 | **Cloud vendor support** | AWS Only | Multiple |
 | **Feature set** | Generalized, large | Specialized, small |
 | **Hosting** | managed | self-hosted |
-| **User Interface** | Desktop-Browsers, REST API | Mobile first web-app |
+| **User Interface** | Desktop-Browsers, REST API | Mobile-first web-app |
 | **Cloud Tenancy** | multi | single |
 | **Integration of Cloud resources** | custom | native |
 
@@ -64,9 +64,29 @@ or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag [bifravst]
 
 ![System overview](./docs/System%20overview.jpg)
 
+Devices connect to the message broker using TLS over TCP. The messaging protocol is JSON over MQTT. The TLS certificates are generated offline by the developer to simplify provision during production.
+
 The cloud and web application will be developed using [TypeScript](https://www.typescriptlang.org/) (a typed superset of JavaScript). JavaScript is the most popular language according to a [2019 Stack Overflow survey](https://insights.stackoverflow.com/survey/2019#technology). All (or at least most) cloud providers provide SDKs in JavaScript.
 
-The reference single-page application (SPA) will be developed using [create-react-app](https://github.com/facebook/create-react-app).
+It provides tools to configure the developers’ cloud account for use with their devices and the SPA. After the cloud account has been configured it provides the necessary resources for asset trackers to connect to the message broker and send and receive messages and the appropriate APIs for the SPA to interact with these devices.
+
+The mobile-first single-page application (SPA) will be developed using [create-react-app](https://github.com/facebook/create-react-app) and provides a reference implementation of a user-interface to control and interact with the devices.
+
+The web application offers these features:
+ - User registration including password recovery
+   - Optional: User approval by an admin.
+ - Listing of asset trackers
+ - Viewing of asset trackers
+   - Current and historical sensor data
+     - GPS location
+     - Battery voltage
+     - Accelerometer
+   - Configure asset tracker
+     - Update interval
+     - Sensor threshold
+ - Managing of asset trackers
+     - Delete tracker
+     - Firmware update
 
 ### Supported Cloud Providers
 
