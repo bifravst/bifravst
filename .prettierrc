@@ -1,6 +1,17 @@
 {
-  "parser": "typescript",
-  "singleQuote": true,
-  "trailingComma": "all",
-  "semi": false
+	"printWidth": 80,
+	"endOfLine": "lf",
+	"overrides": [
+		{
+			"files": "*.ts",
+			"parser": "typescript",
+			"singleQuote": true,
+			"trailingComma": "all",
+			"semi": false
+		},
+		{
+			"files": "*.md",
+			"parser": "markdown"
+		}
+	]
 }

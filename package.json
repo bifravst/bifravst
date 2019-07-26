@@ -58,6 +58,10 @@
       "prettier --write",
       "eslint --ext .js,.ts",
       "git add"
+    ],
+    "*.md": [
+      "prettier --write",
+      "git add"
     ]
   },
   "engines": {
