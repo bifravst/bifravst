@@ -9,7 +9,7 @@ The web app needs to know the ids of the AWS resources that were created during
 the set-up of the stack. Run this command in the `bifravst-aws` directory and
 copy the output to a file called `.env.local`.
 
-    node dist/scripts/print-react-app-configuration.js
+    ./cli.js react-config
 
 Example output:
 
