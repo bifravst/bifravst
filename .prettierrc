@@ -16,7 +16,13 @@
 		{
 			"parser": "json",
 			"files": ".prettierrc,*.json,*.eslintrc",
-			"useTabs": true
+			"useTabs": true,
+			"proseWrap": "always"
+		},
+		{
+			"parser": "yaml",
+			"files": "*.yml,*yaml",
+			"proseWrap": "always"
 		}
 	]
 }
