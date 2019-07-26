@@ -34,8 +34,8 @@
           "minimum": 1
         },
         "acct": {
-          "description": "Accelerometer threshold: minimal absolute value for and accelerometer reading to be considered movement",
-          "type": "number",
+          "description": "Accelerometer threshold: minimal absolute value for and accelerometer reading to be considered movement. Divide by 10 to get the real threshold. Integers are used because the nRF9160 has issue parsing JSON floats.",
+          "type": "integer",
           "minimum": 0
         }
       },

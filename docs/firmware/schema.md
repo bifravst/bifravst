@@ -61,7 +61,7 @@ All instances must conform to this regular expression (test examples
 
 #### v
 
-Accelerometer reading: x,y,z
+Accelerometer reading: x,y,z in m/s²
 
 `v`
 
@@ -144,7 +144,7 @@ Configures the device
 
 | Property | Type    | Required     |
 | -------- | ------- | ------------ |
-| `acct`   | number  | **Required** |
+| `acct`   | integer | **Required** |
 | `act`    | boolean | **Required** |
 | `actwt`  | integer | **Required** |
 | `gpst`   | integer | **Required** |
@@ -154,16 +154,17 @@ Configures the device
 #### acct
 
 Accelerometer threshold: minimal absolute value for and accelerometer reading to
-be considered movement
+be considered movement. Divide by 10 to get the real threshold. Integers are
+used because the nRF9160 has issue parsing JSON floats.
 
 `acct`
 
 - is **required**
-- type: `number`
+- type: `integer`
 
 ##### acct Type
 
-`number`
+`integer`
 
 - minimum value: `0`
 
