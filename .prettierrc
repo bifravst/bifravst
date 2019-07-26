@@ -12,6 +12,11 @@
 		{
 			"files": "*.md",
 			"parser": "markdown"
+		},
+		{
+			"parser": "json",
+			"files": ".prettierrc,*.json,*.eslintrc",
+			"useTabs": true
 		}
 	]
 }
