@@ -59,7 +59,7 @@
       "eslint --ext .js,.ts",
       "git add"
     ],
-    "*.md": [
+    "*.{md,json,yaml,yml}": [
       "prettier --write",
       "git add"
     ]
