@@ -153,7 +153,7 @@ Configures the device
 
 #### acct
 
-Accelerometer threshold: minimal value for and accelerometer reading to be considered movement
+Accelerometer threshold: minimal absolute value for and accelerometer reading to be considered movement
 
 `acct`
 
@@ -165,7 +165,6 @@ Accelerometer threshold: minimal value for and accelerometer reading to be consi
 `number`
 
 - minimum value: `0`
-- maximum value: `1`
 
 #### act
 

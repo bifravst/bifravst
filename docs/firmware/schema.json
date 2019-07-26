@@ -34,10 +34,9 @@
                     "minimum": 1
                 },
                 "acct": {
-                    "description": "Accelerometer threshold: minimal value for and accelerometer reading to be considered movement",
+                    "description": "Accelerometer threshold: minimal absolute value for and accelerometer reading to be considered movement",
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1
+                    "minimum": 0
                 }
             },
             "required": [
@@ -74,7 +73,7 @@
             "type": "object",
             "properties": {
                 "v": {
-                    "description": "Accelerometer reading: x,y,z",
+                    "description": "Accelerometer reading: x,y,z in m/s²",
                     "type": "array",
                     "items": {
                         "type": "number"
