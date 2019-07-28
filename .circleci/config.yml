@@ -20,19 +20,9 @@ jobs:
           name: Update lockfile
           command: npx greenkeeper-lockfile-update
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
       - run:
           name: Install dependencies
           command: npm ci --no-audit
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
 
       - run:
           name: Compile TypeScript
