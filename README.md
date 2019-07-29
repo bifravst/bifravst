@@ -40,6 +40,8 @@ _Bifravst_ aims to provide answers and best practices to these questions:
 - _How can users and other services interact with devices?_
 - _How can I update the application firmware of my devices while they are
   deployed in the field?_
+- _How can I develop an IIoT product that maximizes battery life, minimizes data
+  usage and handles unreliable connectivity gracefully_?
 
 _Bifravst_ is licensed under the [MIT license](./LICENSE).
 
@@ -48,16 +50,18 @@ _Bifravst_ is licensed under the [MIT license](./LICENSE).
 _Bifravst_ does not aim to replace or superseed nRF Connect for Cloud. It has a
 distinctly different scope:
 
-|                                    | [nRF Connect for Cloud](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud) | _Bifravst_           |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------- |
-| **Development model**              | Closed                                                                                                         | Open                 |
-| **License**                        | Commercial                                                                                                     | Open Source          |
-| **Cloud vendor support**           | AWS Only                                                                                                       | Multiple             |
-| **Feature set**                    | Generalized, large                                                                                             | Specialized, small   |
-| **Hosting**                        | managed                                                                                                        | self-hosted          |
-| **User Interface**                 | Desktop-Browsers, REST API                                                                                     | Mobile-first web-app |
-| **Cloud Tenancy**                  | multi                                                                                                          | single               |
-| **Integration of Cloud resources** | custom                                                                                                         | native               |
+|                                    | [nRF Connect for Cloud](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud) | _Bifravst_               |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| **Development model**              | Closed                                                                                                         | Open                     |
+| **License**                        | Commercial                                                                                                     | Open Source              |
+| **Cloud vendor support**           | AWS Only                                                                                                       | Multiple                 |
+| **Feature set**                    | Generalized, large                                                                                             | Specialized, small       |
+| **Hosting**                        | managed                                                                                                        | self-hosted              |
+| **User Interface**                 | Desktop-Browsers, REST API                                                                                     | Mobile-first web-app     |
+| **Cloud Tenancy**                  | multi                                                                                                          | single                   |
+| **Integration of Cloud resources** | custom                                                                                                         | native                   |
+| **Device paradigm**                | always on                                                                                                      | offline most of the time |
+| **Sensor timestamping**            | cloud side                                                                                                     | device side              |
 
 ### Core principles
 
@@ -76,6 +80,13 @@ _Bifravst_ is built around the following principles:
   horizontal scaling resources to be used in a production system if needed.
 - _cloud native_: _Bifravst_ samples are designed following the respective cloud
   providers' best practices to reduce development efforts due to abstraction.
+- _being offline is not an exception_: highly mobile IIoT products need to
+  handle unreliable connections gracefully, by implementing mechanisms to retry
+  sending of failed data. This also means that the sensor measurements need to
+  be timestamped when they are created, not when they arrive at the cloud.
+- _maximize powersaving_: the firmware samples should highlight power-saving
+  features of the nRF9160 because this is critical for developing very small
+  form-factor devices.
 
 ### System overview and technical considerations
 
