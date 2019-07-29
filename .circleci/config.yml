@@ -17,20 +17,12 @@ jobs:
           name: Install latest npm
           command: sudo npm install -g npm@
 
-      - run:
-          name: Install Greenkeeper
-          command: sudo npm i -g greenkeeper-lockfile@2
-
       # Download and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
-      - run:
-          name: Update lockfile
-          command: npx greenkeeper-lockfile-update
 
       - run:
           name: Install dependencies
@@ -48,11 +40,6 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-
-      - run:
-          when: on_success
-          name: Upload lockfile
-          command: npx greenkeeper-lockfile-upload
 
       - run:
           when: on_success
