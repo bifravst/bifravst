@@ -95,21 +95,24 @@
               "type": "number"
             },
             "acc": {
-              "description": "Accuracy",
-              "type": "integer",
+              "description": "Accuracy (2D 1-sigma) in meters",
+              "type": "number",
               "minimum": 0
             },
             "alt": {
-              "description": "Altitude",
+              "description": "Altitude above WGS-84 ellipsoid in meters",
               "type": "number"
             },
             "spd": {
-              "description": "Speed",
-              "type": "number"
+              "description": "Horizontal speed in meters",
+              "type": "number",
+              "minimum": 0
             },
             "hdg": {
-              "description": "Heading",
-              "type": "number"
+              "description": "Heading of movement in degrees",
+              "type": "number",
+              "minimum": 0,
+              "maximum": 360
             }
           },
           "required": ["lng", "lat", "acc", "alt", "spd", "hdg"]

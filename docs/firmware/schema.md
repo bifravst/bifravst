@@ -293,33 +293,33 @@ All instances must conform to this regular expression (test examples
 
 `object` with following properties:
 
-| Property | Type    | Required     |
-| -------- | ------- | ------------ |
-| `acc`    | integer | **Required** |
-| `alt`    | number  | **Required** |
-| `hdg`    | number  | **Required** |
-| `lat`    | number  | **Required** |
-| `lng`    | number  | **Required** |
-| `spd`    | number  | **Required** |
+| Property | Type   | Required     |
+| -------- | ------ | ------------ |
+| `acc`    | number | **Required** |
+| `alt`    | number | **Required** |
+| `hdg`    | number | **Required** |
+| `lat`    | number | **Required** |
+| `lng`    | number | **Required** |
+| `spd`    | number | **Required** |
 
 #### acc
 
-Accuracy
+Accuracy (2D 1-sigma) in meters
 
 `acc`
 
 - is **required**
-- type: `integer`
+- type: `number`
 
 ##### acc Type
 
-`integer`
+`number`
 
 - minimum value: `0`
 
 #### alt
 
-Altitude
+Altitude above WGS-84 ellipsoid in meters
 
 `alt`
 
@@ -332,7 +332,7 @@ Altitude
 
 #### hdg
 
-Heading
+Heading of movement in degrees
 
 `hdg`
 
@@ -342,6 +342,9 @@ Heading
 ##### hdg Type
 
 `number`
+
+- minimum value: `0`
+- maximum value: `360`
 
 #### lat
 
@@ -371,7 +374,7 @@ Longitude
 
 #### spd
 
-Speed
+Horizontal speed in meters
 
 `spd`
 
@@ -381,3 +384,5 @@ Speed
 ##### spd Type
 
 `number`
+
+- minimum value: `0`
