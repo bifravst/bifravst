@@ -12,7 +12,7 @@ less than 128 MB, for example if every messages comes from AWS IoT and is stored
 in individual files). Therefore there needs to be a process to concatenate
 individual files into bigger archive files.
 
-![Pipeline](./AWS%20Historical%20Data%20Pipieline.jpg)
+[![Pipeline](./AWS%20Historical%20Data%20Pipeline.jpg)](https://miro.com/app/board/o9J_kxWDuWs=/)
 
 ## Evaluation
 
