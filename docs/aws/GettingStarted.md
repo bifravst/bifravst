@@ -50,6 +50,17 @@ AWS_DEFAULT_REGION=<your preferred AWS region>
 AWS_ACCOUNT=<your AWS Account ID>
 ```
 
+## Supported regions
+
+Not all AWS features are available in all AWS regions. You will see a warning if
+you are deploying to a region that has not been tested and CDK might fail.
+
+Supported regions are:
+
+- `us-east-1`
+- `eu-west-1`
+- `eu-central-1`
+
 ## Install Bifravst into your AWS account
 
 This step sets up the necessary resources in your AWS account:
