@@ -76,7 +76,7 @@ All items must be of the type: `number`
 
 ## bat
 
-The battery reading in millivolt
+Battery reading in millivolt
 
 `bat`
 
@@ -115,7 +115,7 @@ All instances must conform to this regular expression (test examples
 
 #### v
 
-Battery value as send from the modem
+Battery reading read by the modem
 
 `v`
 
@@ -153,9 +153,8 @@ Configures the device
 
 #### acct
 
-Accelerometer threshold: minimal absolute value for and accelerometer reading to
-be considered movement. Divide by 10 to get the real threshold. Integers are
-used because the nRF9160 has issue parsing JSON floats.
+Accelerometer threshold: minimal absolute value for and accelerometer reading to be considered movement. Divide by 10
+to get the real threshold. Integers are used because the nRF9160 has issue parsing JSON floats.
 
 `acct`
 
@@ -183,8 +182,8 @@ Whether to enable the active mode
 
 #### actwt
 
-In active mode: wait this amount of seconds until sending the next update. The
-actual interval will be this time plus the time it takes to get a GPS fix.
+In active mode: wait this amount of seconds until sending the next update. The actual interval will be this time plus
+the time it takes to get a GPS fix.
 
 `actwt`
 
@@ -214,8 +213,7 @@ GPS treshold (in seconds): timeout for GPS fix
 
 #### mvres
 
-(movement resolution) In passive mode: Time in seconds to wait after detecting
-movement
+(movement resolution) In passive mode: Time in seconds to wait after detecting movement
 
 `mvres`
 
