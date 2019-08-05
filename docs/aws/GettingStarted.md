@@ -1,5 +1,11 @@
 # Getting started
 
+## System requirements
+
+You need a development environment with the
+[latest active LTS release of Node.js](https://nodejs.org/en/about/releases/)
+(right now version 10).
+
 ## Clone the project and install dependencies
 
 Clone the latest version of the [aws](https://github.com/bifravst/aws) project
