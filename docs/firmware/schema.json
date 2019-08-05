@@ -42,7 +42,7 @@
       "required": ["act", "actwt", "mvres", "mvt", "gpst", "acct"]
     },
     "bat": {
-      "description": "The battery reading",
+      "description": "The battery reading in millivolt",
       "type": "object",
       "properties": {
         "v": {

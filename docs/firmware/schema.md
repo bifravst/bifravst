@@ -76,7 +76,7 @@ All items must be of the type: `number`
 
 ## bat
 
-The battery reading
+The battery reading in millivolt
 
 `bat`
 
