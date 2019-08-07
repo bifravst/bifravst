@@ -29,7 +29,7 @@
           "minimum": 1
         },
         "gpst": {
-          "description": "GPS treshold (in seconds): timeout for GPS fix",
+          "description": "GPS timeout (in seconds): timeout for GPS fix",
           "type": "integer",
           "minimum": 1
         },

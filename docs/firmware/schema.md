@@ -199,7 +199,7 @@ actual interval will be this time plus the time it takes to get a GPS fix.
 
 #### gpst
 
-GPS treshold (in seconds): timeout for GPS fix
+GPS timeout (in seconds): timeout for GPS fix
 
 `gpst`
 
