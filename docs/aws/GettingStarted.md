@@ -82,7 +82,7 @@ however skip this step if you are adventurous:
 After this completed successfully the historical data resources need to be set
 up through the CLI:
 
-    ./cli.js historical-data --setup
+    node cli historical-data --setup
 
 ## What's next:
 

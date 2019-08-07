@@ -47,6 +47,6 @@ Now you can set up the continuous deployment:
 If you want to check the status of the Continuous Deployment after you have made
 changes, you can use this CLI command:
 
-    ./cli.js cd
+    node cli cd
 
-![Output of ./cli.js cd](./cli-cd.png)
+![Output of node cli cd](./cli-cd.png)
