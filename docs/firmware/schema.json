@@ -51,9 +51,9 @@
           "minimum": 1
         },
         "ts": {
-          "description": "Timestamp with millisecond precision and timezone",
-          "type": "string",
-          "pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
         }
       },
       "required": ["v", "ts"]
@@ -72,9 +72,9 @@
           "maxItems": 3
         },
         "ts": {
-          "description": "Timestamp with millisecond precision and timezone",
-          "type": "string",
-          "pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
         }
       },
       "required": ["v", "ts"]
@@ -118,9 +118,9 @@
           "required": ["lng", "lat", "acc", "alt", "spd", "hdg"]
         },
         "ts": {
-          "description": "Timestamp with millisecond precision and timezone",
-          "type": "string",
-          "pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
         }
       },
       "required": ["v", "ts"]
