@@ -22,25 +22,3 @@ Run the script to generate and register a CA certificate in your AWS account:
 Run this script to generate a certificate for a new device:
 
     node cli generate-cert
-
-## Connect with the device
-
-### Using the simulator
-
-Run this script to connect to the broker using the previously generated
-certificate:
-
-    node cli connect <id of your device>
-
-This script also provides a browser-based UI which you can use to simulate
-sensor data.
-
-### Using a real device
-
-In order to connect you also need the
-[AWS IoT Root certificate](https://www.amazontrust.com/repository/AmazonRootCA1.pem).
-
-You can use the `certificates/device-<deviceId>.json` file with the _Certificate
-Manager_ in the
-[nRF Connect for Desktop](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
-app _LTE Link Monitor_ to flash certificate onto the device.

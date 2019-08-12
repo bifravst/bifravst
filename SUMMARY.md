@@ -4,6 +4,8 @@
 
 - [Getting Started](./docs/aws/GettingStarted.md)
 - [Device Credentials](./docs/aws/DeviceCredentials.md)
+- [Connect using a real device](./docs/aws/RealDevice.md)
+- [Connect using the simulator](./docs/aws/Simulator.md)
 - [Continuous Deployment](./docs/aws/ContinuousDeployment.md)
 - [Authentication](./docs/aws/Authentication.md)
 - [Limiting the Shadow Document Size](docs/aws/LimitingShadowDocumentSize.md)
