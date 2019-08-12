@@ -25,5 +25,31 @@
     "mvres": 60,
     "mvt": 3600,
     "acct": 12
+  },
+  "nw": {
+    "v": {
+      "currentBand": 3,
+      "supportedBands": [1, 2, 3, 4, 5, 8, 12, 13, 17, 19, 20, 25, 26, 28, 66],
+      "areaCode": 12,
+      "mccmnc": "24202",
+      "ipAddress": "10.81.183.99",
+      "ueMode": 0,
+      "cellID": 33703719,
+      "networkMode": "NB-IoT GPS"
+    },
+    "ts": 1563968743666
+  },
+  "sim": {
+    "v": { "uiccMode": 1, "iccid": "89450421180216216095" },
+    "ts": 1563968743666
+  },
+  "dev": {
+    "v": {
+      "modemFirmware": "mfw_nrf9160_1.0.0",
+      "board": "nrf9160_pca20035",
+      "appVersion": "v1.0.0-rc1-327-g6fc8c16b239f",
+      "appName": "PROJECT_NAME"
+    },
+    "ts": 1563968743666
   }
 }
