@@ -33,8 +33,6 @@ Manager_ in the
 [nRF Connect for Desktop](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
 app _LTE Link Monitor_ to flash certificate onto the device.
 
-![nRF Connect for Desktop LTE Link Monitor](images/lte-link-monitor.png)
-
 The _Certificate Manager_ uses AT commands to write the certificate information
 to the secure storage of the modem and you need to flash your device with a
 firmware that has the AT command host enabled.
@@ -43,19 +41,25 @@ Flash
 [`thingy91_at_client_increased_buf.hex`](https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex)
 using the _Programmer_ app.
 
+![nRF Connect for Desktop Programmer](images/programmer.png)
+
 Drag and Drop (or select via _Add HEX file_) the
 [`thingy91_at_client_increased_buf.hex`](https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex),
 click _Erase & Write_ and wait until the operation has finished.
 
 ![nRF Connect for Desktop Programmer](images/programmer-modem.png)
 
-Afterwards, launch the _LTE Link Monitor_ app and use the _Certificate Manager_
-with the JSON file to write the certificate to the device.
+Afterwards, launch the _LTE Link Monitor_ app.
+
+![nRF Connect for Desktop LTE Link Monitor](images/lte-link-monitor.png)
+
+Use the _Certificate Manager_ with the JSON file to write the certificate to the
+device.
 
 ![nRF Connect for Desktop Certificate Manager](images/certificate-manager.png)
 
 Drag and Drop or select the JSON file, click _Update certificates_ and wait
-until the operation finishes:
+until the operation finishes.
 
 ## Flashing the application
 
