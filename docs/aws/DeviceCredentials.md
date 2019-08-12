@@ -39,3 +39,8 @@ sensor data.
 
 In order to connect you also need the
 [AWS IoT Root certificate](https://www.amazontrust.com/repository/AmazonRootCA1.pem).
+
+You can use the `certificates/device-<deviceId>.json` file with the _Certificate
+Manager_ in the
+[nRF Connect for Desktop](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
+app _LTE Link Monitor_ to flash certificate onto the device.
