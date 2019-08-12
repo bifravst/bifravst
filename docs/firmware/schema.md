@@ -12,13 +12,15 @@ Describes the data published by the device and its configuration options.
 
 # Bifravst Firmware Sensor Data and Configuration Properties
 
-| Property    | Type     | Required     | Nullable | Defined by                                                    |
-| ----------- | -------- | ------------ | -------- | ------------------------------------------------------------- |
-| [acc](#acc) | `object` | Optional     | No       | Bifravst Firmware Sensor Data and Configuration (this schema) |
-| [bat](#bat) | `object` | Optional     | No       | Bifravst Firmware Sensor Data and Configuration (this schema) |
-| [cfg](#cfg) | `object` | **Required** | No       | Bifravst Firmware Sensor Data and Configuration (this schema) |
-| [gps](#gps) | `object` | Optional     | No       | Bifravst Firmware Sensor Data and Configuration (this schema) |
-| `*`         | any      | Additional   | Yes      | this schema _allows_ additional properties                    |
+| Property      | Type     | Required     | Nullable | Defined by                                                    |
+| ------------- | -------- | ------------ | -------- | ------------------------------------------------------------- |
+| [acc](#acc)   | `object` | Optional     | No       | Bifravst Firmware Sensor Data and Configuration (this schema) |
+| [bat](#bat)   | `object` | Optional     | No       | Bifravst Firmware Sensor Data and Configuration (this schema) |
+| [cfg](#cfg)   | `object` | **Required** | No       | Bifravst Firmware Sensor Data and Configuration (this schema) |
+| [dev](#dev)   | `object` | **Required** | No       | Bifravst Firmware Sensor Data and Configuration (this schema) |
+| [gps](#gps)   | `object` | Optional     | No       | Bifravst Firmware Sensor Data and Configuration (this schema) |
+| [roam](#roam) | `object` | **Required** | No       | Bifravst Firmware Sensor Data and Configuration (this schema) |
+| `*`           | any      | Additional   | Yes      | this schema _allows_ additional properties                    |
 
 ## acc
 
@@ -34,30 +36,25 @@ The accelerometer reading
 
 `object` with following properties:
 
-| Property | Type   | Required     |
-| -------- | ------ | ------------ |
-| `ts`     | string | **Required** |
-| `v`      | array  | **Required** |
+| Property | Type    | Required     |
+| -------- | ------- | ------------ |
+| `ts`     | integer | **Required** |
+| `v`      | array   | **Required** |
 
 #### ts
 
-Timestamp with millisecond precision and timezone
+Timestamp as Unix epoch with millisecond precision (UTC)
 
 `ts`
 
 - is **required**
-- type: `string`
+- type: `integer`
 
 ##### ts Type
 
-`string`
+`integer`
 
-All instances must conform to this regular expression (test examples
-[here](<https://regexr.com/?expression=%5E%5Cd%7B4%7D-%5B01%5D%5Cd-%5B0-3%5D%5CdT%5B0-2%5D%5Cd%3A%5B0-5%5D%5Cd%3A%5B0-5%5D%5Cd%5C.%5Cd%2B(%5B%2B-%5D%5B0-2%5D%5Cd%3A%5B0-5%5D%5Cd%7CZ)%24>)):
-
-```regex
-^\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z)$
-```
+- minimum value: `1234567890123`
 
 #### v
 
@@ -90,28 +87,23 @@ Battery reading in millivolt
 
 | Property | Type    | Required     |
 | -------- | ------- | ------------ |
-| `ts`     | string  | **Required** |
+| `ts`     | integer | **Required** |
 | `v`      | integer | **Required** |
 
 #### ts
 
-Timestamp with millisecond precision and timezone
+Timestamp as Unix epoch with millisecond precision (UTC)
 
 `ts`
 
 - is **required**
-- type: `string`
+- type: `integer`
 
 ##### ts Type
 
-`string`
+`integer`
 
-All instances must conform to this regular expression (test examples
-[here](<https://regexr.com/?expression=%5E%5Cd%7B4%7D-%5B01%5D%5Cd-%5B0-3%5D%5CdT%5B0-2%5D%5Cd%3A%5B0-5%5D%5Cd%3A%5B0-5%5D%5Cd%5C.%5Cd%2B(%5B%2B-%5D%5B0-2%5D%5Cd%3A%5B0-5%5D%5Cd%7CZ)%24>)):
-
-```regex
-^\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z)$
-```
+- minimum value: `1234567890123`
 
 #### v
 
@@ -243,6 +235,210 @@ movement before sending the next update
 
 - minimum value: `1`
 
+## dev
+
+Static device information. This information shall be updated by the device once
+after reboot.
+
+`dev`
+
+- is **required**
+- type: `object`
+- defined in this schema
+
+### dev Type
+
+`object` with following properties:
+
+| Property | Type    | Required     |
+| -------- | ------- | ------------ |
+| `ts`     | integer | **Required** |
+| `v`      | object  | **Required** |
+
+#### ts
+
+Timestamp as Unix epoch with millisecond precision (UTC)
+
+`ts`
+
+- is **required**
+- type: `integer`
+
+##### ts Type
+
+`integer`
+
+- minimum value: `1234567890123`
+
+#### v
+
+`v`
+
+- is **required**
+- type: `object`
+
+##### v Type
+
+`object` with following properties:
+
+| Property | Type   | Required     |
+| -------- | ------ | ------------ |
+| `appV`   | string | **Required** |
+| `band`   | number | **Required** |
+| `brdV`   | string | **Required** |
+| `iccid`  | string | **Required** |
+| `modV`   | string | **Required** |
+| `nw`     | string | **Required** |
+| `op`     | string | **Required** |
+
+#### appV
+
+Application Firmware Version
+
+`appV`
+
+- is **required**
+- type: `string`
+
+##### appV Type
+
+`string`
+
+- minimum length: 1 characters
+
+##### appV Example
+
+```json
+v1.0.0-rc1-327-g6fc8c16b239f
+```
+
+#### band
+
+Band
+
+`band`
+
+- is **required**
+- type: `number`
+
+##### band Type
+
+`number`
+
+- minimum value: `1`
+
+##### band Example
+
+```json
+3
+```
+
+#### brdV
+
+Board Version
+
+`brdV`
+
+- is **required**
+- type: `string`
+
+##### brdV Type
+
+`string`
+
+- minimum length: 1 characters
+
+##### brdV Example
+
+```json
+nrf9160_pca20035
+```
+
+#### iccid
+
+SIM ICCID
+
+`iccid`
+
+- is **required**
+- type: `string`
+
+##### iccid Type
+
+`string`
+
+- minimum length: 19 characters
+- maximum length: 20 characters
+
+##### iccid Example
+
+```json
+89450421180216216095
+```
+
+#### modV
+
+Modem Firmware Version
+
+`modV`
+
+- is **required**
+- type: `string`
+
+##### modV Type
+
+`string`
+
+- minimum length: 1 characters
+
+##### modV Example
+
+```json
+mfw_nrf9160_1.0.0
+```
+
+#### nw
+
+Network mode
+
+`nw`
+
+- is **required**
+- type: `string`
+
+##### nw Type
+
+`string`
+
+- minimum length: 1 characters
+
+##### nw Example
+
+```json
+NB-IoT GPS
+```
+
+#### op
+
+Network Operator
+
+`op`
+
+- is **required**
+- type: `string`
+
+##### op Type
+
+`string`
+
+- minimum length: 1 characters
+
+##### op Example
+
+```json
+Telia
+```
+
 ## gps
 
 The GPS reading
@@ -257,30 +453,25 @@ The GPS reading
 
 `object` with following properties:
 
-| Property | Type   | Required     |
-| -------- | ------ | ------------ |
-| `ts`     | string | **Required** |
-| `v`      | object | **Required** |
+| Property | Type    | Required     |
+| -------- | ------- | ------------ |
+| `ts`     | integer | **Required** |
+| `v`      | object  | **Required** |
 
 #### ts
 
-Timestamp with millisecond precision and timezone
+Timestamp as Unix epoch with millisecond precision (UTC)
 
 `ts`
 
 - is **required**
-- type: `string`
+- type: `integer`
 
 ##### ts Type
 
-`string`
+`integer`
 
-All instances must conform to this regular expression (test examples
-[here](<https://regexr.com/?expression=%5E%5Cd%7B4%7D-%5B01%5D%5Cd-%5B0-3%5D%5CdT%5B0-2%5D%5Cd%3A%5B0-5%5D%5Cd%3A%5B0-5%5D%5Cd%5C.%5Cd%2B(%5B%2B-%5D%5B0-2%5D%5Cd%3A%5B0-5%5D%5Cd%7CZ)%24>)):
-
-```regex
-^\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z)$
-```
+- minimum value: `1234567890123`
 
 #### v
 
@@ -386,3 +577,173 @@ Horizontal speed in meters
 `number`
 
 - minimum value: `0`
+
+## roam
+
+Roaming information. This information shall be updated by the device every time
+it publishes primary application data. It is considered low-priority information
+so it should always be sent after the primary application data has been
+published.
+
+`roam`
+
+- is **required**
+- type: `object`
+- defined in this schema
+
+### roam Type
+
+`object` with following properties:
+
+| Property | Type    | Required     |
+| -------- | ------- | ------------ |
+| `ts`     | integer | **Required** |
+| `v`      | object  | **Required** |
+
+#### ts
+
+Timestamp as Unix epoch with millisecond precision (UTC)
+
+`ts`
+
+- is **required**
+- type: `integer`
+
+##### ts Type
+
+`integer`
+
+- minimum value: `1234567890123`
+
+#### v
+
+`v`
+
+- is **required**
+- type: `object`
+
+##### v Type
+
+`object` with following properties:
+
+| Property | Type   | Required     |
+| -------- | ------ | ------------ |
+| `area`   | number | **Required** |
+| `cell`   | number | **Required** |
+| `ip`     | string | **Required** |
+| `mccmnc` | number | **Required** |
+| `rsrp`   | string | **Required** |
+
+#### area
+
+Area code
+
+`area`
+
+- is **required**
+- type: `number`
+
+##### area Type
+
+`number`
+
+- minimum value: `1`
+
+##### area Example
+
+```json
+12
+```
+
+#### cell
+
+Cell id
+
+`cell`
+
+- is **required**
+- type: `number`
+
+##### cell Type
+
+`number`
+
+- minimum value: `1`
+
+##### cell Example
+
+```json
+33703719
+```
+
+#### ip
+
+IP address
+
+`ip`
+
+- is **required**
+- type: `string`
+
+##### ip Type
+
+`string`
+
+- minimum length: 1 characters
+
+##### ip Examples
+
+```json
+10.81.183.99
+```
+
+```json
+2001:0db8:85a3:0000:0000:8a2e:0370:7334
+```
+
+```json
+2001:db8:85a3::8a2e:370:7334
+```
+
+#### mccmnc
+
+Mobile country code and mobile network code
+
+`mccmnc`
+
+- is **required**
+- type: `number`
+
+##### mccmnc Type
+
+`number`
+
+- minimum value: `10000`
+- maximum value: `99999`
+
+##### mccmnc Example
+
+```json
+24202
+```
+
+#### rsrp
+
+Signal strength
+
+`rsrp`
+
+- is **required**
+- type: `string`
+
+##### rsrp Type
+
+`string`
+
+- minimum length: 1 characters
+
+##### rsrp Example
+
+```json
+???
+```
