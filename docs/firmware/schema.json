@@ -124,7 +124,121 @@
         }
       },
       "required": ["v", "ts"]
+    },
+    "dev": {
+      "description": "Static device information. This information shall be updated by the device once after reboot.",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "band": {
+              "type": "number",
+              "description": "Band",
+              "minimum": 1,
+              "examples": [3]
+            },
+            "nw": {
+              "type": "string",
+              "description": "Network mode",
+              "minLength": 1,
+              "examples": ["NB-IoT GPS"]
+            },
+            "iccid": {
+              "type": "string",
+              "description": "SIM ICCID",
+              "minLength": 19,
+              "maxLength": 20,
+              "examples": ["89450421180216216095"]
+            },
+            "op": {
+              "type": "string",
+              "description": "Network Operator",
+              "minLength": 1,
+              "examples": ["Telia"]
+            },
+            "modV": {
+              "type": "string",
+              "description": "Modem Firmware Version",
+              "minLength": 1,
+              "examples": ["mfw_nrf9160_1.0.0"]
+            },
+            "brdV": {
+              "type": "string",
+              "description": "Board Version",
+              "minLength": 1,
+              "examples": ["nrf9160_pca20035"]
+            },
+            "appV": {
+              "type": "string",
+              "description": "Application Firmware Version",
+              "minLength": 1,
+              "examples": ["v1.0.0-rc1-327-g6fc8c16b239f"]
+            }
+          },
+          "required": ["band", "nw", "iccid", "op", "modV", "brdV", "appV"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "roam": {
+      "description": "Roaming information. This information shall be updated by the device every time it publishes primary application data. It is considered low-priority information so it should always be sent after the primary application data has been published.",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "rsrp": {
+              "type": "string",
+              "description": "Signal strength",
+              "minLength": 1,
+              "examples": ["???"]
+            },
+            "area": {
+              "type": "number",
+              "description": "Area code.",
+              "minimum": 1,
+              "examples": [12]
+            },
+            "mccmnc": {
+              "type": "number",
+              "description": "Mobile country code and mobile network code",
+              "minimum": 10000,
+              "maximum": 99999,
+              "examples": [24202]
+            },
+            "cell": {
+              "type": "number",
+              "description": "Cell id",
+              "minimum": 1,
+              "examples": [33703719]
+            },
+            "ip": {
+              "type": "string",
+              "description": "IP address",
+              "minLength": 1,
+              "examples": [
+                "10.81.183.99",
+                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                "2001:db8:85a3::8a2e:370:7334"
+              ]
+            }
+          },
+          "required": ["rsrp", "area", "mccmnc", "cell", "ip"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
     }
   },
-  "required": ["cfg"]
+  "required": ["cfg", "dev", "roam"]
 }
