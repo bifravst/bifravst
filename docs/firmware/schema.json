@@ -133,7 +133,7 @@
           "type": "object",
           "properties": {
             "band": {
-              "type": "number",
+              "type": "integer",
               "description": "Band",
               "minimum": 1,
               "examples": [3]
@@ -150,12 +150,6 @@
               "minLength": 19,
               "maxLength": 20,
               "examples": ["89450421180216216095"]
-            },
-            "op": {
-              "type": "string",
-              "description": "Network Operator",
-              "minLength": 1,
-              "examples": ["Telia"]
             },
             "modV": {
               "type": "string",
@@ -176,7 +170,7 @@
               "examples": ["v1.0.0-rc1-327-g6fc8c16b239f"]
             }
           },
-          "required": ["band", "nw", "iccid", "op", "modV", "brdV", "appV"]
+          "required": ["band", "nw", "iccid", "modV", "brdV", "appV"]
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
@@ -194,26 +188,27 @@
           "type": "object",
           "properties": {
             "rsrp": {
-              "type": "string",
-              "description": "Signal strength",
-              "minLength": 1,
-              "examples": ["???"]
+              "type": "integer",
+              "description": "Reference Signal Received Power (RSRP). The average power level received from a single reference signal in an LTE (Long-term Evolution) network. (0: RSRP < −140 dBm, 1: – When −140 dBm ≤ RSRP < −139 dBm, 2: When −139 dBm ≤ RSRP < −138 dBm,...95: When −46 dBm ≤ RSRP < −45 dBm, 96: When −45 dBm ≤ RSRP < −44 dBm, 97: When −44 dBm ≤ RSRP, 255: Not known or not detectable)",
+              "minimum": 0,
+              "maximum": 255,
+              "examples": [0, 95, 255]
             },
             "area": {
-              "type": "number",
+              "type": "integer",
               "description": "Area code.",
               "minimum": 1,
               "examples": [12]
             },
             "mccmnc": {
-              "type": "number",
+              "type": "integer",
               "description": "Mobile country code and mobile network code",
               "minimum": 10000,
               "maximum": 99999,
               "examples": [24202]
             },
             "cell": {
-              "type": "number",
+              "type": "integer",
               "description": "Cell id",
               "minimum": 1,
               "examples": [33703719]

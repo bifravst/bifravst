@@ -281,15 +281,14 @@ Timestamp as Unix epoch with millisecond precision (UTC)
 
 `object` with following properties:
 
-| Property | Type   | Required     |
-| -------- | ------ | ------------ |
-| `appV`   | string | **Required** |
-| `band`   | number | **Required** |
-| `brdV`   | string | **Required** |
-| `iccid`  | string | **Required** |
-| `modV`   | string | **Required** |
-| `nw`     | string | **Required** |
-| `op`     | string | **Required** |
+| Property | Type    | Required     |
+| -------- | ------- | ------------ |
+| `appV`   | string  | **Required** |
+| `band`   | integer | **Required** |
+| `brdV`   | string  | **Required** |
+| `iccid`  | string  | **Required** |
+| `modV`   | string  | **Required** |
+| `nw`     | string  | **Required** |
 
 #### appV
 
@@ -319,11 +318,11 @@ Band
 `band`
 
 - is **required**
-- type: `number`
+- type: `integer`
 
 ##### band Type
 
-`number`
+`integer`
 
 - minimum value: `1`
 
@@ -416,27 +415,6 @@ Network mode
 
 ```json
 NB-IoT GPS
-```
-
-#### op
-
-Network Operator
-
-`op`
-
-- is **required**
-- type: `string`
-
-##### op Type
-
-`string`
-
-- minimum length: 1 characters
-
-##### op Example
-
-```json
-Telia
 ```
 
 ## gps
@@ -626,26 +604,26 @@ Timestamp as Unix epoch with millisecond precision (UTC)
 
 `object` with following properties:
 
-| Property | Type   | Required     |
-| -------- | ------ | ------------ |
-| `area`   | number | **Required** |
-| `cell`   | number | **Required** |
-| `ip`     | string | **Required** |
-| `mccmnc` | number | **Required** |
-| `rsrp`   | string | **Required** |
+| Property | Type    | Required     |
+| -------- | ------- | ------------ |
+| `area`   | integer | **Required** |
+| `cell`   | integer | **Required** |
+| `ip`     | string  | **Required** |
+| `mccmnc` | integer | **Required** |
+| `rsrp`   | integer | **Required** |
 
 #### area
 
-Area code
+Area code.
 
 `area`
 
 - is **required**
-- type: `number`
+- type: `integer`
 
 ##### area Type
 
-`number`
+`integer`
 
 - minimum value: `1`
 
@@ -662,11 +640,11 @@ Cell id
 `cell`
 
 - is **required**
-- type: `number`
+- type: `integer`
 
 ##### cell Type
 
-`number`
+`integer`
 
 - minimum value: `1`
 
@@ -712,11 +690,11 @@ Mobile country code and mobile network code
 `mccmnc`
 
 - is **required**
-- type: `number`
+- type: `integer`
 
 ##### mccmnc Type
 
-`number`
+`integer`
 
 - minimum value: `10000`
 - maximum value: `99999`
@@ -729,21 +707,34 @@ Mobile country code and mobile network code
 
 #### rsrp
 
-Signal strength
+Reference Signal Received Power (RSRP). The average power level received from a
+single reference signal in an LTE (Long-term Evolution) network. (0: RSRP < −140
+dBm, 1: – When −140 dBm ≤ RSRP < −139 dBm, 2: When −139 dBm ≤ RSRP < −138
+dBm,...95: When −46 dBm ≤ RSRP < −45 dBm, 96: When −45 dBm ≤ RSRP < −44 dBm, 97:
+When −44 dBm ≤ RSRP, 255: Not known or not detectable)
 
 `rsrp`
 
 - is **required**
-- type: `string`
+- type: `integer`
 
 ##### rsrp Type
 
-`string`
+`integer`
 
-- minimum length: 1 characters
+- minimum value: `0`
+- maximum value: `255`
 
-##### rsrp Example
+##### rsrp Examples
 
 ```json
-???
+0
+```
+
+```json
+95
+```
+
+```json
+255
 ```
