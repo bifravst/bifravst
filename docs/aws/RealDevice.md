@@ -58,8 +58,14 @@ device.
 
 ![nRF Connect for Desktop Certificate Manager](images/certificate-manager.png)
 
-Drag and Drop or select the JSON file, click _Update certificates_ and wait
-until the operation finishes.
+Drag and Drop or select the JSON file.
+
+**Note:** Change the security tag to `42`. The modem can hold multiple
+credentials, and the default security tag (`16842753`) is reserved for
+[nRF Connect for Cloud](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud)
+credentials.
+
+Click _Update certificates_ and wait until the operation finishes.
 
 ## Flashing the application
 
