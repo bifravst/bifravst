@@ -45,23 +45,20 @@ _Bifravst_ aims to provide answers and best practices to these questions:
 
 _Bifravst_ is licensed under the [MIT license](./LICENSE).
 
-### Comparison to nRF Connect for Cloud
+### Project characteristics overview
 
-_Bifravst_ does not aim to replace or superseed nRF Connect for Cloud. It has a
-distinctly different scope:
-
-|                                    | [nRF Connect for Cloud](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud) | _Bifravst_               |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------ |
-| **Development model**              | Closed                                                                                                         | Open                     |
-| **License**                        | Commercial                                                                                                     | Open Source              |
-| **Cloud vendor support**           | AWS Only                                                                                                       | Multiple                 |
-| **Feature set**                    | Generalized, large                                                                                             | Specialized, small       |
-| **Hosting**                        | managed                                                                                                        | self-hosted              |
-| **User Interface**                 | Desktop-Browsers, REST API                                                                                     | Mobile-first web-app     |
-| **Cloud Tenancy**                  | multi                                                                                                          | single                   |
-| **Integration of Cloud resources** | custom                                                                                                         | native                   |
-| **Device paradigm**                | always on                                                                                                      | offline most of the time |
-| **Sensor timestamping**            | cloud side                                                                                                     | device side              |
+| Characteristic                     | Principle                |
+| ---------------------------------- | ------------------------ |
+| **Development model**              | Open                     |
+| **License**                        | Open Source              |
+| **Cloud vendor support**           | Multiple                 |
+| **Feature set**                    | Specialized, small       |
+| **Hosting**                        | self-hosted              |
+| **User Interface**                 | Mobile-first web-app     |
+| **Cloud Tenancy**                  | single                   |
+| **Integration of Cloud resources** | native                   |
+| **Device paradigm**                | offline most of the time |
+| **Sensor timestamping**            | device side              |
 
 ### Core principles
 
