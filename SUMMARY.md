@@ -23,3 +23,7 @@
 - [Flashing the Firmware](./docs/firmware/FlashingFirmware.md)
 - [Sensor Data and Configuration](docs/firmware/SensorDataAndConfiguration.md)
 - [Sensor Data and Configuration: Schema](docs/firmware/schema.md)
+
+## General Project information
+
+- [Versioning](./docs/Versioning.md)
