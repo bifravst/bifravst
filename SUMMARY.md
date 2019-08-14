@@ -24,6 +24,10 @@
 - [Sensor Data and Configuration](docs/firmware/SensorDataAndConfiguration.md)
 - [Sensor Data and Configuration: Schema](docs/firmware/schema.md)
 
+## Guides
+
+- [Automated HEX file builds](docs/guides/AutomateHEXFileBuildingOnCircleCI.md)
+
 ## General Project information
 
 - [Versioning](./docs/Versioning.md)
