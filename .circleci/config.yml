@@ -11,7 +11,9 @@ jobs:
 
       - run:
           name: Set up GitHub credentials
-          command: echo "machine github.com login ${GH_USERNAME} password ${GH_TOKEN}" > ~/.netrc
+          command:
+            echo "machine github.com login ${GH_USERNAME} password ${GH_TOKEN}"
+            > ~/.netrc
 
       - run:
           name: Install latest npm
@@ -45,7 +47,7 @@ jobs:
           when: on_success
           name: Run semantic relase
           command: |
-            npm i semantic-release;
+            npm i --no-save semantic-release;
             npx semantic-release || true
 
 workflows:

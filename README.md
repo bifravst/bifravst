@@ -43,7 +43,9 @@ _Bifravst_ aims to provide answers and best practices to these questions:
 - _How can I develop an IIoT product that maximizes battery life, minimizes data
   usage and handles unreliable connectivity gracefully_?
 
-_Bifravst_ is licensed under the [MIT license](./LICENSE).
+_Bifravst_ is licensed under the [MIT license](./LICENSE) (software) and the
+[Nordic 5-clause BSD license](https://github.com/bifravst/cat-tracker-fw/blob/saga/LICENSE)
+(firmware).
 
 ### Project characteristics overview
 
