@@ -131,20 +131,18 @@ The web application offers these features:
 
 ### Supported Cloud Providers
 
-Support for cloud providers is planned be implemented in this order:
+|                  | Amazon Web Services                                                                       | Google Cloud | Alibaba Cloud |
+| ---------------- | ----------------------------------------------------------------------------------------- | ------------ | ------------- |
+| LTE-M: TCP+MQTT  | [in progress](https://bifravst.gitbook.io/bifravst/v/saga/bifravst-on-aws/gettingstarted) | intended     | intended      |
+| NB-Iot: UDP+CoAP | intended                                                                                  | intended     | intended      |
 
-1. [Amazon Web Services](./docs/aws/GettingStarted.md)
-1. Amazon Web Services UDP+CoAP support (using a bridge, e.g.
-   [Eclipse Californium](https://github.com/eclipse/californium))
-1. Google Cloud
-1. Alibaba Cloud
+For cloud providers that have no native UDP+CoAP support using a bridge, e.g.
+[Eclipse Californium](https://github.com/eclipse/californium), shall be
+evaluated.
 
 ---
 
 **Acknowledgments**  
-_Nyan Cat by
-[Christopher Torres](https://www.youtube.com/watch?v=QH2-TGUlwu4)._  
-_Northern Lighs by [Naian Wang](https://unsplash.com/photos/F9wrh2miJLA)._  
 _Pin Icon created by Nun from the Noun Project._  
 _Cat Icon created by Focus Lab from the Noun Project._  
 _Amazon Web Services, the aws logo are trademarks of Amazon.com, Inc. or its
