@@ -20,7 +20,6 @@
 ## Cat Tracker Firmware
 
 - [Getting Started](./docs/firmware/GettingStarted.md)
-- [Flashing the Firmware](docs/Thingy91/FlashingFirmware.md)
 - [Sensor Data and Configuration](docs/firmware/SensorDataAndConfiguration.md)
 - [Sensor Data and Configuration: Schema](docs/firmware/schema.md)
 
