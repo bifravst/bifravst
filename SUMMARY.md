@@ -20,9 +20,15 @@
 ## Cat Tracker Firmware
 
 - [Getting Started](./docs/firmware/GettingStarted.md)
-- [Flashing the Firmware](./docs/firmware/FlashingFirmware.md)
+- [Flashing the Firmware](docs/Thingy91/FlashingFirmware.md)
 - [Sensor Data and Configuration](docs/firmware/SensorDataAndConfiguration.md)
 - [Sensor Data and Configuration: Schema](docs/firmware/schema.md)
+
+## Thingy:91
+
+- [Update the modem firmware](./docs/Thingy91/UpdateModem.md)
+- [Flash the certificate](./docs/Thingy91/Certificates.md)
+- [Flash the application firmware](./docs/Thingy91/FlashingFirmware.md)
 
 ## Guides
 
