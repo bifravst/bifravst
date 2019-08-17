@@ -26,7 +26,7 @@
 ## Thingy:91
 
 - [Update the modem firmware](./docs/Thingy91/UpdateModem.md)
-- [Flash the certificate](./docs/Thingy91/Certificates.md)
+- [Flash the certificate](docs/Thingy91/FlashingCertificate.md)
 - [Flash the application firmware](./docs/Thingy91/FlashingFirmware.md)
 
 ## Guides

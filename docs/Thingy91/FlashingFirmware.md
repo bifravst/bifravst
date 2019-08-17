@@ -1,4 +1,4 @@
-# Flash the latest firmware for your device
+# Flashing the latest firmware for your device
 
 ## Getting the latest firmware build
 
