@@ -56,7 +56,7 @@ not supported natively by the cloud provider.
 
 ## The four kinds of data
 
-![Data Protocols](./images/Bifravst_%20Overview%20-%20Data%20protocol.jpg)
+![Data Protocols](./images/data-protocols.jpg)
 
 1. Device state
 2. Device configuration
