@@ -48,3 +48,8 @@ were to be transferred using for example
 [Protocol Buffers](https://developers.google.com/protocol-buffers/) the data can
 be encoded with only 62 bytes (a 46% improvement)
 ([source code](https://gist.github.com/coderbyheart/34a8e71ffe30af882407544567971efb)).
+
+Note that even though the savings in transferred data over the lifetime of a
+device are significant, there is an extra cost of maintaining the source code on
+the device side and on the cloud side that enables the use of a protocol that is
+not supported natively by the cloud provider.
