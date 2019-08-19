@@ -7,7 +7,7 @@
 - [Connect using the simulator](./docs/aws/Simulator.md)
 - [Continuous Deployment](./docs/aws/ContinuousDeployment.md)
 - [Authentication](./docs/aws/Authentication.md)
-- [Limiting the Shadow Document Size](docs/aws/LimitingShadowDocumentSize.md)
+- [Limiting the Shadow Document Size](./docs/aws/LimitingShadowDocumentSize.md)
 - [Historical Data](./docs/aws/HistoricalData.md)
 
 ## Cat Tracker Web Application
@@ -19,20 +19,21 @@
 ## Cat Tracker Firmware
 
 - [Getting Started](./docs/firmware/GettingStarted.md)
-- [Supported Boards](docs/firmware/SupportedBoards.md)
-- [Sensor Data and Configuration](docs/firmware/SensorDataAndConfiguration.md)
-- [Sensor Data and Configuration: Schema](docs/firmware/schema.md)
+- [Supported Boards](./docs/firmware/SupportedBoards.md)
+- [Device-Cloud-Protocol](./docs/firmware/Protocol.md)
+- [Sensor Data and Configuration](./docs/firmware/SensorDataAndConfiguration.md)
+- [Sensor Data and Configuration: Schema](./docs/firmware/schema.md)
 
 ## Connect using a real device
 
-- [Getting started](docs/devices/GettingStarted.md)
-- [Update the modem firmware](docs/devices/UpdateModem.md)
-- [Flash the certificate](docs/devices/FlashingCertificate.md)
-- [Flash the application firmware](docs/devices/FlashingFirmware.md)
+- [Getting started](./docs/devices/GettingStarted.md)
+- [Update the modem firmware](./docs/devices/UpdateModem.md)
+- [Flash the certificate](./docs/devices/FlashingCertificate.md)
+- [Flash the application firmware](./docs/devices/FlashingFirmware.md)
 
 ## Guides
 
-- [Automated HEX file builds](docs/guides/AutomateHEXFileBuildingOnCircleCI.md)
+- [Automated HEX file builds](./docs/guides/AutomateHEXFileBuildingOnCircleCI.md)
 
 ## General Project information
 
