@@ -1,6 +1,6 @@
 # Device-Cloud-Protocol
 
-> :construction: Draft
+> 🚧 Draft
 
 ## Preface
 
@@ -53,3 +53,12 @@ Note that even though the savings in transferred data over the lifetime of a
 device are significant, there is an extra cost of maintaining the source code on
 the device side and on the cloud side that enables the use of a protocol that is
 not supported natively by the cloud provider.
+
+## The four kinds of data
+
+![Data Protocols](./images/Bifravst_%20Overview%20-%20Data%20protocol.jpg)
+
+1. Device state
+2. Device configuration
+3. Sensor data
+4. Firmware
