@@ -21,7 +21,7 @@
     "NordicSemiconductor"
   ],
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "dependencies": {
     "chance": "^1.0.18",
     "uuid": "^3.3.2"
