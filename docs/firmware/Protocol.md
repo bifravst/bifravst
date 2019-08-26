@@ -18,7 +18,7 @@ data becomes, the longer will your battery and your data contingent last.
 
 Bifravst uses MQTT to connect the device to the cloud provider.
 
-The MQTT client ID defaults to the IMEI of the modem.
+The MQTT client ID defaults to the IMEI of the device.
 
 ## JSON as a data format
 

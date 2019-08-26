@@ -3,7 +3,7 @@
 ## Generating a certificate
 
 Use the CLI to generate a certificate for your device. The firmware will use the
-IMEI of the modem as the MQTT client ID. You can read the IMEI of your device
+IMEI of the device as the MQTT client ID. You can read the IMEI of your device
 using the AT command `AT+CGSN`:
 
     AT+CGSN
