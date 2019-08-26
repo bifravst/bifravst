@@ -21,6 +21,7 @@
 
 - [Getting Started](./docs/firmware/GettingStarted.md)
 - [Supported Boards](./docs/firmware/SupportedBoards.md)
+- [Compiling](./docs/firmware/Compiling.md)
 - [Device-Cloud-Protocol](./docs/firmware/Protocol.md)
 - [Sensor Data and Configuration](./docs/firmware/SensorDataAndConfiguration.md)
 - [Sensor Data and Configuration: Schema](./docs/firmware/schema.md)
