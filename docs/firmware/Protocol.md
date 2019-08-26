@@ -14,6 +14,12 @@ principles explained here and customize them to your specific needs. The more
 the modem-uptime can be reduce and the smaller the total transferred amount if
 data becomes, the longer will your battery and your data contingent last.
 
+## MQTT as transport protocol
+
+Bifravst uses MQTT to connect the device to the cloud provider.
+
+The MQTT client ID defaults to the IMEI of the modem.
+
 ## JSON as a data format
 
 Bifravst uses JSON to represent all transferred data. If offers very good

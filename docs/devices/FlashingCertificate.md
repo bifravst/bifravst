@@ -1,5 +1,21 @@
 # Flashing the certificate
 
+## Generating a certificate
+
+Use the CLI to generate a certificate for your device. The firmware will use the
+IMEI of the modem as the MQTT client ID. You can read the IMEI of your device
+using the AT command `AT+CGSN`:
+
+    AT+CGSN
+    352656100248049
+    OK
+
+Use the IMEI when generating the certificate:
+
+    node cli generate-cert -d <imei>
+
+## Flashing using nRF Connect for Desktop
+
 You can use the `certificates/device-<deviceId>.json` file with the _Certificate
 Manager_ in the
 [nRF Connect for Desktop](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
