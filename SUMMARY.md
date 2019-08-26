@@ -30,6 +30,7 @@
 - [Update the modem firmware](./docs/devices/UpdateModem.md)
 - [Flash the certificate](./docs/devices/FlashingCertificate.md)
 - [Flash the application firmware](./docs/devices/FlashingFirmware.md)
+- [Troubleshooting the connection](./docs/devices/TroubleShooting.md)
 
 ## Guides
 
