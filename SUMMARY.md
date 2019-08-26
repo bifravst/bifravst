@@ -3,6 +3,7 @@
 ## Bifravst on AWS
 
 - [Getting Started](./docs/aws/GettingStarted.md)
+- [Updating an existing installation](./docs/aws/Updating.md)
 - [Device Credentials](./docs/aws/DeviceCredentials.md)
 - [Connect using the simulator](./docs/aws/Simulator.md)
 - [Continuous Deployment](./docs/aws/ContinuousDeployment.md)
