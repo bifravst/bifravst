@@ -12,12 +12,12 @@ Flash the HEX file for your board using the _Programmer_ of the
 [nRF Connect for Desktop](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
 app.
 
-![nRF Connect for Desktop Programmer](images/programmer.png)
+![nRF Connect for Desktop Programmer](images/programmer-desktop.png)
 
 Drag and Drop it (or select via _Add HEX file_), click _Erase & Write_ and wait
 until the operation has finished.
 
-![nRF Connect for Desktop Programmer](images/programmer-modem.png)
+![nRF Connect for Desktop Programmer](images/programmer-modem-desktop.png)
 
 ## Flash using `nrjprog`
 

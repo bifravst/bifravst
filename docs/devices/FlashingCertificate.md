@@ -13,22 +13,22 @@ Flash
 [`thingy91_at_client_increased_buf.hex`](https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex)
 using the _Programmer_ app.
 
-![nRF Connect for Desktop Programmer](images/programmer.png)
+![nRF Connect for Desktop Programmer](images/programmer-desktop.png)
 
 Drag and Drop (or select via _Add HEX file_) the
 [`thingy91_at_client_increased_buf.hex`](https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex),
 click _Erase & Write_ and wait until the operation has finished.
 
-![nRF Connect for Desktop Programmer](images/programmer-modem.png)
+![nRF Connect for Desktop Programmer](images/programmer-modem-desktop.png)
 
 Afterwards, launch the _LTE Link Monitor_ app.
 
-![nRF Connect for Desktop LTE Link Monitor](images/lte-link-monitor.png)
+![nRF Connect for Desktop LTE Link Monitor](images/lte-link-monitor-desktop.png)
 
 Use the _Certificate Manager_ with the JSON file to write the certificate to the
 device.
 
-![nRF Connect for Desktop Certificate Manager](images/certificate-manager.png)
+![nRF Connect for Desktop Certificate Manager](images/certificate-manager-desktop.png)
 
 Drag and Drop or select the JSON file.
 
