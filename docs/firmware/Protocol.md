@@ -14,6 +14,12 @@ principles explained here and customize them to your specific needs. The more
 the modem-uptime can be reduce and the smaller the total transferred amount if
 data becomes, the longer will your battery and your data contingent last.
 
+## NB-IoT as the cellular connection
+
+The firmware is configured to operate in NB-IoT mode to connect to the cellular
+network (albeit using TLS over TCP which is most likely not available in other
+NB-IoT networks outside of Norway).
+
 ## MQTT as transport protocol
 
 Bifravst uses MQTT to connect the device to the cloud provider.
