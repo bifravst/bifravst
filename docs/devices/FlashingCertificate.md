@@ -54,3 +54,13 @@ credentials, and the default security tag (`16842753`) is reserved for
 credentials.
 
 Click _Update certificates_ and wait until the operation finishes.
+
+## Flash using `nrjprog`
+
+First flash the AT host:
+
+    nrfjprog -f nrf91 --program thingy91_at_client.hex --sectoranduicrerase -r --log
+
+Now flash the certificates
+
+    node cli flash <imei>
