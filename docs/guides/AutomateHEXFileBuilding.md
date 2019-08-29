@@ -1,6 +1,6 @@
-# Guide: Automate building of HEX files for your nRF Connect SDK application using CircleCI
+# Guide: Automate building of HEX files for your nRF Connect SDK application
 
-> This guide was first published
+> This guide was originally published
 > [on the {DevZone blog](https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/automate-building-of-hex-files-for-your-nrf-connect-sdk-application-using-circleci).
 
 Continuous delivery is in important aspect of short time to market and since the
@@ -53,3 +53,9 @@ following a certain schema (you can read more in detail about this process
 new release.
 
 ![GitHub releases](images/github-releases.png)
+
+## Using GitHub Actions
+
+[GitHub Actions](https://github.com/features/actions) are a new feature which is to be released in November 2019, but many GitHub organizations already are enrolled in the public beta. Like CircleCI it is a generic task runner but offers deeper integration into GitHub.
+
+[Here is the workflow definition for GitHub Actions](https://github.com/bifravst/cat-tracker-fw/blob/d821cd83c3ca8ac7f910163764d46668412b47c4/.github/workflows/build-and-release.yaml) which automatically compiles HEX files and attaches them to the GitHub release.

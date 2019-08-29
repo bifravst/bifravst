@@ -36,7 +36,7 @@
 
 ## Guides
 
-- [Automated HEX file builds](./docs/guides/AutomateHEXFileBuildingOnCircleCI.md)
+- [Automated HEX file builds](docs/guides/AutomateHEXFileBuilding.md)
 
 ## General Project information
 

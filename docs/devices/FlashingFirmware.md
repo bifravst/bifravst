@@ -10,7 +10,7 @@
 > firmware project.
 >
 > How the HEX files are automatically built for every commit to the GitHub
-> project is explained [here](../guides/AutomateHEXFileBuildingOnCircleCI.md).
+> project is explained [here](../guides/AutomateHEXFileBuilding.md).
 
 In order to connect the cloud using the Cat Tracker firmware, it needs to be
 build needs to be build to include the MQTT endpoint for your cloud account.
