@@ -15,9 +15,10 @@ case you experience connectivity issues.
 
 Below is a list of combinations we now to be working:
 
-| Location                 | Provider | Network | Band | Area Code | CellID   |
-| ------------------------ | -------- | ------- | ---- | --------- | -------- |
-| Hamburg, Germany         | 1NCE     | Telekom | 8    | 230       | 32769286 |
-| Offenbach, Germany       | 1NCE     | Telekom | 8    | 230       | 27394060 |
-| Großkrotzenburg, Germany | 1NCE     | Telekom | 8    | 230       | 27307270 |
-| Trondheim, Norway        | Telia    | Telia   | 3    | 12        | 33703719 |
+| Location                 | SIM   | MCC/MNC | Band | Area Code | CellID   |
+| ------------------------ | ----- | ------- | ---- | --------- | -------- |
+| Hamburg, Germany         | 1NCE  | 26201   | 8    | 230       | 32769286 |
+| Offenbach, Germany       | 1NCE  | 26201   | 8    | 230       | 27394060 |
+| Großkrotzenburg, Germany | 1NCE  | 26201   | 8    | 230       | 27307270 |
+| Hanau, Germany           | 1NCE  | 26201   | 8    | 230       | 37402125 |
+| Trondheim, Norway        | Telia | 24202   | 3    | 12        | 33703719 |
