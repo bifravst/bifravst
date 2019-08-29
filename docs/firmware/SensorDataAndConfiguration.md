@@ -25,3 +25,9 @@ In active mode the device publishes data based on elapsed time. It will wait the
 amount of seconds configured in `cfg.actwt` before publishing the next time.
 
 The device can be put in _active_ mode by setting the `cfg.act` to `true`.
+
+## GPS Timeout configuration
+
+Since the nRF9160 currently does not support AGPS depending on the device
+location acquiring a GPS fix can take a long time. Therefore a timeout of at
+least 1000s should be chosen.
