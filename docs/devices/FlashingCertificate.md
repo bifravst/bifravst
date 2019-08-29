@@ -64,3 +64,8 @@ First flash the AT host:
 Now flash the certificates
 
     node cli flash <imei>
+
+You configure the port to use by passing the `-p <port>` flag:
+
+    node cli flash <imei> -p /dev/ttyS31 # Linux
+    node cli flash <imei> -p COM31       # Windows
