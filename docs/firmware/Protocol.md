@@ -196,7 +196,7 @@ On a side note: the same is true for devices that control a system. They should
 have built-in decision rules and must not depend on an answer from a cloud
 backend to provide the action to execute based on the current condition.
 
-## 4. Firmware Updates
+### 4. Firmware Updates
 
 Arguably a firmware update over the air can be seen as configuration, however
 the size of a typical firmware image (500KB) is 2-3 magnitudes larger than a
@@ -214,3 +214,7 @@ _Bifravst_ aims to provide robust reference implementations for these four kinds
 of device data. While the concrete implementation will differ per cloud
 provider, the general building blocks (state, configuration, batched past state,
 firmware updates) will be the same.
+
+| Cloud Provider | State                                                                                                       | Configuration                                                                                              | Past data       | Firmware                                                                    |
+| -------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------------------------- |
+| AWS            | [Device Shadow](https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html) (`reported`) | [Device Shadow](https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html) (`desired`) | Publish to MQTT | [Jobs](https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html) |
