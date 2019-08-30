@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/batch-schema.json",
+  "title": "Bifravst Firmware Bagtch Data",
+  "description": "Describes the batch data published by the device.",
+  "type": "object",
+  "properties": {
+    "bat": {
+      "description": "Battery readings",
+      "type": "array",
+      "items": {
+        "$ref": "schema.json#/properties/bat"
+      }
+    },
+    "acc": {
+      "description": "Accelerometer readings",
+      "type": "array",
+      "items": {
+        "$ref": "schema.json#/properties/acc"
+      }
+    },
+    "gps": {
+      "description": "GPS readings",
+      "type": "array",
+      "items": {
+        "$ref": "schema.json#/properties/gps"
+      }
+    },
+    "roam": {
+      "description": "Roaming information updates.",
+      "type": "array",
+      "items": {
+        "$ref": "schema.json#/properties/roam"
+      }
+    }
+  },
+  "additionalProperties": false
+}

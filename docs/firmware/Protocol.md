@@ -1,7 +1,5 @@
 # Device-Cloud-Protocol
 
-> 🚧 Draft
-
 ## Preface
 
 This document will provide a general introduction in the way devices
@@ -70,6 +68,8 @@ not supported natively by the cloud provider.
 
 ![Data Protocols](./images/data-protocols.jpg)
 
+### 1. Device State
+
 The Cat Tracker example needs to communicate with the cloud in order to send
 position updates and information about it's health, first an foremost is the
 battery level a critical health indicator. This data is considered the **device
@@ -100,6 +100,8 @@ to conserve as much energy as possible, nevertheless we want the device to once
 in a while send an update, so we know about its battery condition and in case
 the motion sensor stops working properly.
 
+### 2. Device Configuration
+
 Optimizing this behavior takes time and while the devices are in the field
 sending firmware updates for every change (more about that later) will be
 expensive. We observe firmware sizes of around 500 KB which will, even when
@@ -119,6 +121,8 @@ an _active_ mode, where it sends updates based on an configurable interval (of
 course) regardless whether motion is detected or not. This is great when
 actively developing the firmware with individual devices or when debugging the
 device behavior in specific areas and situations.
+
+### Timestamping
 
 Device **state** and **configuration** are timeless datum, they apply always and
 absolutely. The device sends a GPS position over the cellular connection and the
@@ -167,8 +171,46 @@ This way all data is sent with precise timestamps to the cloud where the device
 time is used when visualizing data to accurately reflect _when_ the datum was
 created.
 
-TODO:
+### 3. Past State
 
-- Batching of data.
-- Sheep example: go in valley (GPS), go on hill (GPS+LTE), we must know that
-  sheep was in valley
+Imagine a reindeer tracker which tracks the position of a herd. If position
+updates are only collected when a cellular connection can be established there
+will be an interesting observation: the reindeers are only walking along ridges,
+but never in valleys. The reason is not because they don't like the valley, but
+because the cellular signal does not reach deep down into remote valleys. The
+GPS signal howere will be received there from the tracker because satellites are
+high on the horizon and can send their signal down into the valley.
+
+There are many scenarios where cellular connection might not be available or
+unreliable but reading sensors work. Robust ultra-mobile IoT products therefore
+must make this a normal mode of operation: the absence of a cellular connection
+must be treated as a temporary condition which will eventually resolve and until
+then business as usual ensues. This means devices should keep measuring and
+storing these measures in a ring-buffer or employ other strategies to decide
+which data to discard once the memory limit is reached.
+
+Once the device is successfully able to establish a connection it will then
+(after publishing its most recent measurements) publish past data.
+
+On a side note: the same is true for devices that control a system. They should
+have built-in decision rules and must not depend on an answer from a cloud
+backend to provide the action to execute based on the current condition.
+
+## 4. Firmware Updates
+
+Arguably a firmware update over the air can be seen as configuration, however
+the size of a typical firmware image (500KB) is 2-3 magnitudes larger than a
+control message. Therefore it can be beneficial to treat it differently.
+Typically an update is initated by a configuration change, once acknowledged by
+the device will initiate the firmware download. The download itself is done out
+of band to reduce overhead not using MQTT but HTTP(s).
+
+Firmware updates are so large compared to other messages that the device may
+suspend all other operation until the firmware update has been applied.
+
+## Summary
+
+_Bifravst_ aims to provide robust reference implementations for these four kinds
+of device data. While the concrete implementation will differ per cloud
+provider, the general building blocks (state, configuration, batched past state,
+firmware updates) will be the same.

@@ -4,6 +4,10 @@ The data published by the device and the configuration options are described in
 detail in [this JSON schema file](./schema.json). See
 [this JSON document](./state.json) for an example device state.
 
+The firmware may send data as batch, unsing the schema described
+[in this JSON schema file](./batch-schema.json). See
+[this JSON document](./batch-message.json) for an example batch message.
+
 ## Tracking Modes
 
 The firmware implements two tracking modes: _passive_ and _active_.
