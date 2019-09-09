@@ -7,4 +7,4 @@ release, follow these steps.
         npm ci
         npx tsc
         npx cdk deploy
-        node cli historical-data --setup
+        node cli historical-data --setup -r
