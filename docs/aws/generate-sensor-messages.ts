@@ -13,7 +13,10 @@ for (let i = 0; i < 5; i++) {
 
 const c = new Chance()
 
-function* generateSensorMessage() {
+function* generateSensorMessage(): Iterator<{
+	readonly timestamp: Date
+	readonly temp: { [key: string]: number }
+}> {
 	let i = 0
 	while (true) {
 		yield {
