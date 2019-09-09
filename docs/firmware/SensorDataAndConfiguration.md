@@ -35,12 +35,3 @@ The device can be put in _active_ mode by setting the `cfg.act` to `true`.
 Since the nRF9160 currently does not support AGPS depending on the device
 location acquiring a GPS fix can take a long time. Therefore a timeout of at
 least 1000s should be chosen.
-
-## LED colors
-
-- Yellow flashing: cellular connection search
-- Purple flashing: GPS fix search
-- Green flashing: sending data
-- Light blue flashing: active mode
-- Dark blue slow flashing (short on, long off): passive mode
-- Red solid: error
