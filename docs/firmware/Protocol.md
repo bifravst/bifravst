@@ -168,13 +168,7 @@ by combining three time sources: the relative device timestamp (a relative time
 with microsecond resolution that counts upwards from zero after the device is
 powered on), the cellular network time and the time from the GPS sensor.
 
-```
-       42      131
-0---------------------->
-        ^       ^
-        |       |
-       LTE     GPS
-```
+![Timestamping](./images/timestamping.jpg)
 
 Every time a sensor is read, the value is recorded with the device timestamp.
 Once theses measurements are about to be sent (in which case there is a cellular
