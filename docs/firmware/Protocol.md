@@ -5,11 +5,11 @@
 This document will provide a general introduction in the way devices
 communication with the cloud in the Bifravst project. _Communication_ is the
 most important aspect to optimize for when developing an ultra-low-power product
-because initiating and maintaining network connection is relatively expense
-compared to other operations (for example reading a sensor value). It is
+because initiating and maintaining network connection is relatively expensive
+compared to other device operations (for example reading a sensor value). It is
 therefore recommended to invest a reasonable amount of time to revisit the
 principles explained here and customize them to your specific needs. The more
-the modem-uptime can be reduce and the smaller the total transferred amount if
+the modem-uptime can be reduced and the smaller the total transferred amount if
 data becomes, the longer will your battery and your data contingent last.
 
 ## NB-IoT as the cellular connection
@@ -77,7 +77,7 @@ state**. Because we want to always be able to quickly see the latest state of
 the device, a _digital twin_ is used to store this state on the cloud side:
 whenever the device sends an update, the digital twin is updated. This allows
 the web application to access the most recent device state immediately without
-needing to wait for the device to come online.
+needing to wait for the device to connect and publish its state.
 
 It is an important criterion for the robustness of any IoT product to gracefully
 handle situations in which the device is not connected to the internet. It might
@@ -122,6 +122,21 @@ course) regardless whether motion is detected or not. This is great when
 actively developing the firmware with individual devices or when debugging the
 device behavior in specific areas and situations.
 
+On the other hand is _device configuration_ needed if the device controls
+something: imaging a smart lock which needs to manipulate the state of a
+physical lock. The backend needs a way to tell the device which state that lock
+should be in, and this setting needs to be persisted on the cloud side, since
+the device could lose power, crash or otherwise lose the information if the lock
+should be open or closed.
+
+Here again is the _digital twin_ used on the cloud side to store the latest
+_desired_ configuration of the device immediately, so the application does not
+have to wait for the device to be connected to record the configuration change.
+The implementation of the _digital twin_ then will take care of sending only the
+latest required changes to the device (all changes since the device did last
+request its configuration are combined into one change) thus also minimizing the
+amount of data which needs to be transferred to the device.
+
 ### Timestamping
 
 Device **state** and **configuration** are timeless datum, they apply always and
@@ -165,7 +180,7 @@ Every time a sensor is read, the value is recorded with the device timestamp.
 Once theses measurements are about to be sent (in which case there is a cellular
 connection and at least the network time is known), the relative timestamps can
 be converted to absolute timestamps using the _relative_ timestamps of the
-network or the gps time.
+network or the GPS time.
 
 This way all data is sent with precise timestamps to the cloud where the device
 time is used when visualizing data to accurately reflect _when_ the datum was
@@ -178,8 +193,8 @@ updates are only collected when a cellular connection can be established there
 will be an interesting observation: the reindeers are only walking along ridges,
 but never in valleys. The reason is not because they don't like the valley, but
 because the cellular signal does not reach deep down into remote valleys. The
-GPS signal howere will be received there from the tracker because satellites are
-high on the horizon and can send their signal down into the valley.
+GPS signal however will be received there from the tracker because satellites
+are high on the horizon and can send their signal down into the valley.
 
 There are many scenarios where cellular connection might not be available or
 unreliable but reading sensors work. Robust ultra-mobile IoT products therefore
@@ -190,23 +205,28 @@ storing these measures in a ring-buffer or employ other strategies to decide
 which data to discard once the memory limit is reached.
 
 Once the device is successfully able to establish a connection it will then
-(after publishing its most recent measurements) publish past data.
+(after publishing its most recent measurements) publish past data in batch. Here
+again we need to make a compromise: the device memory is limited, so there needs
+to be a strategy to discard old messages. A simple approach is to use a ring
+buffer that stores the latest messages and will discard the oldest message once
+its size limit is reached.
 
-On a side note: the same is true for devices that control a system. They should
-have built-in decision rules and must not depend on an answer from a cloud
-backend to provide the action to execute based on the current condition.
+_On a side note:_ the same is true for devices that control a system. They
+should have built-in decision rules and must not depend on an answer from a
+cloud backend to provide the action to execute based on the current condition.
 
 ### 4. Firmware Updates
 
-Arguably a firmware update over the air can be seen as configuration, however
+Arguably a firmware update _over the air_ can be seen as configuration, however
 the size of a typical firmware image (500KB) is 2-3 magnitudes larger than a
 control message. Therefore it can be beneficial to treat it differently.
-Typically an update is initated by a configuration change, once acknowledged by
+Typically an update is initiated by a configuration change, once acknowledged by
 the device will initiate the firmware download. The download itself is done out
-of band to reduce overhead not using MQTT but HTTP(s).
+of band not using MQTT but HTTP(s) to reduce overhead.
 
 Firmware updates are so large compared to other messages that the device may
-suspend all other operation until the firmware update has been applied.
+suspend all other operation until the firmware update has been applied to
+conserve resources.
 
 ## Summary
 
