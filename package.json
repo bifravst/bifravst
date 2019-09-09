@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@adobe/jsonschema2md": "^3.3.0",
-    "@bifravst/code-style": "^3.0.0",
+    "@bifravst/code-style": "^3.0.1",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-angular": "^8.1.0",
     "@types/ajv": "^1.0.0",
