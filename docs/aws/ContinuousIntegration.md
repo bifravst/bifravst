@@ -17,3 +17,22 @@ unchanged during refactoring.
 This also provides an easily grokable description of the available (and
 implemented) features,
 [in one folder](https://github.com/bifravst/aws/tree/saga/features).
+
+## Running during development
+
+You can run these test when developing:
+
+    npm run tests:e2e -- -r -p
+
+## Set up on GitHub
+
+In order to run the end-to-end tests an AWS Account needs to be prepared. It is
+recommended to run them against a separate, blank account.
+
+Provide these environment variables for GitHub Actions of the project:
+
+- `GITHUB_TOKEN`: a GitHub token (used with `semantic-release`)
+- `GH_USERNAME`: your GitHub username (used with `semantic-release`)
+- `AWS_ACCOUNT`: the AWS account ID to run the e2e tests in
+- `AWS_ACCESS_KEY_ID`: the access key id of the user which should run the tests
+- `AWS_SECRET_ACCESS_KEY`: the secret access key of that user
