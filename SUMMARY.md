@@ -10,6 +10,7 @@
 - [Authentication](./docs/aws/Authentication.md)
 - [Limiting the Shadow Document Size](./docs/aws/LimitingShadowDocumentSize.md)
 - [Historical Data](./docs/aws/HistoricalData.md)
+- [Continuous Integration](./docs/aws/ContinuousIntegration.md)
 
 ## Cat Tracker Web Application
 
