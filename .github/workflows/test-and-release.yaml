@@ -20,7 +20,6 @@ jobs:
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_USERNAME: ${{ secrets.GH_USERNAME }}
         run: |
           npm i --no-save semantic-release@next
           npx semantic-release
