@@ -6,5 +6,5 @@ release, follow these steps.
         git pull
         npm ci
         npx tsc
-        npx cdk deploy
+        npx cdk deploy '*'
         node cli historical-data --setup -r

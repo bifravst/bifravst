@@ -72,12 +72,12 @@ Supported regions are:
 This step sets up the necessary resources in your AWS account:
 
     npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' deploy
-    npx cdk deploy
+    npx cdk deploy '*'
 
 CDK will present you with a list of permission changes to your account, you need
 to review them carefully everytime you make changes to your set-up. You can
 however skip this step if you are adventurous:
-`npx cdk deploy --require-approval never`. 🤞
+`npx cdk deploy '*' --require-approval never`. 🤞
 
 After this completed successfully the historical data resources need to be set
 up through the CLI:
