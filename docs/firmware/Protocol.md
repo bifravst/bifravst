@@ -66,6 +66,9 @@ not supported natively by the cloud provider.
 
 ## The four kinds of data
 
+> This segment is also available as a
+> [stand-alone blog post on {DevZone](https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/the-four-kinds-of-data-you-need-to-consider-when-developing-an-iot-product).
+
 ![Data Protocols](./images/data-protocols.jpg)
 
 ### 1. Device State
