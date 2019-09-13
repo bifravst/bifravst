@@ -4,11 +4,16 @@ The data published by the device and the configuration options are described in
 detail in [this JSON schema file](./schema.json). See
 [this JSON document](./state.json) for an example device state.
 
+Sending and receiving this data is different per cloud-operator, see
+implementation details for [AWS here](../aws/IoTShadowAndTopics.md).
+
 ### Batch data
 
 The firmware may send data as batch, unsing the schema described
 [in this JSON schema file](./batch-schema.json). See
 [this JSON document](./batch-message.json) for an example batch message.
+
+For sending batched data from the device, the topic `<deviceId>/batch` is used.
 
 ## Tracking Modes
 

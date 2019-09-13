@@ -8,6 +8,7 @@
 - [Connect using the simulator](./docs/aws/Simulator.md)
 - [Continuous Deployment](./docs/aws/ContinuousDeployment.md)
 - [Authentication](./docs/aws/Authentication.md)
+- [IoT Shadow and Topics](./docs/aws/IoTShadowAndTopics.md)
 - [Limiting the Shadow Document Size](./docs/aws/LimitingShadowDocumentSize.md)
 - [Historical Data](./docs/aws/HistoricalData.md)
 - [Continuous Integration](./docs/aws/ContinuousIntegration.md)
