@@ -24,8 +24,7 @@
 - [Supported Boards](./docs/firmware/SupportedBoards.md)
 - [Compiling](./docs/firmware/Compiling.md)
 - [Device-Cloud-Protocol](./docs/firmware/Protocol.md)
-- [Sensor Data and Configuration](./docs/firmware/SensorDataAndConfiguration.md)
-- [Sensor Data and Configuration: Schema](./docs/firmware/schema.md)
+- [Device Data and Configuration](./docs/firmware/SensorDataAndConfiguration.md)
 - [LED Schema](./docs/firmware/LEDSchema.md)
 
 ## Connect using a real device

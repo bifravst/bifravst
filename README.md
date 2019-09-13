@@ -119,7 +119,7 @@ The web application offers these features:
   - Optional: User approval by an admin.
 - Listing of asset trackers
 - Viewing of asset trackers
-  - Current and historical sensor data
+  - Current and historical device data
     - GPS location
     - Battery voltage
     - Accelerometer

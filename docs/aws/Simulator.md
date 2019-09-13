@@ -6,4 +6,4 @@ certificate:
     node cli connect <id of your device>
 
 This script also provides a browser-based UI which you can use to simulate
-sensor data.
+device data.
