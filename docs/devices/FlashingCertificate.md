@@ -25,15 +25,17 @@ The _Certificate Manager_ uses AT commands to write the certificate information
 to the secure storage of the modem and you need to flash your device with a
 firmware that has the AT command host enabled.
 
-Flash
-[`thingy91_at_client_increased_buf.hex`](https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex)
-using the _Programmer_ app.
+Flash the AT host using the _Programmer_ app:
+
+- for the Thingy:91 use
+  [`thingy91_at_client_increased_buf.hex`](https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex)
+- for the nRF9160 DK use
+  [`91dk_at_client_increased_buf.hex`](https://github.com/bifravst/bifravst/releases/download/v5.9.2/91dk_at_client_increased_buf.hex)
 
 ![nRF Connect for Desktop Programmer](images/programmer-desktop.png)
 
-Drag and Drop (or select via _Add HEX file_) the
-[`thingy91_at_client_increased_buf.hex`](https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex),
-click _Erase & Write_ and wait until the operation has finished.
+Drag and Drop the HEX file (or select it via _Add HEX file_), click _Erase &
+Write_ and wait until the operation has finished.
 
 ![nRF Connect for Desktop Programmer](images/programmer-modem-desktop.png)
 
@@ -59,7 +61,11 @@ Click _Update certificates_ and wait until the operation finishes.
 
 First flash the AT host:
 
+    # Thingy:91
     nrfjprog -f nrf91 --program thingy91_at_client.hex --sectoranduicrerase -r --log
+
+    # nRF9160 DK
+    nrfjprog -f nrf91 --program 91dk_at_client_increased_buf.hex --sectoranduicrerase -r --log
 
 Now flash the certificates
 
