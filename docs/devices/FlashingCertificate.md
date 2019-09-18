@@ -62,7 +62,7 @@ Click _Update certificates_ and wait until the operation finishes.
 First flash the AT host:
 
     # Thingy:91
-    nrfjprog -f nrf91 --program thingy91_at_client.hex --sectoranduicrerase -r --log
+    nrfjprog -f nrf91 --program thingy91_at_client_increased_buf.hex --sectoranduicrerase -r --log
 
     # nRF9160 DK
     nrfjprog -f nrf91 --program 91dk_at_client_increased_buf.hex --sectoranduicrerase -r --log
