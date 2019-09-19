@@ -55,6 +55,9 @@ credentials, and the default security tag (`16842753`) is reserved for
 [nRF Connect for Cloud](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud)
 credentials.
 
+**Note:** Make sure that the selected device is directly connected and not
+connected via the debugger!
+
 Click _Update certificates_ and wait until the operation finishes.
 
 ## Flash using `nrjprog`
