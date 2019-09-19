@@ -28,17 +28,17 @@
   },
   "devDependencies": {
     "@bifravst/code-style": "^3.0.1",
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-angular": "^8.1.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-angular": "^8.2.0",
     "@types/ajv": "^1.0.0",
     "@types/chance": "^1.0.6",
     "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.4",
+    "@types/node": "^12.7.5",
     "@types/uuid": "^3.4.5",
     "ajv": "^6.10.2",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
-    "ts-jest": "^24.0.2"
+    "ts-jest": "^24.1.0"
   },
   "husky": {
     "hooks": {
