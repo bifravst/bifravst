@@ -3,8 +3,8 @@
 ## System requirements
 
 You need a development environment with the
-[latest active LTS release of Node.js](https://nodejs.org/en/about/releases/)
-(right now version 10).
+[next LTS release candidate of Node.js](https://nodejs.org/en/about/releases/)
+(right now version 12).
 
 ## Clone the project and install dependencies
 
