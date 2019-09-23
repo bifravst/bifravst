@@ -69,6 +69,8 @@ created when setting up _Bifravst_ in your AWS account.
     aws s3 cp build s3://$REACT_APP_WEB_APP_BUCKET_NAME \
       --recursive --metadata-directive REPLACE \
       --cache-control 'public,max-age=600' --expires ''
+    aws cloudfront create-invalidation --distribution-id \
+      $REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP --paths /,/index.html
     echo "Done. Now open https://$REACT_APP_WEB_APP_DOMAIN_NAME/ to view the web app."
 
 Afterwards you can open the domain name printed in
