@@ -15,6 +15,11 @@ jobs:
         run: |
           sudo npm install -g npm@
           npm config set update-notifier false
+      - name: Authenticate with NPM
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > ~/.npmrc
       - name: Install dependencies
         run: npm ci --no-audit
       - name: Compile TypeScript
