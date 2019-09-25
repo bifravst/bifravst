@@ -53,7 +53,6 @@ to the `.env` file.
 AWS_ACCESS_KEY_ID=<value of Access key ID>
 AWS_SECRET_ACCESS_KEY=<value of Secret access key>
 AWS_DEFAULT_REGION=<your preferred AWS region>
-AWS_ACCOUNT=<your AWS Account ID>
 ```
 
 ## Supported regions
