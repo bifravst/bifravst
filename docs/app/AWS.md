@@ -14,19 +14,14 @@ uses to make the settings in there available
 ### Configure ids of your AWS resources
 
 The web app needs to know the ids of the AWS resources that were created during
-the set-up of the stack. Run this command in the `bifravst-aws` directory to
-copy the output to a file called `.env.local` in the `bifravst-app` directory in
-the same parent folder.
+the set-up of the stack. Run this command in the `bifravst-app` directory to
+copy the output to a file called `.env.local`.
 
-    node cli react-config > ../bifravst-app/.env.local
+    node ../bifravst-aws/cli react-config > .env.local
 
 ### Version string
 
-Go back in the `bifravst-app` directory:
-
-    cd ../bifravst-app
-
-and run this command to provide the version to the app:
+Run this command to provide the version to the app:
 
     echo REACT_APP_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)` >> .env.local
 
@@ -61,8 +56,8 @@ This is how the file would look like:
 
 ### Deploy the app
 
-In the `bifravst-app` directory this builds and deploys the app to the S3 bucket
-created when setting up _Bifravst_ in your AWS account.
+This builds and deploys the app to the S3 bucket created when setting up
+_Bifravst_ in your AWS account.
 
     export $(cat .env.local | xargs)
     npm run build
