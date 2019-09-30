@@ -14,6 +14,18 @@ individual files into bigger archive files.
 
 [![Pipeline](./AWS%20Historical%20Data%20Pipeline.jpg)](https://miro.com/app/board/o9J_kxWDuWs=/)
 
+## Athena limitations
+
+Athena is optimal during the development phase of a product, since it is easy to
+adapt the schema needed for querying withing seconds. However in production this
+can become expensive since the per-query costs are quite high compare to using a
+database which is optimized for read performance. When turning this into a
+production deployment where the schema is no longer changing often a different
+pipeline with a hardcoded schema should be considered. For example one could
+store the data in an ElasticSearch or Aurora cluster: the per-request costs
+would go down dramatically but this introduces baseline costs for having
+multiple EC2 instances.
+
 ## Evaluation
 
 Using 1,000,000 temperature readings in per-month JSON files over 6 months
