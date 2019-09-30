@@ -31,6 +31,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          # FIXME: remove use of pinned semantic-release when https://github.com/pvdlg/env-ci/pull/101 is merged
-          npm i --no-save 'git+https://github.com/bifravst/semantic-release.git#next-with-env-ci-4.1.1'
+          npm i --no-save semantic-release@next
           npx semantic-release
