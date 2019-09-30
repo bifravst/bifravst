@@ -17,9 +17,9 @@ jobs:
           npm config set update-notifier false
       - name: Authenticate with NPM
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=$GH_TOKEN" > ~/.npmrc
       - name: Install dependencies
         run: npm ci --no-audit
       - name: Compile TypeScript
@@ -29,7 +29,7 @@ jobs:
       - name: Semantic release
         continue-on-error: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           # FIXME: remove use of pinned semantic-release when https://github.com/pvdlg/env-ci/pull/101 is merged
           npm i --no-save 'git+https://github.com/bifravst/semantic-release.git#next-with-env-ci-4.1.1'
