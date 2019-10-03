@@ -13,6 +13,10 @@
 - [Historical Data](./docs/aws/HistoricalData.md)
 - [Continuous Integration](./docs/aws/ContinuousIntegration.md)
 
+## Bifravst on GCP
+
+- [Service Equivalents](./docs/gcp/ServiceEquivalents.md)
+
 ## Cat Tracker Web Application
 
 - [Getting Started](./docs/app/GettingStarted.md)
