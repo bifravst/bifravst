@@ -24,8 +24,8 @@ bucket.
 
 You need to create a
 [developer token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line)
-with `repo` and `admin:repo_hook` permissions for an account that has write
-permissions to your repository.
+with `repo`, `admin:repo_hook` and `read:packages` permissions for an account
+that has write permissions to your repository.
 
 > 🚨 It is recommended to use a separate GitHub account for this, not your
 > personal GitHub account.
@@ -34,7 +34,6 @@ You need to store this token in AWS ParameterStore which is a **one-time**
 manual step done through the AWS CLI:
 
     aws ssm put-parameter --name /codebuild/github-token --type String --value <Github Token>
-    aws ssm put-parameter --name /codebuild/github-username --type String --value <Github Username>
 
 ## Enable Continuous Deployment
 
