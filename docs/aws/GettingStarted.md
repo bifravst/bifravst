@@ -19,7 +19,7 @@ and install the dependencies:
 
 In order to set up Bifravst on AWS you first need to set up a new account.
 
-> 🚨 It is recommended to install these resources in a blank AWS account to
+> 🚨It is recommended to install these resources in a blank AWS account to
 > clearly separate them from your other projects. After you have registered your
 > personal account, sign-up for
 > [AWS Organizations](https://aws.amazon.com/organizations/) and create a

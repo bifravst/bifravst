@@ -1,11 +1,13 @@
 # Device Credentials
 
-On AWS devices connect to IoT core using
-[TLS version 1.2](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html).
+On GCP devices connect to IoT core using
+[TLS version 1.2](https://cloud.google.com/iot/docs/concepts/device-security).
 
-It is recommended to
-[use your own Certificate Authority (CA)](https://docs.aws.amazon.com/iot/latest/developerguide/device-certs-your-own.html)
-to create certificates for your devices.
+In contrast to AWS IoT Core, GCP IoT does not support custom CAs
+
+Like with AWS IoT Core
+[use of your own Certificate Authority (CA) is possible](https://cloud.google.com/iot/docs/how-tos/credentials/verifying-credentials)
+to create keys for your devices.
 
 ## Generate a CA certificate
 
