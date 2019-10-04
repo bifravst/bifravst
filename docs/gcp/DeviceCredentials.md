@@ -15,9 +15,15 @@ to create keys for your devices.
 > a directory called `certificates` with a `rootCA.pem` in it, you already did
 > this step.
 
-Run the script to generate and register a CA certificate in your AWS account:
+Run the script to generate a CA certificate:
 
-    node cli register-ca
+    node cli generate-ca
+
+## Create an IoT registry
+
+Now
+[create a new IoT registry](https://console.cloud.google.com/iot/registries/new?project=bifravst)
+and provide the CA certificate.
 
 ## Generate a device certificate
 
