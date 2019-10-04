@@ -18,6 +18,7 @@ jobs:
         run: |
           sudo npm install -g npm@
           npm config set update-notifier false
+          sudo chown -R $USER:$(id -gn $USER) /home/runner/.config
       - name: Authenticate with NPM
         run: |
           echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > ~/.npmrc
