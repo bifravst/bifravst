@@ -33,13 +33,19 @@
           "type": "integer",
           "minimum": 1
         },
+        "celt": {
+          "description": "Cellular timeout (in seconds): timeout for acquiring a cellular connection",
+          "type": "integer",
+          "minimum": 1,
+          "examples": [600]
+        },
         "acct": {
           "description": "Accelerometer threshold: minimal absolute value for and accelerometer reading to be considered movement. Divide by 10 to get the real threshold. Integers are used because the nRF9160 has issue parsing JSON floats.",
           "type": "integer",
           "minimum": 0
         }
       },
-      "required": ["act", "actwt", "mvres", "mvt", "gpst", "acct"]
+      "required": ["act", "actwt", "mvres", "mvt", "gpst", "acct", "celt"]
     },
     "bat": {
       "description": "Battery reading in millivolt",

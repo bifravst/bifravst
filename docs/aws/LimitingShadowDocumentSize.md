@@ -19,6 +19,7 @@ device configuration:
     {
       "cfg": {
         "gpst": 720,
+        "celt": 600,
         "act": false,
         "actwt": 60,
         "mvres": 60,
