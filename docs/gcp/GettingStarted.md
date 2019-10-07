@@ -6,6 +6,16 @@ You need a development environment with the
 [next LTS release candidate of Node.js](https://nodejs.org/en/about/releases/)
 (right now version 12).
 
+## Supported regions
+
+Not all GCP features are available in all GCP regions.
+
+Supported regions are:
+
+- `us-central1`
+- `europe-west1`
+- `asia-east1`
+
 ## Clone the project and install dependencies
 
 Clone the latest version of the [gcp](https://github.com/bifravst/gcp) project
@@ -17,12 +27,19 @@ and install the dependencies:
 
 ## Set up your GCP project
 
-Follow the _Before you begin_ instructions in the
-[Deployment Manager's Getting Started Guide](https://cloud.google.com/deployment-manager/docs/quickstart),
-especially:
+Create a new project named and remember the project name
+[on the Google Cloud Platform Console](https://console.cloud.google.com/projectcreate),
+then
 
-- [Enable the required APIs](https://console.cloud.google.com/flows/enableapi?apiid=deploymentmanager,iot)
-  (Deployment Manager, IoT)
-- [Install the Google Cloud SDK](https://cloud.google.com/sdk/install): most
-  likely there is a package available through your operating system's package
-  manager.
+    # Export the project name
+    export PROJECT_NAME=bifravst
+    # Authenticate on the console
+    gcloud auth login
+    # Set the active project to $PROJECT_NAME
+    gcloud config set project $PROJECT_NAME
+    # Create the service account bifravst
+    gcloud iam service-accounts create bifravst
+    # Grant permissions to the service account.
+    gcloud projects add-iam-policy-binding $PROJECT_NAME --member "serviceAccount:bifravst@$PROJECT_NAME.iam.gserviceaccount.com" --role "roles/owner"
+    # Generate the key file
+    `gcloud iam service-accounts keys create gcp.json --iam-account bifravst@$PROJECT_NAME.iam.gserviceaccount.com`

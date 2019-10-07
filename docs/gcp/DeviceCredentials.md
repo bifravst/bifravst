@@ -9,6 +9,10 @@ Like with AWS IoT Core
 [use of your own Certificate Authority (CA) is possible](https://cloud.google.com/iot/docs/how-tos/credentials/verifying-credentials)
 to create keys for your devices.
 
+## Create an IoT registry
+
+    node cli create-registry
+
 ## Generate a CA certificate
 
 > **Note:** Creating the CA certificate is a **one-time operation**. If you have
@@ -17,13 +21,7 @@ to create keys for your devices.
 
 Run the script to generate a CA certificate:
 
-    node cli generate-ca
-
-## Create an IoT registry
-
-Now
-[create a new IoT registry](https://console.cloud.google.com/iot/registries/new?project=bifravst)
-and provide the CA certificate.
+    node cli register-ca
 
 ## Generate a device certificate
 
