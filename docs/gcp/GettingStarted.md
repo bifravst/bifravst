@@ -33,13 +33,20 @@ then
 
     # Export the project name
     export PROJECT_NAME=bifravst
+    
     # Authenticate on the console
     gcloud auth login
+    
     # Set the active project to $PROJECT_NAME
     gcloud config set project $PROJECT_NAME
+    
     # Create the service account bifravst
     gcloud iam service-accounts create bifravst
+    
     # Grant permissions to the service account.
     gcloud projects add-iam-policy-binding $PROJECT_NAME --member "serviceAccount:bifravst@$PROJECT_NAME.iam.gserviceaccount.com" --role "roles/owner"
+
+Do this on every machine you want to interact with the Google Cloud Console:
+    
     # Generate the key file
-    `gcloud iam service-accounts keys create gcp.json --iam-account bifravst@$PROJECT_NAME.iam.gserviceaccount.com`
+    gcloud iam service-accounts keys create gcp.json --iam-account bifravst@$PROJECT_NAME.iam.gserviceaccount.com
