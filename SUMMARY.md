@@ -17,6 +17,7 @@
 
 - [Getting Started](./docs/gcp/GettingStarted.md)
 - [Device Credentials](./docs/gcp/DeviceCredentials.md)
+- [Connect using the simulator](./docs/gcp/Simulator.md)
 - [Service Equivalents](./docs/gcp/ServiceEquivalents.md)
 
 ## Cat Tracker Web Application
