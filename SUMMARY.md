@@ -25,6 +25,7 @@
 - [Getting Started](./docs/app/GettingStarted.md)
 - [Updating an existing installation](./docs/app/Updating.md)
 - [Deploying to AWS](./docs/app/AWS.md)
+- [Deploying to GCP](./docs/app/GCP.md)
 - [Customizing the app](./docs/app/Customizing.md)
 
 ## Cat Tracker Firmware
