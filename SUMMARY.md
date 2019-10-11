@@ -36,6 +36,7 @@
 - [Device-Cloud-Protocol](./docs/firmware/Protocol.md)
 - [Device Data and Configuration](./docs/firmware/SensorDataAndConfiguration.md)
 - [LED Schema](./docs/firmware/LEDSchema.md)
+- [Cloud Differences](./docs/firmware/CloudDifferences.md)
 
 ## Connect using a real device
 
