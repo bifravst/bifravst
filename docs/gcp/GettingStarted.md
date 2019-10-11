@@ -50,8 +50,9 @@ then
 
     # Grant permissions to the service account.
     gcloud projects add-iam-policy-binding $PROJECT_NAME --member "serviceAccount:bifravst@$PROJECT_NAME.iam.gserviceaccount.com" --role "roles/owner"
-    gcloud projects add-iam-policy-binding $PROJECT_NAME --member "serviceAccount:bifravst@$PROJECT_NAME.iam.gserviceaccount.com" --role "roles/owner"
 
-Do this on every machine you want to interact with the Google Cloud Console:   
- # Generate the key file gcloud iam service-accounts keys create gcp.json
+Do this on every machine you want to interact with the Google Cloud Console:
+
+# Generate the key file gcloud iam service-accounts keys create gcp.json
+
 --iam-account bifravst@\$PROJECT_NAME.iam.gserviceaccount.com
