@@ -24,3 +24,8 @@ updated config will be published to the topic. There is no _AWS: delta_.
 
 Devices publish their state to `/devices/${deviceId}/state` topic. They always
 must publish the _entire_ state, there is no native support for partial update
+
+### Websockets
+
+The IoT Core does not support Websocket connections which is used in the app to
+get notified in real-time about changes on device state.
