@@ -31,10 +31,11 @@ and install the dependencies:
 remember the project name
 [on the Google Cloud Platform Console](https://console.cloud.google.com/projectcreate),
 enable the APIs
-[Cloud IoT](https://console.cloud.google.com/flows/enableapi?apiid=cloudiot.googleapis.com)
+[Cloud IoT](https://console.cloud.google.com/flows/enableapi?apiid=cloudiot.googleapis.com),
+[Firebase Hosting](https://console.cloud.google.com/flows/enableapi?apiid=firebasehosting.googleapis.com)
 and
-[Firebase Hosting](https://console.cloud.google.com/flows/enableapi?apiid=firebasehosting.googleapis.com),
-then
+[Identity Platform](https://console.cloud.google.com/customer-identity/onboarding)
+(and enable the _Email / Password provider_), then
 
     # Export the project name
     export PROJECT_NAME=bifravst
