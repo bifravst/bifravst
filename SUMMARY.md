@@ -12,6 +12,7 @@
 - [Limiting the Shadow Document Size](./docs/aws/LimitingShadowDocumentSize.md)
 - [Historical Data](./docs/aws/HistoricalData.md)
 - [Continuous Integration](./docs/aws/ContinuousIntegration.md)
+- [Cell Geolocation](./docs/aws/CellGeolocation.md)
 
 ## Bifravst on GCP
 
