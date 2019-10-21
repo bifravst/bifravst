@@ -20,7 +20,7 @@ This is done through the config `CLOUD_HOST_NAME` setting.
 In order to use your endpoint, add a new entry to
 [`applications\cat_tracker\prj.conf`](https://github.com/bifravst/cat-tracker-fw/blob/saga/applications/cat_tracker/prj.conf):
 
-    CONFIG_CLOUD_HOST_NAME="<mqtt endpoint>"
+    CONFIG_BIFRAVST_CLOUD_HOST_NAME="<mqtt endpoint>"
 
 You can find the endpoint for your installation through the CLI:
 
