@@ -1,6 +1,6 @@
 # Continuous Deployment
 
-> _Note:_ This is an optional step to keep the deployment in your account in
+> **Note:** This is an optional step to keep the deployment in your account in
 > sync with the source code repository automatically.
 
 For this to work you need to fork the source code in order to register the

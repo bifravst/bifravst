@@ -12,7 +12,7 @@ You need a development environment with the
 
 ## Clone the project and install dependencies
 
-> _Note:_ Remember to
+> **Note:** Remember to
 > [authenticate against the GitHub package registry](../guides/GitHubRegistry.md).
 
 Clone the latest version of the [app](https://github.com/bifravst/app) project

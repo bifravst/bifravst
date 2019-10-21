@@ -1,6 +1,6 @@
 # Deploying to AWS
 
-> **Note**: first make sure you have
+> **Note:** first make sure you have
 > [set up the necessary AWS resources](../aws/GettingStarted.md).
 
 ## Configure the react app
@@ -76,4 +76,4 @@ Afterwards you can open the domain name printed in
 There are no predefined user accounts in the userpool, so you need to register a
 new user.
 
-> _Note:_ the UserPool is configured to use the email address as the username.
+> **Note:** the UserPool is configured to use the email address as the username.

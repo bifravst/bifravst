@@ -6,7 +6,7 @@
 the AWS IoT broker using WebSockets, and the authentication is done through AWS
 Cognito.
 
-> Note: The way authorization works is explained in the AWS docs
+> **Note:** The way authorization works is explained in the AWS docs
 > [here](https://docs.aws.amazon.com/iot/latest/developerguide/cognito-identities.html)
 > and in little more detail
 > [here](https://docs.aws.amazon.com/iot/latest/developerguide/pub-sub-policy.html#pub-sub-policy-cognito).

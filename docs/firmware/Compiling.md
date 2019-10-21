@@ -17,7 +17,7 @@ Then build the actual application: change to the
 
 ## nRF9160 Tracker
 
-Note: Zephyr needs to be patched in order to enable the board.
+> **Note:** Zephyr needs to be patched in order to enable the board.
 
     patch -b ncs/zephyr/cmake/app/boilerplate.cmake < ncs/nrf/.github/workflows/zephyr.patch
     west build -p auto -b nrf9160_pca10015ns

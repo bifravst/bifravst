@@ -13,7 +13,7 @@ with
 
 ## Clone the project and install dependencies
 
-> _Note:_ Remember to
+> **Note:** Remember to
 > [authenticate against the GitHub package registry](../guides/GitHubRegistry.md).
 
 Clone the latest version of the [aws](https://github.com/bifravst/aws) project
