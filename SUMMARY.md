@@ -50,6 +50,7 @@
 
 - [Automated HEX file builds](docs/guides/AutomateHEXFileBuilding.md)
 - [Cloud Differences](./docs/guides/CloudDifferences.md)
+- [Authenticate against the GitHub package registry](./docs/guides/GitHubRegistry.md)
 
 ## General Project information
 
