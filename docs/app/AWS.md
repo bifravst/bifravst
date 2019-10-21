@@ -54,7 +54,7 @@ This is how the file would look like:
     REACT_APP_DEVICE_UI_DOMAIN_NAME=d3b8967x1t5y3g.cloudfront.net
     REACT_APP_VERSION=v3.6.1
 
-### Deploy the app
+## Deploy the app
 
 This builds and deploys the app to the S3 bucket created when setting up
 _Bifravst_ in your AWS account.
@@ -70,3 +70,10 @@ _Bifravst_ in your AWS account.
 
 Afterwards you can open the domain name printed in
 `REACT_APP_WEB_APP_DOMAIN_NAME` to view the web app.
+
+## Registering a user
+
+There are no predefined user accounts in the userpool, so you need to register a
+new user.
+
+> _Note:_ the UserPool is configured to use the email address as the username.
