@@ -3,8 +3,7 @@
 ## Set up the UI
 
 The [device-ui](https://github.com/bifravst/device-ui) provides a browser-based
-UI to control the simulated device. Set it up on your Google Cloud using
-Firebase Hosting.
+UI to control the simulated device.
 
 ### Clone the project and install dependencies
 
