@@ -32,7 +32,7 @@ Using 1,000,000 temperature readings in per-month JSON files over 6 months
 stored on S3.
 
 - [Test data](https://drive.google.com/open?id=1COcGT_04FSXtOGqIrz4gKoZaxtYv7ezo)
-- [Script to generate test data](./generate-sensor-messages.ts)
+- [Script to generate test data](https://gist.github.com/coderbyheart/9ff494a6edb9ce07699f95bd6612011a)
 - [Top 10 Performance Tuning Tips for Amazon Athena](https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/)
 
 ### File name
