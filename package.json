@@ -29,12 +29,12 @@
     "@commitlint/config-angular": "^8.2.0",
     "@types/ajv": "^1.0.0",
     "@types/jest": "^24.0.21",
-    "@types/node": "^12.12.3",
+    "@types/node": "^12.12.5",
     "ajv": "^6.10.2",
     "husky": "^3.0.9",
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
-    "typescript": "^3.7.0-beta"
+    "typescript": "^3.8.0-dev.20191102"
   },
   "husky": {
     "hooks": {
