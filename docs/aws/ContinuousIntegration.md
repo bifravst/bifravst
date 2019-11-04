@@ -22,7 +22,7 @@ implemented) features,
 
 You can run these test when developing:
 
-    npm run tests:e2e -- -r -p
+    npm run test:e2e
 
 ## Set up on GitHub
 
