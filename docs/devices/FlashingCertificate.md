@@ -7,6 +7,9 @@ IMEI of the device as the MQTT client ID. You can read the IMEI of your device
 using the AT command `AT+CGSN`:
 
     AT+CGSN
+
+The output will look like this
+
     352656100248049
     OK
 
@@ -64,12 +67,12 @@ Click _Update certificates_ and wait until the operation finishes.
 
 First flash the AT host:
 
-*Thingy:91*
+_Thingy:91_
 
     curl -L -o thingy91_at_client_increased_buf.hex https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex
     nrfjprog -f nrf91 --program thingy91_at_client_increased_buf.hex --sectoranduicrerase -r --log
 
-*nRF9160 DK*
+_nRF9160 DK_
 
     curl -L -o 91dk_at_client_increased_buf.hex https://github.com/bifravst/bifravst/releases/download/v5.9.2/91dk_at_client_increased_buf.hex
     nrfjprog -f nrf91 --program 91dk_at_client_increased_buf.hex --sectoranduicrerase -r --log
