@@ -64,11 +64,13 @@ Click _Update certificates_ and wait until the operation finishes.
 
 First flash the AT host:
 
-    # Thingy:91
+*Thingy:91*
+
     curl -L -o thingy91_at_client_increased_buf.hex https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex
     nrfjprog -f nrf91 --program thingy91_at_client_increased_buf.hex --sectoranduicrerase -r --log
 
-    # nRF9160 DK
+*nRF9160 DK*
+
     curl -L -o 91dk_at_client_increased_buf.hex https://github.com/bifravst/bifravst/releases/download/v5.9.2/91dk_at_client_increased_buf.hex
     nrfjprog -f nrf91 --program 91dk_at_client_increased_buf.hex --sectoranduicrerase -r --log
 
