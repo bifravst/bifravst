@@ -21,6 +21,10 @@
 - [Connect using the simulator](./docs/gcp/Simulator.md)
 - [Service Equivalents](./docs/gcp/ServiceEquivalents.md)
 
+## Bifravst on Azure
+
+- [Service Equivalents](./docs/azure/ServiceEquivalents.md)
+
 ## Cat Tracker Web Application
 
 - [Getting Started](./docs/app/GettingStarted.md)
