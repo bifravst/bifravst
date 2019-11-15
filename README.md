@@ -132,10 +132,10 @@ The web application offers these features:
 
 ### Supported Cloud Providers
 
-|                  | Amazon Web Services                                                                            | Google Cloud                                                  | Alibaba Cloud |
-| ---------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------- |
-| LTE-M: TCP+MQTT  | [feature complete](https://bifravst.gitbook.io/bifravst/v/saga/bifravst-on-aws/gettingstarted) | [in progress](https://github.com/bifravst/bifravst/issues/25) | intended      |
-| NB-Iot: UDP+CoAP | intended                                                                                       | intended                                                      | intended      |
+|                  | Amazon Web Services                                                                            | Google Cloud                                                  | Microsoft Azure                                               | Alibaba Cloud |
+| ---------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------- |
+| LTE-M: TCP+MQTT  | [feature complete](https://bifravst.gitbook.io/bifravst/v/saga/bifravst-on-aws/gettingstarted) | [in progress](https://github.com/bifravst/bifravst/issues/25) | [in progress](https://github.com/bifravst/bifravst/issues/29) | intended      |
+| NB-Iot: UDP+CoAP | intended                                                                                       | intended                                                      | intended                                                      | intended      |
 
 For cloud providers that have no native UDP+CoAP support using a bridge, e.g.
 [Eclipse Californium](https://github.com/eclipse/californium), shall be
