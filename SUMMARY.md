@@ -23,6 +23,7 @@
 
 ## Bifravst on Azure
 
+- [Getting Started](./docs/azure/GettingStarted.md)
 - [Service Equivalents](./docs/azure/ServiceEquivalents.md)
 
 ## Cat Tracker Web Application
