@@ -20,3 +20,34 @@ in order to install the CLI.
 Afterwards you should be able to execute the `az` command:
 
     az
+
+### Dockerizing the `az` command
+
+In case you encounter the issue where the azure CLI
+[requires an older Python version](https://github.com/Azure/azure-cli/issues/11239),
+you can _dockerize_ it like this:
+
+    #!/usr/bin/env bash
+    set -eu
+
+    command="$@"
+
+    docker run --rm --volume `pwd`:/root --volume $HOME/.azure:/root/.azure -w=/root mcr.microsoft.com/azure-cli az $command
+
+Put above into an executable file in your path.
+
+## Deploy the solution to your account
+
+Authenticate the CLI:
+
+    az login
+
+List available locations:
+
+    az account list-locations
+
+Deploy the solution:
+
+    az group create -l norwaywest -n bifravst
+    az group deployment create --resource-group bifravst --mode Complete --name bifravst --template-file /home/m/bifravst/azure/azuredeploy.json \
+        --parameters iotHubName='bifravst' location='norwaywest'
