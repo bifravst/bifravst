@@ -6,5 +6,5 @@ release, follow these steps.
     git pull
     npm ci
     npx tsc
-    az group deployment create --resource-group bifravst --mode Complete --name bifravst --template-file azuredeploy.json \
-        --parameters iotHubName='bifravst' location='northeurope'
+    npx cdk deploy '*'
+    node cli historical-data --setup -r

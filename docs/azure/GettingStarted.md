@@ -48,6 +48,7 @@ List available locations:
 
 Deploy the solution:
 
-    az group create -l norwaywest -n bifravst
+    LOCATION=northeurope
+    az group create -l $LOCATION -n bifravst
     az group deployment create --resource-group bifravst --mode Complete --name bifravst --template-file azuredeploy.json \
-        --parameters iotHubName='bifravst' location='northeurope'
+        --parameters iotHubName='bifravst' location="$LOCATION"
