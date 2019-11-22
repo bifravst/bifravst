@@ -215,11 +215,11 @@ _On a side note:_ the same is true for devices that control a system. They
 should have built-in decision rules and must not depend on an answer from a
 cloud backend to provide the action to execute based on the current condition.
 
-### 4. Firmware Updates
+### 4. Firmware Updates (FOTA)
 
-Arguably a firmware update _over the air_ can be seen as configuration, however
-the size of a typical firmware image (500KB) is 2-3 magnitudes larger than a
-control message. Therefore it can be beneficial to treat it differently.
+Arguably a firmware update _over the air_ (FOTA) can be seen as configuration,
+however the size of a typical firmware image (500KB) is 2-3 magnitudes larger
+than a control message. Therefore it can be beneficial to treat it differently.
 Typically an update is initiated by a configuration change, once acknowledged by
 the device will initiate the firmware download. The download itself is done out
 of band not using MQTT but HTTP(s) to reduce overhead.
@@ -235,6 +235,8 @@ of device data. While the concrete implementation will differ per cloud
 provider, the general building blocks (state, configuration, batched past state,
 firmware updates) will be the same.
 
-| Cloud Provider | State                                                                                                       | Configuration                                                                                              | Past data       | Firmware                                                                    |
-| -------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------------------------- |
-| AWS            | [Device Shadow](https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html) (`reported`) | [Device Shadow](https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html) (`desired`) | Publish to MQTT | [Jobs](https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html) |
+| Cloud                         | State                                                                                                       | Configuration                                                                                              | Past data         | FOTA                                                                                  |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------- |
+| Amazon Web Services (`aws`)   | [Device Shadow](https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html) (`reported`) | [Device Shadow](https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html) (`desired`) | Publish over MQTT | [Jobs](https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html)+HTTPS     |
+| Google Cloud Platform (`gcp`) | [Device Configuration](https://cloud.google.com/iot/docs/concepts/devices#device_configuration)             | [Device State](https://cloud.google.com/iot/docs/concepts/devices#device_state)                            | Publish over MQTT | -                                                                                     |
+| Microsoft Azure (`azure`)     | [Device twins](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) (`reported`)   | [Device twins](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) (`desired`)   | Publish over MQTT | [MQTT+HTTPS](https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update) |
