@@ -45,22 +45,21 @@ Follow
 [this guide](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)
 to configure AWS CDK.
 
-The recommended workflow is to use a _dotenv_ plugin for your shell (e.g.
-[this one for Zsh](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/dotenv))
-which will automatically export the environment variables it finds in a
-`.dotenv` file in the project folder:
+The recommended workflow is to use a [_direnv_](https://direnv.net/) plugin for
+your shell which will automatically export the environment variables it finds in
+a `.envrc` file in the project folder:
 
-Create a new file `.env` in the project folder and add the credentials that are
-presented to you after you have created the new user.
+Create a new file `.envrc` in the project folder and add the credentials that
+are presented to you after you have created the new user.
 
 Also add your preferred region and your AWS account ID, which can be found
 [under _My Account_ on the AWS console](https://console.aws.amazon.com/billing/home?#/account),
-to the `.env` file.
+to the `.envrc` file.
 
 ```
-AWS_ACCESS_KEY_ID=<value of Access key ID>
-AWS_SECRET_ACCESS_KEY=<value of Secret access key>
-AWS_DEFAULT_REGION=<your preferred AWS region>
+export AWS_ACCESS_KEY_ID=<value of Access key ID>
+export AWS_SECRET_ACCESS_KEY=<value of Secret access key>
+export AWS_DEFAULT_REGION=<your preferred AWS region>
 ```
 
 ## Supported regions
