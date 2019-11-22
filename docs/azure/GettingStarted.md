@@ -49,13 +49,3 @@ Deploy the solution in your preferred location (you can list them using
     az group create -l $LOCATION -n bifravst
     az group deployment create --resource-group bifravst --mode Complete --name bifravst --template-file azuredeploy.json \
         --parameters iotHubName='bifravst' location="$LOCATION"
-
-## Generate IoT enrollment group
-
-Azure supports offline generation of device certificates through
-[Enrollment Groups](https://docs.microsoft.com/bs-latn-ba/azure/iot-dps/quick-enroll-device-x509-node).
-For these a CA certificate needs to be registered:
-
-    node cli register-ca
-    # this is a separate step because immediate verification may fail
-    node cli proof-ca-posession

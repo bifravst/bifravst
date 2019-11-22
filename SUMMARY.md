@@ -25,6 +25,7 @@
 
 - [Getting Started](./docs/azure/GettingStarted.md)
 - [Updating an existing installation](./docs/azure/Updating.md)
+- [Device Credentials](./docs/azure/DeviceCredentials.md)
 - [Service Equivalents](./docs/azure/ServiceEquivalents.md)
 
 ## Cat Tracker Web Application
