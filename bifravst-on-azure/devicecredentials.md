@@ -1,22 +1,56 @@
 # Device Credentials
 
-On Azure devices connect to IoT Hub using [TLS version 1.2](https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment).
+On Azure devices connect to IoT Hub using
+[TLS version 1.2](https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment).
 
-## Generate IoT enrollment group and a CA certificate for Bifravst
+Azure supports offline generation of device certificates through
+[Enrollment Groups](https://docs.microsoft.com/bs-latn-ba/azure/iot-dps/quick-enroll-device-x509-node).
 
-Azure supports offline generation of device certificates through [Enrollment Groups](https://docs.microsoft.com/bs-latn-ba/azure/iot-dps/quick-enroll-device-x509-node). For these a CA certificate needs to be registered:
+Device certificates are signed using an intermediate CA. This allows to keep the
+CA root certificate secure and create an intermediate CA certificate to be used
+during device provisioning. This way the CA root certificate private key will
+never be transmitted to unsecure locations (e.g. a third-party factory).
 
-```text
-node cli register-ca
-# this is a separate step because immediate verification may fail
-node cli proof-ca-posession
-```
+If the intermediate CA certificate is compromised, it can be deactivated so new
+devices with credentials signed by the compromised intermediat CA certficate
+will no longer be provisioned.
 
-## Generate a device certificate and register a device
+Devices that previously connected to the IoT Hub, will keep working.
 
-Run this script to generate a certificate for a new device and register it in the IoT Hub:
+## Create a CA root certificate
 
-```text
-node cli register-device
-```
+This creates a CA root certificate and registers it with the Azure IoT Device
+Provisioning Service.
 
+    node cli create-ca-root
+    node cli proof-ca-root-possession
+
+The CA root certificate should not be shared. The number of CA root certificates
+is typically very small, one (1) is sufficient.
+
+## Create a CA intermediate certificate
+
+This creates a CA intermediate certificate and creates an enrollment group for
+it.
+
+    node cli create-ca-intermediate
+
+The CA intermediate certificate is the one to be shared with the factory. Over
+time you will have multiple intermediate certificates.
+
+## Create a device certificate
+
+Run this script to generate a certificate for a new device:
+
+    node cli create-device-cert
+
+Devices will first connect to the
+[Device Provisioning Service](https://docs.microsoft.com/en-us/azure/iot-dps/)
+(DPS) using the certificate and request to be provisioned. The DPS registers the
+device on the associated IoT Hub and returns the registration information to the
+device, which includes the hostname of the assigned IoT Hub.
+
+Now the device can terminate the connection to the DPS and initiate a new
+connection to the IoT Hub endpoint. The device should store the registration
+information so that it can directly connect to the assigned IoT Hub endpoint the
+next time it boots.
