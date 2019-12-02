@@ -59,6 +59,9 @@ Put above into an executable file in your path.
 
 ## Deploy the solution to your account
 
+> Note: since we will be using Azure Active Directory B2C it is recommended to
+> set up Bifravst in a dedicated account.
+
 Authenticate the CLI:
 
     az login
