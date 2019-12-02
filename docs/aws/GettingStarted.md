@@ -71,6 +71,9 @@ export AWS_SECRET_ACCESS_KEY=<value of Secret access key>
 export AWS_DEFAULT_REGION=<your preferred AWS region>
 ```
 
+> Note: you should add the `.envrc` to your
+> [global .gitignore file](https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore).
+
 ## Supported regions
 
 Not all AWS features are available in all AWS regions. You will see a warning if
