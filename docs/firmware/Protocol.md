@@ -6,8 +6,8 @@ This document will provide a general introduction in the way devices
 communication with the cloud in the Bifravst project. _Communication_ is the
 most important aspect to optimize for when developing an ultra-low-power product
 because initiating and maintaining network connection is relatively expensive
-compared to other device operations (for example reading a sensor value). It is
-therefore recommended to invest a reasonable amount of time to revisit the
+compared to other device operations \(for example reading a sensor value\). It
+is therefore recommended to invest a reasonable amount of time to revisit the
 principles explained here and customize them to your specific needs. The more
 the modem-uptime can be reduced and the smaller the total transferred amount if
 data becomes, the longer will your battery and your data contingent last.
@@ -15,8 +15,8 @@ data becomes, the longer will your battery and your data contingent last.
 ## NB-IoT as the cellular connection
 
 The firmware is configured to operate in NB-IoT mode to connect to the cellular
-network (albeit using TLS over TCP which is most likely not available in other
-NB-IoT networks outside of Norway).
+network \(albeit using TLS over TCP which is most likely not available in other
+NB-IoT networks outside of Norway\).
 
 ## MQTT as transport protocol
 
@@ -33,13 +33,13 @@ verbosity is valuable.
 ### Possible Optimizations
 
 As a data- and power-optimization technique it is recommended to look into
-denser data protocols, especially since the majority of IoT applications (like
-in the Cat Tracker example) will always send data in the same structure, only
+denser data protocols, especially since the majority of IoT applications \(like
+in the Cat Tracker example\) will always send data in the same structure, only
 the values change.
 
 Consider the GPS message:
 
-```json
+```javascript
 {
   "v": {
     "lng": 10.414394,
@@ -53,11 +53,11 @@ Consider the GPS message:
 }
 ```
 
-In JSON notation this document (without newlines) has 114 bytes. If the message
-were to be transferred using for example
+In JSON notation this document \(without newlines\) has 114 bytes. If the
+message were to be transferred using for example
 [Protocol Buffers](https://developers.google.com/protocol-buffers/) the data can
-be encoded with only 62 bytes (a 46% improvement)
-([source code](https://gist.github.com/coderbyheart/34a8e71ffe30af882407544567971efb)).
+be encoded with only 62 bytes \(a 46% improvement\)
+\([source code](https://gist.github.com/coderbyheart/34a8e71ffe30af882407544567971efb)\).
 
 Note that even though the savings in transferred data over the lifetime of a
 device are significant, there is an extra cost of maintaining the source code on
@@ -67,12 +67,15 @@ not supported natively by the cloud provider.
 See also:
 [RION Performance Benchmarks](http://tutorials.jenkov.com/rion/rion-performance-benchmarks.html)
 
+[FlatBuffers](https://google.github.io/flatbuffers/) seems like the best
+candidate for a resource constraint device like the 9160.
+
 ## The four kinds of data
 
 > This segment is also available as a
 > [stand-alone blog post on {DevZone](https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/the-four-kinds-of-data-you-need-to-consider-when-developing-an-iot-product).
 
-![Data Protocols](./images/data-protocols.jpg)
+![Data Protocols](../.gitbook/assets/data-protocols.jpg)
 
 ### 1. Device State
 
@@ -87,9 +90,9 @@ needing to wait for the device to connect and publish its state.
 
 It is an important criterion for the robustness of any IoT product to gracefully
 handle situations in which the device is not connected to the internet. It might
-even not be favorable to be connected all the time&mdash;wireless communication
-is relatively expensive consumes a lot of energy and therefore increases the
-power consumption.
+even not be favorable to be connected all the time—wireless communication is
+relatively expensive consumes a lot of energy and therefore increases the power
+consumption.
 
 > The _Cat Tracker_ example is optimized for ultra low power consumption, we
 > want to turn off the modem as quickly as possible and keep it off as long as
@@ -109,7 +112,7 @@ the motion sensor stops working properly.
 ### 2. Device Configuration
 
 Optimizing this behavior takes time and while the devices are in the field
-sending firmware updates for every change (more about that later) will be
+sending firmware updates for every change \(more about that later\) will be
 expensive. We observe firmware sizes of around 500 KB which will, even when
 compressed, be expensive because it will take a device some time to download and
 apply the updated, not to mention the costs for transferring the firmware update
@@ -123,8 +126,8 @@ sensor: depending on the tracked subject what is considered "movement" can vary
 greatly. Various timeout settings have an important influence on power- and
 data-consumption: the time the device waits to acquire a GPS fix, or the time it
 waits between sending updates when in motion. Finally the device can be put in
-an _active_ mode, where it sends updates based on an configurable interval (of
-course) regardless whether motion is detected or not. This is great when
+an _active_ mode, where it sends updates based on an configurable interval \(of
+course\) regardless whether motion is detected or not. This is great when
 actively developing the firmware with individual devices or when debugging the
 device behavior in specific areas and situations.
 
@@ -139,18 +142,18 @@ Here again is the _digital twin_ used on the cloud side to store the latest
 _desired_ configuration of the device immediately, so the application does not
 have to wait for the device to be connected to record the configuration change.
 The implementation of the _digital twin_ then will take care of sending only the
-latest required changes to the device (all changes since the device did last
-request its configuration are combined into one change) thus also minimizing the
-amount of data which needs to be transferred to the device.
+latest required changes to the device \(all changes since the device did last
+request its configuration are combined into one change\) thus also minimizing
+the amount of data which needs to be transferred to the device.
 
 ### Timestamping
 
 Device **state** and **configuration** are timeless datum, they apply always and
 absolutely. The device sends a GPS position over the cellular connection and the
 digital twin is updated, we now know where the device is _now_. When the device
-configuration is changed (`A -> A'`) the device will eventually apply the new
+configuration is changed \(`A -> A'`\) the device will eventually apply the new
 configuration, and if another configuration change was made while the device was
-not connected (`A' -> A''`) the device can directly _jump_ to `A''`. To make
+not connected \(`A' -> A''`\) the device can directly _jump_ to `A''`. To make
 state and configuration changes available over time we can store all changes on
 the cloud side with the time of the change and make them available for retrieval
 in a time-series fashion.
@@ -170,17 +173,17 @@ difference to pinpoint the exact situation when the parcel is being moved by a
 person or even in a vehicle.
 
 The need for precise time measurement on the device is important and is achieved
-by combining three time sources: the relative device timestamp (a relative time
+by combining three time sources: the relative device timestamp \(a relative time
 with microsecond resolution that counts upwards from zero after the device is
-powered on), the cellular network time and the time from the GPS sensor.
+powered on\), the cellular network time and the time from the GPS sensor.
 
-![Timestamping](./images/timestamping.jpg)
+![Timestamping](../.gitbook/assets/timestamping.jpg)
 
 Every time a sensor is read, the value is recorded with the device timestamp.
-Once theses measurements are about to be sent (in which case there is a cellular
-connection and at least the network time is known), the relative timestamps can
-be converted to absolute timestamps using the _relative_ timestamps of the
-network or the GPS time.
+Once theses measurements are about to be sent \(in which case there is a
+cellular connection and at least the network time is known\), the relative
+timestamps can be converted to absolute timestamps using the _relative_
+timestamps of the network or the GPS time.
 
 This way all data is sent with precise timestamps to the cloud where the device
 time is used when visualizing data to accurately reflect _when_ the datum was
@@ -205,24 +208,24 @@ storing these measures in a ring-buffer or employ other strategies to decide
 which data to discard once the memory limit is reached.
 
 Once the device is successfully able to establish a connection it will then
-(after publishing its most recent measurements) publish past data in batch. Here
-again we need to make a compromise: the device memory is limited, so there needs
-to be a strategy to discard old messages. A simple approach is to use a ring
-buffer that stores the latest messages and will discard the oldest message once
-its size limit is reached.
+\(after publishing its most recent measurements\) publish past data in batch.
+Here again we need to make a compromise: the device memory is limited, so there
+needs to be a strategy to discard old messages. A simple approach is to use a
+ring buffer that stores the latest messages and will discard the oldest message
+once its size limit is reached.
 
 _On a side note:_ the same is true for devices that control a system. They
 should have built-in decision rules and must not depend on an answer from a
 cloud backend to provide the action to execute based on the current condition.
 
-### 4. Firmware Updates (FOTA)
+### 4. Firmware Updates \(FOTA\)
 
-Arguably a firmware update _over the air_ (FOTA) can be seen as configuration,
-however the size of a typical firmware image (500KB) is 2-3 magnitudes larger
+Arguably a firmware update _over the air_ \(FOTA\) can be seen as configuration,
+however the size of a typical firmware image \(500KB\) is 2-3 magnitudes larger
 than a control message. Therefore it can be beneficial to treat it differently.
 Typically an update is initiated by a configuration change, once acknowledged by
 the device will initiate the firmware download. The download itself is done out
-of band not using MQTT but HTTP(s) to reduce overhead.
+of band not using MQTT but HTTP\(s\) to reduce overhead.
 
 Firmware updates are so large compared to other messages that the device may
 suspend all other operation until the firmware update has been applied to
@@ -232,11 +235,11 @@ conserve resources.
 
 _Bifravst_ aims to provide robust reference implementations for these four kinds
 of device data. While the concrete implementation will differ per cloud
-provider, the general building blocks (state, configuration, batched past state,
-firmware updates) will be the same.
+provider, the general building blocks \(state, configuration, batched past
+state, firmware updates\) will be the same.
 
-| Cloud                         | State                                                                                                       | Configuration                                                                                              | Past data         | FOTA                                                                                  |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------- |
-| Amazon Web Services (`aws`)   | [Device Shadow](https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html) (`reported`) | [Device Shadow](https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html) (`desired`) | Publish over MQTT | [Jobs](https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html)+HTTPS     |
-| Google Cloud Platform (`gcp`) | [Device Configuration](https://cloud.google.com/iot/docs/concepts/devices#device_configuration)             | [Device State](https://cloud.google.com/iot/docs/concepts/devices#device_state)                            | Publish over MQTT | -                                                                                     |
-| Microsoft Azure (`azure`)     | [Device twins](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) (`reported`)   | [Device twins](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) (`desired`)   | Publish over MQTT | [MQTT+HTTPS](https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update) |
+| Cloud                           | State                                                                                                         | Configuration                                                                                                | Past data         | FOTA                                                                                  |
+| :------------------------------ | :------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------------- | :---------------- | :------------------------------------------------------------------------------------ |
+| Amazon Web Services \(`aws`\)   | [Device Shadow](https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html) \(`reported`\) | [Device Shadow](https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html) \(`desired`\) | Publish over MQTT | [Jobs](https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html)+HTTPS     |
+| Google Cloud Platform \(`gcp`\) | [Device Configuration](https://cloud.google.com/iot/docs/concepts/devices#device_configuration)               | [Device State](https://cloud.google.com/iot/docs/concepts/devices#device_state)                              | Publish over MQTT | -                                                                                     |
+| Microsoft Azure \(`azure`\)     | [Device twins](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) \(`reported`\)   | [Device twins](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins) \(`desired`\)   | Publish over MQTT | [MQTT+HTTPS](https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update) |
