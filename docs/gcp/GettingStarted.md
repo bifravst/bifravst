@@ -40,6 +40,7 @@ and install the dependencies:
     git clone https://github.com/bifravst/gcp.git bifravst-gcp
     cd bifravst-gcp
     npm ci
+    npx tsc
 
 ## Set up your GCP project
 

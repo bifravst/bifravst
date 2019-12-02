@@ -30,6 +30,7 @@ and install the dependencies:
     git clone https://github.com/bifravst/aws.git bifravst-aws
     cd bifravst-aws
     npm ci
+    npx tsc
 
 ## Provide your AWS credentials
 
