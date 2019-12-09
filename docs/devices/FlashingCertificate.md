@@ -15,7 +15,7 @@ The output will look like this
 
 Use the IMEI when generating the certificate:
 
-    node cli generate-cert -d <imei>
+    node cli create-device-cert -d <imei>
 
 ## Flashing using nRF Connect for Desktop
 

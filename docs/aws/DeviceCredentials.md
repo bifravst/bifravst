@@ -16,10 +16,10 @@ Certificates_ offline.
 
 Run the script to generate and register a CA certificate in your AWS account:
 
-    node cli register-ca
+    node cli create-ca
 
 ## Generate a device certificate
 
 Run this script to generate a certificate for a new device:
 
-    node cli generate-cert
+    node cli create-device-cert

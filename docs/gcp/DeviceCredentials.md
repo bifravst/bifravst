@@ -20,7 +20,7 @@ Certificates_ offline.
 
 Run the script to generate a CA certificate:
 
-    node cli register-ca
+    node cli create-ca
 
 ## Generate a device certificate and register a device
 
