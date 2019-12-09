@@ -24,17 +24,17 @@
   "license": "BSD-3-Clause",
   "dependencies": {},
   "devDependencies": {
-    "@bifravst/code-style": "^5.0.1",
+    "@bifravst/code-style": "^6.0.1",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-angular": "^8.2.0",
     "@types/ajv": "^1.0.0",
-    "@types/jest": "^24.0.21",
-    "@types/node": "^12.12.5",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
     "ajv": "^6.10.2",
-    "husky": "^3.0.9",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
-    "ts-jest": "^24.1.0",
-    "typescript": "^3.8.0-dev.20191102"
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.8.0-dev.20191207"
   },
   "husky": {
     "hooks": {
