@@ -74,4 +74,5 @@ Deploy the solution in your preferred location (you can list them using
     az group deployment create --resource-group bifravst --mode Complete --name bifravst --template-file azuredeploy.json \
         --parameters iotHubName='bifravst' location="$LOCATION"
     # It's currently not possible to enable website hosting through the ARM template
+    az storage blob service-properties update --account-name bifravstapp --static-website --index-document index.html
     az storage blob service-properties update --account-name bifravstdeviceui --static-website --index-document index.html
