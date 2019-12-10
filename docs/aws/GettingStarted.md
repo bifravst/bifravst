@@ -89,8 +89,8 @@ Supported regions are:
 
 This step sets up the necessary resources in your AWS account:
 
-    npx cdk bootstrap
     npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' deploy
+    npx cdk bootstrap
     npx cdk deploy '*'
 
 CDK will present you with a list of permission changes to your account, you need
