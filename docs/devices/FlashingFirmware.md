@@ -46,4 +46,8 @@ until the operation has finished.
 
 ## Flash using `nrjprog`
 
+> Note: The nRF9160
+> [should be programmed using `nrfjprog`](http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160.html#board-controller).
+> `west flash` is not supported.
+
     nrfjprog -f nrf91 --program <hexfile> --sectoranduicrerase -r
