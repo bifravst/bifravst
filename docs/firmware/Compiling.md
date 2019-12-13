@@ -4,39 +4,57 @@ Follow the
 [Getting Started Guide](http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html)
 of the Nordic Connect SDK to set up your system for compiling the project.
 
+## Configuration
+
+### Setting the AWS IoT Core MQTT broker hostname
+
+> **Note:** If `CONFIG_AWS_IOT_BROKER_HOST_NAME` is not set you will not be able
+> to build the firmware.
+
+In order to build the `cat_tracker` application your AWS IoT Core MQTT broker
+hostname **must** be provided.
+
+Add a definition called `CONFIG_AWS_IOT_BROKER_HOST_NAME` to the project
+configuration (`applications/cat_tracker/prj.conf`), like this:
+
+```
+CONFIG_AWS_IOT_BROKER_HOST_NAME="<your broker hostname>"
+```
+
+### Setting the application version
+
+You **may** configure the application version that is sent as part of the device
+information, it can be any string and defaults to `0.0.0-development`.
+
+You can customize this string by adding a defintion called
+`CONFIG_CAT_TRACKER_APP_VERSION` to the project configuration
+(`applications/cat_tracker/prj.conf`), like this:
+
+```
+CONFIG_CAT_TRACKER_APP_VERSION="<your version string>"
+```
+
+## Building
+
 Then build the actual application: change to the
 `ncs/nrf/applications/cat_tracker` directory and build for your board:
 
-## Thingy:91
-
-    west build -p auto -b nrf9160_pca20035ns
-
-## nRF9160 DK
-
-    west build -p auto -b nrf9160_pca20035ns
-
-## nRF9160 Tracker
+### Asset Tracker (`PCA10015`)
 
 > **Note:** Zephyr needs to be patched in order to enable the board.
 
     patch -b ncs/zephyr/cmake/app/boilerplate.cmake < ncs/nrf/.github/workflows/zephyr.patch
     west build -p auto -b nrf9160_pca10015ns
 
+### Thingy:91 (`PCA20035`)
+
+    west build -p auto -b nrf9160_pca20035ns
+
+### nRF9160 DK (`PCA10090`)
+
+    west build -p auto -b nrf9160_pca20035ns
+
 ## Location of the HEX file
 
 The built HEX file will be located in
 `ncs/nrf/applications/cat_tracker/build/zephyr/merged.hex`.
-
-## Compiling using GitHub actions
-
-Since it is a tedious effort to compile the application, you can leverage GitHub
-Actions (which is free for open-source projects) to compile the application for
-you. Using the
-[provided workflow](https://github.com/bifravst/cat-tracker-fw/blob/saga/.github/workflows/build-and-release.yaml)
-you can quickly set up compilation for your application using a fork.
-
-After you have forked the repository,
-[enable GitHub Actions](https://help.github.com/en/github/automating-your-workflow-with-github-actions/about-github-actions#requesting-to-join-the-limited-public-beta-for-github-actions)
-and look for the _Actions_ tab in your repo, there you will find the the Action
-runs. Now commit a change to your repo, e.g. change the MQTT hostname, and the
-Action will compile the application and attach the HEX files to a release.
