@@ -1,5 +1,13 @@
 # Compiling the project
 
+## Prepare your system
+
+Follow the
+[Getting Started Guide](http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html)
+of the Nordic Connect SDK to set up your system for compiling the project.
+Especially make sure to follow the instructions on _Installing the nRF Connect
+SDK_.
+
 ## Clone the project and install dependencies
 
 Create a folder, e.g. `ncs` and init the project:
