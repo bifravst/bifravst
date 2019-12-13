@@ -9,3 +9,11 @@ The Cat Tracker Firmware is a reference application developed using the
 
 The source code for the Cat Tracker application is available
 [here](https://github.com/bifravst/cat-tracker-fw).
+
+## Prepare your system
+
+Follow the
+[Getting Started Guide](http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html)
+of the Nordic Connect SDK to set up your system for compiling the project.
+Especially make sure to follow the instructions on _Installing the nRF Connect
+SDK_.

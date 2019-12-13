@@ -1,8 +1,18 @@
 # Compiling the project
 
-Follow the
-[Getting Started Guide](http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html)
-of the Nordic Connect SDK to set up your system for compiling the project.
+## Clone the project and install dependencies
+
+Create a folder, e.g. `ncs` and init the project:
+
+    cd ./ncs
+    west init -m https://github.com/bifravst/cat-tracker-fw
+    west update
+    sudo pip3 install -r zephyr/scripts/requirements.txt
+    sudo pip3 install pc_ble_driver_py
+    sudo pip3 install -r nrf/scripts/requirements.txt
+    sudo pip3 install -r mcuboot/scripts/requirements.txt
+    # this sets $ZEPHYR_TOOLCHAIN_VARIANT and $GNUARMEMB_TOOLCHAIN_PATH
+    source zephyr/zephyr-env.sh
 
 ## Configuration
 
@@ -15,7 +25,7 @@ In order to build the `cat_tracker` application your AWS IoT Core MQTT broker
 hostname **must** be provided.
 
 Add a definition called `CONFIG_AWS_IOT_BROKER_HOST_NAME` to the project
-configuration (`applications/cat_tracker/prj.conf`), like this:
+configuration (`./ncs/nrf/applications/cat_tracker/prj.conf`), like this:
 
 ```
 CONFIG_AWS_IOT_BROKER_HOST_NAME="<your broker hostname>"
@@ -28,7 +38,7 @@ information, it can be any string and defaults to `0.0.0-development`.
 
 You can customize this string by adding a defintion called
 `CONFIG_CAT_TRACKER_APP_VERSION` to the project configuration
-(`applications/cat_tracker/prj.conf`), like this:
+(`./ncs/nrf/applications/cat_tracker/prj.conf`), like this:
 
 ```
 CONFIG_CAT_TRACKER_APP_VERSION="<your version string>"
@@ -37,7 +47,7 @@ CONFIG_CAT_TRACKER_APP_VERSION="<your version string>"
 ## Building
 
 Then build the actual application: change to the
-`ncs/nrf/applications/cat_tracker` directory and build for your board:
+`./ncs/nrf/applications/cat_tracker` directory and build for your board:
 
 ### Asset Tracker (`PCA10015`)
 
