@@ -2,6 +2,10 @@
 
 ## Prepare your system
 
+> **Note:** You can always check out the
+> [GitHub Actions workflow](https://github.com/bifravst/cat-tracker-fw/blob/saga/.github/workflows/build-and-release.yaml)
+> as a reference, which sets up a blank Ubuntu image to compile the firmware.
+
 Follow the
 [Getting Started Guide](http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html)
 of the Nordic Connect SDK to set up your system for compiling the project.
