@@ -13,6 +13,7 @@
 - [Historical Data](./docs/aws/HistoricalData.md)
 - [Continuous Integration](./docs/aws/ContinuousIntegration.md)
 - [Cell Geolocation](./docs/aws/CellGeolocation.md)
+- [Uninstalling](./docs/aws/Uninstalling.md)
 
 ## Bifravst on GCP
 
