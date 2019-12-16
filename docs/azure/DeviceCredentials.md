@@ -9,7 +9,7 @@ Azure supports offline generation of device certificates through
 Device certificates are signed using an intermediate CA. This allows to keep the
 CA root certificate secure and create an intermediate CA certificate to be used
 during device provisioning. This way the CA root certificate private key will
-never be transmitted to unsecure locations (e.g. a third-party factory).
+never be transmitted to insecure locations (e.g. a third-party factory).
 
 If the intermediate CA certificate is compromised, it can be deactivated so new
 devices with credentials signed by the compromised intermediat CA certficate
