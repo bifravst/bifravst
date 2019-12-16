@@ -12,7 +12,7 @@ during device provisioning. This way the CA root certificate private key will
 never be transmitted to insecure locations (e.g. a third-party factory).
 
 If the intermediate CA certificate is compromised, it can be deactivated so new
-devices with credentials signed by the compromised intermediat CA certficate
+devices with credentials signed by the compromised intermediate CA certificate
 will no longer be provisioned.
 
 Devices that previously connected to the IoT Hub, will keep working.
