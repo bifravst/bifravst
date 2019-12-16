@@ -17,6 +17,14 @@ will no longer be provisioned.
 
 Devices that previously connected to the IoT Hub, will keep working.
 
+## Device Provisioning Service (DPS)
+
+Devices connect to IoT Hub using the Device Provisioning Service (DPS). This
+allows to better manage roaming devices. However this requires an extra
+connection step: first connect to DPS to retrieve the endpoint configuration,
+then connect to the IoT Hub endpoint. This is a one-time op, and the device can
+cache its associated IoT Hub endpoint.
+
 ## Create a CA root certificate
 
 This creates a CA root certificate and registers it with the Azure IoT Device
