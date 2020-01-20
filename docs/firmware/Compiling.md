@@ -61,13 +61,6 @@ CONFIG_CAT_TRACKER_APP_VERSION="<your version string>"
 Then build the actual application: change to the
 `./ncs/nrf/applications/cat_tracker` directory and build for your board:
 
-### Asset Tracker (`PCA10015`)
-
-> **Note:** Zephyr needs to be patched in order to enable the board.
-
-    patch -b ncs/zephyr/cmake/app/boilerplate.cmake < ncs/nrf/.github/workflows/zephyr.patch
-    west build -p auto -b nrf9160_pca10015ns
-
 ### Thingy:91 (`PCA20035`)
 
     west build -p auto -b nrf9160_pca20035ns
