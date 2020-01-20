@@ -25,15 +25,15 @@
   "dependencies": {},
   "devDependencies": {
     "@bifravst/code-style": "^6.0.1",
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-angular": "^8.2.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-angular": "^8.3.4",
     "@types/ajv": "^1.0.0",
-    "@types/jest": "^24.0.23",
-    "@types/node": "^13.1.1",
-    "ajv": "^6.10.2",
+    "@types/jest": "^24.9.0",
+    "@types/node": "^13.1.8",
+    "ajv": "^6.11.0",
     "husky": "^4.0.10",
     "jest": "^24.9.0",
-    "ts-jest": "^24.2.0",
+    "ts-jest": "^24.3.0",
     "typescript": "^3.8.0-dev.20191207"
   },
   "husky": {
