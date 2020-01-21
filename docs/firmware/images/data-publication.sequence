@@ -1,0 +1,8 @@
+participant Device: Cat tracker
+participant Cloud: Cloud service
+
+Device->Cloud: Publish Battery, accelerometer and GPS data
+Cloud->Device: Send new configuration (if any)
+Device->Cloud: Acknowledge new configuration
+Device->Cloud: Publish modem data (device information, network information)
+Device->Cloud: Publish buffered GPS data

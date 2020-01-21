@@ -41,6 +41,7 @@
 ## Cat Tracker Firmware
 
 - [Getting Started](./docs/firmware/GettingStarted.md)
+- [Overview](./docs/firmware/Overview.md)
 - [Supported Boards](./docs/firmware/SupportedBoards.md)
 - [Compiling](./docs/firmware/Compiling.md)
 - [Compiling using GitHub Actions](./docs/firmware/CompilingOnGitHub.md)

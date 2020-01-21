@@ -1,0 +1,7 @@
+participant Device: Cat tracker
+participant Cloud: Cloud service
+
+Device->Cloud: Requesting current configuration
+Cloud->Device: Send configuration
+Device->Cloud: Acknowledge new configuration
+Device->Cloud: Publish modem data (device information, network information)
