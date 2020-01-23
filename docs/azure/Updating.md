@@ -8,4 +8,5 @@ release, follow these steps.
     npx tsc
     LOCATION=northeurope
     az group deployment create --resource-group bifravst --mode Complete --name bifravst --template-file azuredeploy.json \
-        --parameters iotHubName='bifravst' location="$LOCATION"
+        --parameters appName='bifravst' location="$LOCATION"
+    func azure functionapp publish bifravstWebsite

@@ -57,6 +57,14 @@ you can _dockerize_ it like this:
 
 Put above into an executable file in your path.
 
+## Install the Azure Functions Core Tools
+
+Follow
+[the installation instructions](https://github.com/Azure/azure-functions-core-tools#installing),
+afterwards you should be able to execute the `func` command:
+
+    func
+
 ## Deploy the solution to your account
 
 > Note: since we will be using Azure Active Directory B2C it is recommended to
@@ -72,7 +80,9 @@ Deploy the solution in your preferred location (you can list them using
     LOCATION=northeurope
     az group create -l $LOCATION -n bifravst
     az group deployment create --resource-group bifravst --mode Complete --name bifravst --template-file azuredeploy.json \
-        --parameters iotHubName='bifravst' location="$LOCATION"
+        --parameters appName='bifravst' location="$LOCATION"
     # It's currently not possible to enable website hosting through the ARM template
     az storage blob service-properties update --account-name bifravstapp --static-website --index-document index.html
     az storage blob service-properties update --account-name bifravstdeviceui --static-website --index-document index.html
+    # Deploy the functions
+    func azure functionapp publish bifravstWebsite
