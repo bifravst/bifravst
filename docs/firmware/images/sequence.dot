@@ -5,13 +5,17 @@ digraph G {
     checkDeviceMode [ label="Check\ndevice mode" shape=diamond ]
     waitForMovement  [ label="Sleep and\nwait for\nmovement" shape=circle ]
     searchGPS [ label="Search for\nGPS fix" shape=circle ]
-    checkCellular [ label="Check current\ncellular network\nregistration\nstatus" shape=circle ]
+    checkCellular [ label="Check current\ncellular network\nregistration\nstatus" shape=diamond ]
     publish [ label="Publish data" shape=circle ]
+    buffer [ label="Buffer data" shape=circle ]
     sleepActive [ label="Sleep until\nwait time" shape=circle ]
-    checkDeviceMode:n -> waitForMovement [ label="Passive" ]
-    checkDeviceMode:e -> sleepActive [ label="Active" ]
+    checkDeviceMode -> waitForMovement [ label="Passive" ]
+    checkDeviceMode -> sleepActive [ label="Active" ]
     waitForMovement -> searchGPS
     sleepActive -> searchGPS
-    searchGPS -> checkCellular -> publish
-    publish -> checkDeviceMode:s
+    searchGPS -> checkCellular
+    checkCellular -> publish [ label="Connected" ] 
+    checkCellular -> buffer [ label="Not connected" ] 
+    publish -> checkDeviceMode
+    buffer -> checkDeviceMode
 }
