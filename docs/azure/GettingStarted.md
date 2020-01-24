@@ -75,14 +75,24 @@ Authenticate the CLI:
     az login
 
 Deploy the solution in your preferred location (you can list them using
-`az account list-locations`):
+`az account list-locations`) and export it on the environment variable
+`LOCATION`:
 
-    LOCATION=northeurope
     az group create -l $LOCATION -n bifravst
+    # It's currently also not possible to create Active Directory App Registrations through the ARM template
+    export APP_REG_CLIENT_ID=`az ad app create --display-name bifravst --query "appId" -o tsv`
+    echo "Note down this id an export it when updating as APP_REG_CLIENT_ID=$APP_REG_CLIENT_ID"
+    export TENANT_ID=`az account show  --query "tenantId" -o tsv`
+    echo "Note down this id an export it when updating as TENANT_ID=$TENANT_ID"
     az group deployment create --resource-group bifravst --mode Complete --name bifravst --template-file azuredeploy.json \
-        --parameters appName='bifravst' location="$LOCATION"
+        --parameters appName=bifravst location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID tenantId=$TENANT_ID
     # It's currently not possible to enable website hosting through the ARM template
     az storage blob service-properties update --account-name bifravstapp --static-website --index-document index.html
     az storage blob service-properties update --account-name bifravstdeviceui --static-website --index-document index.html
+
     # Deploy the functions
     func azure functionapp publish bifravstWebsite
+
+    # TODO: Maybe?
+    # add the reply url to the app registration reply urls
+    # az ad app update --id $clientId   --add replyUrls "https://${functionAppName}.azurewebsites.net/.auth/login/aad/callback"

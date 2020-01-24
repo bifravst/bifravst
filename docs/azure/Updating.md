@@ -6,7 +6,6 @@ release, follow these steps.
     git pull
     npm ci
     npx tsc
-    LOCATION=northeurope
     az group deployment create --resource-group bifravst --mode Complete --name bifravst --template-file azuredeploy.json \
-        --parameters appName='bifravst' location="$LOCATION"
+        --parameters appName=bifravst location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID tenantId=$TENANT_ID
     func azure functionapp publish bifravstWebsite
