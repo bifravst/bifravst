@@ -74,25 +74,48 @@ Authenticate the CLI:
 
     az login
 
+Pick a name for the solution and export it as `APP_NAME`, in this example we use
+`bifravst`.
+
 Deploy the solution in your preferred location (you can list them using
 `az account list-locations`) and export it on the environment variable
-`LOCATION`:
+`LOCATION`.
 
-    az group create -l $LOCATION -n bifravst
-    # It's currently also not possible to create Active Directory App Registrations through the ARM template
-    export APP_REG_CLIENT_ID=`az ad app create --display-name bifravst --query "appId" -o tsv`
-    echo "Note down this id an export it when updating as APP_REG_CLIENT_ID=$APP_REG_CLIENT_ID"
+The recommended workflow is to use a [_direnv_](https://direnv.net/) plugin for
+your shell which will automatically export the environment variables it finds in
+a `.envrc` file in the project folder:
+
+Create a new file `.envrc` in the project folder and add these environment
+variables.
+
+    export LOCATION=northeurope
+    export APP_NAME=bifravst
+
+Add the tenant ID:
+
     export TENANT_ID=`az account show  --query "tenantId" -o tsv`
-    echo "Note down this id an export it when updating as TENANT_ID=$TENANT_ID"
-    az group deployment create --resource-group bifravst --mode Complete --name bifravst --template-file azuredeploy.json \
-        --parameters appName=bifravst location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID tenantId=$TENANT_ID
+    echo "export TENANT_ID=$TENANT_ID" >> .envrc
+    direnv allow
+
+Now create the solution:
+
+    az group create -l $LOCATION -n $APP_NAME
+    # It's currently also not possible to create Active Directory App Registrations through the ARM template
+    export APP_REG_CLIENT_ID=`az ad app create --display-name $APP_NAME --query "appId" -o tsv`
+    # Grant User.Read permission
+    az ad app permission add --id $APP_REG_CLIENT_ID --api 00000002-0000-0000-c000-000000000000 --api-permissions 311a71cc-e848-46a1-bdf8-97ff7156d8e6=Scope
+    # Configure auth callback
+    az ad app update --id $APP_REG_CLIENT_ID --add replyUrls "https://${APP_NAME}website.azurewebsites.net/auth-callback"
+    az group deployment create --resource-group $APP_NAME --mode Complete --name $APP_NAME --template-file azuredeploy.json \
+        --parameters appName=$APP_NAME location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID tenantId=$TENANT_ID
     # It's currently not possible to enable website hosting through the ARM template
-    az storage blob service-properties update --account-name bifravstapp --static-website --index-document index.html
-    az storage blob service-properties update --account-name bifravstdeviceui --static-website --index-document index.html
+    az storage blob service-properties update --account-name ${APP_NAME}app --static-website --index-document index.html
+    az storage blob service-properties update --account-name ${APP_NAME}deviceui --static-website --index-document index.html
 
     # Deploy the functions
-    func azure functionapp publish bifravstWebsite
+    func azure functionapp publish ${APP_NAME}website
 
-    # TODO: Maybe?
-    # add the reply url to the app registration reply urls
-    # az ad app update --id $clientId   --add replyUrls "https://${functionAppName}.azurewebsites.net/.auth/login/aad/callback"
+Save the App Registration Client ID for later use:
+
+    echo "export APP_REG_CLIENT_ID=$APP_REG_CLIENT_ID" >> .envrc
+    direnv allow
