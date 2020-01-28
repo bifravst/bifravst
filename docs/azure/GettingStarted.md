@@ -97,15 +97,36 @@ Add the tenant ID:
     echo "export TENANT_ID=$TENANT_ID" >> .envrc
     direnv allow
 
-Now create the solution:
+Now create the resource group for the solution:
 
     az group create -l $LOCATION -n $APP_NAME
-    # It's currently also not possible to create Active Directory App Registrations through the ARM template
-    export APP_REG_CLIENT_ID=`az ad app create --display-name $APP_NAME --query "appId" -o tsv`
-    # Grant User.Read permission
-    az ad app permission add --id $APP_REG_CLIENT_ID --api 00000002-0000-0000-c000-000000000000 --api-permissions 311a71cc-e848-46a1-bdf8-97ff7156d8e6=Scope
-    # Configure auth callback
-    az ad app update --id $APP_REG_CLIENT_ID --add replyUrls "https://${APP_NAME}website.azurewebsites.net/auth-callback"
+
+[It's currently also not possible](https://github.com/bifravst/azure/issues/1)
+to create Active Directory B2C and application through the ARM template, you
+need to follow
+[these instructions](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications)
+and create a B2C tenant and an application. Use `http://localhost:3000/` (for
+local development) and `https://${APP_NAME}website.azurewebsites.net/` as the
+redirect URLs.
+
+Save the _directory (tenant) id_ of the created Active Directory B2C and the
+_application (client) id_ to the environment variable `APP_REG_CLIENT_ID` in the
+`.envrc` file:
+
+    export TENANT_ID=...
+    export APP_REG_CLIENT_ID=...
+
+Create the user flow for sign up and sign in and save the name (e.g.
+`B2C_1_signup_signin`) in the `.envrc` file:
+
+    export SIGNUP_USER_FLOW=B2C_1_signup_signin
+
+Remember to allow the changed file:
+
+    direnv allow
+
+Now deploy the solution:
+
     az group deployment create --resource-group $APP_NAME --mode Complete --name $APP_NAME --template-file azuredeploy.json \
         --parameters appName=$APP_NAME location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID tenantId=$TENANT_ID
     # It's currently not possible to enable website hosting through the ARM template
@@ -115,7 +136,5 @@ Now create the solution:
     # Deploy the functions
     func azure functionapp publish ${APP_NAME}website
 
-Save the App Registration Client ID for later use:
-
-    echo "export APP_REG_CLIENT_ID=$APP_REG_CLIENT_ID" >> .envrc
-    direnv allow
+TODO: authenticate against Azure function apps scopes
+https://azure.microsoft.com/en-us/blog/azure-ad-b2c-access-tokens-now-in-public-preview/
