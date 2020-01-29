@@ -31,10 +31,18 @@ This creates a CA root certificate and registers it with the Azure IoT Device
 Provisioning Service.
 
     node cli create-ca-root
-    node cli proof-ca-root-possession
 
 The CA root certificate should not be shared. The number of CA root certificates
 is typically very small, one (1) is sufficient.
+
+Proof your ownership of the CA with
+
+    node cli proof-ca-root-possession
+
+> Note: if you see the error _"A required certificate is not within its validity
+> period when verifying against the current system clock or the timestamp in the
+> signed file."_ double check that your system's clock is correct, if it is set
+> to a future time, this will be the cause of this error.
 
 ## Create a CA intermediate certificate
 
