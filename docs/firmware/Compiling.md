@@ -3,7 +3,7 @@
 ## Prepare your system
 
 > **Note:** You can always check out the
-> [GitHub Actions workflow](https://github.com/bifravst/cat-tracker-fw/blob/saga/.github/workflows/build-and-release.yaml)
+> [GitHub Actions workflow](https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml)
 > as a reference, which sets up a blank Ubuntu image to compile the firmware.
 
 Follow the
@@ -17,7 +17,7 @@ SDK_.
 Create a folder, e.g. `ncs` and init the project:
 
     cd ./ncs
-    west init -m https://github.com/bifravst/cat-tracker-fw
+    west init -m https://github.com/bifravst/firmware
     west update
     sudo pip3 install -r zephyr/scripts/requirements.txt
     sudo pip3 install pc_ble_driver_py

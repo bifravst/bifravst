@@ -36,7 +36,7 @@ operators country code. This is sufficient to provide the GPS module with the
 data it needs for a quick GPS fix.
 
 > **Note:**
-> [AGPS is currently not implemented in the Cat Tracker Firmware](https://github.com/bifravst/cat-tracker-fw/issues/34).
+> [AGPS is currently not implemented in the Cat Tracker Firmware](https://github.com/bifravst/firmware/issues/8).
 
 ## Geolocating cells
 

@@ -3,7 +3,7 @@
 Since it is a tedious effort to compile the application, you can leverage GitHub
 Actions (which is free for open-source projects) to compile the application for
 you. Using the
-[provided workflow](https://github.com/bifravst/cat-tracker-fw/blob/saga/.github/workflows/build-and-release.yaml)
+[provided workflow](https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml)
 you can quickly set up compilation for your application using a fork.
 
 After you have forked the repository,

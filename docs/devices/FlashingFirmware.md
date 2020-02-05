@@ -3,10 +3,10 @@
 ## Configure and build the firmware
 
 > Removing this step is planned (see
-> [this issue](https://github.com/bifravst/cat-tracker-fw/issues/17)), so that
+> [this issue](https://github.com/bifravst/firmware/issues/12)), so that
 > at some point we can provide you with pre-built HEX files for all supported
 > devices, which we currently publish in the
-> [GitHub releases](https://github.com/bifravst/cat-tracker-fw/releases) for the
+> [GitHub releases](https://github.com/bifravst/firmware/releases) for the
 > firmware project.
 >
 > How the HEX files are automatically built for every commit to the GitHub
@@ -18,7 +18,7 @@ build needs to be build to include the MQTT endpoint for your cloud account.
 This is done through the config `CLOUD_HOST_NAME` setting.
 
 In order to use your endpoint, add a new entry to
-[`applications\cat_tracker\prj.conf`](https://github.com/bifravst/cat-tracker-fw/blob/saga/applications/cat_tracker/prj.conf):
+[`applications\cat_tracker\prj.conf`](https://github.com/bifravst/firmware/blob/saga/applications/cat_tracker/prj.conf):
 
     CONFIG_BIFRAVST_CLOUD_HOST_NAME="<mqtt endpoint>"
 

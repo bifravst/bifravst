@@ -45,7 +45,7 @@ _Bifravst_ aims to provide answers and best practices to these questions:
 
 _Bifravst_ is licensed under the [3-clause BSD license](./LICENSE) (software)
 and the
-[Nordic 5-clause BSD license](https://github.com/bifravst/cat-tracker-fw/blob/saga/LICENSE)
+[Nordic 5-clause BSD license](https://github.com/bifravst/firmware/blob/saga/LICENSE)
 (firmware).
 
 ### Project characteristics overview

@@ -38,14 +38,14 @@ but using a CI runner allows you to automate your software releases using a
 project called
 [semantic release](https://github.com/semantic-release/semantic-release).
 
-[This repository](https://github.com/bifravst/cat-tracker-fw/releases) contains
+[This repository](https://github.com/bifravst/firmware/releases) contains
 the
 
-- [CircleCI configuration file](https://github.com/bifravst/cat-tracker-fw/blob/60465f8264f83535ea2931a4adb3b939e179fca3/.circleci/config.yml) which
+- [CircleCI configuration file](https://github.com/bifravst/firmware/blob/60465f8264f83535ea2931a4adb3b939e179fca3/.circleci/config.yml) which
   builds the HEX files for the application located in
-  [applications/cat_tracker](https://github.com/bifravst/cat-tracker-fw/tree/60465f8264f83535ea2931a4adb3b939e179fca3/applications/cat_tracker)
+  [applications/cat_tracker](https://github.com/bifravst/firmware/tree/60465f8264f83535ea2931a4adb3b939e179fca3/applications/cat_tracker)
 - and uses semantic release to attach these HEX files
-  [to GitHub releases](https://github.com/bifravst/cat-tracker-fw/releases/tag/v0.5.3).
+  [to GitHub releases](https://github.com/bifravst/firmware/releases/tag/v0.5.3).
 
 Following this example, all developers need to do format their commit messages
 following a certain schema (you can read more in detail about this process
@@ -58,4 +58,4 @@ new release.
 
 [GitHub Actions](https://github.com/features/actions) are a new feature which is to be released in November 2019, but many GitHub organizations already are enrolled in the public beta. Like CircleCI it is a generic task runner but offers deeper integration into GitHub.
 
-[Here is the workflow definition for GitHub Actions](https://github.com/bifravst/cat-tracker-fw/blob/d821cd83c3ca8ac7f910163764d46668412b47c4/.github/workflows/build-and-release.yaml) which automatically compiles HEX files and attaches them to the GitHub release.
+[Here is the workflow definition for GitHub Actions](https://github.com/bifravst/firmware/blob/d821cd83c3ca8ac7f910163764d46668412b47c4/.github/workflows/build-and-release.yaml) which automatically compiles HEX files and attaches them to the GitHub release.
