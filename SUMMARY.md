@@ -45,6 +45,7 @@
 - [Supported Boards](./docs/firmware/SupportedBoards.md)
 - [Compiling](./docs/firmware/Compiling.md)
 - [Compiling using GitHub Actions](./docs/firmware/CompilingOnGitHub.md)
+- [Compiling using Docker](./docs/firmware/CompilingUsingDocker.md)
 - [Device-Cloud-Protocol](./docs/firmware/Protocol.md)
 - [Device Data and Configuration](./docs/firmware/SensorDataAndConfiguration.md)
 - [LED Schema](./docs/firmware/LEDSchema.md)
