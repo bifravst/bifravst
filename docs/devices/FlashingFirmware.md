@@ -28,7 +28,7 @@ You can find the endpoint for your installation through the CLI:
 
 ### Build
 
-Follow the instructions on [how to build](../firmware/Compiling.md) the HEX file
+Follow the instructions on [how to build](../firmware/Building.md) the HEX file
 for your board.
 
 ## Flash using the _Programmer_

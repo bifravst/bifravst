@@ -1,4 +1,4 @@
-# Compiling using Docker
+# Building using Docker
 
 The docker image is not intended to be shared, but to simplify building locally.
 It is used to cache all dependencies so you can build and develop locally

@@ -1,4 +1,4 @@
-# Compiling the project
+# Building the project
 
 ## Prepare your system
 
