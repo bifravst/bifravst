@@ -11,7 +11,7 @@ application.
 
 ![GitHub release with attached HEX files](images/github-release-with-hex-files.png)
 
-One precondition for that is the automation of the process that compiles the HEX
+One precondition for that is the automation of the process that builds the HEX
 file of an application.
 
 In this example I'll provide the configuration for Circle CI, a continuous
@@ -38,8 +38,7 @@ but using a CI runner allows you to automate your software releases using a
 project called
 [semantic release](https://github.com/semantic-release/semantic-release).
 
-[This repository](https://github.com/bifravst/firmware/releases) contains
-the
+[This repository](https://github.com/bifravst/firmware/releases) contains the
 
 - [CircleCI configuration file](https://github.com/bifravst/firmware/blob/60465f8264f83535ea2931a4adb3b939e179fca3/.circleci/config.yml) which
   builds the HEX files for the application located in
@@ -56,6 +55,10 @@ new release.
 
 ## Using GitHub Actions
 
-[GitHub Actions](https://github.com/features/actions) are a new feature which is to be released in November 2019, but many GitHub organizations already are enrolled in the public beta. Like CircleCI it is a generic task runner but offers deeper integration into GitHub.
+[GitHub Actions](https://github.com/features/actions) are a new feature which is
+to be released in November 2019, but many GitHub organizations already are
+enrolled in the public beta. Like CircleCI it is a generic task runner but
+offers deeper integration into GitHub.
 
-[Here is the workflow definition for GitHub Actions](https://github.com/bifravst/firmware/blob/d821cd83c3ca8ac7f910163764d46668412b47c4/.github/workflows/build-and-release.yaml) which automatically compiles HEX files and attaches them to the GitHub release.
+[Here is the workflow definition for GitHub Actions](https://github.com/bifravst/firmware/blob/d821cd83c3ca8ac7f910163764d46668412b47c4/.github/workflows/build-and-release.yaml)
+which automatically builds HEX files and attaches them to the GitHub release.

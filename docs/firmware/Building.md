@@ -4,11 +4,11 @@
 
 > **Note:** You can always check out the
 > [GitHub Actions workflow](https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml)
-> as a reference, which sets up a blank Ubuntu image to compile the firmware.
+> as a reference, which sets up a blank Ubuntu image to build the firmware.
 
 Follow the
 [Getting Started Guide](http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html)
-of the Nordic Connect SDK to set up your system for compiling the project.
+of the Nordic Connect SDK to set up your system for building the project.
 Especially make sure to follow the instructions on _Installing the nRF Connect
 SDK_.
 

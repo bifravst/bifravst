@@ -1,8 +1,8 @@
 # Compiling using Docker
 
-The docker image is not intended to be shared, but to simplify compiling
-locally. It is used to cache all dependencies so you can compile and develop
-locally without needing to install dependencies directly in your system.
+The docker image is not intended to be shared, but to simplify building locally.
+It is used to cache all dependencies so you can build and develop locally
+without needing to install dependencies directly in your system.
 
     git clone https://github.com/bifravst/firmware
     cd firmware
