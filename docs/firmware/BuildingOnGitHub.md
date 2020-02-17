@@ -1,4 +1,4 @@
-# Compiling using GitHub actions
+# Building using GitHub actions
 
 Since it is a tedious effort to build the application, you can leverage GitHub
 Actions (which is free for open-source projects) to build the application for
