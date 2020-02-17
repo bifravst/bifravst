@@ -1,8 +1,13 @@
 # Compiling using Docker
 
 The docker image is not intended to be shared, but to simplify compiling
-locally. It includes the source code so the dependencies can be cached.
+locally. It is used to cache all dependencies so you can compile and develop
+locally without needing to install dependencies directly in your system.
 
-    mkdir ./workdir
+    git clone https://github.com/bifravst/firmware
+    cd firmware
     docker build -t ncs .
-    docker run --name ncs --rm -v ${PWD}:/workdir/nrf/fw-nrfconnect-nrf ncs west build -p auto -b nrf9160_pca20035ns
+    BROKER_HOSTNAME=`aws iot describe-endpoint --endpoint-type iot:Data-ATS | jq -r '.endpointAddress'`
+    echo "CONFIG_AWS_IOT_BROKER_HOST_NAME=\"${BROKER_HOSTNAME}\"" >> prj.conf
+    docker run --name ncs --rm -v ${PWD}:/workdir/ncs/firmware ncs /bin/bash -c 'cd ncs/firmware; west build -p auto -b nrf9160_pca20035ns'
+    ls -la build/zephyr/merged.hex
