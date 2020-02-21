@@ -17,7 +17,8 @@ SDK_.
 Create a folder, e.g. `ncs` and init the project:
 
     cd ./ncs
-    west init -m https://github.com/bifravst/firmware
+    sudo pip3 install -U --pre west
+    west init -m https://github.com/bifravst/firmware --mr saga
     west update
     sudo pip3 install -r zephyr/scripts/requirements.txt
     sudo pip3 install pc_ble_driver_py
