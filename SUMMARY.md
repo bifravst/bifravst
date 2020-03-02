@@ -25,6 +25,7 @@
 ## Bifravst on Azure
 
 - [Getting Started](./docs/azure/GettingStarted.md)
+- [RunningInDocker](./docs/azure/RunningInDocker.md)
 - [Updating an existing installation](./docs/azure/Updating.md)
 - [Device Credentials](./docs/azure/DeviceCredentials.md)
 - [Connect using the simulator](./docs/azure/Simulator.md)
