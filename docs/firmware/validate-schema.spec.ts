@@ -32,7 +32,8 @@ describe('schemas', () => {
 		it('should validate state.json', async () => {
 			const validate = ajv.getSchema(
 				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/schema.json',
-			)
+			) as Ajv.ValidateFunction
+			expect(validate).toBeDefined()
 			const state = await fs.readFile(
 				path.resolve(process.cwd(), 'docs', 'firmware', 'state.json'),
 				'utf-8',
@@ -47,7 +48,8 @@ describe('schemas', () => {
 		it('should validate batch-message.json', async () => {
 			const validate = ajv.getSchema(
 				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/batch-schema.json',
-			)
+			) as Ajv.ValidateFunction
+			expect(validate).toBeDefined()
 			const state = await fs.readFile(
 				path.resolve(process.cwd(), 'docs', 'firmware', 'batch-message.json'),
 				'utf-8',
