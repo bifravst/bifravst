@@ -27,4 +27,4 @@ Run the script to generate a CA certificate:
 Run this script to generate a certificate for a new device and register it in
 the registry:
 
-    node cli register-device
+    node cli create-device-cert
