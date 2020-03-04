@@ -8,6 +8,8 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier/)
 [![ESLint: TypeScript](https://img.shields.io/badge/ESLint-TypeScript-blue.svg)](https://github.com/typescript-eslint/typescript-eslint)
 
+> 🚧 *Note:* The Azure implementation is [work in progress](https://github.com/bifravst/bifravst/issues/29).
+
 ## System requirements
 
 You need a development environment with the
