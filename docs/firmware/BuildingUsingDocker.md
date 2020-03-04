@@ -13,17 +13,18 @@ without needing to install dependencies directly in your system.
     docker build -t ncs .
     BROKER_HOSTNAME=`aws iot describe-endpoint --endpoint-type iot:Data-ATS | jq -r '.endpointAddress'`
     echo "CONFIG_AWS_IOT_BROKER_HOST_NAME=\"${BROKER_HOSTNAME}\"" >> prj.conf
-    ls -la build/zephyr/merged.hex
 
 ## Building
 
 ### Thingy:91 (`PCA20035`)
 
     docker run --name ncs --rm -v ${PWD}:/workdir/ncs/firmware ncs /bin/bash -c 'cd ncs/firmware; west build -p auto -b nrf9160_pca20035ns'
+    ls -la build/zephyr/merged.hex
 
 ### nRF9160 DK (`PCA10090`)
 
     docker run --name ncs --rm -v ${PWD}:/workdir/ncs/firmware ncs /bin/bash -c 'cd ncs/firmware; west build -p auto -b nrf9160_pca10090ns'
+    ls -la build/zephyr/merged.hex
 
 ## Location of the HEX file
 
