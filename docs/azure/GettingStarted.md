@@ -26,7 +26,7 @@ with
 > **Note:** Remember to
 > [authenticate against the GitHub package registry](../guides/GitHubRegistry.md).
 
-Clone the latest version of the [aws](https://github.com/bifravst/azure) project
+Clone the latest version of the [azure](https://github.com/bifravst/azure) project
 and install the dependencies:
 
     git clone https://github.com/bifravst/azure.git bifravst-azure
