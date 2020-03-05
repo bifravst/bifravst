@@ -25,7 +25,7 @@
 ## Bifravst on Azure
 
 - [Getting Started](./docs/azure/GettingStarted.md)
-- [RunningInDocker](./docs/azure/RunningInDocker.md)
+- [Running in Docker](./docs/azure/RunningInDocker.md)
 - [Updating an existing installation](./docs/azure/Updating.md)
 - [Device Credentials](./docs/azure/DeviceCredentials.md)
 - [Connect using the simulator](./docs/azure/Simulator.md)
@@ -71,3 +71,4 @@
 ## General Project information
 
 - [Versioning](./docs/Versioning.md)
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
