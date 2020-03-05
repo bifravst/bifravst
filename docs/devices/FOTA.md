@@ -4,7 +4,7 @@
 
 Firmware updates over the Air on AWS are implemented using AWS IoT Jobs,
 following the Nordic
-[FOTA sample](https://github.com/NordicPlayground/fw-nrfconnect-nrf/tree/master/samples/nrf9160/aws_fota).
+[FOTA example](https://github.com/NordicPlayground/fw-nrfconnect-nrf/tree/master/samples/nrf9160/aws_fota).
 
 ## See also
 

@@ -23,13 +23,13 @@ questions).
 
 ## Vision
 
-_Bifravst_ aims to provide a concrete end-to-end sample for an IoT product in
+_Bifravst_ aims to provide a concrete end-to-end example for an IoT product in
 the asset tracker space, a _Cat Tracker_.
 
 ![Bifravst: Cat Tracker IoT example](./docs/logo-with-text.png)
 
 **With _Bifravst_ developers are enabled to set up a real world IoT solution
-using their cloud provider and start adapting the sample firmware and software
+using their cloud provider and start adapting the example firmware and software
 for their use case within minutes.**
 
 _Bifravst_ aims to provide answers and best practices to these questions:
@@ -67,8 +67,8 @@ and the
 
 _Bifravst_ is built around the following principles:
 
-- _teach through showing_: all samples are designed to solve a concrete use-case
-  (a _Cat Tracker_) instead of providing generic or abstract solutions.
+- _teach through showing_: all examples are designed to solve a concrete
+  use-case (a _Cat Tracker_) instead of providing generic or abstract solutions.
   _Bifravst_ is not a framework, but a real application.
 - _err on the side of security_: _Bifravst_ follows the most robust security
   recommendations of the respective cloud provider.
@@ -78,13 +78,14 @@ _Bifravst_ is built around the following principles:
 - _serverless_: _Bifravst_ uses a serverless architecture as much as possible to
   have near zero costs for the operation during development but provide
   horizontal scaling resources to be used in a production system if needed.
-- _cloud native_: _Bifravst_ samples are designed following the respective cloud
-  providers' best practices to reduce development efforts due to abstraction.
+- _cloud native_: _Bifravst_ examples are designed following the respective
+  cloud providers' best practices to reduce development efforts due to
+  abstraction.
 - _being offline is not an exception_: highly mobile IIoT products need to
   handle unreliable connections gracefully, by implementing mechanisms to retry
   sending of failed data. This also means that the sensor measurements need to
   be timestamped when they are created, not when they arrive at the cloud.
-- _maximize powersaving_: the firmware samples should highlight power-saving
+- _maximize powersaving_: the firmware examples should highlight power-saving
   features of the nRF9160 because this is critical for developing very small
   form-factor devices.
 
