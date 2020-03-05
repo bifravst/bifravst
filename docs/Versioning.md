@@ -10,11 +10,9 @@ The next version is determined by scanning the commit messages. They must follow
 and in every library [a hook](https://github.com/marionebl/commitlint) will
 check commit messages against these rules.
 
-> :information_source: The `package.json` of a project should only contain
-> `0.0.0-development` as the `version` property, semantic-release will ignore
-> the value.  
-> :warning: Only the published package on npm will contain the correct version
-> number.
+> ℹ️ The `package.json` of a project should only contain `0.0.0-development` as
+> the `version` property, semantic-release will ignore the value.  
+> ⚠️ Only the published package on npm will contain the correct version number.
 
 ## How to release a new version of a package
 
@@ -42,15 +40,14 @@ Breaking Release:
 
     <description of breaking change>
 
-:warning: Note that **any other** commit message format **will not trigger** a
-release.
+⚠️ Note that **any other** commit message format **will not trigger** a release.
 
-### Patch release (`fix`) `2.3.4 -> 2.3.5` :beetle:
+### Patch release (`fix`) `2.3.4 -> 2.3.5` 🐞
 
-:information_source: A fix is a change to the implementation which removes a bug
-**without changing the public API** (method names and signatures, exports) of
-the library. The consumer of the library must not need to change their
-implementation when installing the fixed version.
+ℹ️ A fix is a change to the implementation which removes a bug **without
+changing the public API** (method names and signatures, exports) of the library.
+The consumer of the library must not need to change their implementation when
+installing the fixed version.
 
 To release a fix (which will update the version from `2.3.4` to `2.3.5`, use the
 type `fix` in the commit message:
@@ -64,13 +61,13 @@ affected _component_.
 
 Scopes are useful when the project is rather big.
 
-### Feature release (`feat`) `2.3.4 -> 2.4.0` :rocket:
+### Feature release (`feat`) `2.3.4 -> 2.4.0` 🚀
 
-:information_source: A feature is a change to the implementation of a library
-which adds additional functionality **without changing the public API** of the
-library. You may add new exports, methods and even extra, optional method
-arguments, but the consumer of the library must not need to change their
-implementation when installing the library with the new feature.
+ℹ️ A feature is a change to the implementation of a library which adds
+additional functionality **without changing the public API** of the library. You
+may add new exports, methods and even extra, optional method arguments, but the
+consumer of the library must not need to change their implementation when
+installing the library with the new feature.
 
 To release a feature (which will update the version from `2.3.4` to `2.4.0`, use
 the type `feat` in the commit message:
@@ -79,14 +76,14 @@ the type `feat` in the commit message:
 
 You can optionally add a scope as well.
 
-### Breaking Release (`BREAKING CHANGE:`) `2.3.4 -> 3.0.0` :rotating_light:
+### Breaking Release (`BREAKING CHANGE:`) `2.3.4 -> 3.0.0` 🚨
 
-:information*source: Every time the public API of the library changes in a way
-that requires the consumer to update their implementation **you must mark the
-change as breaking**. This can happen if method names and arguments are renamed,
+ℹ️ Every time the public API of the library changes in a way that requires the
+consumer to update their implementation **you must mark the change as
+breaking**. This can happen if method names and arguments are renamed,
 previously optional arguments become required, arguments get removed, classes
 get renamed. Even if the change is very small, as soon as you are breaking the
-library's \_contract* (it's public API) it is considered a breaking change,
+library's \_contract\* (it's public API) it is considered a breaking change,
 [according to semver](https://semver.org/#spec-item-8).
 
 To release a breaking release (which will update the version from `2.3.4` to
