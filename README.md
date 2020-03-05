@@ -34,7 +34,7 @@ for their use case within minutes.**
 
 _Bifravst_ aims to provide answers and best practices to these questions:
 
-- _How can I connect Nordic's long-range chips to my cloud provider?_
+- _How can I connect Nordic's cellular IoT chips to my cloud provider?_
 - _How do devices send data into the cloud?_
 - _How can data be sent to the devices?_
 - _How can users and other services interact with devices?_
