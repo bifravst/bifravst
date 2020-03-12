@@ -142,6 +142,12 @@ For cloud providers that have no native UDP+CoAP support using a bridge, e.g.
 [Eclipse Californium](https://github.com/eclipse/californium), shall be
 evaluated.
 
+### What does _Bifravst_ mean?
+
+Bifravst is from the Nordic mythology and refers to the bridge built by the gods
+between earth and heaven. Read more about it
+[here](https://www.lyngen.com/2020/03/the-vikings-and-the-northern-lights-bridge/).
+
 ---
 
 **Acknowledgments**  
