@@ -38,13 +38,15 @@ but using a CI runner allows you to automate your software releases using a
 project called
 [semantic release](https://github.com/semantic-release/semantic-release).
 
-[This repository](https://github.com/bifravst/firmware/releases) contains the
+> _Note:_ by default `semantic-release` will get the `reposityUrl` it uses to
+> determine the changes between releases from the `package.json` which after
+> forking the `firmware` repo will still point to
+> `https://github.com/bifravst/firmware.git`. Either, update that to the URL of
+> your fork, or
+> [provide it as an argument to the `semantic-release` CLI](https://semantic-release.gitbook.io/semantic-release/usage/configuration#repositoryurl).
 
-- [CircleCI configuration file](https://github.com/bifravst/firmware/blob/60465f8264f83535ea2931a4adb3b939e179fca3/.circleci/config.yml) which
-  builds the HEX files for the application located in
-  [applications/cat_tracker](https://github.com/bifravst/firmware/tree/60465f8264f83535ea2931a4adb3b939e179fca3/applications/cat_tracker)
-- and uses semantic release to attach these HEX files
-  [to GitHub releases](https://github.com/bifravst/firmware/releases/tag/v0.5.3).
+[Here is the workflow definition for GitHub Actions](https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml)
+which automatically builds HEX files and attaches them to the GitHub release.
 
 Following this example, all developers need to do format their commit messages
 following a certain schema (you can read more in detail about this process
@@ -52,13 +54,3 @@ following a certain schema (you can read more in detail about this process
 new release.
 
 ![GitHub releases](images/github-releases.png)
-
-## Using GitHub Actions
-
-[GitHub Actions](https://github.com/features/actions) are a new feature which is
-to be released in November 2019, but many GitHub organizations already are
-enrolled in the public beta. Like CircleCI it is a generic task runner but
-offers deeper integration into GitHub.
-
-[Here is the workflow definition for GitHub Actions](https://github.com/bifravst/firmware/blob/d821cd83c3ca8ac7f910163764d46668412b47c4/.github/workflows/build-and-release.yaml)
-which automatically builds HEX files and attaches them to the GitHub release.
