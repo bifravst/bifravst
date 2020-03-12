@@ -10,6 +10,8 @@ destination.
 
 ## Locating cells based on device data
 
+![Calculating the location of a cell using device geo location data](https://github.com/bifravst/cell-geolocation-helpers/raw/saga/map.gif)
+
 GPS locations acquired by devices together with their cell information (cell id,
 area id, MCC/MNC) are stored and and used to
 [calculate the location of the cell](https://github.com/bifravst/cell-geolocation-helpers#cellfromgeolocations).
