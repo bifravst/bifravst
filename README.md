@@ -142,6 +142,18 @@ For cloud providers that have no native UDP+CoAP support using a bridge, e.g.
 [Eclipse Californium](https://github.com/eclipse/californium), shall be
 evaluated.
 
+#### IoT Cloud vendor survey results
+
+_(Normalized: most popular choice = 100%)_
+
+|            | Nordic internal (2019) | [Eclipse Fdtn. (2019)](https://iot.eclipse.org/resources/iot-developer-survey/iot-comm-adoption-survey-2019.pdf) |
+| ---------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| AWS        | 1.                     | 1.                                                                                                               |
+| Google     | 2. (-21%)              | 3. (-27%)                                                                                                        |
+| Azure      | 3. (-34%)              | 2. (-16%)                                                                                                        |
+| ARM Pelion | 4. (-75%)              |                                                                                                                  |
+| IBM        | 5. (-80%)              |                                                                                                                  |
+
 ### What does _Bifravst_ mean?
 
 Bifravst is from the Nordic mythology and refers to the bridge built by the gods
