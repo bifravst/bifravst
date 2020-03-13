@@ -15,19 +15,19 @@
 - [Cell Geolocation](./docs/aws/CellGeolocation.md)
 - [Uninstalling](./docs/aws/Uninstalling.md)
 
-## Bifravst on GCP
-
-- [Getting Started](./docs/gcp/GettingStarted.md)
-- [Device Credentials](./docs/gcp/DeviceCredentials.md)
-- [Connect using the simulator](./docs/gcp/Simulator.md)
-
-## Bifravst on Azure
+## Bifravst on Azure (WIP)
 
 - [Getting Started](./docs/azure/GettingStarted.md)
 - [Running in Docker](./docs/azure/RunningInDocker.md)
 - [Updating an existing installation](./docs/azure/Updating.md)
 - [Device Credentials](./docs/azure/DeviceCredentials.md)
 - [Connect using the simulator](./docs/azure/Simulator.md)
+
+## Bifravst on GCP (WIP)
+
+- [Getting Started](./docs/gcp/GettingStarted.md)
+- [Device Credentials](./docs/gcp/DeviceCredentials.md)
+- [Connect using the simulator](./docs/gcp/Simulator.md)
 
 ## Cat Tracker Web Application
 
