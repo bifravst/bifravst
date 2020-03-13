@@ -20,7 +20,6 @@
 - [Getting Started](./docs/gcp/GettingStarted.md)
 - [Device Credentials](./docs/gcp/DeviceCredentials.md)
 - [Connect using the simulator](./docs/gcp/Simulator.md)
-- [Service Equivalents](./docs/gcp/ServiceEquivalents.md)
 
 ## Bifravst on Azure
 
@@ -29,7 +28,6 @@
 - [Updating an existing installation](./docs/azure/Updating.md)
 - [Device Credentials](./docs/azure/DeviceCredentials.md)
 - [Connect using the simulator](./docs/azure/Simulator.md)
-- [Service Equivalents](./docs/azure/ServiceEquivalents.md)
 
 ## Cat Tracker Web Application
 
