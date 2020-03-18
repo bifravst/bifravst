@@ -7,7 +7,7 @@ Flash the latest modem firmware in case you haven't done this already. Find it
 on
 [NordicSemi.com](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF9160-DK/Download),
 e.g.
-[`mfwnrf9160101.zip`](https://www.nordicsemi.com/-/media/Software-and-other-downloads/Dev-Kits/nRF9160-DK/mfwnrf9160101.zip)
+[`mfwnrf9160111.zip`](https://www.nordicsemi.com/-/media/Software-and-other-downloads/Dev-Kits/nRF9160-DK/mfwnrf9160111.zip)
 using the _Programmer_ of the
 [nRF Connect for Desktop](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
 app.
