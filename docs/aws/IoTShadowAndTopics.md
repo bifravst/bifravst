@@ -6,8 +6,9 @@ is used to send device data and configuration.
 
 ## Reported state
 
-The document is described [in this JSON schema file](../firmware/schema.json).
-See [this JSON document](../firmware/state.json) for an example device state.
+The document is described
+[in this JSON schema file](../firmware/state.schema.json). See
+[this JSON document](../firmware/state.json) for an example device state.
 
 ## Desired state
 

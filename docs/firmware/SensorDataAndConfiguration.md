@@ -1,16 +1,30 @@
 # Device Data and Configuration
 
 The data published by the device and the configuration options are described in
-detail in [this JSON schema file](./schema.json). See
+detail in [this JSON schema file](./state.schema.json). See
 [this JSON document](./state.json) for an example device state.
 
 Sending and receiving this data is different per cloud-operator, see
 implementation details for [AWS here](../aws/IoTShadowAndTopics.md).
 
-### Batch data
+## State vs Messages
 
-The firmware may send data as batch, unsing the schema described
-[in this JSON schema file](./batch-schema.json). See
+Most data is stored in the digital twin of the device, this is useful to be able
+to quickly query the last known data from the device. However some data does not
+fit well into this model, e.g. because of its ephemeral nature. In the Cat
+Tracker example we send the button pushes as a message and do not store it in
+the digital twin; after all it is a UI element and it in case of push buttons
+has no _state_ which could be restored on the device or persists over a longer
+time.
+
+The messages published by the device are described in detail in
+[this JSON schema file](./messages.schema.json). See
+[this JSON document](./message.json) for an example device state.
+
+## Batch data
+
+The firmware may send data as batch, using the schema described
+[in this JSON schema file](./batch.schema.json). See
 [this JSON document](./batch-message.json) for an example batch message.
 
 For sending batched data from the device, the topic `<deviceId>/batch` is used.
@@ -30,10 +44,11 @@ seconds configured in `cfg.mvres` before publishing the next time.
 If it detects no movement for the amount of seconds specified in `cfg.mvt`, it
 will also publish data once.
 
-The [nRF9160 DK (`PCA10090`)](https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF9160-DK)
-does not support _passive_ mode by default. The _passive_ mode
-depends on an external accelerometer (Analog Devices ADXL362) being connected
-to the GPIO ports specified in the `nrf9160_pca10090ns.overlay` file.
+The
+[nRF9160 DK (`PCA10090`)](https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF9160-DK)
+does not support _passive_ mode by default. The _passive_ mode depends on an
+external accelerometer (Analog Devices ADXL362) being connected to the GPIO
+ports specified in the `nrf9160_pca10090ns.overlay` file.
 
 ### Active Mode
 
