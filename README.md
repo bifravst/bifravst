@@ -9,17 +9,18 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier/)
 [![ESLint: TypeScript](https://img.shields.io/badge/ESLint-TypeScript-blue.svg)](https://github.com/typescript-eslint/typescript-eslint)  
 [![{DevZone Community](https://img.shields.io/badge/%7BDevZone-community-brightgreen.svg)](https://devzone.nordicsemi.com/search?q=bifravst)
-[![Spectrum Chat](https://img.shields.io/badge/Spectrum-chat-blue.svg)](https://spectrum.chat/bifravst)
+
+## Development roadmap
 
 🚧 Development progress is managed in
 [this GitHub Project](https://github.com/orgs/bifravst/projects/1).
 
-❓ You can get in touch by
-[creating an issue in this repository](https://github.com/bifravst/bifravst/issues/new),  
-or via [DevZone](https://devzone.nordicsemi.com/) (please use the tag
-[bifravst](https://devzone.nordicsemi.com/search?q=bifravst) to mark your
-questions).  
-💬 There is also [a chat on Spectrum](https://spectrum.chat/bifravst).
+## Support
+
+❓ You can get in touch via [DevZone](https://devzone.nordicsemi.com/) (please
+use the tag [bifravst](https://devzone.nordicsemi.com/search?q=bifravst) to mark
+your questions) or by
+[creating an issue in this repository](https://github.com/bifravst/bifravst/issues/new).
 
 ## Vision
 
