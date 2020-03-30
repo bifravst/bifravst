@@ -39,11 +39,11 @@ build for your board:
 
 ### Thingy:91 (`PCA20035`)
 
-    west build -p auto -b nrf9160_pca20035ns
+    west build -p always -b nrf9160_pca20035ns
 
 ### nRF9160 DK (`PCA10090`)
 
-    west build -p auto -b nrf9160_pca10090ns
+    west build -p always -b nrf9160_pca10090ns
 
 ## Location of the HEX file
 
