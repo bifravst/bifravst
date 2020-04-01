@@ -42,7 +42,7 @@
 - [Getting Started](./docs/firmware/GettingStarted.md)
 - [Overview](./docs/firmware/Overview.md)
 - [Supported Boards](./docs/firmware/SupportedBoards.md)
-- [Building](./docs/firmware/Building.md)
+- [Configuration](./docs/firmware/Configuration.md)
 - [Building using Docker](./docs/firmware/BuildingUsingDocker.md)
 - [Building using your local system](./docs/firmware/BuildingUsingLocalSystem.md)
 - [Building using GitHub Actions](./docs/firmware/BuildingUsingGitHub.md)
