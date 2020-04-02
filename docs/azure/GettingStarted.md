@@ -136,7 +136,7 @@ Now deploy the solution:
     az storage blob service-properties update --account-name ${APP_NAME}deviceui --static-website --index-document index.html
 
     # Deploy the functions
-    func azure functionapp publish ${APP_NAME}website
+    func azure functionapp publish ${APP_NAME}website --typescript
 
 TODO: authenticate against Azure function apps scopes
 https://azure.microsoft.com/en-us/blog/azure-ad-b2c-access-tokens-now-in-public-preview/

@@ -8,4 +8,4 @@ release, follow these steps.
     npx tsc
     az group deployment create --resource-group $APP_NAME --mode Complete --name $APP_NAME --template-file azuredeploy.json \
         --parameters appName=$APP_NAME location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID tenantId=$TENANT_ID
-    func azure functionapp publish ${APP_NAME}website
+    func azure functionapp publish ${APP_NAME}website --typescript
