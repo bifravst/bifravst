@@ -129,7 +129,7 @@ Remember to allow the changed file:
 
 Now deploy the solution:
 
-    az group deployment create --resource-group $APP_NAME --mode Complete --name $APP_NAME --template-file azuredeploy.json \
+    az deployment group create --resource-group $APP_NAME --mode Complete --name $APP_NAME --template-file azuredeploy.json \
         --parameters appName=$APP_NAME location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID tenantId=$TENANT_ID
     # It's currently not possible to enable website hosting through the ARM template
     az storage blob service-properties update --account-name ${APP_NAME}app --static-website --index-document index.html
