@@ -73,4 +73,4 @@
 
 ## Architecture Decision Records
 
-- [1. Use GitHub package registry](./docs/adr/001-use-github-package-registry.md)
+- [2. Use NPM package registry](./docs/adr/002-use-npm-package-registry.md)
