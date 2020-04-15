@@ -70,3 +70,7 @@
 
 - [Versioning](./docs/Versioning.md)
 - [Code of Conduct](./CODE_OF_CONDUCT.md)
+
+## Architecture Decision Records
+
+- [1. Use GitHub package registry](./docs/adr/001-use-github-package-registry.md)
