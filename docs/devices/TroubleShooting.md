@@ -1,10 +1,12 @@
-# Troubleshooting the connection
+# Troubleshooting
 
-## Error code `-22`
+## Connection
+
+### Error code `-22`
 
 Double check the clientID, the endpoint and the certificates.
 
-## Cellular connection
+### Cellular connection
 
 Since 5G support is currently being deployed by mobile phone network operators
 there is a high chance that you might perceive connection issues in you
@@ -13,12 +15,15 @@ location.
 It is generally recommended to try multiple SIM cards from different vendors in
 case you experience connectivity issues.
 
-Below is a list of combinations we now to be working:
+## GPS
 
-| Location                 | SIM   | MCC/MNC | Band | Area Code | CellID   |
-| ------------------------ | ----- | ------- | ---- | --------- | -------- |
-| Hamburg, Germany         | 1NCE  | 26201   | 8    | 230       | 32769286 |
-| Offenbach, Germany       | 1NCE  | 26201   | 8    | 230       | 27394060 |
-| Großkrotzenburg, Germany | 1NCE  | 26201   | 8    | 230       | 27307270 |
-| Hanau, Germany           | 1NCE  | 26201   | 8    | 230       | 37402125 |
-| Trondheim, Norway        | Telia | 24202   | 3    | 12        | 33703719 |
+### Error: `GPS_EVT_OPERATION_BLOCKED`
+
+This happens if the Network provider does not grant PSM (power savings mode) and
+the GPS takes too long to acquire a fix.
+[See this {DevZone post for more details](https://devzone.nordicsemi.com/f/nordic-q-a/51962/gps-and-lte-issue/210272#210272).
+
+One solution is to switch SIM cards to one that grants PSM.
+
+Another solution is to use assisted GPS (A-GPS) to speed up the time to fix.
+[Currently there is no support for A-GPS in Bifravst.](https://github.com/bifravst/firmware/issues/8)
