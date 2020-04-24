@@ -69,13 +69,21 @@
       "type": "object",
       "properties": {
         "v": {
-          "description": "Accelerometer reading: x,y,z in m/s²",
-          "type": "array",
-          "items": {
-            "type": "number"
+          "description": "Accelerometer reading in m/s² per axis",
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            },
+            "z": {
+              "type": "number"
+            }
           },
-          "minItems": 3,
-          "maxItems": 3
+          "required": ["x", "y", "z"],
+          "additionalProperties": false
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
