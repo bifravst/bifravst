@@ -15,7 +15,7 @@ in [TypeScript](https://www.typescriptlang.org/).
 
 You need a development environment with the
 [next LTS release candidate of Node.js](https://nodejs.org/en/about/releases/)
-(right now version 12).
+(right now version 14).
 
 If you are using Windows, we recommend the
 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
