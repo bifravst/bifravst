@@ -62,30 +62,3 @@ credentials.
 connected via the debugger!
 
 Click _Update certificates_ and wait until the operation finishes.
-
-## Flash using `nrfjprog`
-
-> Note: The nRF9160
-> [should be programmed using `nrfjprog`](http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160.html#board-controller).
-> `west flash` is not supported.
-
-First flash the AT host:
-
-_Thingy:91_
-
-    curl -L -o thingy91_at_client_increased_buf.hex https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex
-    nrfjprog -f nrf91 --program thingy91_at_client_increased_buf.hex --sectoranduicrerase -r --log
-
-_nRF9160 DK_
-
-    curl -L -o 91dk_at_client_increased_buf.hex https://github.com/bifravst/bifravst/releases/download/v5.9.2/91dk_at_client_increased_buf.hex
-    nrfjprog -f nrf91 --program 91dk_at_client_increased_buf.hex --sectoranduicrerase -r --log
-
-Now flash the certificates
-
-    node cli flash <imei>
-
-You configure the port to use by passing the `-p <port>` flag:
-
-    node cli flash <imei> -p /dev/ttyS31 # Linux
-    node cli flash <imei> -p COM31       # Windows
