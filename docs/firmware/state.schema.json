@@ -70,7 +70,7 @@
       "properties": {
         "v": {
           "description": "Temperature reading from external sensor",
-          "type": "number",
+          "type": "number"
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
