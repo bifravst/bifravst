@@ -64,6 +64,40 @@
       },
       "required": ["v", "ts"]
     },
+    "tmp": {
+      "description": "Temperature reading in celcius",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "Temperature reading from external sensor",
+          "type": "number",
+          "minimum": 1
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "hmt": {
+      "description": "Humidity reading in percent",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "Humidity reading from external sensor",
+          "type": "number",
+          "minimum": 1
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
     "acc": {
       "description": "The accelerometer reading",
       "type": "object",
