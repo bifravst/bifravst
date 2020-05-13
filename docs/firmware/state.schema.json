@@ -64,7 +64,7 @@
       },
       "required": ["v", "ts"]
     },
-    "tmp": {
+    "temp": {
       "description": "Temperature reading in celcius",
       "type": "object",
       "properties": {
