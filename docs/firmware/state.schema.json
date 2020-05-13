@@ -80,7 +80,7 @@
       },
       "required": ["v", "ts"]
     },
-    "hmt": {
+    "hum": {
       "description": "Humidity reading in percent",
       "type": "object",
       "properties": {
