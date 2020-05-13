@@ -71,7 +71,6 @@
         "v": {
           "description": "Temperature reading from external sensor",
           "type": "number",
-          "minimum": 1
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
