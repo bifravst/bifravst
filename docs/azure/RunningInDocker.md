@@ -6,7 +6,9 @@ In case your system has a different Node.js version you can run the app locally
 Export the IotHub connection string, the Avatar storage environment variables
 (can be found in the function app's configuration) to the environment variables
 `IOT_HUB_CONNECTION_STRING`,`AVATAR_STORAGE_ACCOUNT_NAME`,
-`AVATAR_STORAGE_ACCESS_KEY`, `AVATAR_STORAGE_CONTAINER`,
+`AVATAR_STORAGE_ACCESS_KEY`,
+`AVATAR_STORAGE_CONTAINER`,`FOTA_STORAGE_ACCOUNT_NAME`,
+`FOTA_STORAGE_ACCESS_KEY`, `FOTA_STORAGE_CONTAINER`
 
 Run the functions app:
 
@@ -15,6 +17,9 @@ Run the functions app:
         -e AVATAR_STORAGE_ACCOUNT_NAME \
         -e AVATAR_STORAGE_ACCESS_KEY \
         -e AVATAR_STORAGE_CONTAINER \
+        -e FOTA_STORAGE_ACCOUNT_NAME \
+        -e FOTA_STORAGE_ACCESS_KEY \
+        -e FOTA_STORAGE_CONTAINER \
         -v ${PWD}:/workdir bifravst/azure-dev:latest \
         func start --typescript
 
