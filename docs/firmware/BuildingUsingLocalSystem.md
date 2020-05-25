@@ -39,7 +39,7 @@ build for your board:
 
 ### Thingy:91 (`PCA20035`)
 
-    west build -p always -b nrf9160_pca20035ns
+    west build -p always -b thingy91_nrf9160ns
 
 ### nRF9160 DK (`PCA10090`)
 
