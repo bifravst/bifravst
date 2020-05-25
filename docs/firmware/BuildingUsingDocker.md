@@ -8,7 +8,7 @@ The docker image is not intended to be shared, but to simplify building locally.
 It is used to cache all dependencies so you can build and develop locally
 without needing to install dependencies directly in your system.
 
-[Read more about this aproach here](https://github.com/coderbyheart/fw-nrfconnect-nrf-docker).
+[Read more about this aproach here](https://github.com/coderbyheart/sdk-nrf-docker).
 
     git clone https://github.com/bifravst/firmware
     cd firmware

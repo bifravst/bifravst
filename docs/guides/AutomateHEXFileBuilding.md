@@ -5,7 +5,7 @@
 
 Continuous delivery is in important aspect of short time to market and since the
 nRF9160
-[supports firmware over the air updates](https://github.com/NordicPlayground/fw-nrfconnect-nrf/tree/master/samples/nrf9160/aws_fota) we
+[supports firmware over the air updates](https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/aws_fota) we
 want to ship a new firmware to our development boards every time we update the
 application.
 
