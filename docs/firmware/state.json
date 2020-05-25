@@ -44,7 +44,7 @@
       "nw": "NB-IoT GPS",
       "iccid": "89450421180216216095",
       "modV": "mfw_nrf9160_1.0.0",
-      "brdV": "nrf9160_pca20035",
+      "brdV": "thingy91_nrf9160",
       "appV": "v1.0.0-rc1-327-g6fc8c16b239f"
     },
     "ts": 1563968743666

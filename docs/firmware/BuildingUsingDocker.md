@@ -20,7 +20,7 @@ without needing to install dependencies directly in your system.
 
 ### Thingy:91 (`PCA20035`)
 
-    docker run --rm -v ${PWD}:/workdir/ncs/firmware bifravst-firmware-docker:latest /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b nrf9160_pca20035ns'
+    docker run --rm -v ${PWD}:/workdir/ncs/firmware bifravst-firmware-docker:latest /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns'
     ls -la build/zephyr/merged.hex
 
 ### nRF9160 DK (`PCA10090`)
