@@ -9,3 +9,12 @@ release, follow these steps.
     az deployment group create --resource-group $APP_NAME --mode Complete --name $APP_NAME --template-file azuredeploy.json \
         --parameters appName=$APP_NAME location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID tenantId=$TENANT_ID
     func azure functionapp publish ${APP_NAME}website --typescript
+
+_Tip:_ You can verify the validity of a template using
+
+    az deployment group validate --resource-group $APP_NAME --mode Complete --name $APP_NAME --template-file azuredeploy.json \
+        --parameters appName=$APP_NAME location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID tenantId=$TENANT_ID
+
+If this throws an error, you can find the detailed log message using
+
+    az monitor activity-log list --correlation-id <tracking id> | jq '.[].properties.statusMessage | fromjson'
