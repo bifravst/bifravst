@@ -10,6 +10,11 @@
 > 🚧 _Note:_ The Azure implementation is
 > [work in progress](https://github.com/bifravst/bifravst/issues/29).
 
+> 💵 _Note:_ Because the Azure solution is using
+> [Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) for
+> querying historical device data, the minimum costs to run Bifravst on Azure is
+> around \$24 per month.
+
 ## System requirements
 
 You need a development environment with the
