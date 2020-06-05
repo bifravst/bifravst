@@ -13,7 +13,9 @@
 > 💵 _Note:_ Because the Azure solution is using
 > [Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) for
 > querying historical device data, the minimum costs to run Bifravst on Azure is
-> around \$24 per month.
+> around \$24 per month. However,
+> [there is a free tier for new accounts](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/),
+> which you might be eligible for.
 
 ## System requirements
 
