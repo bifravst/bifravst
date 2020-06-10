@@ -39,6 +39,13 @@
       "items": {
         "$ref": "messages.schema.json#/properties/btn"
       }
+    },
+    "env": {
+      "description": "Environmental sensors.",
+      "type": "array",
+      "items": {
+        "$ref": "state.schema.json#/properties/env"
+      }
     }
   },
   "additionalProperties": false
