@@ -20,7 +20,7 @@ jobs:
           npm config set update-notifier false
           sudo chown -R $USER:$(id -gn $USER) /home/runner/.config
       - name: Keep npm cache around to speed up installs
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/.npm
           key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
