@@ -14,11 +14,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      - name: Install latest npm
-        run: |
-          sudo npm install -g npm@
-          npm config set update-notifier false
-          sudo chown -R $USER:$(id -gn $USER) /home/runner/.config
       - name: Keep npm cache around to speed up installs
         uses: actions/cache@v2
         with:
