@@ -22,6 +22,7 @@
 - [Updating an existing installation](./docs/azure/Updating.md)
 - [Device Credentials](./docs/azure/DeviceCredentials.md)
 - [Connect using the simulator](./docs/azure/Simulator.md)
+- [Continuous Deployment](./docs/aws/ContinuousDeployment.md)
 
 ## Bifravst on GCP (WIP)
 

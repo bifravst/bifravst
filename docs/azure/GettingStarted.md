@@ -77,7 +77,12 @@ afterwards you should be able to execute the `func` command:
 ## Deploy the solution to your account
 
 > Note: since we will be using Azure Active Directory B2C it is recommended to
-> set up Bifravst in a dedicated account.
+> set up Bifravst in a dedicated subscription.
+
+Go to the Subscriptions blade, and add a new subscription for Bifravst, copy the
+subscript id.
+
+    export SUBSCRIPTION_ID=0aef5c04-9e9c-4275-9ccf-e719842d082d
 
 Authenticate the CLI:
 
@@ -108,7 +113,7 @@ Add the tenant ID:
 
 Now create the resource group for the solution:
 
-    az group create -l $LOCATION -n $APP_NAME
+    az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n $APP_NAME
 
 [It's currently also not possible](https://github.com/bifravst/azure/issues/1)
 to create Active Directory B2C and application through the ARM template, you
