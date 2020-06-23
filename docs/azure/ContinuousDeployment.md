@@ -1,42 +1,47 @@
 # Continuous Deployment
 
-    export LOCATION=northeurope
-    export RESOURCE_GROUP_NAME=bifravst
-    # APP_NAME (must be unique, so pick something different)
-    export APP_NAME=bifravstcd
-
 Continuous Deployment should be installed in a dedicated directory with a
 dedicated subscription to have clear control over permissions and costs.
 
-Go to the _Azure Active Directory_ blade and create a new tenant, and select
-_Azure Active Directory (B2C)_ as the type. Click _Next: Configure_ and use
-these settings:
+1.  Go to the _Subscriptions_ blade and add a new subscription for Bifravst and
+    name it _Bifravst CD_.
+1.  After the subscription has been created navigate again to the
+    _Subscriptions_ blade and copy the subscription id of the newly created
+    subscription:
 
-- Organization name: Bifravst CD
-- Initial domain name: `$APP_NAME`
-- Country/Region: Sweden
-- Subscription: Bifravst CD
-- Resource group: bifravst
+```
+export SUBSCRIPTION_ID=<subscription id>
+```
 
-![Create Directory settings](./cd/create-directory.png)
+3.  Go to the _Marketplace_ blade and search for _Azure Active Directory B2C_.
+1.  Click the _Azure Active Directory B2C_ tile, and on then click the _Create_
+    button.
+1.  Select _Create a new Azure AD B2C Tenant._
+1.  Use these settings:
+    - Organization name: _Bifravst CD_
+    - Initial domain name: `$APP_NAME` (in this example we will use
+      `bifravstcd`, but you should pick something that fits your project)
+    - Country/Region: Sweden (or pick a location that is closer to you)
+    - Subscription: Bifravst CD
+    - Resource group: bifravst
+      ![Create Directory settings](./cd/create-directory.png)
+1.  Click _next_ to see the summary and then click _Create_ to create the new
+    Active Directory B2C. It will take a while to be created.
+1.  Switch to the newly created directory, by following the link in the success
+    message.
+1.  Create an App Registration. Use `https://${APP_NAME}.azurewebsites.net/` as
+    the redirect URLs.
+    ![Create App Registration settings](./cd/create-app-registration.png)
+1.  store the _application (client) id_ of the created Active Directory B2C App
+    registration
 
-It will take a while to be created.
+```
+export APP_REG_CLIENT_ID=<application (client) id>
+```
 
-Switch to the newly created directory.
+---
 
-Go to the _Subscriptions_ blade and add a new subscription for Bifravst and name
-it _Bifravst CD_, copy the subscription id:
-
-    export SUBSCRIPTION_ID=<subscription id>
-
-Find the newly created subscription and select _Change directory_ and assign it
-to the directory you created above.
-
-Then, go to the _Azure Active Directory_ blade and create a new tenant, and
-select _Azure Active Directory (B2C)_ as the type. Click _Next: Configure_ and
-use these settings:
-
-Re-login to make the new subscription available:
+Now drop into a shell and login:
 
     az login
 
@@ -54,15 +59,6 @@ Enable required resources
     az provider register --subscription $SUBSCRIPTION_ID --namespace Microsoft.Devices
     az provider register --subscription $SUBSCRIPTION_ID --namespace Microsoft.Web
 
-Switch to the created directory, and create an App Registration. Use
-`https://${RESOURCE_GROUP_NAME}.azurewebsites.net/` as the redirect URLs
-(replace ).
-
-![Create App Registration settings](./cd/create-app-registration.png)
-
-Store the _application (client) id_ of the created Active Directory B2C App
-registration in the secret `APP_REG_CLIENT_ID`.
-
 Now create the CI credentials:
 
     az ad sp create-for-rbac --name GitHub --role Contributor --sdk-auth --scopes /subscriptions/${SUBSCRIPTION_ID} > ci-credentials.json
@@ -71,6 +67,7 @@ Fork the
 [Bifravst Azure project](https://github.com/bifravst/azure/settings/secrets/new)
 and add these secrets.
 
-- `APP_REG_CLIENT_ID`: store the _application (client) id_ of the created Active
-  Directory B2C App registration
 - `AZURE_CREDENTIALS`: store the contents of the JSON file created above
+- `APP_REG_CLIENT_ID`: the _application (client) id_ of the created Active
+  Directory B2C App registration
+- `SUBSCRIPTION_ID`: the ID of the subscription

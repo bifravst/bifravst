@@ -120,7 +120,7 @@ to create Active Directory B2C and application through the ARM template, you
 need to follow
 [these instructions](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications)
 and create a B2C tenant and an application. Use `http://localhost:3000/` (for
-local development) and `https://${APP_NAME}website.azurewebsites.net/` as the
+local development) and `https://${APP_NAME}app.z16.web.core.windows.net/` as the
 redirect URLs.
 
 Save the _directory (tenant) id_ of the created Active Directory B2C and the
