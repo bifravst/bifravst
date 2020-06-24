@@ -3,6 +3,8 @@
 Continuous Deployment should be deployed with a dedicated subscription to have
 clear control over permissions and costs.
 
+## Create a subscription for Bifravst
+
 1.  Go to the _Subscriptions_ blade and add a new subscription for Bifravst and
     name it _Bifravst CD_.
 1.  After the subscription has been created navigate again to the
@@ -13,11 +15,19 @@ clear control over permissions and costs.
 export SUBSCRIPTION_ID=<subscription id>
 ```
 
-3. Create a new resource group (e.g. `bifrastprod`) and copy the name:
+## Create a resource group for Bifravst
 
-```
-export RESOURCE_GROUP_NAME=<resource group name>
-```
+    # Change to your liking
+    export RESOURCE_GROUP_NAME=bifravstprod
+    # Use "az account list-locations -o table" to list all locations
+    export LOCATION=northeurope
+
+    az group create --subscription $SUBSCRIPTION_ID --name $RESOURCE_GROUP_NAME --location $LOCATION
+
+## Create an Azure Active Directory B2C
+
+> _Note:_ This
+> [can currently only be achieved through the CLI](https://github.com/bifravst/azure/issues/1).
 
 4.  Go to the _Marketplace_ blade and search for _Azure Active Directory B2C_.
 1.  Click the _Azure Active Directory B2C_ tile, and on then click the _Create_
@@ -47,9 +57,10 @@ export B2C_TENANT=bifravstprod
 1.  Switch back to the B2C directory
 1.  Create an App Registration:
     - Name: Bifravst Web App
-    - Redirect URI: `https://bifravstprodapp.z16.web.core.windows.net/` (instead
-      of `bifravstprodapp` you need to pick something else that fits your
-      project because this name is globally unique)
+    - Redirect URI (make sure to select SPA):
+      `https://bifravstprodapp.z16.web.core.windows.net/` (instead of
+      `bifravstprodapp` you need to pick something else that fits your project
+      because this name is globally unique)
       ![Create App Registration settings](./cd/create-app-registration.png)
 1.  store the _application (client) id_ of the created Active Directory B2C App
     registration:
@@ -58,11 +69,16 @@ export B2C_TENANT=bifravstprod
 export APP_REG_CLIENT_ID=<application (client) id>
 ```
 
-16. store the subdomain name used in the Redirect URI:
+16. Enable the implicit grant flow for _Access tokens_ and _ID tokens_ and click
+    _Save_:  
+    ![Enable implicit grant flow](./cd/implicit-grant.png)
+1. store the subdomain name used in the Redirect URI:
 
 ```
 export APP_NAME=bifravstprodapp
 ```
+
+17. Create the _Sign up and sign in_ user flow, and name it `signup_signin`.
 
 ---
 
@@ -91,3 +107,5 @@ and add these secrets.
 - `AZURE_CREDENTIALS`: store the contents of the JSON file created above
 - `APP_REG_CLIENT_ID`: the _application (client) id_ of the created Active
   Directory B2C App registration
+
+Now trigger a deploy.
