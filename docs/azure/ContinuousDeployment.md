@@ -62,6 +62,17 @@ export B2C_TENANT=bifravstprod
       `bifravstprodapp` you need to pick something else that fits your project
       because this name is globally unique)
       ![Create App Registration settings](./cd/create-app-registration.png)
+1.  In _Expose an API_ set the _Application ID URI_ to `api`
+1.  Click _+ Add a scope_ and create a new scope:
+    - Scope name: `bifravst.admin`
+    - Admin consent display name: Admin Access to the Bifravst API
+    - Admin consent description: Allows admin access to all resources exposed
+      through the Bifravst API
+1.  In _API permissions_ click _+ Add a permission_ and under _My APIs_ select
+    the app registration
+1.  Enable the `bifravst.admin` permission and click _Add permission_
+1.  Click _Grant admin consent for &lt;your Directory name&gt;_
+    ![Add Scope](./cd/add-scope.png)
 1.  store the _application (client) id_ of the created Active Directory B2C App
     registration:
 
@@ -69,7 +80,7 @@ export B2C_TENANT=bifravstprod
 export APP_REG_CLIENT_ID=<application (client) id>
 ```
 
-16. Enable the implicit grant flow for _Access tokens_ and _ID tokens_ and click
+21. Enable the implicit grant flow for _Access tokens_ and _ID tokens_ and click
     _Save_:  
     ![Enable implicit grant flow](./cd/implicit-grant.png)
 1. store the subdomain name used in the Redirect URI:
@@ -78,7 +89,27 @@ export APP_REG_CLIENT_ID=<application (client) id>
 export APP_NAME=bifravstprodapp
 ```
 
-17. Create the _Sign up and sign in_ user flow, and name it `signup_signin`.
+23. Create the _Sign up and sign in_ user flow for local users, and name it
+    `signup_signin`
+    ([Reference](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows)).
+1. Select the created user flow and click _Run user flow_
+1. Copy the Link in the pop-out:  
+   ![Copy user flow URL](./cd/run-userflow.png)
+
+```
+export B2C_ISSUER_URL=<User flow link>
+```
+
+26. Switch back to the main directory
+1. Find the Bifravst Azure Function App
+1. Select _Authentication / Authorization_
+1. Select _Log in with Azure Active Directory_ for _Action to take when request
+   is not authenticated_
+1. Click _Azure Active Directory_ and configure the authentication using the
+   _Advanced Management mode_:
+   - Client ID: `$APP_REG_CLIENT_ID`
+   - Issuer URL: `$B2C_ISSUER_URL`  
+     ![Function App Settings](./cd/function-app-settings.png)
 
 ---
 
@@ -107,5 +138,6 @@ and add these secrets.
 - `AZURE_CREDENTIALS`: store the contents of the JSON file created above
 - `APP_REG_CLIENT_ID`: the _application (client) id_ of the created Active
   Directory B2C App registration
+- `B2C_TENANT`: the _initial domain name_ of the created Active Directory B2C
 
 Now trigger a deploy.
