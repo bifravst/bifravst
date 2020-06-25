@@ -1,4 +1,4 @@
-# Use NPM registry
+# 2. Use NPM registry
 
 In March 2020,
 [GitHub acquired NPM](https://github.blog/2020-03-16-npm-is-joining-github/) and
