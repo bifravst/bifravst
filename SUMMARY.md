@@ -75,3 +75,4 @@
 ## Architecture Decision Records
 
 - [2. Use NPM package registry](./docs/adr/002-use-npm-package-registry.md)
+- [3. Use `saga` as the name for the main branch](./docs/adr/003-use-saga-as-the-main-branch.md)
