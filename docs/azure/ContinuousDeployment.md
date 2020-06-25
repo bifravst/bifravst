@@ -108,15 +108,21 @@ Now drop into a shell and login:
 
     az login
 
+Make sure you have enabled the right subscription:
+
+    az account set --subscription $SUBSCRIPTION_ID
+    # Verify that it is set to default
+    az account list --output table
+
 Enable required resources
 
-    az provider register --subscription $SUBSCRIPTION_ID --namespace Microsoft.AzureActiveDirectory
-    az provider register --subscription $SUBSCRIPTION_ID --namespace Microsoft.Storage
-    az provider register --subscription $SUBSCRIPTION_ID --namespace Microsoft.Insights
-    az provider register --subscription $SUBSCRIPTION_ID --namespace Microsoft.SignalRService
-    az provider register --subscription $SUBSCRIPTION_ID --namespace Microsoft.DocumentDB
-    az provider register --subscription $SUBSCRIPTION_ID --namespace Microsoft.Devices
-    az provider register --subscription $SUBSCRIPTION_ID --namespace Microsoft.Web
+    az provider register --namespace Microsoft.AzureActiveDirectory
+    az provider register --namespace Microsoft.Storage
+    az provider register --namespace Microsoft.Insights
+    az provider register --namespace Microsoft.SignalRService
+    az provider register --namespace Microsoft.DocumentDB
+    az provider register --namespace Microsoft.Devices
+    az provider register --namespace Microsoft.Web
 
 Now create the CI credentials:
 
@@ -129,7 +135,7 @@ Create a resource group for Bifravst
     # Use "az account list-locations -o table" to list all locations
     export LOCATION=northeurope
 
-    az group create --subscription $SUBSCRIPTION_ID --name $RESOURCE_GROUP_NAME --location $LOCATION
+    az group create --name $RESOURCE_GROUP_NAME --location $LOCATION
 
 Fork the
 [Bifravst Azure project](https://github.com/bifravst/azure/settings/secrets/new)
@@ -141,3 +147,6 @@ and add these secrets.
 - `B2C_TENANT`: the _initial domain name_ of the created Active Directory B2C
 
 Now trigger a deploy.
+
+You can now [create device credentials](./DeviceCredentials.md) for this
+environment.
