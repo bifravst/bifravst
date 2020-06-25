@@ -15,15 +15,6 @@ clear control over permissions and costs.
 export SUBSCRIPTION_ID=<subscription id>
 ```
 
-## Create a resource group for Bifravst
-
-    # Change to your liking
-    export RESOURCE_GROUP_NAME=bifravstprod
-    # Use "az account list-locations -o table" to list all locations
-    export LOCATION=northeurope
-
-    az group create --subscription $SUBSCRIPTION_ID --name $RESOURCE_GROUP_NAME --location $LOCATION
-
 ## Create an Azure Active Directory B2C
 
 > _Note:_ This
@@ -52,7 +43,7 @@ export B2C_TENANT=bifravstprod
 1.  You need to link a Subscription to the B2C Directory, follow the link in the
     notification message to find the instructions.
     ![Link Subscription](./cd/link-subscription.png)
-1.  Select the subscription and resource group to be used:
+1.  Select the subscription and create a new resource group for this assignment:
     ![Link Subscription](./cd/link-subscription2.png)
 1.  Switch back to the B2C directory
 1.  Create an App Registration:
@@ -71,7 +62,7 @@ export B2C_TENANT=bifravstprod
 1.  In _API permissions_ click _+ Add a permission_ and under _My APIs_ select
     the app registration
 1.  Enable the `bifravst.admin` permission and click _Add permission_
-1.  Click _Grant admin consent for &lt;your Directory name&gt;_
+1.  Click _Grant admin consent for &lt;your main directory&gt;_
     ![Add Scope](./cd/add-scope.png)
 1.  store the _application (client) id_ of the created Active Directory B2C App
     registration:
@@ -130,6 +121,15 @@ Enable required resources
 Now create the CI credentials:
 
     az ad sp create-for-rbac --name GitHub --role Contributor --sdk-auth --scopes /subscriptions/${SUBSCRIPTION_ID} > ci-credentials.json
+
+Create a resource group for Bifravst
+
+    # Change to your liking
+    export RESOURCE_GROUP_NAME=bifravstprod
+    # Use "az account list-locations -o table" to list all locations
+    export LOCATION=northeurope
+
+    az group create --subscription $SUBSCRIPTION_ID --name $RESOURCE_GROUP_NAME --location $LOCATION
 
 Fork the
 [Bifravst Azure project](https://github.com/bifravst/azure/settings/secrets/new)
