@@ -19,6 +19,8 @@ export SUBSCRIPTION_ID=<subscription id>
 
 > _Note:_ This
 > [can currently only be achieved through the CLI](https://github.com/bifravst/azure/issues/1).
+> If you know how to make the whole set-up process simpler,
+> [please provide your input here!](https://github.com/bifravst/azure/issues/1)
 
 4.  Go to the _Marketplace_ blade and search for _Azure Active Directory B2C_.
 1.  Click the _Azure Active Directory B2C_ tile, and on then click the _Create_

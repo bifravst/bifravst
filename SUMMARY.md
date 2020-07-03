@@ -23,6 +23,7 @@
 - [Device Credentials](./docs/azure/DeviceCredentials.md)
 - [Connect using the simulator](./docs/azure/Simulator.md)
 - [Continuous Deployment](./docs/azure/ContinuousDeployment.md)
+- [Continuous Integration](./docs/azure/ContinuousIntegration.md)
 
 ## Bifravst on GCP (WIP)
 
