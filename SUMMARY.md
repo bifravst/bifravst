@@ -66,6 +66,7 @@
 - [Cloud Differences](./docs/guides/CloudDifferences.md)
 - [Authenticate against the GitHub package registry](./docs/guides/GitHubRegistry.md)
 - [Cell Geolocations](./docs/guides/CellGeolocations.md)
+- [Security for IoT](./docs/guides/ETSI-EN-303-645.md)
 
 ## General Project information
 
