@@ -149,6 +149,3 @@ Now deploy the solution:
 
     # Deploy the functions
     func azure functionapp publish ${APP_NAME}website --typescript
-
-TODO: authenticate against Azure function apps scopes
-https://azure.microsoft.com/en-us/blog/azure-ad-b2c-access-tokens-now-in-public-preview/

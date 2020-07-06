@@ -9,6 +9,10 @@ Export the IotHub connection string, the Avatar storage environment variables
 `AVATAR_STORAGE_ACCESS_KEY`,`FOTA_STORAGE_ACCOUNT_NAME`,
 `FOTA_STORAGE_ACCESS_KEY`, `HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING`
 
+Run this command to list the environment variables:
+
+    az functionapp config appsettings list --resource-group $RESOURCE_GROUP_NAME --name ${APP_NAME}API
+
 Run the functions app:
 
     docker run --rm --net=host -P \
