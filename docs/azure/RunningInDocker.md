@@ -7,7 +7,25 @@ Export the IotHub connection string, the Avatar storage environment variables
 (can be found in the function app's configuration) to the environment variables
 `IOT_HUB_CONNECTION_STRING`,`AVATAR_STORAGE_ACCOUNT_NAME`,
 `AVATAR_STORAGE_ACCESS_KEY`,`FOTA_STORAGE_ACCOUNT_NAME`,
-`FOTA_STORAGE_ACCESS_KEY`, `HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING`
+`FOTA_STORAGE_ACCESS_KEY`, `HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING`.
+
+Make sure to include these settings in your `local.settings.json`:
+
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "IoTHubEventHubCompatibleConnectionString": "...",
+    "AzureWebJobsStorage": "...",
+    "IoTHubEventHubName": "...",
+    "SignalRConnectionString": "..."
+  },
+  "Host": {
+    "CORS": "*",
+    "CORSCredentials": false
+  }
+}
+```
 
 Run this command to list the environment variables:
 
