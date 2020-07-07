@@ -24,6 +24,7 @@
 - [Connect using the simulator](./docs/azure/Simulator.md)
 - [Continuous Deployment](./docs/azure/ContinuousDeployment.md)
 - [Continuous Integration](./docs/azure/ContinuousIntegration.md)
+- [Guide: Using Azure AD B2C to secure your Azure Functions Apps](./docs/azure/secure-azure-function-apps-with-microsoft-b2c.md)
 
 ## Bifravst on GCP (WIP)
 
