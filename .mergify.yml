@@ -6,8 +6,6 @@ pull_request_rules:
     actions:
       label:
         add:
-         - auto-merged
-      merge:
-        method: rebase
-        rebase_fallback: squash
-        strict: true
+         - mergify
+      rebase:
+        bot_account: bifravst-ci
