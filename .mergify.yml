@@ -4,7 +4,11 @@ pull_request_rules:
       - status-success=security/snyk (Bifravst)
       - status-success=tests
     actions:
+      label:
+        add:
+         - auto-merged
       merge:
-        method: squash
+        method: rebase
+        rebase_fallback: squash
         commit_message: title+body
         strict: true
