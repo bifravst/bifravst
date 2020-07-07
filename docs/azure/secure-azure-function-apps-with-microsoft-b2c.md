@@ -44,8 +44,8 @@ configuring Azure AD B2C, as the identity provider for your Azure Function Apps.
     give the app a friendly name, Select _Yes_ for Web App/ Web API option, in
     the Reply URL section, enter in the full Azure website name that you created
     in step 2, and append it with: **/.auth/login/aad/callback**. For example:
-    _https://myAppSecuredByB2C.azurewebites.net/.auth/login/aad/callback_ Select
-    Create.  
+    `https://myAppSecuredByB2C.azurewebites.net/.auth/login/aad/callback`  
+    Select Create.  
     ![7](./secure-azure-function-apps-with-microsoft-b2c/07.png)
 1.  Collect B2C Application ID. After successfully creating the application, go
     back to the B2C Admin Portal Application blade, find your newly created
