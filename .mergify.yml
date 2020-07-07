@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: Automatic merge when all status checks pass
+    conditions:
+      - status-success=security/snyk (Bifravst)
+      - status-success=tests
+    actions:
+      merge:
+        method: squash
+        commit_message: title+body
+        strict: true
