@@ -1,8 +1,16 @@
 # Limiting the Shadow Document Size
 
-The nRF9160 has a size limit of 2303 bytes for sending and receiving TLS
-packages (<small>FIXME: citation needed</small>). Bifravst sets up an IoT rule
-which only publishes the `cfg` section of
+The nRF9160 has a size limit of 2303 bytes for receiving TLS packages:
+
+    *** Limitations
+    ***************
+    - TLS/DTLS
+        - 2kB secure socket buffer size.
+
+_(Source: `mfw_nrf9160_1.2.0_release_notes.txt` from
+[1.2.0 nRF91 firmware binaries](https://www.nordicsemi.com/-/media/Software-and-other-downloads/Dev-Kits/nRF9160-DK/nRF9160-modem-FW/mfwnrf9160120.zip))_
+
+Bifravst sets up an IoT rule which only publishes the `cfg` section of
 [the shadow document](../firmware/state.json) to a separate topic
 `$aws/things/<thing name>/shadow/get/accepted/desired/cfg` when devices receive
 their state after publishing an empty message to
