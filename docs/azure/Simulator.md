@@ -5,9 +5,6 @@
 The [device-ui](https://github.com/bifravst/device-ui) provides a browser-based
 UI to control the simulated device. Set it up on your Azure account:
 
-> **Note:** Remember to
-> [authenticate against the GitHub package registry](../guides/GitHubRegistry.md).
-
     git clone https://github.com/bifravst/device-ui
     cd device-ui
     npm ci

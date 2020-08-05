@@ -25,9 +25,6 @@ with
 
 ## Clone the project and install dependencies
 
-> **Note:** Remember to
-> [authenticate against the GitHub package registry](../guides/GitHubRegistry.md).
-
 Clone the latest version of the [app](https://github.com/bifravst/app) project
 and install the dependencies:
 

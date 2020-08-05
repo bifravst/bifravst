@@ -34,9 +34,6 @@ Supported regions are:
 
 ## Clone the project and install dependencies
 
-> **Note:** Remember to
-> [authenticate against the GitHub package registry](../guides/GitHubRegistry.md).
-
 Clone the latest version of the [gcp](https://github.com/bifravst/gcp) project
 and install the dependencies:
 

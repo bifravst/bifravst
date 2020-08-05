@@ -7,9 +7,6 @@ UI to control the simulated device.
 
 ### Clone the project and install dependencies
 
-> **Note:** Remember to
-> [authenticate against the GitHub package registry](../guides/GitHubRegistry.md).
-
 Clone the latest version of the
 [device-ui](https://github.com/bifravst/device-ui) project and install the
 dependencies:
