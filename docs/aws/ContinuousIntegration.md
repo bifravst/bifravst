@@ -1,5 +1,10 @@
 # Continuous Integration
 
+> _Note:_ This is an advanced topic for those who want to further develop and
+> customize Bifravst according to their needs. Please see the
+> [GitHub project page](https://github.com/bifravst/aws/) of Bifravst for AWS
+> which implements the process outlined here.
+
 Every change to the project is tested against an AWS account, all necessary
 resources are set-up using CDK (this ensures that the definitions actually work)
 in a separate AWS account, and then a BDD test-suite of end-to-end tests written

@@ -121,7 +121,7 @@ Enable required resources
 
 Now create the CI credentials:
 
-    az ad sp create-for-rbac --name GitHub --role Contributor --sdk-auth --scopes /subscriptions/${SUBSCRIPTION_ID} > ci-credentials.json
+    az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/${SUBSCRIPTION_ID} > ci-credentials.json
 
 Create a resource group for Bifravst
 
