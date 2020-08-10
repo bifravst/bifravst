@@ -27,9 +27,10 @@ Make sure to include these settings in your `local.settings.json`:
 }
 ```
 
-Run this command to list the environment variables:
+Run this command to list the environment variables of the function app. Export
+them.
 
-    az functionapp config appsettings list --resource-group $RESOURCE_GROUP_NAME --name ${APP_NAME}API
+    az functionapp config appsettings list --resource-group $RESOURCE_GROUP_NAME --name ${APP_NAME}API | jq -r '.[] | .name+"=\""+.value+"\""'
 
 Run the functions app:
 
