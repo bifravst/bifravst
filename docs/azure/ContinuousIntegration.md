@@ -177,4 +177,9 @@ Docker variant for publishing the functions (in case you get a
 
 ## Configure GitHub Actions
 
-TODO
+Configure these environment variables with the values you noted down earlier:
+
+- `APP_REG_CLIENT_ID`
+- `AZURE_CREDENTIALS`
+- `B2C_CLIENT_SECRET`
+- `B2C_TENANT_ID`
