@@ -5,14 +5,31 @@
 > [GitHub project page](https://github.com/bifravst/azure/) of Bifravst for
 > Azure which implements the process outlined here.
 
+Every change to the project is tested against an Azure account (which has to be
+manually prepared, see below), and then a BDD test-suite of end-to-end tests
+written in [Gherkin](https://cucumber.io/docs/gherkin/), which describes tests
+in plain english, is run.
+
+This way the tests itself are not tied to the implementation and during
+refactoring one cannot accidentally drop tests: tests written for test runners
+like Jest tend to be tied closely to the API of the source-code implementation,
+in a case of bigger refactoring the tests themselves usually need to be
+refactored as well. Since the BDD test above are purely testing based on the
+public API of the project (which is a mix of the native Azure API and a custom
+REST API), they can be kept unchanged during refactoring.
+
+This also provides an easily grokable description of the available (and
+implemented) features,
+[in one folder](https://github.com/bifravst/azure/tree/saga/features).
+
+## Prepare your Azure Account
+
 > _Warning:_ Compared to the
 > [AWS continuous integration setup](../aws/ContinuousIntegration.md) getting it
 > to work on Azure is immensely more complicated and involves many manual steps,
 > which unfortunately cannot be automated. If you know how to make the whole
 > set-up process simpler,
 > [please provide your input here!](https://github.com/bifravst/azure/issues/1)
-
-## Prepare your Azure Account
 
 ### Create a new tenant (Azure Active Directory)
 
@@ -168,16 +185,24 @@ Docker variant for publishing the functions (in case you get a
     docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure bifravst/azure-dev:latest \
         func azure functionapp publish ${APP_NAME}API --typescript
 
-## Run end-to-end tests manually
+## Running during development
 
     export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP_NAME} -n ${APP_NAME}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
 
     npm ci
     npm run test:e2e
 
-## Configure GitHub Actions
+> _Note:_ Azure functions only allow one _Issuer Url_ in the Active Directory
+> authentication configuration, so you cannot interact with this instance both
+> from the end-to-end tests **and** the web app because the user flow name
+> differs (`B2C_1_developer` for end-to-end tests and `B2C_1_signup_signin` for
+> the web application) and it is part of the Issuer Url, e.g.
+> `https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer`.
 
-Configure these environment variables with the values you noted down earlier:
+## Set up on GitHub
+
+Provide these environment variables for GitHub Actions of the project you noted
+down earlier:
 
 - `APP_REG_CLIENT_ID`
 - `E2E_AZURE_CREDENTIALS` (the contents of `ci-credentials.json`)
