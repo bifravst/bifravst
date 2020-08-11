@@ -15,9 +15,9 @@ This way the tests itself are not tied to the implementation and during
 refactoring one cannot accidentally drop tests: tests written for test runners
 like Jest tend to be tied closely to the API of the source-code implementation,
 in a case of bigger refactoring the tests themselves usually need to be
-refactored as well. Since the BDD test above are purely testing based on the
-public API of the project (which is the native AWS API), they can be kept
-unchanged during refactoring.
+refactored as well. Since the BDD test are purely testing based on the public
+API of the project (which is the native AWS API), they can be kept unchanged
+during refactoring.
 
 This also provides an easily grokable description of the available (and
 implemented) features,
