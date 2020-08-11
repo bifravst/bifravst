@@ -15,8 +15,7 @@ release, follow these steps.
             appName=$APP_NAME \
             location=$LOCATION \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
-            b2cTenant=$B2C_TENANT \
-            tenantId=$TENANT_ID
+            b2cTenant=$B2C_TENANT
     func azure functionapp publish ${APP_NAME}API --typescript
 
 Docker variant
@@ -35,8 +34,7 @@ _Tip:_ You can verify the validity of a template using
             appName=$APP_NAME \
             location=$LOCATION \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
-            b2cTenant=$B2C_TENANT \
-            tenantId=$TENANT_ID
+            b2cTenant=$B2C_TENANT
 
 If this throws an error, you can find the detailed log message using
 

@@ -105,8 +105,6 @@ variables.
 
 Add the tenant ID:
 
-    export TENANT_ID=`az account show  --query "tenantId" -o tsv`
-    echo "export TENANT_ID=$TENANT_ID" >> .envrc
     direnv allow
 
 Now create the resource group for the solution:
@@ -125,7 +123,6 @@ Save the _directory (tenant) id_ of the created Active Directory B2C and the
 _application (client) id_ to the environment variable `APP_REG_CLIENT_ID` in the
 `.envrc` file:
 
-    export TENANT_ID=...
     export APP_REG_CLIENT_ID=...
 
 Create the user flow for sign up and sign in and save the name (e.g.
@@ -148,8 +145,7 @@ Now deploy the solution:
             appName=$APP_NAME \
             location=$LOCATION \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
-            b2cTenant=$B2C_TENANT \
-            tenantId=$TENANT_ID
+            b2cTenant=$B2C_TENANT
     # It's currently not possible to enable website hosting through the ARM template
     az storage blob service-properties update --account-name ${APP_NAME}app --static-website --index-document index.html
     az storage blob service-properties update --account-name ${APP_NAME}deviceui --static-website --index-document index.html

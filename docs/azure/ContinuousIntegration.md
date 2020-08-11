@@ -48,10 +48,6 @@ Note down the initial domain name you used:
 
     export TENANT_DOMAIN=<Primary domain> # e.g. "bifravstci"
 
-Note down the Tenant ID which you can find in the Active Directory blade:
-
-    export TENANT_ID=<Tenant ID> # e.g. "9a81f8ed-f7a5-408d-8d4f-af3d46cb83d3"
-
 ### Create subscription
 
 Go to the Subscriptions blade and create a new subscription for the CI tenant,
@@ -171,7 +167,6 @@ Deploy the resources:
       appName=$APP_NAME \
       location=$LOCATION \
       appRegistrationClientId=$APP_REG_CLIENT_ID \
-      tenantId=$TENANT_ID \
       b2cTenant=$B2C_TENANT \
       b2cFlowName=B2C_1_developer
 
