@@ -71,7 +71,6 @@ export B2C_TENANT=bifravstprod
 
 ```
 export APP_REG_CLIENT_ID=<application (client) id>
-export B2C_TENANT_ID=<Directory (tenant) ID>
 ```
 
 21. Enable the implicit grant flow for _Access tokens_ and _ID tokens_ and click
@@ -94,7 +93,8 @@ export APP_NAME=bifravstprodapp
 1. Click _Azure Active Directory_ and configure the authentication using the
    _Advanced Management mode_:
    - Client ID: `$APP_REG_CLIENT_ID`
-   - Issuer URL: `https://${B2C_TENANT}.b2clogin.com/${B2C_TENANT_ID}`  
+   - Issuer URL:
+     `https://${B2C_TENANT}.b2clogin.com/${B2C_TENANT}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_signup_signin`  
      ![Function App Settings](./cd/function-app-settings.png)
 
 ---

@@ -199,7 +199,7 @@ Docker variant for publishing the functions (in case you get a
 Provide these environment variables for GitHub Actions of the project you noted
 down earlier:
 
-- `APP_REG_CLIENT_ID`
+- `E2E_APP_REG_CLIENT_ID`
 - `E2E_AZURE_CREDENTIALS` (the contents of `ci-credentials.json`)
-- `B2C_CLIENT_SECRET`
-- `B2C_TENANT_ID`
+- `E2E_B2C_CLIENT_SECRET`
+- `E2E_B2C_TENANT_ID`
