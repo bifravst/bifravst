@@ -9,7 +9,8 @@ In order to build the `cat_tracker` application your AWS IoT Core MQTT broker
 hostname **must** be provided.
 
 Add a definition called `CONFIG_AWS_IOT_BROKER_HOST_NAME` to the project
-configuration (`./ncs/nrf/applications/cat_tracker/prj.conf`), like this:
+configuration (`./firmware/prj.conf`) or (`./firmware/prj_thingy91_nrf9160ns.conf`)
+depending on the board you are building for, like this:
 
 ```
 CONFIG_AWS_IOT_BROKER_HOST_NAME="<your broker hostname>"
@@ -20,9 +21,8 @@ CONFIG_AWS_IOT_BROKER_HOST_NAME="<your broker hostname>"
 You **may** configure the application version that is sent as part of the device
 information, it can be any string and defaults to `0.0.0-development`.
 
-You can customize this string by adding a defintion called
-`CONFIG_CAT_TRACKER_APP_VERSION` to the project configuration
-(`./ncs/nrf/applications/cat_tracker/prj.conf`), like this:
+You can customize this string by adding a defintion called `CONFIG_CAT_TRACKER_APP_VERSION`
+to the project configuration (`./firmware/prj.conf`) or (`./firmware/prj_thingy91_nrf9160ns.conf`), like this:
 
 ```
 CONFIG_CAT_TRACKER_APP_VERSION="<your version string>"

@@ -15,10 +15,12 @@
 In order to connect the cloud using the Cat Tracker firmware, it needs to be
 build needs to be build to include the MQTT endpoint for your cloud account.
 
-This is done through the config `CLOUD_HOST_NAME` setting.
+This is done through the config `CONFIG_AWS_IOT_BROKER_HOST_NAME` setting.
 
-In order to use your endpoint, add a new entry to
-[`applications\cat_tracker\prj.conf`](https://github.com/bifravst/firmware/blob/saga/applications/cat_tracker/prj.conf):
+In order to use your endpoint, add a new entry to [`firmware\prj.conf`](https://github.com/bifravst/firmware/prj.conf)
+if you are building for the [nRF9160 DK (`PCA10090`)](https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF9160-DK)
+or [`firmware\prj_thingy91_nrf9160ns.conf`](https://github.com/bifravst/firmware/prj.conf)
+if you are building for the [Thingy:91 (`PCA20035`)](https://www.nordicsemi.com/Software-and-tools/Prototyping-platforms/Nordic-Thingy-91):
 
     CONFIG_BIFRAVST_CLOUD_HOST_NAME="<mqtt endpoint>"
 
