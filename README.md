@@ -11,6 +11,13 @@
 [![ESLint: TypeScript](https://img.shields.io/badge/ESLint-TypeScript-blue.svg)](https://github.com/typescript-eslint/typescript-eslint)  
 [![{DevZone Community](https://img.shields.io/badge/%7BDevZone-community-brightgreen.svg)](https://devzone.nordicsemi.com/search?q=bifravst)
 
+> **🐣 incubating _Bifravst_ as an official _Nordic Semiconductor_ project 🎉**
+>
+> In the coming weeks we will establish the best path to provide this project
+> through nRF Connect SDK, Nordic Semiconductor Info center and potentially
+> other established channels.
+> [Read more here.](https://github.com/bifravst/bifravst/issues/56)
+
 ## Development roadmap
 
 🚧 Development progress is managed in
