@@ -8,8 +8,12 @@
 [![Mergify Status](https://img.shields.io/endpoint.svg?url=https://dashboard.mergify.io/badges/bifravst/bifravst&style=flat)](https://mergify.io)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier/)
-[![ESLint: TypeScript](https://img.shields.io/badge/ESLint-TypeScript-blue.svg)](https://github.com/typescript-eslint/typescript-eslint)  
-[![{DevZone Community](https://img.shields.io/badge/%7BDevZone-community-brightgreen.svg)](https://devzone.nordicsemi.com/search?q=bifravst)
+[![ESLint: TypeScript](https://img.shields.io/badge/ESLint-TypeScript-blue.svg)](https://github.com/typescript-eslint/typescript-eslint)
+
+## Development roadmap
+
+🚧 Development progress is managed in
+[this GitHub Project](https://github.com/orgs/bifravst/projects/1).
 
 > **🐣 incubating _Bifravst_ as an official _Nordic Semiconductor_ project 🎉**
 >
@@ -18,12 +22,9 @@
 > other established channels.
 > [Read more here.](https://github.com/bifravst/bifravst/issues/56)
 
-## Development roadmap
-
-🚧 Development progress is managed in
-[this GitHub Project](https://github.com/orgs/bifravst/projects/1).
-
 ## Support
+
+[![{DevZone Community](https://img.shields.io/badge/%7BDevZone-community-brightgreen.svg)](https://devzone.nordicsemi.com/search?q=bifravst)
 
 ❓ You can get in touch via [DevZone](https://devzone.nordicsemi.com/) (please
 use the tag [bifravst](https://devzone.nordicsemi.com/search?q=bifravst) to mark
@@ -142,14 +143,14 @@ The web application offers these features:
 
 ### Supported Cloud Providers
 
-|                  | Amazon Web Services                                                                     | Google Cloud                                                  | Microsoft Azure                                               | Alibaba Cloud |
-| ---------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------- |
-| LTE-M: TCP+MQTT  | [feature complete](https://bifravst.gitbook.io/bifravst/bifravst-on-aws/gettingstarted) | [in progress](https://github.com/bifravst/bifravst/issues/25) | [in progress](https://github.com/bifravst/bifravst/issues/29) | intended      |
-| NB-Iot: UDP+CoAP | intended                                                                                | intended                                                      | intended                                                      | intended      |
+|                   | Amazon Web Services                                                                     | Google Cloud                                              | Microsoft Azure                                               | Alibaba Cloud |
+| ----------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------- | ------------- |
+| LTE-M: TCP+MQTT   | [feature complete](https://bifravst.gitbook.io/bifravst/bifravst-on-aws/gettingstarted) | [on hold](https://github.com/bifravst/bifravst/issues/25) | [in progress](https://github.com/bifravst/bifravst/issues/29) | intended      |
+| NB-Iot: UDP+LWM2M | intended                                                                                | intended                                                  | intended                                                      | intended      |
 
-For cloud providers that have no native UDP+CoAP support using a bridge, e.g.
-[Eclipse Californium](https://github.com/eclipse/californium), shall be
-evaluated.
+For cloud providers that have no native UDP+LWM2M support using a bridge, e.g.
+[Eclipse Californium](https://github.com/eclipse/californium),
+[was evaluated](https://github.com/coderbyheart/leshan-aws).
 
 #### IoT Cloud vendor survey results
 
