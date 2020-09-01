@@ -24,7 +24,7 @@
   "license": "BSD-3-Clause",
   "dependencies": {},
   "devDependencies": {
-    "@bifravst/code-style": "8.0.53",
+    "@bifravst/code-style": "8.0.56",
     "@commitlint/cli": "9.1.2",
     "@commitlint/config-angular": "9.1.2",
     "@types/ajv": "1.0.0",
