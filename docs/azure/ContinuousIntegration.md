@@ -147,42 +147,34 @@ Now create the CI credentials:
 
 Create a resource group for Bifravst
 
-    # Change to your liking
-    export RESOURCE_GROUP_NAME=bifravst
-    # Use "az account list-locations -o table" to list all locations
-    export LOCATION=northeurope
-
-    az group create --name $RESOURCE_GROUP_NAME --location $LOCATION
+    az group create --name ${RESOURCE_GROUP_NAME:-bifravst} --location ${LOCATION:-northeurope}
 
 Deploy the resources:
 
-    # Change to your liking
-    export APP_NAME=bifravst
-
     az deployment group create \
-    --resource-group $RESOURCE_GROUP_NAME \
+    --resource-group ${RESOURCE_GROUP_NAME:-bifravst} \
     --mode Complete \
     --template-file azuredeploy.json \
     --parameters \
-      appName=$APP_NAME \
-      location=$LOCATION \
+      appName=${APP_NAME:-bifravst} \
+      location=${LOCATION:-northeurope} \
       appRegistrationClientId=$APP_REG_CLIENT_ID \
       b2cTenant=$B2C_TENANT \
       b2cFlowName=B2C_1_developer
 
 Publish the functions:
 
-    func azure functionapp publish ${APP_NAME}API --typescript
+    func azure functionapp publish ${APP_NAME:-bifravst}API --typescript
 
 Docker variant for publishing the functions (in case you get a
 `Permission denied.` error):
 
     docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure bifravst/azure-dev:latest \
-        func azure functionapp publish ${APP_NAME}API --typescript
+        func azure functionapp publish ${APP_NAME:-bifravst}API --typescript
 
 ## Running during development
 
-    export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP_NAME} -n ${APP_NAME}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
+    export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP_NAME} -n ${APP_NAME:-bifravst}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
 
     npm ci
     npm run test:e2e

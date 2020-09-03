@@ -88,7 +88,7 @@ Authenticate the CLI:
     az login
 
 Pick a name for the solution and export it as `APP_NAME`, in this example we use
-`bifravst`.
+`bifravst` as the default.
 
 Deploy the solution in your preferred location (you can list them using
 `az account list-locations`) and export it on the environment variable
@@ -102,7 +102,6 @@ Create a new file `.envrc` in the project folder and add these environment
 variables.
 
     export LOCATION=northeurope
-    export APP_NAME=bifravst
 
 Add the tenant ID:
 
@@ -110,15 +109,16 @@ Add the tenant ID:
 
 Now create the resource group for the solution:
 
-    az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n $APP_NAME
+    az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${APP_NAME:-bifravst}
 
 [It's currently also not possible](https://github.com/bifravst/azure/issues/1)
 to create Active Directory B2C and application through the ARM template, you
 need to follow
 [these instructions](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications)
 and create a B2C tenant and an application. Use `http://localhost:3000/` (for
-local development) and `https://${APP_NAME}app.z16.web.core.windows.net/` as the
-redirect URLs.
+local development) and
+`https://${APP_NAME:-bifravst}app.z16.web.core.windows.net/` as the redirect
+URLs.
 
 Save the _directory (tenant) id_ of the created Active Directory B2C and the
 _application (client) id_ to the environment variable `APP_REG_CLIENT_ID` in the
@@ -126,10 +126,8 @@ _application (client) id_ to the environment variable `APP_REG_CLIENT_ID` in the
 
     export APP_REG_CLIENT_ID=...
 
-Create the user flow for sign up and sign in and save the name (e.g.
-`B2C_1_signup_signin`) in the `.envrc` file:
-
-    export SIGNUP_USER_FLOW=B2C_1_signup_signin
+Create the user flow for sign up and sign in and make sure to name it
+`B2C_1_signup_signin`.
 
 Remember to allow the changed file:
 
@@ -138,18 +136,18 @@ Remember to allow the changed file:
 Now deploy the solution:
 
     az deployment group create \
-        --resource-group $APP_NAME \
+        --resource-group ${APP_NAME:-bifravst} \
         --mode Complete \
-        --name $APP_NAME \
+        --name ${APP_NAME:-bifravst} \
         --template-file azuredeploy.json \
         --parameters \
-            appName=$APP_NAME \
+            appName=${APP_NAME:-bifravst} \
             location=$LOCATION \
             appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT
     # It's currently not possible to enable website hosting through the ARM template
-    az storage blob service-properties update --account-name ${APP_NAME}app --static-website --index-document index.html
-    az storage blob service-properties update --account-name ${APP_NAME}deviceui --static-website --index-document index.html
+    az storage blob service-properties update --account-name ${APP_NAME:-bifravst}app --static-website --index-document index.html
+    az storage blob service-properties update --account-name ${APP_NAME:-bifravst}deviceui --static-website --index-document index.html
 
     # Deploy the functions
-    func azure functionapp publish ${APP_NAME}API --typescript
+    func azure functionapp publish ${APP_NAME:-bifravst}API --typescript

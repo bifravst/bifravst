@@ -30,7 +30,7 @@ Make sure to include these settings in your `local.settings.json`:
 Run this command to list the environment variables of the function app. Export
 them.
 
-    az functionapp config appsettings list --resource-group $RESOURCE_GROUP_NAME --name ${APP_NAME}API | jq -r '.[] | .name+"=\""+.value+"\""'
+    az functionapp config appsettings list --resource-group ${RESOURCE_GROUP_NAME:-bifravst} --name ${APP_NAME:-bifravst}API | jq -r '.[] | .name+"=\""+.value+"\""'
 
 Run the functions app:
 

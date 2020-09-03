@@ -125,12 +125,7 @@ Now create the CI credentials:
 
 Create a resource group for Bifravst
 
-    # Change to your liking
-    export RESOURCE_GROUP_NAME=bifravstprod
-    # Use "az account list-locations -o table" to list all locations
-    export LOCATION=northeurope
-
-    az group create --name $RESOURCE_GROUP_NAME --location $LOCATION
+    az group create --name ${RESOURCE_GROUP_NAME:-bifravst} --location ${LOCATION:-northeurope}
 
 Fork the
 [Bifravst Azure project](https://github.com/bifravst/azure/settings/secrets/new)
