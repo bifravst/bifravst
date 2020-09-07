@@ -32,3 +32,20 @@ and install the dependencies:
     git clone https://github.com/bifravst/app.git bifravst-app
     cd bifravst-app
     npm ci
+
+Set the environment `EXTEND_ESLINT` to `true` (this is needed for Create React
+App to pick up the
+[custom eslint configuration](https://create-react-app.dev/docs/setting-up-your-editor/#experimental-extending-the-eslint-config)).
+
+The recommended workflow is to use a [_direnv_](https://direnv.net/) plugin for
+your shell which will automatically export the environment variables it finds in
+a `.envrc` file in the project folder:
+
+Create a new file `.envrc` in the project folder and add these environment
+variables.
+
+    export EXTEND_ESLINT=true
+
+Add the tenant ID:
+
+    direnv allow
