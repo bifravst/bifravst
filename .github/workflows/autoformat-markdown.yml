@@ -1,6 +1,6 @@
-name: Prettify sources in PRs
+name: Prettify Markdown files
 
-on: pull_request
+on: push
 
 jobs:
   tests:
