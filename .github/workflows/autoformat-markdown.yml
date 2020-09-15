@@ -3,7 +3,7 @@ name: Prettify Markdown files
 on: push
 
 jobs:
-  tests:
+  prettify:
     runs-on: ubuntu-latest
 
     steps:
