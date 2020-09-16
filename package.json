@@ -28,7 +28,7 @@
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-angular": "11.0.0",
     "@types/ajv": "1.0.0",
-    "@types/jest": "26.0.13",
+    "@types/jest": "26.0.14",
     "@types/node": "14.10.2",
     "ajv": "6.12.5",
     "husky": "4.3.0",
