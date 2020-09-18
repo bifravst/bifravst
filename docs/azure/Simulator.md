@@ -8,6 +8,7 @@ UI to control the simulated device. Set it up on your Azure account:
     git clone https://github.com/bifravst/device-ui
     cd device-ui
     npm ci
+    export EXTEND_ESLINT=true
     npm run build
     # Upload it to the storage account created for bifravst
     az storage blob upload-batch -s build -d \$web --account-name bifravstdeviceui

@@ -13,6 +13,7 @@ let's call it `bifravst-device-ui` then
     git clone https://github.com/bifravst/device-ui
     cd device-ui
     npm ci
+    export EXTEND_ESLINT=true
     npm run build
     npx firebase login
     npx firebase deploy

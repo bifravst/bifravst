@@ -60,6 +60,7 @@ This builds and deploys the app to the S3 bucket created when setting up
 _Bifravst_ in your AWS account.
 
     export $(cat .env.local | xargs)
+    export EXTEND_ESLINT=true
     npm run build
     aws s3 cp build s3://$REACT_APP_WEB_APP_BUCKET_NAME \
       --recursive --metadata-directive REPLACE \
