@@ -31,8 +31,11 @@ a Raspberry Pi connected to AWS IoT where it receives jobs to execute:
 The CI run on GitHub Actions uses AWS IoT jobs to communication with the
 Firmware CI runner.
 
-Run this command to set up the Firmware CI Stack in an AWS Account.
+Run this command to set up the Firmware CI Stack in an AWS Account. It's
+recommended to use a separate account for CI purposes.
 
+    npx cdk -a 'node --unhandled-rejections=strict dist/cdk/cloudformation-sourcecode.js' deploy
+    npx cdk bootstrap
     npx cdk -a 'node --unhandled-rejections=strict dist/cdk/cloudformation-firmware-ci.js' deploy
 
 Print the AWS Key for the CI runner on GitHub Actions using this command:
