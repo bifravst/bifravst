@@ -79,7 +79,7 @@ afterwards you should be able to execute the `func` command:
 > set up Bifravst in a dedicated subscription.
 
 Go to the Subscriptions blade, and add a new subscription for Bifravst, copy the
-subscript id.
+subscription id.
 
     export SUBSCRIPTION_ID=0aef5c04-9e9c-4275-9ccf-e719842d082d
 
