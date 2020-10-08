@@ -28,15 +28,28 @@ a Raspberry Pi connected to AWS IoT where it receives jobs to execute:
 
 ## Preparation
 
-The CI run on GitHub Actions uses AWS IoT jobs to communication with the
+The purpose of end-to-end testing is ensure that the firmware is communicating
+correctly with Bifravst, therefore a test environment is also needed. During
+test runs, a device certificate will be created and passed alongside the
+firmware hexfile to the CI runner. The hardware devices controlled by the CI
+runner will be provisioned and connect to the endpoint of the test environment.
+Each CI run on GitHub Actions uses AWS IoT jobs to communication with the
 Firmware CI runner.
 
-Run this command to set up the Firmware CI Stack in an AWS Account. It's
-recommended to use a separate account for CI purposes.
+> **Note:** It's recommended to use a separate account for CI purposes.
 
-    npx cdk -a 'node --unhandled-rejections=strict dist/cdk/cloudformation-sourcecode.js' deploy
+Set up a test instance of Bifravst with the Firmware CI resources in the CI
+account (see [Getting Started](./GettingStarted.md)).
+
+    npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' deploy
     npx cdk bootstrap
-    npx cdk -a 'node --unhandled-rejections=strict dist/cdk/cloudformation-firmware-ci.js' deploy
+    # Do not deploy the web apps
+    npx cdk deploy '*' -c firmware-ci=1 -c webapp=0 -c deviceui=0
+
+You should also enable [Continuous Deployment](./ContinuousDeployment.md) for
+the test instance so it's kept in sync with the development.
+
+    npx cdk deploy '*' -c firmware-ci=1 -c webapp=0 -c deviceui=0 -c cd=1
 
 Print the AWS Key for the CI runner on GitHub Actions using this command:
 
