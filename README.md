@@ -31,8 +31,8 @@ by the gods between earth and heaven.
 
 ## Vision
 
-_Bifravst_ aims to provide a concrete end-to-end example for an IoT product in
-the asset tracker space, namely a _Cat Tracker_.
+_Bifravst_ aims to provide a concrete end-to-end example for an ultra-low power
+IoT product in the asset tracker space, namely a _Cat Tracker_.
 
 ![Bifravst: Cat Tracker IoT example](./docs/logo-with-text.png)
 
@@ -47,10 +47,10 @@ questions :
 - _How do devices send data into the cloud?_
 - _How can the data be sent to the devices?_
 - _How can users and other services interact with the devices?_
-- \_How can you update the application firmware of your devices while they are
-- deployed in the field?\_
-- \_How can you develop an IIoT product that maximizes battery life, minimizes
-- data usage, and handles unreliable connectivity gracefully\_?
+- _How can you update the application firmware of your devices while they are
+  deployed in the field?_
+- _How can you develop a cellular IoT product that maximizes battery life,
+  minimizes data usage, and handles unreliable connectivity gracefully?_
 
 _Bifravst_ is licensed under the [3-clause BSD license](./LICENSE) (software)
 and the
@@ -83,8 +83,8 @@ _Bifravst_ is built on the following principles:
   recommendations of the respective cloud provider.
 - _Single tenancy_ - _Bifravst_ implements a scenario in which all the
   authenticated users can be trusted to access all the devices. This is a
-  typical scenario in IIoT products and it simplifies the onboarding of new
-  devices.
+  typical scenario for cellular IoT products and it simplifies the onboarding of
+  new devices.
 - _Serverless_ - _Bifravst_ uses a serverless architecture as much as possible
   to have near-zero costs for the operation during the development, and to
   provide horizontal scaling of resources to be used in a production system if
@@ -92,10 +92,10 @@ _Bifravst_ is built on the following principles:
 - _Cloud native_ - _Bifravst_ examples are designed by following the best
   practices of the respective cloud provider to reduce development efforts due
   to abstraction.
-- _Being offline is not an exception_ - Highly mobile IIoT products need to
-  handle unreliable connections gracefully, by implementing mechanisms to retry
-  the failed sending of data. This also means that the sensor measurements need
-  to be timestamped when they are created, and not when they arrive at the
+- _Being offline is not an exception_ - Highly mobile cellular IoT products need
+  to handle unreliable connections gracefully, by implementing mechanisms to
+  retry the failed sending of data. This also means that the sensor measurements
+  need to be timestamped when they are created, and not when they arrive at the
   cloud.
 - _Maximize power saving_ - The firmware examples should highlight power saving
   features of the nRF9160 DK because this is critical for developing very small
