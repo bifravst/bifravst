@@ -32,7 +32,7 @@ by the gods between earth and heaven.
 ## Vision
 
 _Bifravst_ aims to provide a concrete end-to-end example for an ultra-low power
-IoT product in the asset tracker space, namely a _Cat Tracker_.
+cellular IoT product in the asset tracker space, namely a _Cat Tracker_.
 
 ![Bifravst: Cat Tracker IoT example](./docs/logo-with-text.png)
 
