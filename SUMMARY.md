@@ -14,6 +14,7 @@
 - [Continuous Integration](./docs/aws/ContinuousIntegration.md)
 - [Cell Geolocation](./docs/aws/CellGeolocation.md)
 - [Uninstalling](./docs/aws/Uninstalling.md)
+- [SNI](./docs/aws/SNI.md)
 
 ## Bifravst on Azure (WIP)
 
