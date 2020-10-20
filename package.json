@@ -16,24 +16,24 @@
   "keywords": [
     "Cloud",
     "IoT",
-    "bifravst",
-    "AssetTracker",
+    "Bifravst",
+    "Asset Tracker",
     "NordicSemiconductor"
   ],
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "BSD-3-Clause",
   "dependencies": {},
   "devDependencies": {
-    "@bifravst/code-style": "8.0.94",
+    "@bifravst/code-style": "8.0.134",
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-angular": "11.0.0",
     "@types/ajv": "1.0.0",
-    "@types/jest": "26.0.14",
-    "@types/node": "14.11.2",
-    "ajv": "6.12.5",
+    "@types/jest": "26.0.15",
+    "@types/node": "14.14.0",
+    "ajv": "6.12.6",
     "husky": "4.3.0",
-    "jest": "26.4.2",
-    "ts-jest": "26.4.0",
+    "jest": "26.6.0",
+    "ts-jest": "26.4.1",
     "typescript": "4.0.3"
   },
   "husky": {

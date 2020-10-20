@@ -14,6 +14,7 @@
 - [Continuous Integration](./docs/aws/ContinuousIntegration.md)
 - [Cell Geolocation](./docs/aws/CellGeolocation.md)
 - [Uninstalling](./docs/aws/Uninstalling.md)
+- [SNI](./docs/aws/SNI.md)
 
 ## Bifravst on Azure (WIP)
 
@@ -50,6 +51,7 @@
 - [Building using Docker](./docs/firmware/BuildingUsingDocker.md)
 - [Building using your local system](./docs/firmware/BuildingUsingLocalSystem.md)
 - [Building using GitHub Actions](./docs/firmware/BuildingUsingGitHub.md)
+- [Continuous Integration on AWS](./docs/aws/FirmwareContinuousIntegration.md)
 - [Device-Cloud-Protocol](./docs/firmware/Protocol.md)
 - [Device Data and Configuration](./docs/firmware/SensorDataAndConfiguration.md)
 - [LED Schema](./docs/firmware/LEDSchema.md)

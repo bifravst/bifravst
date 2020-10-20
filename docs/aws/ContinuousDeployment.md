@@ -39,7 +39,7 @@ manual step done through the AWS CLI:
 
 Now you can set up the continuous deployment:
 
-    npx cdk -a 'node dist/cdk/cloudformation-cd.js' deploy
+    npx cdk deploy '*' -c cd=1
 
 ## Check the status of the Continuous Deployment
 

@@ -14,19 +14,19 @@ without needing to install dependencies directly in your system.
     cd firmware
     docker build -t bifravst-firmware-docker .
     BROKER_HOSTNAME=`aws iot describe-endpoint --endpoint-type iot:Data-ATS | jq -r '.endpointAddress'`
-    echo "CONFIG_AWS_IOT_BROKER_HOST_NAME=\"${BROKER_HOSTNAME}\"" >> prj.conf
+    echo "CONFIG_AWS_IOT_BROKER_HOST_NAME=\"${BROKER_HOSTNAME}\"" >> prj_nrf9160dk_nrf9160ns.conf
     echo "CONFIG_AWS_IOT_BROKER_HOST_NAME=\"${BROKER_HOSTNAME}\"" >> prj_thingy91_nrf9160ns.conf
 
 ## Building
 
 ### Thingy:91 (`PCA20035`)
 
-    docker run --rm -v ${PWD}:/workdir/ncs/firmware bifravst-firmware-docker:latest /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns'
+    docker run --rm -v ${PWD}:/workdir/ncs/firmware bifravst-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns'
     ls -la build/zephyr/merged.hex
 
 ### nRF9160 DK (`PCA10090`)
 
-    docker run --rm -v ${PWD}:/workdir/ncs/firmware bifravst-firmware-docker:latest /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b nrf9160_pca10090ns'
+    docker run --rm -v ${PWD}:/workdir/ncs/firmware bifravst-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b nrf9160dk_nrf9160ns'
     ls -la build/zephyr/merged.hex
 
 ## Location of the HEX file
