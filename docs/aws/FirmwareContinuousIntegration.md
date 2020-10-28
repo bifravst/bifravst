@@ -26,6 +26,14 @@ a Raspberry Pi connected to AWS IoT where it receives jobs to execute:
    1. or a stop condition is reached (wait for a log output to match a regex)
 1. it uploads the logs to S3
 
+> Note: these devices connect to an existing instance, so the firmware tests
+> will not set up a new blank Bifravst AWS environment for every test, but be
+> run against an existing instance. The reason for that is that we want to
+> reduce the possible reasons for failures during the test. The development
+> model is also that firmware and cloud backend are development independently so
+> there is limited value in running a test for a specific combination of cloud
+> backend and firmware.
+
 ## Preparation
 
 The purpose of end-to-end testing is ensure that the firmware is communicating
