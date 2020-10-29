@@ -60,6 +60,7 @@
 
 ## Guides
 
+- [Cloud connectivity and protocols for the Internet of Things](docs/guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.md)
 - [Automated HEX file builds](docs/guides/AutomateHEXFileBuilding.md)
 - [Cloud Differences](./docs/guides/CloudDifferences.md)
 - [Cell Geolocations](./docs/guides/CellGeolocations.md)
