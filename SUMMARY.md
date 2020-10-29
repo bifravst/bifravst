@@ -27,18 +27,11 @@
 - [Continuous Integration](./docs/azure/ContinuousIntegration.md)
 - [Guide: Using Azure AD B2C to secure your Azure Functions Apps](./docs/azure/secure-azure-function-apps-with-microsoft-b2c.md)
 
-## Bifravst on GCP (WIP)
-
-- [Getting Started](./docs/gcp/GettingStarted.md)
-- [Device Credentials](./docs/gcp/DeviceCredentials.md)
-- [Connect using the simulator](./docs/gcp/Simulator.md)
-
 ## Cat Tracker Web Application
 
 - [Getting Started](./docs/app/GettingStarted.md)
 - [Updating an existing installation](./docs/app/Updating.md)
 - [Deploying to AWS](./docs/app/AWS.md)
-- [Deploying to GCP](./docs/app/GCP.md)
 - [Deploying to Azure](./docs/app/Azure.md)
 - [Customizing the app](./docs/app/Customizing.md)
 
