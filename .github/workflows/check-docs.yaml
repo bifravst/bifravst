@@ -16,6 +16,8 @@ jobs:
           python3 -m pip install --upgrade --user pip setuptools
           python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
 
-      - run: rstcheck ./**/*.rst
+      - run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          rstcheck ./**/*.rst
 
       - run: make html
