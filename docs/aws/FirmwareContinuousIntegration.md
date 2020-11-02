@@ -26,6 +26,14 @@ a Raspberry Pi connected to AWS IoT where it receives jobs to execute:
    1. or a stop condition is reached (wait for a log output to match a regex)
 1. it uploads the logs to S3
 
+> Note: these devices connect to an existing instance, so the firmware tests
+> will not set up a new blank Bifravst AWS environment for every test, but be
+> run against an existing instance. The reason for that is that we want to
+> reduce the possible reasons for failures during the test. The development
+> model is also that firmware and cloud backend are development independently so
+> there is limited value in running a test for a specific combination of cloud
+> backend and firmware.
+
 ## Preparation
 
 The purpose of end-to-end testing is ensure that the firmware is communicating
@@ -55,12 +63,54 @@ Print the AWS Key for the CI runner on GitHub Actions using this command:
 
     node cli firmware-ci -s
 
+    Region:             <Region>
+    Bucket name:        <Bucket name>
+    Access Key ID:      <AWS Access Key ID>
+    Secret Access Key:  <AWS Secret Access Key>
+
 Now you can create a new IoT Thing to be used for a Firmware CI runner:
 
     node cli firmware-ci -c
 
-Provide the generated JSON file to the CI runner.
-
 You can delete a device using this command:
 
     node cli firmware-ci -r <deviceId>
+
+## CI Runner
+
+1.  Download [JLink](https://www.segger.com/downloads/jlink/) for your platform.
+    Use the path to the folder (e.g. `~/JLink_Linux_V686_arm64/`) further down.
+
+2.  Install [firmware-ci](https://github.com/bifravst/firmware-ci.git):
+
+        git clone https://github.com/bifravst/firmware-ci.git
+        cd firmware-ci
+        npm ci
+        npx tsc
+
+3.  Now provide these environment variables:
+
+    ```
+    export AWS_ACCESS_KEY_ID=<AWS Access Key ID printed above>
+    export AWS_SECRET_ACCESS_KEY=<AWS Secret Access Key printed above>
+    export REGION=<Region printed above>
+    export BUCKET_NAME=<Bucket name printed above>
+    export PATH=<Path to JLINK>:$PATH
+    ```
+
+    > The recommended workflow is to use a [_direnv_](https://direnv.net/)
+    > plugin for your shell which will automatically export the environment
+    > variables it finds in a `.envrc` file in the project folder:
+    >
+    > Create a new file `.envrc` in the project folder and add the credentials
+    > that are presented to you after you have created the new user.
+
+4.  Copy over the JSON file containing the certificate
+
+5.  Run:
+
+    ```
+    node cli run <path to certificate.json>
+    ```
+
+The Firmware CI will now process all schedule jobs one after another.
