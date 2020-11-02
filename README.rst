@@ -6,6 +6,13 @@ Bifravst
 
   *Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.*
 
+.. admonition:: 🐣 incubating *Bifravst* as an official *Nordic Semiconductor* project 🎉
+
+  In the coming weeks, we will establish the best path to provide this project
+  through nRF Connect SDK, Nordic Semiconductor Info center and potentially
+  other established channels. For more information see the
+  `GitHub issue <https://github.com/bifravst/bifravst/issues/56>`_.
+
 What does *Bifravst* mean?
 --------------------------------------------------------------------------------
 
@@ -38,20 +45,10 @@ by the gods between earth and heaven.
    :alt: ESLint: TypeScript
    :target: https://github.com/typescript-eslint/typescript-eslint
 
-Development roadmap
---------------------------------------------------------------------------------
-
-.. admonition:: 🚧 
+.. admonition:: 🚧 Development roadmap
 
   Development progress is managed in the
   `Bifravst GitHub Project <https://github.com/orgs/bifravst/projects/1>`_.
-
-.. admonition:: 🐣 incubating *Bifravst* as an official *Nordic Semiconductor* project 🎉
-
-  In the coming weeks, we will establish the best path to provide this project
-  through nRF Connect SDK, Nordic Semiconductor Info center and potentially
-  other established channels. For more information see the
-  `GitHub issue <https://github.com/bifravst/bifravst/issues/56>`_.
 
 Support
 --------------------------------------------------------------------------------
