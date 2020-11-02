@@ -74,13 +74,13 @@ export AWS_SECRET_ACCESS_KEY=<value of Secret access key>
 export AWS_DEFAULT_REGION=<your preferred AWS region>
 ```
 
->Note: You should add the `.envrc` file to your global 
->[.gitignore file](https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore).lobal-gitignore).
+> Note: You should add the `.envrc` file to your global
+> [.gitignore file](https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore).
 
 ## Supported regions
 
 Not all AWS features are available in all the AWS regions.
-You can see a warning if you are deploying to a region that has not been tested
+You will see a warning if you are deploying to a region that has not been tested
 and the AWS CDK might fail.
 
 The supported regions are listed below:
