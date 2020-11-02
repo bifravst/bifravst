@@ -2,6 +2,8 @@
 Automate building of HEX files for your nRF Connect SDK application
 ================================================================================
 
+.. note::
+
     This guide was originally published `on the {DevZone blog 
     <https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/automate-building-of-hex-files-for-your-nrf-connect-sdk-application-using-circleci>`_.
 
@@ -42,7 +44,9 @@ effort, but using a CI runner allows you to automate your software
 releases using a project called `semantic
 release <https://github.com/semantic-release/semantic-release>`_.
 
-    **Note:** by default :code:`semantic-release` will get the :code:`reposityUrl`
+.. note::
+
+    By default :code:`semantic-release` will get the :code:`reposityUrl`
     it uses to  determine the changes between releases from the :code:`package.json`
     which after forking the :code:`firmware` repo will still point to 
     :code:`https://github.com/bifravst/firmware.git`. 

@@ -61,7 +61,9 @@ Programmer\](images/programmer-modem-desktop.png)
 Flash using [nrjprog]{.title-ref}
 ================================================================================
 
-\    Note: The nRF9160 \> \[should be programmed using
+.. note::
+
+    The nRF9160 \> \[should be programmed using
 [nrfjprog]{.title-ref}\](<http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160.html#board-controller>).
 \    [west flash]{.title-ref} is not supported.
 

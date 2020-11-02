@@ -2,7 +2,9 @@
 Deploying to AWS
 ================================================================================
 
-\    **Note:** first make sure you have \> \[set up the necessary AWS
+.. note::
+
+    first make sure you have \> \[set up the necessary AWS
 resources\](../aws/GettingStarted.md).
 
 Configure the react app
@@ -87,5 +89,7 @@ Registering a user
 There are no predefined user accounts in the userpool, so you need to
 register a new user.
 
-\    **Note:** the UserPool is configured to use the email address as the
+.. note::
+
+    the UserPool is configured to use the email address as the
 username.

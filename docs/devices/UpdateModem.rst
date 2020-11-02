@@ -2,7 +2,9 @@
 Updating the modem firmware on an nRF9160
 ================================================================================
 
-\    **Note:** This is a one-time operation and only needed if your have
+.. note::
+
+    This is a one-time operation and only needed if your have
 not yet \    updated the modem to the latest firmware version.
 
 Flash the latest modem firmware in case you haven\'t done this already.

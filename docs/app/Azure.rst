@@ -2,7 +2,9 @@
 Deploying to Azure
 ================================================================================
 
-\    **Note:** first make sure you have \> \[set up the necessary Azure
+.. note::
+
+    first make sure you have \> \[set up the necessary Azure
 resources\](../azure/GettingStarted.md).
 
 Configure the react app

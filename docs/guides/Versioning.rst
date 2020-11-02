@@ -15,12 +15,15 @@ and in every library `a
 hook <https://github.com/marionebl/commitlint>`_ will check commit
 messages against these rules.
 
-    **Note:** ℹ️ The :code:`package.json` of a project should only contain
+.. note::
+
+    The :code:`package.json` of a project should only contain
     :code:`0.0.0-development` as  the :code:`version`
     property, semantic-release will ignore the value.
     
-    ⚠️ Only the
-    published package on npm will contain the correct version number.
+.. warning::
+
+    Only the published package on npm will contain the correct version number.
 
 How to release a new version of a package
 ================================================================================
@@ -56,16 +59,20 @@ Breaking Release:
     
     <description of breaking change>
 
-⚠️ Note that **any other** commit message format **will not trigger** a
-release.
+.. warning::
+
+    Note that **any other** commit message format **will not trigger** a
+    release.
 
 Patch release (:code:`fix`) :code:`2.3.4 -> 2.3.5` 🐞
 --------------------------------------------------------------------------------
 
-ℹ️ A fix is a change to the implementation which removes a bug **without
-changing the public API** (method names and signatures, exports) of the
-library. The consumer of the library must not need to change their
-implementation when installing the fixed version.
+.. note::
+
+    A fix is a change to the implementation which removes a bug **without
+    changing the public API** (method names and signatures, exports) of the
+    library. The consumer of the library must not need to change their
+    implementation when installing the fixed version.
 
 To release a fix (which will update the version from :code:`2.3.4`
 to :code:`2.3.5`, use the type :code:`fix` in the commit
@@ -86,12 +93,15 @@ Scopes are useful when the project is rather big.
 
 Feature release (:code:`feat`) :code:`2.3.4 -> 2.4.0` 🚀
 --------------------------------------------------------------------------------
-ℹ️ A feature is a change to the implementation of a library which adds
-additional functionality **without changing the public API** of the
-library. You may add new exports, methods and even extra, optional
-method arguments, but the consumer of the library must not need to
-change their implementation when installing the library with the new
-feature.
+
+.. note::
+
+    A feature is a change to the implementation of a library which adds
+    additional functionality **without changing the public API** of the
+    library. You may add new exports, methods and even extra, optional
+    method arguments, but the consumer of the library must not need to
+    change their implementation when installing the library with the new
+    feature.
 
 To release a feature (which will update the version from
 :code:`2.3.4` to :code:`2.4.0`, use the type
@@ -106,14 +116,16 @@ You can optionally add a scope as well.
 Breaking Release (:code:`BREAKING CHANGE:`) :code:`2.3.4 -> 3.0.0` 🚨
 --------------------------------------------------------------------------------
 
-ℹ️ Every time the public API of the library changes in a way that
-requires the consumer to update their implementation **you must mark the
-change as breaking**. This can happen if method names and arguments are
-renamed, previously optional arguments become required, arguments get
-removed, classes get renamed. Even if the change is very small, as soon
-as you are breaking the library's *contract* (its public API) it is
-considered a breaking change, `according to
-semver <https://semver.org/#spec-item-8>`_.
+.. note::
+
+    Every time the public API of the library changes in a way that
+    requires the consumer to update their implementation **you must mark the
+    change as breaking**. This can happen if method names and arguments are
+    renamed, previously optional arguments become required, arguments get
+    removed, classes get renamed. Even if the change is very small, as soon
+    as you are breaking the library's *contract* (its public API) it is
+    considered a breaking change, `according to
+    semver <https://semver.org/#spec-item-8>`_.
 
 To release a breaking release (which will update the version from
 :code:`2.3.4` to :code:`3.0.0`, use the text :code:`BREAKING

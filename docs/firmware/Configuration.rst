@@ -5,7 +5,9 @@ Configuration
 Setting the AWS IoT Core MQTT broker hostname
 ================================================================================
 
-\    **Note:** If [CONFIG_AWS_IOT_BROKER_HOST_NAME]{.title-ref} is not set
+.. note::
+
+    If [CONFIG_AWS_IOT_BROKER_HOST_NAME]{.title-ref} is not set
 you will not be able \    to build the firmware.
 
 In order to build the [cat_tracker]{.title-ref} application your AWS IoT

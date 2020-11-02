@@ -19,7 +19,9 @@ Create a subscription for Bifravst
 Create an Azure Active Directory B2C
 ================================================================================
 
-\    \_Note:\_ This \> \[can currently only be achieved through the
+.. note::
+
+     This \> \[can currently only be achieved through the
 CLI\](<https://github.com/bifravst/azure/issues/1>). \    If you know how
 to make the whole set-up process simpler, \    \[please provide your input
 here!\](<https://github.com/bifravst/azure/issues/1>)

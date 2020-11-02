@@ -2,7 +2,9 @@
 Continuous Integration
 ================================================================================
 
-\    \_Note:\_ This is an advanced topic for those who want to further
+.. note::
+
+     This is an advanced topic for those who want to further
 develop and \    customize Bifravst according to their needs. Please see
 the \    `GitHub project page <https://github.com/bifravst/aws/>`_ of
 Bifravst for AWS \    which implements the process outlined here.

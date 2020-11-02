@@ -2,7 +2,9 @@
 Continuous Integration
 ================================================================================
 
-\    \_Note:\_ This is an advanced topic for those who want to further
+.. note::
+
+     This is an advanced topic for those who want to further
 develop and \    customize Bifravst according to their needs. Please see
 the \    `GitHub project page <https://github.com/bifravst/azure/>`_ of
 Bifravst for \    Azure which implements the process outlined here.
@@ -29,7 +31,9 @@ folder\](<https://github.com/bifravst/azure/tree/saga/features>).
 Prepare your Azure Account
 ================================================================================
 
-\    \_Warning:\_ Compared to the \> \[AWS continuous integration
+.. warning::
+
+Compared to the \> \[AWS continuous integration
 setup\](../aws/ContinuousIntegration.md) getting it \    to work on Azure
 is immensely more complicated and involves many manual steps, \    which
 unfortunately cannot be automated. If you know how to make the whole \>
@@ -203,7 +207,9 @@ Running during development
     
     npm ci npm run test:e2e
 
-\    \_Note:\_ Azure functions only allow one \_Issuer [Url]() in the
+.. note::
+
+     Azure functions only allow one \_Issuer [Url]() in the
 Active Directory \    authentication configuration, so you cannot interact
 with this instance both \    from the end-to-end tests **and** the web app
 because the user flow name \    differs ([B2C_1\_developer]{.title-ref}

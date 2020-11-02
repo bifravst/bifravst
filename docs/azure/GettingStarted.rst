@@ -16,10 +16,14 @@ prettier\](<https://img.shields.io/badge/code_style-prettier-ff69b4.svg>)\](<htt
 \[!\[ESLint:
 TypeScript\](<https://img.shields.io/badge/ESLint-TypeScript-blue.svg>)\](<https://github.com/typescript-eslint/typescript-eslint>)
 
-\    🚧 \_Note:\_ The Azure implementation is \> \[work in
+.. note::
+
+    🚧 The Azure implementation is \> \[work in
 progress\](<https://github.com/bifravst/bifravst/issues/29>).
 
-\    💵 \_Note:\_ Because the Azure solution is using \> \[Cosmos
+.. note::
+
+    💵 Because the Azure solution is using \> \[Cosmos
 DB\](<https://docs.microsoft.com/en-us/azure/cosmos-db/introduction>)
 for \    querying historical device data, the minimum costs to run
 Bifravst on Azure is \    around \$24 per month. However, \> \[there is a
@@ -89,7 +93,9 @@ afterwards you should be able to execute the [func]{.title-ref} command:
 Deploy the solution to your account
 ================================================================================
 
-\    Note: since we will be using Azure Active Directory B2C it is
+.. note::
+
+    since we will be using Azure Active Directory B2C it is
 recommended to \    set up Bifravst in a dedicated subscription.
 
 Go to the Subscriptions blade, and add a new subscription for Bifravst,

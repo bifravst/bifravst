@@ -33,7 +33,9 @@ op, and the device can cache its associated IoT Hub endpoint.
 Create a CA root certificate
 ================================================================================
 
-\    \_Note:\_ Make sure you have exported the right resource group to
+.. note::
+
+     Make sure you have exported the right resource group to
 name as \    [\$RESOURCE_GROUP_NAME]{.title-ref}, it defaults to
 [bifravst]{.title-ref}.
 
@@ -49,7 +51,9 @@ Proof your ownership of the CA with
 
     node cli proof-ca-root-possession
 
-\    Note: if you see the error \_\"A required certificate is not within
+.. note::
+
+    if you see the error \_\"A required certificate is not within
 its validity \    period when verifying against the current system clock
 or the timestamp in the \    signed file.\"\_ double check that your
 system\'s clock is correct, if it is set \    to a future time, this will

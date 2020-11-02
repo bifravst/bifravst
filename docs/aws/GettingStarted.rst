@@ -44,7 +44,9 @@ Provide your AWS credentials
 In order to set up Bifravst on AWS you first need to set up a new
 account.
 
-\    🚨 It is recommended to install these resources in a blank AWS account
+.. warning::
+
+    It is recommended to install these resources in a blank AWS account
 to \    clearly separate them from your other projects. After you have
 registered your \    personal account, sign-up for \> \[AWS
 Organizations\](<https://aws.amazon.com/organizations/>) and create a \>
@@ -79,7 +81,9 @@ the [.envrc]{.title-ref} file.
 
 `` ` export AWS_ACCESS_KEY_ID=<value of Access key ID    export AWS_SECRET_ACCESS_KEY=<value of Secret access key> export AWS_DEFAULT_REGION=<your preferred AWS region> ``\`
 
-\    Note: you should add the [.envrc]{.title-ref} to your \> \[global
+.. note::
+
+    you should add the [.envrc]{.title-ref} to your \> \[global
 .gitignore
 file\](<https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore>).
 

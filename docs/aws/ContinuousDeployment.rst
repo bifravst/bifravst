@@ -2,7 +2,9 @@
 Continuous Deployment
 ================================================================================
 
-\    **Note:** This is an optional step to keep the deployment in your
+.. note::
+
+    This is an optional step to keep the deployment in your
 account in \    sync with the source code repository automatically.
 
 For this to work you need to fork the source code in order to register
@@ -32,7 +34,9 @@ with [repo]{.title-ref}, [admin:repo_hook]{.title-ref} and
 [read:packages]{.title-ref} permissions for an account that has write
 permissions to your repository.
 
-\    🚨 It is recommended to use a separate GitHub account for this, not
+.. warning::
+
+    It is recommended to use a separate GitHub account for this, not
 your \    personal GitHub account.
 
 You need to store this token in AWS ParameterStore which is a

@@ -59,13 +59,17 @@ Manager\](images/certificate-manager-desktop.png)
 
 Drag and Drop or select the JSON file.
 
-**Note:** Change the security tag to [42]{.title-ref}. The modem can
+.. note::
+
+    Change the security tag to [42]{.title-ref}. The modem can
 hold multiple credentials, and the default security tag
 ([16842753]{.title-ref}) is reserved for \[nRF Connect for
 Cloud\](<https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud>)
 credentials.
 
-**Note:** Make sure that the selected device is directly connected and
+.. note::
+
+    Make sure that the selected device is directly connected and
 not connected via the debugger!
 
 Click \_Update [certificates]() and wait until the operation finishes.

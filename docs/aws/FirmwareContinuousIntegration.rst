@@ -32,7 +32,9 @@ execute:
         regex)
 3.  it uploads the logs to S3
 
-\    Note: these devices connect to an existing instance, so the firmware
+.. note::
+
+    these devices connect to an existing instance, so the firmware
 tests \    will not set up a new blank Bifravst AWS environment for every
 test, but be \    run against an existing instance. The reason for that is
 that we want to \    reduce the possible reasons for failures during the
@@ -51,7 +53,9 @@ devices controlled by the CI runner will be provisioned and connect to
 the endpoint of the test environment. Each CI run on GitHub Actions uses
 AWS IoT jobs to communication with the Firmware CI runner.
 
-\    **Note:** It\'s recommended to use a separate account for CI
+.. note::
+
+    It\'s recommended to use a separate account for CI
 purposes.
 
 Set up a test instance of Bifravst with the Firmware CI resources in the

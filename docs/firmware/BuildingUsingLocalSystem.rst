@@ -2,7 +2,9 @@
 Building using your local system
 ================================================================================
 
-\    **Note:** Getting your system to the required state to build firmware
+.. note::
+
+    Getting your system to the required state to build firmware
 is \    cumbersome. It is recommend to check out the alternative of using
 \    \[Docker\](./BuildingUsingDocker.md) or use a \> \[CI
 Runner\](./BuildingUsingGitHub.md)
@@ -10,7 +12,9 @@ Runner\](./BuildingUsingGitHub.md)
 Prepare your system
 ================================================================================
 
-\    **Note:** You can always check out the \> \[GitHub Actions
+.. note::
+
+    You can always check out the \> \[GitHub Actions
 workflow\](<https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml>)
 \    as a reference, which sets up a blank Ubuntu image to build the
 firmware.

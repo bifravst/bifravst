@@ -8,7 +8,9 @@ On AWS devices connect to IoT core using \[TLS version
 Generate a CA certificate
 ================================================================================
 
-\    **Note:** Creating the CA certificate is a **one-time operation**. If
+.. note::
+
+    Creating the CA certificate is a **one-time operation**. If
 you have \    a directory called [certificates]{.title-ref} with a
 [rootCA.pem]{.title-ref} in it, you already did \    this step.
 

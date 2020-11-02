@@ -25,7 +25,9 @@ will only *report* the location to the cloud backend, and it's the
 mobile app which is visualizing the Cat Tracker's location tha has a
 need to *know* the device location.
 
-    **Note:** Since it is much more efficient to resolve cell
+.. note::
+
+    Since it is much more efficient to resolve cell
     geolocations on the cloud it's the cloud backends responsibility.
 
 Assisted GPS (AGPS)
@@ -41,7 +43,9 @@ the rough location on the globe, which is provided by the mobile network
 operators country code. This is sufficient to provide the GPS module
 with the data it needs for a quick GPS fix.
 
-    **Note:** `AGPS is currently not implemented in the Cat Tracker
+.. note::
+
+    `AGPS is currently not implemented in the Cat Tracker
     Firmware <https://github.com/bifravst/firmware/issues/8>`_.
 
 Geolocating cells
