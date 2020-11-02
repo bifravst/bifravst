@@ -2,24 +2,6 @@
 Bifravst
 ================================================================================
 
-.. epigraph::
-
-  *Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.*
-
-.. admonition:: 🐣 incubating *Bifravst* as an official *Nordic Semiconductor* project 🎉
-
-  In the coming weeks, we will establish the best path to provide this project
-  through nRF Connect SDK, Nordic Semiconductor Info center and potentially
-  other established channels. For more information see the
-  `GitHub issue <https://github.com/bifravst/bifravst/issues/56>`_.
-
-What does *Bifravst* mean?
---------------------------------------------------------------------------------
-
-Bifravst is a term from the Nordic mythology and it refers to the bridge built
-by the gods between earth and heaven.
-`Read more about it <https://www.lyngen.com/2020/03/the-vikings-and-the-northern-lights-bridge/>`_.
-
 .. image:: https://github.com/bifravst/bifravst/workflows/Test%20and%20Release/badge.svg
    :alt: GitHub Actions
    :target: https://github.com/bifravst/bifravst/actions
@@ -44,6 +26,24 @@ by the gods between earth and heaven.
 .. image:: https://img.shields.io/badge/ESLint-TypeScript-blue.svg
    :alt: ESLint: TypeScript
    :target: https://github.com/typescript-eslint/typescript-eslint
+   
+.. epigraph::
+
+  *Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.*
+
+.. admonition:: 🐣 incubating *Bifravst* as an official *Nordic Semiconductor* project 🎉
+
+  In the coming weeks, we will establish the best path to provide this project
+  through nRF Connect SDK, Nordic Semiconductor Info center and potentially
+  other established channels. For more information see the
+  `GitHub issue <https://github.com/bifravst/bifravst/issues/56>`_.
+
+What does *Bifravst* mean?
+================================================================================
+
+Bifravst is a term from the Nordic mythology and it refers to the bridge built
+by the gods between earth and heaven.
+`Read more about it <https://www.lyngen.com/2020/03/the-vikings-and-the-northern-lights-bridge/>`_.
 
 .. admonition:: 🚧 Development roadmap
 
@@ -51,7 +51,7 @@ by the gods between earth and heaven.
   `Bifravst GitHub Project <https://github.com/orgs/bifravst/projects/1>`_.
 
 Support
---------------------------------------------------------------------------------
+================================================================================
 
 .. image:: https://img.shields.io/badge/%7BDevZone-community-brightgreen.svg
    :alt: {DevZone Community
@@ -63,7 +63,7 @@ your questions) or by
 `creating an issue in the Bifravst repository <https://github.com/bifravst/bifravst/issues/new>`_.
 
 Vision
---------------------------------------------------------------------------------
+================================================================================
 
 *Bifravst* aims to provide a concrete end-to-end example for an ultra-low power
 cellular IoT product in the asset tracker space, namely a *Cat Tracker*.
@@ -95,7 +95,7 @@ and the
 (firmware).
 
 Project characteristics overview
---------------------------------------------------------------------------------
+================================================================================
 
 +------------------------------------+----------------------+
 | Characteristic                     | Principle            |
@@ -122,7 +122,7 @@ Project characteristics overview
 +------------------------------------+----------------------+
 
 Core principles
---------------------------------------------------------------------------------
+================================================================================
 
 *Bifravst* is built on the following principles:
 
@@ -152,7 +152,7 @@ Core principles
   form-factor devices.
 
 System overview and technical considerations
---------------------------------------------------------------------------------
+================================================================================
 
 .. figure:: ./docs/system-overview.jpg
    :alt: System overview
@@ -208,15 +208,15 @@ The web application offers the following features:
   - Firmware update
 
 Supported Cloud Providers
---------------------------------------------------------------------------------
+================================================================================
 
-+-------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
++-------------------+================================================================================-----------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
 |                   | Amazon Web Services                                                                       | Google Cloud                                                | Microsoft Azure                                                 | Alibaba Cloud |
 +===================+===========================================================================================+=============================================================+=================================================================+===============+
 | LTE-M: TCP+MQTT   | `feature complete <https://bifravst.gitbook.io/bifravst/bifravst-on-aws/gettingstarted>`_ | `on hold <https://github.com/bifravst/bifravst/issues/25>`_ | `in progress <https://github.com/bifravst/bifravst/issues/29>`_ | Planned       |
-+-------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
++-------------------+================================================================================-----------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
 | NB-IoT: UDP+LWM2M | Planned                                                                                   | Planned                                                     | Planned                                                         | Planned       |
-+-------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
++-------------------+================================================================================-----------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
 
 For cloud providers having no native UDP+LWM2M support using a bridge, e.g.
 `Eclipse Californium <https://github.com/eclipse/californium>`_, was evaluated.
@@ -226,22 +226,22 @@ For more information see
 IoT Cloud vendor survey results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
++------------+------------------------+================================================================================------------------------------------+
 |            | Nordic internal (2019) | `Eclipse Fdtn. (2019) <https://iot.eclipse.org/resources/iot-developer-survey/iot-comm-adoption-survey-2019.pdf>`_ |
 +============+========================+====================================================================================================================+
 | AWS        | 1\. 100%               | 1\.100%                                                                                                            |
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
++------------+------------------------+================================================================================------------------------------------+
 | Google     | 2\. 79%                | 3\. 73%                                                                                                            |
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
++------------+------------------------+================================================================================------------------------------------+
 | Azure      | 3\. 66%                | 2\. 84%                                                                                                            |
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
++------------+------------------------+================================================================================------------------------------------+
 | ARM Pelion | 4\. 25%                |                                                                                                                    |
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
++------------+------------------------+================================================================================------------------------------------+
 | IBM        | 5\. 20%                |                                                                                                                    |
-+------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
++------------+------------------------+================================================================================------------------------------------+
 
 Documentation
---------------------------------------------------------------------------------
+================================================================================
 
 .. toctree::
    :titlesonly:
