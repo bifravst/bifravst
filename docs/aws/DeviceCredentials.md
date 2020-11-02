@@ -1,7 +1,7 @@
 # Device Credentials
 
 On AWS devices, connect to IoT core using
-[TLS version 1.2](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)..
+[TLS version 1.2](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html).
 
 ## Generate a CA certificate
 
