@@ -5,14 +5,14 @@ Connect using the simulator
 Set up the UI
 ================================================================================
 
-The `device-ui <https://github.com/bifravst/device-ui>`_ provides a
+The device-ui_ provides a
 browser-based UI to control the simulated device.
 
 Clone the project and install dependencies
 --------------------------------------------------------------------------------
 
 Clone the latest version of the
-`device-ui <https://github.com/bifravst/device-ui>`_ project and
+device-ui_ project and
 install the dependencies:
 
 .. code-block:: bash
@@ -113,9 +113,11 @@ Connect
 Run this script to connect to the broker using the previously generated
 certificate:
 
-.. code-block:: bash
+.. code-block::
 
     node cli connect <id of your device>
 
 This script also provides a browser-based UI which you can use to
 simulate device data.
+
+.. _device-ui: https://github.com/bifravst/device-ui

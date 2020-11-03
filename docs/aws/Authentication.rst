@@ -11,8 +11,8 @@ is done through AWS Cognito.
 
 .. note::
 
-    The way authorization works is explained in the AWS docs 
-    `here <https://docs.aws.amazon.com/iot/latest/developerguide/cognito-identities.html>`_
+    The way authorization works is explained
+    `in the AWS docs <https://docs.aws.amazon.com/iot/latest/developerguide/cognito-identities.html>`_
     and in little more detail
     `here <https://docs.aws.amazon.com/iot/latest/developerguide/pub-sub-policy.html#pub-sub-policy-cognito>`_.
 

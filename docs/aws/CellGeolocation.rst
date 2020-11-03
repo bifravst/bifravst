@@ -25,17 +25,17 @@ cell <https://github.com/bifravst/cell-geolocation-helpers#cellfromgeolocations>
 
 In case there is no device geo location for the cell from your own
 devices, third-party services like
-`UnwiredLabs <https://unwiredlabs.com/>`_ or
+UnwiredLabs_ or
 `RXNetworks <https://rxnetworks.com/location.io#!RT-GNSS>`_ provide a
 database of cell geo locations.
 
 UnwiredLabs API
 ================================================================================
 
-To use `UnwiredLabs <https://unwiredlabs.com/>`_ geolocation API,
+To use UnwiredLabs_ geolocation API,
 store your API key as an SSM parameter and redeploy the stack:
 
-.. code-block:: bash
+.. code-block::
 
     aws ssm put-parameter --name /bifravst/cellGeoLocation/unwiredlabs/apiKey \
         --type String --value <API Key>
@@ -51,3 +51,5 @@ use the UnwiredLabs API as a resolver.
     allows to use the underlying dataset for free. If this is relevant
     for you, please `vote in this
     issue <https://github.com/bifravst/aws/issues/120>`_.
+
+.. _UnwiredLabs: https://unwiredlabs.com/
