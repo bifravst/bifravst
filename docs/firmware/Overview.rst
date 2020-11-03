@@ -12,23 +12,26 @@ in the repeating sequence.
 
 The device publishes data to a desired compatible cloud service
 sequentially and upon movement depending on the current device mode. The
-device mode can either be \"active\" or \"passive\". In \"active\" mode
-the device publishes data sequentially every \"active wait time\"
-interval and in \"passive\" mode the device publishes data every
-\"passive wait time\" as long as there is movement detected by the
+device mode can either be "active" or "passive". In "active" mode
+the device publishes data sequentially every "active wait time"
+interval and in "passive" mode the device publishes data every
+"passive wait time" as long as there is movement detected by the
 external accelerometer.
 
 Repeating Sequence
 ================================================================================
 
-!\[Repeating Sequence\](./images/sequence.png)
+.. figure:: ./images/sequence.png
+    :alt: Repeating Sequence
+
+    Repeating Sequence
 
 1. Check device mode
 --------------------------------------------------------------------------------
 
-The application checks the current device mode. If it is in \"active
-mode\" the device will immediately try to get a gps fix. If it is in
-\"passive\" mode the main thread will go to sleep and not continue until
+The application checks the current device mode. If it is in "active
+mode" the device will immediately try to get a gps fix. If it is in
+"passive" mode the main thread will go to sleep and not continue until
 movement over a configurable threshold value is detected.
 
 2. Search for GPS fix
@@ -70,13 +73,17 @@ to the cellular network.
 The main thread sleeps in the duration of the current device mode wait
 time.
 
-| Mode \| GPS fix? \| Sensor/Modem data published \|
-| \-\-\-\-\-\-- \| \-\-\-\-\-\-\-- \|
-  \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-- \|
-| Active \| Fix \| Battery, modem, GPS \|
-| Active \| No fix \| Battery, modem \|
-| Passive \| Fix \| Battery, modem, GPS, accelerometer \|
-| Passive \| No fix \| Battery, modem, accelerometer \|
++---------+----------+------------------------------------+
+| Mode    | GPS fix? | Sensor/Modem data published        |
++=========+==========+====================================+
+| Active  | Fix      | Battery, modem, GPS                |
++---------+----------+------------------------------------+
+| Active  | No fix   | Battery, modem                     |
++---------+----------+------------------------------------+
+| Passive | Fix      | Battery, modem, GPS, accelerometer |
++---------+----------+------------------------------------+
+| Passive | No fix   | Battery, modem, accelerometer      |
++---------+----------+------------------------------------+
 
 Cloud Communication
 ================================================================================
@@ -94,12 +101,18 @@ Cloud Communication
 Successful connection to cloud
 --------------------------------------------------------------------------------
 
-!\[Sequence: Successful connection to cloud\](./images/successful.svg)
+.. figure:: ./images/successful.svg
+    :alt: Sequence: Successful connection to cloud
+
+    Sequence: Successful connection to cloud
 
 Data publication
 --------------------------------------------------------------------------------
 
-!\[Sequence: Data publication\](./images/data-publication.svg)
+.. figure:: ./images/data-publication.svg
+    :alt: Data publication
+
+    Sequence: Data publication
 
 Timestamping
 ================================================================================
@@ -107,7 +120,7 @@ Timestamping
 All the data published to the cloud are timestamped in sample time UTC.
 For more information about how timestamping is carried out in the cat
 tracker firmware see section
-\[Timestamping\](./Protocol.md\#timestamping) in the handbook.
+`Timestamping <./Protocol.html#timestamping>`_ in the handbook.
 
 Default configurations
 ================================================================================
@@ -115,12 +128,18 @@ Default configurations
 If the device is unable to connect to the cloud after boot it will used
 the following configurations:
 
-| Configuration \| Default \|
-| \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
-  \| \-\-\-\-\-\-\-\-\-\-- \|
-| Active wait time \| 60 sec \|
-| Movement resolution (passive wait time) \| 60 sec \|
-| Movement timeout \| 3600 sec \|
-| Device mode \| Active \|
-| GPS timeout \| 60 sec \|
-| Accelerometer threshold \| 100/10 m/s² \|
++-----------------------------------------+-------------+
+| Configuration                           | Default     |
++=========================================+=============+ 
+| Active wait time                        | 60 sec      |
++-----------------------------------------+-------------+
+| Movement resolution (passive wait time) | 60 sec      |
++-----------------------------------------+-------------+
+| Movement timeout                        | 3600 sec    | 
++-----------------------------------------+-------------+
+| Device mode                             | Active      |
++-----------------------------------------+-------------+
+| GPS timeout                             | 60 sec      |
++-----------------------------------------+-------------+
+| Accelerometer threshold                 | 100/10 m/s² |
++-----------------------------------------+-------------+

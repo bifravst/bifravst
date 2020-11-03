@@ -2,8 +2,10 @@
 Continuous Integration of Firmware
 ================================================================================
 
-The AWS implementation of Bifravst provides resources to continuously
-test the firmware build on real hardware.
+.. note::
+
+    The AWS implementation of Bifravst provides resources to continuously
+    test the firmware build on real hardware.
 
 Overview
 ================================================================================
