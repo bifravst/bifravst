@@ -2,12 +2,11 @@
 Device Credentials
 ================================================================================
 
-On Azure devices connect to IoT Hub using \[TLS version
-1.2\](<https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment>).
+On Azure devices connect to IoT Hub using
+`TLS version 1.2 <https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment>`_.
 
 Azure supports offline generation of device certificates through
-\[Enrollment
-Groups\](<https://docs.microsoft.com/bs-latn-ba/azure/iot-dps/quick-enroll-device-x509-node>).
+`Enrollment Groups <https://docs.microsoft.com/bs-latn-ba/azure/iot-dps/quick-enroll-device-x509-node>`_.
 
 Device certificates are signed using an intermediate CA. This allows to
 keep the CA root certificate secure and create an intermediate CA
@@ -35,12 +34,14 @@ Create a CA root certificate
 
 .. note::
 
-     Make sure you have exported the right resource group to
-name as \    [\$RESOURCE_GROUP_NAME]{.title-ref}, it defaults to
-[bifravst]{.title-ref}.
+    Make sure you have exported the right resource group to
+    name as :code:`$RESOURCE_GROUP_NAME`, it defaults to
+    :code:`bifravst`.
 
 This creates a CA root certificate and registers it with the Azure IoT
 Device Provisioning Service.
+
+.. code-block:: bash
 
     node cli create-ca-root
 
@@ -49,21 +50,25 @@ certificates is typically very small, one (1) is sufficient.
 
 Proof your ownership of the CA with
 
+.. code-block:: bash
+
     node cli proof-ca-root-possession
 
 .. note::
 
-    if you see the error \_\"A required certificate is not within
-its validity \    period when verifying against the current system clock
-or the timestamp in the \    signed file.\"\_ double check that your
-system\'s clock is correct, if it is set \    to a future time, this will
-be the cause of this error.
+    If you see the error *"A required certificate is not within
+    its validity period when verifying against the current system clock
+    or the timestamp in the signed file."* double check that your
+    system's clock is correct, if it is set to a future time, this will
+    be the cause of this error.
 
 Create a CA intermediate certificate
 ================================================================================
 
 This creates a CA intermediate certificate and creates an enrollment
 group for it.
+
+.. code-block:: bash
 
     node cli create-ca-intermediate
 
@@ -75,10 +80,13 @@ Create a device certificate
 
 Run this script to generate a certificate for a new device:
 
+.. code-block:: bash
+
     node cli create-device-cert
 
-Devices will first connect to the \[Device Provisioning
-Service\](<https://docs.microsoft.com/en-us/azure/iot-dps/>) (DPS) using
+Devices will first connect to the
+`Device Provisioning Service <https://docs.microsoft.com/en-us/azure/iot-dps/>`_
+(DPS) using
 the certificate and request to be provisioned. The DPS registers the
 device on the associated IoT Hub and returns the registration
 information to the device, which includes the hostname of the assigned
