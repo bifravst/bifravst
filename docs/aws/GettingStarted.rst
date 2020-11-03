@@ -5,11 +5,11 @@ Getting started
 System requirements
 ================================================================================
 
-You need a development environment with the `next LTS release candidate
-of Node.js <https://nodejs.org/en/about/releases/>`_ (right now version
+You need a development environment with the `upcoming LTS release candidate
+of Node.js <https://nodejs.org/en/about/releases/>`_ (current release is version
 14).
 
-If you are using Windows, we recommend the `[Windows Subsystem for
+If you are using Windows, we recommend using the `[Windows Subsystem for
 Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_
 with `Ubuntu 18.04
 LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
@@ -17,9 +17,8 @@ LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
 Clone the project and install dependencies
 ================================================================================
 
-Clone the latest version of the
-`aws <https://github.com/bifravst/aws>`_ project and install the
-dependencies:
+Clone the latest version of the `Bifravst AWS <https://github.com/bifravst/aws>`_
+project and install the dependencies using the following commands:
 
 .. code-block::
 
@@ -30,64 +29,65 @@ dependencies:
 Provide your AWS credentials
 ================================================================================
 
-In order to set up Bifravst on AWS you first need to set up a new
-account.
+In order to set up Bifravst on AWS you first need to set up a new AWS account
+and provide AWS credentials.
 
 .. note::
 
     It is recommended to install these resources in a blank AWS account
     to clearly separate them from your other projects. After you have
-    registered your personal account, sign-up for `AWS
+    registered your personal account, sign up for `AWS
     Organizations <https://aws.amazon.com/organizations/>`_ and create a
-    sub-account for Bifravst. You can have as many sub-accounts as you like,
-    without extra costs.
+    sub-account for Bifravst. You can have many sub-accounts, without extra costs.
 
-Go to your `IAM
-console <https://console.aws.amazon.com/iam/home?region=us-east-1#/home>`_
-and add a new user for programmatic access and attach the
-:code:`arn:aws:iam::aws:policy/AdministratorAccess` policy
-directly. Note that this action will create a user which can do
-everything in the account, therefore it should only be created in an
-account dedicated for Bifravst.
+To setup a new AWS account and provide credentials, complete the following steps:
 
-Follow `this
-guide <https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html>`_
-to configure AWS CDK.
+1.  Navigate to your `IAM console <https://console.aws.amazon.com/iam/home?region=us-east-1#/home>`_
+    and add a new user for `programmatic access <https://wa.aws.amazon.com/wat.question.SEC_3.en.html>`_ 
 
-The recommended workflow is to use a
-`direnv <https://direnv.net/>`_ plugin for your shell which will
-automatically export the environment variables it finds in a
-:code:`.envrc` file in the project folder:
+2.  Attach the :code:`arn:aws:iam::aws:policy/AdministratorAccess` policy directly.
 
-Create a new file :code:`.envrc` in the project folder and add the
-credentials that are presented to you after you have created the new
-user.
+    .. warning::
 
-Also add your preferred region and your AWS account ID, which can be
-found `under *My Account* on the AWS
-console <https://console.aws.amazon.com/billing/home?#/account>`_, to
-the :code:`.envrc` file.
+        This action will create a user which can do
+        everything in the account, therefore it should only be created in an
+        account dedicated for Bifravst.
 
-.. code-block:: bash
+3.  See the `Getting Started guide <https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html>`_
+    to configure the AWS CDK.
 
-    export AWS_ACCESS_KEY_ID=<value of Access key ID    
-    export AWS_SECRET_ACCESS_KEY=<value of Secret access key> 
-    export AWS_DEFAULT_REGION=<your preferred AWS region>
+4.  As a recommended workflow, use a `direnv <https://direnv.net/>`_ plugin
+    for your shell, which locates the environment variables in a :code:`.envrc` file in
+    the project folder and automatically exports them.
 
-.. note::
+5.  Create a new :code:`.envrc` file in the project folder and add the credentials
+    that are provided to you when you create the new user.
 
-    You should add the :code:`.envrc` to your `global
-    .gitignore
-    file <https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore>`_.
+6.  Also add your preferred region and your AWS account ID (that can be found
+    under `My Account on the AWS console <https://console.aws.amazon.com/billing/home?#/account>`_),
+    to the :code:`.envrc` file, as shown in the following code:
+
+    .. code-block:: bash
+
+        export AWS_ACCESS_KEY_ID=<value of Access key ID    
+        export AWS_SECRET_ACCESS_KEY=<value of Secret access key> 
+        export AWS_DEFAULT_REGION=<your preferred AWS region>
+
+    .. note::
+
+        You should add the :code:`.envrc` file to your global 
+        `.gitignore file <https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore>`_.
 
 Supported regions
 ================================================================================
 
-Not all AWS features are available in all AWS regions. You will see a
-warning if you are deploying to a region that has not been tested and
-CDK might fail.
+.. warning::
 
-Supported regions are:
+    Not all AWS features are available in all AWS regions. You will see a
+    warning if you are deploying to a region that has not been tested and
+    CDK might fail.
+
+The supported regions are listed below:
 
 -   :code:`us-east-1`
 -   :code:`eu-west-1`
@@ -96,7 +96,7 @@ Supported regions are:
 Install Bifravst into your AWS account
 ================================================================================
 
-This step sets up the necessary resources in your AWS account:
+The following commands set up the necessary resources in your AWS account:
 
 .. code-block::
 
@@ -104,10 +104,15 @@ This step sets up the necessary resources in your AWS account:
     npx cdk bootstrap
     npx cdk deploy '*'
 
-CDK will present you with a list of permission changes to your account,
-you need to review them carefully everytime you make changes to your
-set-up. You can however skip this step if you are adventurous: 
-:code:`npx cdk deploy '*' --require-approval never`. 🤞
+The AWS CDK will provide a list of permission changes to your account, and you
+need to review them carefully whenever you make changes to the setup.
+However, this step is not mandatory, and you can skip it by using the following
+command:
+
+.. code-block::
+
+    # 🤞
+    npx cdk deploy '*' --require-approval never
 
 After this completed successfully the historical data resources need to
 be set up through the CLI:
