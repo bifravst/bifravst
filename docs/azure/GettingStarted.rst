@@ -123,12 +123,6 @@ these environment variables.
 
     export LOCATION=northeurope
 
-Add the tenant ID:
-
-.. code-block:: bash
-
-    direnv allow
-
 Now create the resource group for the solution:
 
 .. code-block:: bash
