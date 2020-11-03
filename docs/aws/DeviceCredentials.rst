@@ -24,7 +24,7 @@ to create certificates for your devices since it allows generating
 Run the following script to generate and register a CA certificate in your
 AWS account:
 
-.. code-block::
+.. code-block:: bash
 
     node cli create-ca
 
@@ -33,6 +33,6 @@ Generate a device certificate
 
 Run the following script to generate a certificate for a new device:
 
-.. code-block::
+.. code-block:: bash
 
     node cli create-device-cert

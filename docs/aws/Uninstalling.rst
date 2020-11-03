@@ -2,11 +2,11 @@
 Uninstalling Bifravst from AWS
 ================================================================================
 
-.. note::
+.. warning::
 
     These commands are destructive!
 
-.. code-block::
+.. code-block:: bash
 
     STACK_NAME=bifravst
     

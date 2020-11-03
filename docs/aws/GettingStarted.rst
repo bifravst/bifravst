@@ -9,7 +9,7 @@ You need a development environment with the `upcoming LTS release candidate
 of Node.js <https://nodejs.org/en/about/releases/>`_ (current release is version
 14).
 
-If you are using Windows, we recommend using the `[Windows Subsystem for
+If you are using Windows, we recommend using the `Windows Subsystem for
 Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_
 with `Ubuntu 18.04
 LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
@@ -20,7 +20,7 @@ Clone the project and install dependencies
 Clone the latest version of the `Bifravst AWS <https://github.com/bifravst/aws>`_
 project and install the dependencies using the following commands:
 
-.. code-block::
+.. code-block:: bash
 
     git clone https://github.com/bifravst/aws.git bifravst-aws 
     cd bifravst-aws 
@@ -98,7 +98,7 @@ Install Bifravst into your AWS account
 
 The following commands set up the necessary resources in your AWS account:
 
-.. code-block::
+.. code-block:: bash
 
     npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' deploy
     npx cdk bootstrap
@@ -109,7 +109,7 @@ need to review them carefully whenever you make changes to the setup.
 However, this step is not mandatory, and you can skip it by using the following
 command:
 
-.. code-block::
+.. code-block:: bash
 
     # 🤞
     npx cdk deploy '*' --require-approval never
@@ -117,7 +117,7 @@ command:
 After this completed successfully the historical data resources need to
 be set up through the CLI:
 
-.. code-block::
+.. code-block:: bash
 
     node cli historical-data --setup
 

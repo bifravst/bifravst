@@ -4,10 +4,10 @@ Continuous Integration
 
 .. note::
 
-     This is an advanced topic for those who want to further
-develop and \    customize Bifravst according to their needs. Please see
-the \    `GitHub project page <https://github.com/bifravst/aws/>`_ of
-Bifravst for AWS \    which implements the process outlined here.
+    This is an advanced topic for those who want to further
+    develop and customize Bifravst according to their needs. Please see
+    the `GitHub project page <https://github.com/bifravst/aws/>`_ of
+    Bifravst for AWS which implements the process outlined here.
 
 Every change to the project is tested against an AWS account, all
 necessary resources are set-up using CDK (this ensures that the
@@ -25,13 +25,15 @@ testing based on the public API of the project (which is the native AWS
 API), they can be kept unchanged during refactoring.
 
 This also provides an easily grokable description of the available (and
-implemented) features, \[in one
-folder\](<https://github.com/bifravst/aws/tree/saga/features>).
+implemented) features, `in one
+folder <https://github.com/bifravst/aws/tree/saga/features>`_.
 
 Running during development
 ================================================================================
 
 You can run these test when developing:
+
+.. code-block:: bash
 
     npm run test:e2e
 
@@ -44,8 +46,8 @@ account.
 
 Provide these environment variables for GitHub Actions of the project:
 
--   \`GITHUB_TOKEN\`: a GitHub token (used with
-    [semantic-release]{.title-ref})
--   \`AWS_ACCESS_KEY_ID\`: the access key id of the user which should
+-   :code:`GITHUB_TOKEN`: a GitHub token (used with
+    `semantic-release <https://github.com/semantic-release/semantic-release>`_)
+-   :code:`AWS_ACCESS_KEY_ID`: the access key id of the user which should
     run the tests
--   \`AWS_SECRET_ACCESS_KEY\`: the secret access key of that user
+-   :code:`AWS_SECRET_ACCESS_KEY`: the secret access key of that user

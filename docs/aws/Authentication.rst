@@ -5,16 +5,16 @@ Authentication
 Web App
 ================================================================================
 
-\[The Cat Tracker Web Application\](../app/GettingStarted.md) on AWS
+`The Cat Tracker Web Application <../app/GettingStarted.html>`_ on AWS
 connects to the AWS IoT broker using WebSockets, and the authentication
 is done through AWS Cognito.
 
 .. note::
 
-    The way authorization works is explained in the AWS docs \>
-`here <https://docs.aws.amazon.com/iot/latest/developerguide/cognito-identities.html>`_
-\    and in little more detail \>
-`here <https://docs.aws.amazon.com/iot/latest/developerguide/pub-sub-policy.html#pub-sub-policy-cognito>`_.
+    The way authorization works is explained in the AWS docs 
+    `here <https://docs.aws.amazon.com/iot/latest/developerguide/cognito-identities.html>`_
+    and in little more detail
+    `here <https://docs.aws.amazon.com/iot/latest/developerguide/pub-sub-policy.html#pub-sub-policy-cognito>`_.
 
 An Amazon Cognito authenticated user needs two policies to access AWS
 IoT.
@@ -34,26 +34,16 @@ unauthorized.
 Example
 --------------------------------------------------------------------------------
 
-Let\'s say we have this IAM policy on the authenticated role:
+Let's say we have this IAM policy on the authenticated role:
 
-    {
-    
-    :   \"Version\": \"2012-10-17\", \"Statement\": \[ { \"Effect\":
-        \"Allow\", \"Action\": \[ \"iot:Subscribe\" \], \"Resource\": \[
-        \"\*\" \] } \]
-    
-    }
+.. literalinclude:: ./iam-policy.json
+  :language: JSON
 
 And we have this IoT policy assigned to the Cognito Identity:
 
-    {
-    
-    :   \"Version\": \"2012-10-17\", \"Statement\": \[ { \"Effect\":
-        \"Allow\", \"Action\": \[ \"iot:Subscribe\" \], \"Resource\": \[
-        \"arn:aws:iot:*:*:topicfilter/messages\" \] } \]
-    
-    }
+.. literalinclude:: ./iot-policy.json
+  :language: JSON
 
 The two policies will be ANDed and only the least combined privilege are
-granted. That means the user can only subscribe to the \"messages\"
+granted. That means the user can only subscribe to the "messages"
 topic.

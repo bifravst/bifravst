@@ -15,41 +15,49 @@ Clone the latest version of the
 `device-ui <https://github.com/bifravst/device-ui>`_ project and
 install the dependencies:
 
-    git clone <https://github.com/bifravst/device-ui.git>
-    bifravst-device-ui cd bifravst-device-ui npm ci
+.. code-block:: bash
+
+    git clone https://github.com/bifravst/device-ui.git bifravst-device-ui
+    cd bifravst-device-ui
+    npm ci
 
 Configure the react app
 --------------------------------------------------------------------------------
 
 The app needs to be configured to be able to run against your account.
 
-In this section we will create a file called [.env.local]{.title-ref}
-which Create React App uses to make the settings in there available \[as
+In this section we will create a file called :code:`.env.local`
+which Create React App uses to make the settings in there available `as
 environment variables during build
-time\](<https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables>).
+time <https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables>`_.
 
 Configure ids of your AWS resources
 --------------------------------------------------------------------------------
 
 The web app needs to know the ids of the AWS resources that were created
 during the set-up of the stack. Run this command in the
-[bifravst-device-ui]{.title-ref} directory to copy the output to a file
-called [.env.local]{.title-ref}.
+:code:`bifravst-device-ui` directory to copy the output to a file
+called :code:`.env.local`.
 
-    node ../bifravst-aws/cli react-config \> .env.local
+.. code-block:: bash
+
+    node ../bifravst-aws/cli react-config > .env.local
 
 Version string
 --------------------------------------------------------------------------------
 
 Run this command to provide the version to the app:
 
-    echo REACT_APP_VERSION=\`git describe \--tags \$(git rev-list \--tags
-    \--max-count=1)\` \>\> .env.local
+.. code-block:: bash
 
-Example [.env.local]{.title-ref}
+    echo REACT_APP_VERSION=`git describe --tags $(git rev-list --tags --max-count=1` >> .env.local
+
+Example :code:`.env.local`
 --------------------------------------------------------------------------------
 
 This is how the file would look like:
+
+.. code-block:: bash
 
     REACT_APP_REGION=eu-central-1
     REACT_APP_HISTORICALDATA_WORKGROUP_NAME=bifravst
@@ -80,19 +88,24 @@ Deploy the app
 --------------------------------------------------------------------------------
 
 This builds and deploys the app to the S3 bucket created when setting up
-\_[Bifravst]() in your AWS account.
+*Bifravst* in your AWS account.
 
-    export \$(cat .env.local \| xargs) export EXTEND_ESLINT=true npm run
-    build aws s3 cp build s3://\$REACT_APP_DEVICE_UI_BUCKET_NAME
-    \--recursive \--metadata-directive REPLACE \--cache-control
-    \'public,max-age=600\' \--expires \'\' aws cloudfront
-    create-invalidation \--distribution-id
-    \$REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP \--paths /,/index.html
-    echo \"Done. Now open <https://$REACT_APP_DEVICE_UI_DOMAIN_NAME/> to
-    view the web app.\"
+.. code-block:: bash
+
+    export $(cat .env.local | xargs) 
+    export EXTEND_ESLINT=true 
+    npm run build 
+    aws s3 cp build s3://$REACT_APP_DEVICE_UI_BUCKET_NAME --recursive \
+        --metadata-directive REPLACE \
+        --cache-control 'public,max-age=600' \
+        --expires '' 
+    aws cloudfront create-invalidation \
+        --distribution-id $REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP \
+        --paths /,/index.html
+    echo "Done. Now open https://$REACT_APP_DEVICE_UI_DOMAIN_NAME/ to view the web app."
 
 Afterwards you can open the domain name printed in
-[REACT_APP_DEVICE_UI_DOMAIN_NAME]{.title-ref} to view the web app.
+:code:`REACT_APP_DEVICE_UI_DOMAIN_NAME` to view the web app.
 
 Connect
 ================================================================================
@@ -100,7 +113,9 @@ Connect
 Run this script to connect to the broker using the previously generated
 certificate:
 
-    node cli connect \<id of your device\>
+.. code-block:: bash
+
+    node cli connect <id of your device>
 
 This script also provides a browser-based UI which you can use to
 simulate device data.

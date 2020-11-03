@@ -1,0 +1,11 @@
+{
+  "cfg": {
+    "gpst": 720,
+    "celt": 600,
+    "act": false,
+    "actwt": 60,
+    "mvres": 60,
+    "mvt": 3600,
+    "acct": 12
+  }
+}
