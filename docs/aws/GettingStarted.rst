@@ -67,11 +67,11 @@ To setup a new AWS account and provide credentials, complete the following steps
     under `My Account on the AWS console <https://console.aws.amazon.com/billing/home?#/account>`_),
     to the :code:`.envrc` file, as shown in the following code:
 
-    .. code-block::
+    .. code-block:: bash
 
-        export AWS_ACCESS_KEY_ID=<value of Access key ID    
-        export AWS_SECRET_ACCESS_KEY=<value of Secret access key> 
-        export AWS_DEFAULT_REGION=<your preferred AWS region>
+        export AWS_ACCESS_KEY_ID="<value of Access key ID>"
+        export AWS_SECRET_ACCESS_KEY="<value of Secret access key>"
+        export AWS_DEFAULT_REGION="<your preferred AWS region>"
 
     .. note::
 

@@ -57,9 +57,9 @@ created.
 
 Note down the initial domain name you used:
 
-.. code-block::
+.. code-block:: bash
 
-    export TENANT_DOMAIN=<Primary domain> # e.g. "bifravstci"
+    export TENANT_DOMAIN="<Primary domain>" # e.g. "bifravstci"
 
 Create subscription
 --------------------------------------------------------------------------------
@@ -73,9 +73,9 @@ created above.
 Note down the Subscription ID which you can find in the Subscriptions
 blade:
 
-.. code-block::
+.. code-block:: bash
 
-    export SUBSCRIPTION_ID=<Subscription ID> # e.g. "1aae311f-12d6-419e-8c6b-ebcf3ec4ed15"
+    export SUBSCRIPTION_ID="<Subscription ID>" # e.g. "1aae311f-12d6-419e-8c6b-ebcf3ec4ed15"
 
 Create another new tenant (Azure Active Directory B2C)
 --------------------------------------------------------------------------------
@@ -95,9 +95,9 @@ to create a new Azure AD B2C tenant:
 
 Note down the initial domain name you used:
 
-.. code-block::
+.. code-block:: bash
 
-    export B2C_TENANT=<Primary domain> # e.g. "bifravstciusers"
+    export B2C_TENANT="<Primary domain>" # e.g. "bifravstciusers"
 
 Link this Azure AD B2C tenant to the subscription for CI by following
 `this guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
@@ -118,10 +118,10 @@ new App registration.
 Note down the *Application (client) ID* and the *Directory (tenant) ID* of the
 created Active Directory B2C App registration:
 
-.. code-block::
+.. code-block:: bash
 
-    export APP_REG_CLIENT_ID=<application (client) id>
-    export B2C_TENANT_ID=<Directory (tenant) ID>
+    export APP_REG_CLIENT_ID="<application (client) id>"
+    export B2C_TENANT_ID="<Directory (tenant) ID>"
 
 For the test-runner to be able to programmatically log-in users, the
 resource owner password credentials (ROPC) flow
@@ -140,9 +140,9 @@ select *Yes* for *Treat application as a public client*.
 
 Create a new client secret for the App registration and note it down as
 
-.. code-block::
+.. code-block:: bash
 
-    export B2C_CLIENT_SECRET=<Client Secret Value> # e.g. "12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U"
+    export B2C_CLIENT_SECRET="<Client Secret Value>" # e.g. "12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U"
 
 Deploy the solution
 ================================================================================

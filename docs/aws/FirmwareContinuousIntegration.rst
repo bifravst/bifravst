@@ -79,14 +79,14 @@ for the test instance so it's kept in sync with the development.
 Print the AWS Key for the CI runner on GitHub Actions using this
 command:
 
-.. code-block::
+.. code-block:: bash
 
     node cli firmware-ci -s
     
-    Region: <Region> 
-    Bucket name: <Bucket name> 
-    Access Key ID: <AWS Access Key ID> 
-    Secret Access Key: <AWS Secret Access Key>
+    Region: "<Region>"
+    Bucket name: "<Bucket name>"
+    Access Key ID: "<AWS Access Key ID>"
+    Secret Access Key: "<AWS Secret Access Key>"
 
 Now you can create a new IoT Thing to be used for a Firmware CI runner:
 
@@ -96,9 +96,9 @@ Now you can create a new IoT Thing to be used for a Firmware CI runner:
 
 You can delete a device using this command:
 
-.. code-block::
+.. code-block:: bash
 
-    node cli firmware-ci -r <deviceId>
+    node cli firmware-ci -r "<deviceId>"
 
 CI Runner
 ================================================================================

@@ -42,10 +42,10 @@ permissions to your repository.
 You need to store this token in AWS ParameterStore which is a
 **one-time** manual step done through the AWS CLI:
 
-.. code-block::
+.. code-block:: bash
 
     aws ssm put-parameter --name /codebuild/github-token \
-        --type String --value <Github Token>
+        --type String --value "<Github Token>"
 
 Enable Continuous Deployment
 ================================================================================

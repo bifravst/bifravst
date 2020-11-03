@@ -14,9 +14,9 @@ Create a subscription for Bifravst
     *Subscriptions* blade and copy the subscription id of the newly
     created subscription:
 
-    .. code-block::
+    .. code-block:: bash
 
-        export SUBSCRIPTION_ID=<subscription id>
+        export SUBSCRIPTION_ID="<subscription id>"
 
 Create an Azure Active Directory B2C
 ================================================================================
@@ -105,9 +105,9 @@ Create an Azure Active Directory B2C
 19. store the *application (client) id* and the *Directory (tenant) ID* 
     of the created Active Directory B2C App registration:
 
-    .. code-block::
+    .. code-block:: bash
 
-        export APP_REG_CLIENT_ID=<application (client) id>
+        export APP_REG_CLIENT_ID="<application (client) id>"
 
 20. Enable the implicit grant flow for *Access tokens* and 
     *ID tokens* and click *Save*:

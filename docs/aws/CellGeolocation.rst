@@ -35,10 +35,10 @@ UnwiredLabs API
 To use UnwiredLabs_ geolocation API,
 store your API key as an SSM parameter and redeploy the stack:
 
-.. code-block::
+.. code-block:: bash
 
     aws ssm put-parameter --name /bifravst/cellGeoLocation/unwiredlabs/apiKey \
-        --type String --value <API Key>
+        --type String --value "<API Key>"
     npx cdk deploy '*'
 
 This will update the StateMachine which resolves cells from devices to

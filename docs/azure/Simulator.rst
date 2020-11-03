@@ -25,9 +25,9 @@ Connect
 Run this script to connect to the broker using the previously generated
 certificate:
 
-.. code-block::
+.. code-block:: bash
 
     cd ../bifravst-azure
     # FIXME: move this to the connect command once https://github.com/Azure/azure-sdk-for-js/issues/6361 is fixed
     export DEVICE_UI_LOCATION=`az storage account show -n bifravstdeviceui -g bifravst --query "primaryEndpoints.web" --output tsv`
-    node cli connect <id of your device>
+    node cli connect "<id of your device>"

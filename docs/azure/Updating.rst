@@ -50,6 +50,6 @@ You can verify the validity of a template using
 
 If this throws an error, you can find the detailed log message using
 
-.. code-block::
+.. code-block:: bash
 
-    az monitor activity-log list --correlation-id <tracking id> | jq '.[].properties.statusMessage | fromjson'
+    az monitor activity-log list --correlation-id "<tracking id>" | jq '.[].properties.statusMessage | fromjson'

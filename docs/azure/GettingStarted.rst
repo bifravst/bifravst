@@ -94,9 +94,9 @@ Deploy the solution to your account
 Go to the Subscriptions blade, and add a new subscription for Bifravst,
 copy the subscription id.
 
-.. code-block::
+.. code-block:: bash
 
-    export SUBSCRIPTION_ID=<Subscription ID>
+    export SUBSCRIPTION_ID="<Subscription ID>"
 
 Authenticate the CLI:
 
