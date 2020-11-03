@@ -20,7 +20,7 @@ jobs:
           export PATH=$PATH:/home/runner/.local/bin
           ls -la
           find ./ -type f -name \*.rst
-          rstcheck ./**/*.rst
+          rstcheck -r ./
 
       - run: make html
 
