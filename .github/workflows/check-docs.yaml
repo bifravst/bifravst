@@ -15,12 +15,9 @@ jobs:
         run: |
           python3 -m pip install --upgrade --user pip setuptools
           python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
+          echo "PATH=${{ env.PATH }}:/home/runner/.local/bin" >> $GITHUB_ENV
 
-      - run: |
-          export PATH=$PATH:/home/runner/.local/bin
-          ls -la
-          find ./ -type f -name \*.rst
-          rstcheck -r ./
+      - run: rstcheck -r ./
 
       - run: make html
 
