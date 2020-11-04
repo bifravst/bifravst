@@ -26,5 +26,5 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: bifravst-docs-${{ github.event.pull_request.head.sha }}
+          name: bifravst-docs-${{ github.sha }}
           path: build/html/
