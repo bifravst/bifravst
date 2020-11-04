@@ -9,15 +9,9 @@ is used to send device data and configuration.
 Reported state
 ================================================================================
 
-The document is described in this JSON schema file:
+The document is described in `this JSON schema file <../firmware/state.schema.json>`_.
 
-.. literalinclude:: ../firmware/state.schema.json
-  :language: JSON
-
-See this JSON document for an example device state:
-
-.. literalinclude:: ../firmware/state.json
-  :language: JSON
+See `this JSON document <../firmware/state.json>`_ for an example device state.
 
 Desired state
 ================================================================================

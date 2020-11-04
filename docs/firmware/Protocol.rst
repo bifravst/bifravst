@@ -281,21 +281,23 @@ these four kinds of device data. While the concrete implementation will
 differ per cloud provider, the general building blocks (state,
 configuration, batched past state, firmware updates) will be the same.
 
-| Cloud | State | Configuration | Past data | FOTA |
-| :------------------------------ |
-  :------------------------------------------------------------------------------------------------------------
-  |
-  :-----------------------------------------------------------------------------------------------------------
-  | :---------------- |
-  :------------------------------------------------------------------------------------
-  |
-| Amazon Web Services (:code:`aws`) | `Device Shadow <https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html>`_ (:code:`reported`) | `Device Shadow <https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html>`_
-  (:code:`desired`) | Publish over MQTT | `Jobs <https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html>`_+HTTPS> |
-| Google Cloud Platform (:code:`gcp`) | `Device Configuration <https://cloud.google.com/iot/docs/concepts/devices#device_configuration>`_
-  | `Device State <https://cloud.google.com/iot/docs/concepts/devices#device_state>`_
-  | Publish over MQTT | - |
-| Microsoft Azure (:code:`azure`) | `Device twins <https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins>`_
-  (:code:`reported`) | `Device twins <https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins>`_
-  (:code:`desired`) | Publish over MQTT |
-  `MQTT+HTTPS <https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update>`_
-  |
++-------------------------------------+-------------------------+------------------+-----------+-----------------+
+| Cloud                               | State                   | Configuration    | Past data | FOTA            |
++=====================================+=========================+==================+===========+=================+
+| :abbr:`AWS (Amazon Web Services)`   | `Device Shadow`_        | `Device Shadow`_ | MQTT      | `Jobs`_ + HTTPS |
+|                                     |                         |                  |           |                 |
+|                                     | :code:`reported`        | :code:`desired`  |           |                 |
++-------------------------------------+-------------------------+------------------+-----------+-----------------+
+| :abbr:`GCP (Google Cloud Platform)` | `Device Configuration`_ | `Device State`_  | MQTT      |                 |
++-------------------------------------+-------------------------+------------------+-----------+-----------------+
+| :abbr:`Azure (Microsoft Azure)`     | `Device twins`_         | `Device twins`_  | MQTT      | `MQTT+HTTPS`_   |
+|                                     |                         |                  |           |                 |
+|                                     | :code:`reported`        | :code:`desired`  |           |                 |
++-------------------------------------+-------------------------+------------------+-----------+-----------------+
+
+.. _Device Shadow: https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html
+.. _Jobs: https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html
+.. _Device Configuration: https://cloud.google.com/iot/docs/concepts/devices#device_configuration>
+.. _Device State: https://cloud.google.com/iot/docs/concepts/devices#device_state
+.. _Device twins: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins
+.. _MQTT+HTTPS: https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update

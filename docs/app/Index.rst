@@ -7,6 +7,9 @@ The Cat Tracker Web Application is a reference single-page application
 `create-react-app <https://github.com/facebook/create-react-app>`_ in
 `TypeScript <https://www.typescriptlang.org/>`_.
 
+Documentation
+================================================================================
+
 .. toctree::
    :titlesonly:
 

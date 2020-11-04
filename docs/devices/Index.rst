@@ -7,9 +7,12 @@ to connect to your account.
 
 In order for the device to connect you need to:
 
-1.  `Update the modem firmware <./UpdateModem.html>`_
-2.  `Flash the certificate <./FlashingCertificate.html>`_
-3.  `Flash the application firmware <./FlashingFirmware.html>`_
+#.  `Update the modem firmware <./UpdateModem.html>`_
+#.  `Flash the certificate <./FlashingCertificate.html>`_
+#.  `Flash the application firmware <./FlashingFirmware.html>`_
+
+Documentation
+================================================================================
 
 .. toctree::
    :titlesonly:

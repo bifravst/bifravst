@@ -13,28 +13,28 @@ Overview
 Every commit to the `firmware <https://github.com/bifravst/firmware>`_
 repo will trigger a CI run on GitHub Actions. The CI run will
 
-1.  create a new device and credentials on AWS IoT
-2.  build a firmware that has the device ID hardcoded for the MQTT
+#.  create a new device and credentials on AWS IoT
+#.  build a firmware that has the device ID hardcoded for the MQTT
     client ID
-3.  send the firmware along with the credentials to the 
+#.  send the firmware along with the credentials to the 
     `Firmware CI runner`_
-4.  observe the firmware CI run until it finishes
-5.  download the log result from S3
-6.  run assertions against the log result
+#.  observe the firmware CI run until it finishes
+#.  download the log result from S3
+#.  run assertions against the log result
 
 The `Firmware CI runner`_ is
 running on a Raspberry Pi connected to AWS IoT where it receives jobs to
 execute:
 
-1.  it flashes the firmware and optional credentials using the connected
+#.  it flashes the firmware and optional credentials using the connected
     debugger to the connected nRF9160 DK or Thingy:91
-2.  it then collects all log output until
+#.  it then collects all log output until
 
     a.  a timeout is reached
     b.  or a stop condition is reached (wait for a log output to match a
         regex)
     
-3.  it uploads the logs to S3
+#.  it uploads the logs to S3
 
 .. note::
 
@@ -105,11 +105,11 @@ You can delete a device using this command:
 CI Runner
 ================================================================================
 
-1.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for
+#.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for
     your platform. Use the path to the folder (e.g.
     :code:`~/JLink_Linux_V686_arm64/`) further down.
 
-2.  Install
+#.  Install
     `firmware-ci <https://github.com/bifravst/firmware-ci.git>`_:
 
     .. code-block:: bash
@@ -119,15 +119,15 @@ CI Runner
         npm ci
         npx tsc
 
-3.  Now provide these environment variables:
+#.  Now provide these environment variables:
 
     .. code-block:: bash
 
-        export AWS_ACCESS_KEY_ID=<AWS Access Key ID printed above>
-        export AWS_SECRET_ACCESS_KEY=<AWS Secret Access Key printed above>
-        export REGION=<Region printed above>
-        export BUCKET_NAME=<Bucket name printed above>
-        export PATH=<Path to JLINK>:$PATH
+        export AWS_ACCESS_KEY_ID="<AWS Access Key ID printed above>"
+        export AWS_SECRET_ACCESS_KEY="<AWS Secret Access Key printed above>"
+        export REGION="<Region printed above>"
+        export BUCKET_NAME="<Bucket name printed above>"
+        export PATH="<Path to JLINK>":$PATH
 
     The recommended workflow is to use a
     `direnv <https://direnv.net/>`_ plugin for your shell
@@ -137,13 +137,13 @@ CI Runner
     the credentials that are presented to you after you have created
     the new user.
 
-4.  Copy over the JSON file containing the certificate
+#.  Copy over the JSON file containing the certificate
 
-5.  Run:
+#.  Run:
 
     .. code-block:: bash
 
-        node cli run <path to certificate.json>
+        node cli run "<path to certificate.json>"
 
 The Firmware CI will now process all schedule jobs one after another.
 

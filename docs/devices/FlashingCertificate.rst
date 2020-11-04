@@ -75,7 +75,7 @@ Drag and Drop or select the JSON file.
     Change the security tag to :code:`42`. The modem can
     hold multiple credentials, and the default security tag
     :code:`16842753` is reserved for
-    `nRF Connect for Cloud <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud>`
+    `nRF Connect for Cloud <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud>`_
     credentials.
 
 .. warning::

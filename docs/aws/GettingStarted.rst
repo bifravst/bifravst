@@ -42,28 +42,27 @@ and provide AWS credentials.
 
 To setup a new AWS account and provide credentials, complete the following steps:
 
-1.  Navigate to your `IAM console <https://console.aws.amazon.com/iam/home?region=us-east-1#/home>`_
+#.  Navigate to your `IAM console <https://console.aws.amazon.com/iam/home?region=us-east-1#/home>`_
     and add a new user for `programmatic access <https://wa.aws.amazon.com/wat.question.SEC_3.en.html>`_ 
 
-2.  Attach the :code:`arn:aws:iam::aws:policy/AdministratorAccess` policy directly.
+#.  Attach the :code:`arn:aws:iam::aws:policy/AdministratorAccess` policy directly.
 
     .. warning::
 
         This action will create a user which can do
         everything in the account, therefore it should only be created in an
-        account dedicated for Bifravst.
 
-3.  See the `Getting Started guide <https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html>`_
+#.  See the `Getting Started guide <https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html>`_
     to configure the AWS CDK.
 
-4.  As a recommended workflow, use a `direnv <https://direnv.net/>`_ plugin
+#.  As a recommended workflow, use a `direnv <https://direnv.net/>`_ plugin
     for your shell, which locates the environment variables in a :code:`.envrc` file in
     the project folder and automatically exports them.
 
-5.  Create a new :code:`.envrc` file in the project folder and add the credentials
+#.  Create a new :code:`.envrc` file in the project folder and add the credentials
     that are provided to you when you create the new user.
 
-6.  Also add your preferred region and your AWS account ID (that can be found
+#.  Also add your preferred region and your AWS account ID (that can be found
     under `My Account on the AWS console <https://console.aws.amazon.com/billing/home?#/account>`_),
     to the :code:`.envrc` file, as shown in the following code:
 

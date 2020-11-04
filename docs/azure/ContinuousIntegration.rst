@@ -85,7 +85,7 @@ identity management solution for the user accounts of the Bifravst
 instance.
 
 Follow
-`this guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant>`_
+`the Create Tenant guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant>`_
 to create a new Azure AD B2C tenant:
 
 -   Organization name: :code:`Bifravst (CI) Users`
@@ -100,7 +100,7 @@ Note down the initial domain name you used:
     export B2C_TENANT="<Primary domain>" # e.g. "bifravstciusers"
 
 Link this Azure AD B2C tenant to the subscription for CI by following
-`this guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
+`the Billing guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
 
 Create Azure Active Directory B2C application
 ================================================================================

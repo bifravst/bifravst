@@ -19,10 +19,10 @@ is done through AWS Cognito.
 An Amazon Cognito authenticated user needs two policies to access AWS
 IoT.
 
-1.  The first policy is attached to the role of the authenticated pool
+#.  The first policy is attached to the role of the authenticated pool
     to authenticate and authorize the Cognito user to communicate with
     AWS IoT.
-2.  The second policy is attached to the authenticated Cognito user ID
+#.  The second policy is attached to the authenticated Cognito user ID
     principal for fine-grained permissions.
 
 **When authorizing Cognito identities, AWS IoT will consider both these

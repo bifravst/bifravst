@@ -11,4 +11,5 @@ docs/firmware/images/%.svg: docs/firmware/images/%.sequence
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 html: Makefile
-	sphinx-build -M html ./ build 
+	sphinx-build -M html ./ build
+	find docs -type f -name \*.json | xargs -I@ cp -v @ build/html/@
