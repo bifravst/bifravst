@@ -42,7 +42,7 @@ jobs:
       - name: Trigger Documentation Publication
         if:
           github.ref == 'refs/heads/saga' && github.event_name == 'push' &&
-          env.VERSION !== '0.0.0-development'
+          env.VERSION != '0.0.0-development'
         continue-on-error: true
         uses: octokit/request-action@v2.x
         with:

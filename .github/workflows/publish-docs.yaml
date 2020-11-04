@@ -1,12 +1,14 @@
 name: Test and Release
 
-on: publish-docs
+on:
+  repository_dispatch:
+    types: publish-docs
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  tests:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
