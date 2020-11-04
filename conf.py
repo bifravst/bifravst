@@ -21,10 +21,6 @@ project = 'Bifravst'
 copyright = '2019-2020, Nordic Semiconductor ASA | nordicsemi.no'
 author = 'Nordic Semiconductor ASA | nordicsemi.no'
 
-# The full version, including alpha/beta/rc tags
-release = '0.0.0-development'
-
-
 # -- General configuration -------------------------------------------------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be

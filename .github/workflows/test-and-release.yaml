@@ -11,22 +11,52 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v1
         with:
           node-version: "14.x"
+
       - name: Keep npm cache around to speed up installs
         uses: actions/cache@v2
         with:
           path: ~/.npm
           key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+
       - name: Install dependencies
         run: npm ci --no-audit
+
       - name: Compile TypeScript
         run: npx tsc
+
       - name: Test
         run: npm test
+
       - name: Semantic release
+        id: semantic-release
         continue-on-error: true
         run: |
           npm i --no-save semantic-release
           npx semantic-release
+          echo "VERSION=`cat package.json | jq -r '.version' | tr -d '\n'`" >> $GITHUB_ENV
+
+      - name: Publish Documentation
+        if:
+          steps.semantic-release.outcome == 'success' && github.ref ==
+          'refs/heads/saga' && github.event_name == 'push'
+        run: |
+          python3 -m pip install --upgrade --user pip setuptools
+          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
+          export PATH=$PATH:/home/runner/.local/bin
+          # Generate Documentation
+          make html
+          # Publish build
+          echo "machine github.com login accesskey password ${GITHUB_TOKEN}" > ~/.netrc
+          git config --global user.email "actions@example.com"
+          git config --global user.name "GitHub Actions"
+          cd build/html
+          touch .nojekyll
+          git init
+          git add -A
+          git commit -m "Update documentation to version ${VERSION}"
+          git remote add origin https://github.com/${GITHUB_REPOSITORY}.git
+          git push -f origin HEAD:gh-pages
