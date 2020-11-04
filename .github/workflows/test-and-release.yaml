@@ -44,6 +44,7 @@ jobs:
           steps.semantic-release.outcome == 'success' && github.ref ==
           'refs/heads/saga' && github.event_name == 'push'
         run: |
+          if [[ "${VERSION:-none}" == "none" ]]; then echo "Version not updated"; exit 0; else; echo "Updating documentation for version ${VERSION}..."; fi
           python3 -m pip install --upgrade --user pip setuptools
           python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
           export PATH=$PATH:/home/runner/.local/bin
