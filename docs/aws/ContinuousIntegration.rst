@@ -46,10 +46,8 @@ account.
 
 Provide these environment variables for GitHub Actions of the project:
 
--   :code:`USER_GITHUB_TOKEN_FOR_ACTION_TRIGGER`: In order to be able to trigger this
-    action, a GitHub user token with the permissions :code:`public_repo`, :code:`repo:status`,
-    :code:`repo_deployment` is needed (the default Actions credentials
-    `can't trigger other Actions <https://help.github.com/en/actions/reference/events-that-trigger-workflows#triggering-new-workflows-using-a-personal-access-token>`_).
+-   :code:`GITHUB_TOKEN`: a GitHub token (used with
+    `semantic-release <https://github.com/semantic-release/semantic-release>`_)
 -   :code:`AWS_ACCESS_KEY_ID`: the access key id of the user which should
     run the tests
 -   :code:`AWS_SECRET_ACCESS_KEY`: the secret access key of that user

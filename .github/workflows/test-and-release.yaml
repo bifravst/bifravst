@@ -3,7 +3,7 @@ name: Test and Release
 on: push
 
 env:
-  GITHUB_TOKEN: ${{ secrets.USER_GITHUB_TOKEN_FOR_ACTION_TRIGGER }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   tests:
@@ -37,16 +37,25 @@ jobs:
         run: |
           npm i --no-save semantic-release
           npx semantic-release
-          echo "VERSION=`cat package.json | jq -r '.version' | tr -d '\n'`" >> $GITHUB_ENV
 
-      - name: Trigger Documentation Publication
-        if:
-          github.ref == 'refs/heads/saga' && github.event_name == 'push' &&
-          env.VERSION != '0.0.0-development'
-        continue-on-error: true
-        uses: octokit/request-action@v2.x
-        with:
-          route: POST /repos/:repository/dispatches
-          repository: ${{ github.repository }}
-          event_type: "publish-docs"
-          client_payload: '{"sha": "${{ github.sha }}"}'
+      - name: Publish Documentation
+        if: github.ref == 'refs/heads/saga' && github.event_name == 'push'
+        run: |
+          export VERSION=`git tag --contains ${{ github.sha }} | tr -d '\n'`
+          if [[ "${VERSION}" == "" ]]; then echo "Version not updated."; exit 0; else echo "Updating documentation for version ${VERSION}..."; fi
+          python3 -m pip install --upgrade --user pip setuptools
+          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
+          export PATH=$PATH:/home/runner/.local/bin
+          # Generate Documentation
+          make html
+          # Publish build
+          echo "machine github.com login accesskey password ${GITHUB_TOKEN}" > ~/.netrc
+          git config --global user.email "actions@example.com"
+          git config --global user.name "GitHub Actions"
+          cd build/html
+          touch .nojekyll
+          git init
+          git add -A
+          git commit -m "Update documentation to version ${VERSION}"
+          git remote add origin https://github.com/${GITHUB_REPOSITORY}.git
+          git push -f origin HEAD:gh-pages
