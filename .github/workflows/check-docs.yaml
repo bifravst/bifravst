@@ -15,11 +15,14 @@ jobs:
         run: |
           python3 -m pip install --upgrade --user pip setuptools
           python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
-          echo "PATH=${{ env.PATH }}:/home/runner/.local/bin" >> $GITHUB_ENV
 
-      - run: rstcheck -r ./
+      - run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          rstcheck -r ./
 
-      - run: make html
+      - run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          make html
 
       - uses: actions/upload-artifact@v2
         with:
