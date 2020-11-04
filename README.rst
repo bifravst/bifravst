@@ -232,14 +232,32 @@ Documentation
 
 .. toctree::
    :titlesonly:
+   :caption: Documentation
 
-   docs/Support.rst
    docs/aws/Index.rst
    docs/azure/Index.rst
    docs/app/Index.rst
    docs/firmware/Index.rst
    docs/devices/Index.rst
-   docs/guides/Index.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: Guides
+
+   docs/guides/AutomateHEXFileBuilding.rst
+   docs/guides/CellGeolocations.rst
+   docs/guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.rst
+   docs/guides/CloudDifferences.rst
+   docs/guides/ETSI-EN-303-645.rst
+   docs/guides/Versioning.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: Resources
+
+   GitHub <https://github.com/bifravst>
+   {DevZone <https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc>
+   docs/Support.rst
    docs/adr/README.rst
    CODE_OF_CONDUCT.rst
 
