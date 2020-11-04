@@ -34,6 +34,7 @@ jobs:
           git config --global user.email "actions@example.com"
           git config --global user.name "GitHub Actions"
           cd build/html
+          touch .nojekyll
           git init
           git add -A
           git commit -m 'Update documentation'
