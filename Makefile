@@ -12,4 +12,5 @@ docs/firmware/images/%.svg: docs/firmware/images/%.sequence
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 html: Makefile
 	sphinx-build -M html ./ build
+	cp build/html/README.html build/html/index.html
 	find docs -type f -name \*.json | xargs -I@ cp -v @ build/html/@
