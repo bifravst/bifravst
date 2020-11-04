@@ -1,0 +1,30 @@
+name: Build Docs
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade --user pip setuptools
+          python3 -m pip install --upgrade --user sphinx recommonmark sphinx_rtd_theme rstcheck
+
+      - run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          rstcheck -r ./
+
+      - run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          make html
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: bifravst-docs-${{ github.sha }}
+          path: build/html/

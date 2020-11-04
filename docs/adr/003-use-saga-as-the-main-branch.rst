@@ -1,0 +1,21 @@
+================================================================================
+3. Use :code:`saga` as the name for the main branch
+================================================================================
+
+Historically, Git and other software use terms such as
+:code:`master/slave`, :code:`whitelist/blacklist` which are based on racial
+concepts. Their continued use maintains the racial stereo-types they
+depict. Better alternatives in meaning and technical correctness exist,
+like :code:`leader/follower`, :code:`blocklist/allowlist`.
+
+In the Nordic mythology, a *saga* is a long continuous recollection
+of histories of stories about the history of humans, legends and gods.
+This idea reflects very well what happens in a Git repository. Changes
+happen in branches (some teams tie them to *User Stories*, which
+are sometimes directly, sometimes loosely coupled to the main branch.
+Once they are finished they get added to the main branch, or get
+appended in case of a rebase. The mental model of a big book of stories
+fits this process very well.
+
+Therefore the main branch in this project is named :code:`saga`.
+:code:`master` shall not be used.

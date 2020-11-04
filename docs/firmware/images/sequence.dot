@@ -9,13 +9,13 @@ digraph G {
     publish [ label="Publish data" shape=circle ]
     buffer [ label="Buffer data" shape=circle ]
     sleepActive [ label="Sleep until\nwait time" shape=circle ]
-    checkDeviceMode -> waitForMovement [ label="Passive" ]
-    checkDeviceMode -> sleepActive [ label="Active" ]
-    waitForMovement -> searchGPS
-    sleepActive -> searchGPS
-    searchGPS -> checkCellular
-    checkCellular -> publish [ label="Connected" ] 
-    checkCellular -> buffer [ label="Not connected" ] 
-    publish -> checkDeviceMode
-    buffer -> checkDeviceMode
+    checkDeviceMode -    waitForMovement [ label="Passive" ]
+    checkDeviceMode -    sleepActive [ label="Active" ]
+    waitForMovement -    searchGPS
+    sleepActive -    searchGPS
+    searchGPS -    checkCellular
+    checkCellular -    publish [ label="Connected" ] 
+    checkCellular -    buffer [ label="Not connected" ] 
+    publish -    checkDeviceMode
+    buffer -    checkDeviceMode
 }

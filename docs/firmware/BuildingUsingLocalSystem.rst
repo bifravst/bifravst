@@ -1,0 +1,68 @@
+================================================================================
+Building using your local system
+================================================================================
+
+.. note::
+
+    Getting your system to the required state to build firmware
+    is cumbersome. It is recommend to check out the alternative of using
+    `Docker <./BuildingUsingDocker.html>`_ or use a `CI Runner <./BuildingUsingGitHub.html>`_.
+
+Prepare your system
+================================================================================
+
+.. note::
+
+    You can always check out the
+    `GitHub Actions workflow <https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml>`_
+    as a reference, which sets up a blank Ubuntu image to build the firmware.
+
+Follow the
+`Getting Started Guide <http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html>`_
+of the Nordic Connect SDK to set up your system for building the
+project. Especially make sure to follow the instructions on _Installing
+the *nRF Connect SDK*.
+
+Clone the project and install dependencies
+================================================================================
+
+Create a folder, e.g. :code:`ncs` and init the project:
+
+.. code-block:: bash
+
+    cd ./ncs
+    sudo pip3 install -U --pre west
+    west init -m https://github.com/bifravst/firmware --mr saga
+    west update
+    sudo pip3 install -r zephyr/scripts/requirements.txt
+    sudo pip3 install pc_ble_driver_py
+    sudo pip3 install -r nrf/scripts/requirements.txt
+    sudo pip3 install -r mcuboot/scripts/requirements.txt
+    # this sets $ZEPHYR_TOOLCHAIN_VARIANT and $GNUARMEMB_TOOLCHAIN_PATH
+    source zephyr/zephyr-env.sh
+
+Building
+================================================================================
+
+Then build the actual application: change to the
+:code:`./ncs/firmware` directory and build for your board:
+
+Thingy:91 (:code:`PCA20035`)
+--------------------------------------------------------------------------------
+
+.. code-block:: bash
+
+    west build -p always -b thingy91_nrf9160ns
+
+nRF9160 DK (:code:`PCA10090`)
+--------------------------------------------------------------------------------
+
+.. code-block:: bash
+
+    west build -p always -b nrf9160_pca10090ns
+
+Location of the HEX file
+================================================================================
+
+The built HEX file will be located in
+:code:`ncs/firmware/build/zephyr/merged.hex`.
