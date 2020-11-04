@@ -2,6 +2,10 @@
 Bifravst
 ================================================================================
 
+.. epigraph::
+
+  *Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.*
+
 .. image:: https://github.com/bifravst/bifravst/workflows/Test%20and%20Release/badge.svg
    :alt: GitHub Actions
    :target: https://github.com/bifravst/bifravst/actions
@@ -20,47 +24,19 @@ Bifravst
 .. image:: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
    :alt: Commitizen friendly
    :target: http://commitizen.github.io/cz-cli/
-.. image:: https://img.shields.io/badge/code*style-prettier-ff69b4.svg
+.. image:: https://img.shields.io/badge/code_style-prettier-ff69b4.svg
    :alt: code style: prettier
    :target: https://github.com/prettier/prettier/
 .. image:: https://img.shields.io/badge/ESLint-TypeScript-blue.svg
    :alt: ESLint: TypeScript
    :target: https://github.com/typescript-eslint/typescript-eslint
    
-.. epigraph::
-
-  *Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.*
-
 .. admonition:: 🐣 incubating *Bifravst* as an official *Nordic Semiconductor* project 🎉
 
   In the coming weeks, we will establish the best path to provide this project
   through nRF Connect SDK, Nordic Semiconductor Info center and potentially
   other established channels. For more information see the
   `GitHub issue <https://github.com/bifravst/bifravst/issues/56>`_.
-
-What does *Bifravst* mean?
-================================================================================
-
-Bifravst is a term from the Nordic mythology and it refers to the bridge built
-by the gods between earth and heaven.
-`Read more about it <https://www.lyngen.com/2020/03/the-vikings-and-the-northern-lights-bridge/>`_.
-
-.. admonition:: 🚧 Development roadmap
-
-  Development progress is managed in the
-  `Bifravst GitHub Project <https://github.com/orgs/bifravst/projects/1>`_.
-
-Support
-================================================================================
-
-.. image:: https://img.shields.io/badge/%7BDevZone-community-brightgreen.svg
-   :alt: {DevZone Community
-   :target: https://devzone.nordicsemi.com/search?q=bifravst
-
-❓ You can get in touch via `DevZone <https://devzone.nordicsemi.com/>`_ (You can
-use the tag `Bifravst <https://devzone.nordicsemi.com/search?q=bifravst>`_ to mark
-your questions) or by
-`creating an issue in the Bifravst repository <https://github.com/bifravst/bifravst/issues/new>`_.
 
 Vision
 ================================================================================
@@ -94,8 +70,49 @@ and the
 `Nordic 5-clause BSD license <https://github.com/bifravst/firmware/blob/saga/LICENSE>`_
 (firmware).
 
-Project characteristics overview
+.. admonition:: What does *Bifravst* mean?
+
+    Bifravst is a term from the Nordic mythology and it refers to the bridge built
+    by the gods between earth and heaven.
+    `Read more about it <https://www.lyngen.com/2020/03/the-vikings-and-the-northern-lights-bridge/>`_.
+
+Core principles
 ================================================================================
+
+*Bifravst* is built on the following principles:
+
+- *Teach by showing*: All examples are designed to solve a concrete use case (a
+  *Cat Tracker*) instead of providing generic or abstract solutions. *Bifravst*
+  is not a framework, but it is a real application.
+- *Err on the side of security*: *Bifravst* follows the most robust security
+  recommendations of the respective cloud provider.
+- *Single tenancy*: *Bifravst* implements a scenario in which all the
+  authenticated users can be trusted to access all the devices. This is a
+  typical scenario for cellular IoT products and it simplifies the onboarding of
+  new devices.
+- *Serverless*: *Bifravst* uses a serverless architecture as much as possible
+  to have near-zero costs for the operation during the development, and to
+  provide horizontal scaling of resources to be used in a production system if
+  needed.
+- *Cloud native*: *Bifravst* examples are designed by following the best
+  practices of the respective cloud provider to reduce development efforts due
+  to abstraction.
+- *Being offline is not an exception*: Highly mobile cellular IoT products need
+  to handle unreliable connections gracefully, by implementing mechanisms to
+  retry the failed sending of data. This also means that the sensor measurements
+  need to be timestamped when they are created, and not when they arrive at the
+  cloud.
+- *Maximize power saving*: The firmware examples should highlight power saving
+  features of the nRF9160 DK because this is critical for developing very small
+  form-factor devices.
+
+Project overview
+================================================================================
+
+.. admonition:: 🚧 Development roadmap
+
+  Development progress is managed in the
+  `Bifravst GitHub Project <https://github.com/orgs/bifravst/projects/1>`_.
 
 +------------------------------------+----------------------+
 | Characteristic                     | Principle            |
@@ -121,38 +138,8 @@ Project characteristics overview
 | **Sensor timestamping**            | Device-side          |
 +------------------------------------+----------------------+
 
-Core principles
-================================================================================
-
-*Bifravst* is built on the following principles:
-
-- *Teach by showing* - All examples are designed to solve a concrete use case (a
-  *Cat Tracker*) instead of providing generic or abstract solutions. *Bifravst*
-  is not a framework, but it is a real application.
-- *Err on the side of security* - *Bifravst* follows the most robust security
-  recommendations of the respective cloud provider.
-- *Single tenancy* - *Bifravst* implements a scenario in which all the
-  authenticated users can be trusted to access all the devices. This is a
-  typical scenario for cellular IoT products and it simplifies the onboarding of
-  new devices.
-- *Serverless* - *Bifravst* uses a serverless architecture as much as possible
-  to have near-zero costs for the operation during the development, and to
-  provide horizontal scaling of resources to be used in a production system if
-  needed.
-- *Cloud native* - *Bifravst* examples are designed by following the best
-  practices of the respective cloud provider to reduce development efforts due
-  to abstraction.
-- *Being offline is not an exception* - Highly mobile cellular IoT products need
-  to handle unreliable connections gracefully, by implementing mechanisms to
-  retry the failed sending of data. This also means that the sensor measurements
-  need to be timestamped when they are created, and not when they arrive at the
-  cloud.
-- *Maximize power saving* - The firmware examples should highlight power saving
-  features of the nRF9160 DK because this is critical for developing very small
-  form-factor devices.
-
 System overview and technical considerations
-================================================================================
+--------------------------------------------------------------------------------
 
 .. figure:: ./docs/system-overview.jpg
    :alt: System overview
@@ -210,13 +197,13 @@ The web application offers the following features:
 Supported Cloud Providers
 ================================================================================
 
-+-------------------+================================================================================-----------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
++-------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
 |                   | Amazon Web Services                                                                       | Google Cloud                                                | Microsoft Azure                                                 | Alibaba Cloud |
 +===================+===========================================================================================+=============================================================+=================================================================+===============+
 | LTE-M: TCP+MQTT   | `feature complete <https://bifravst.gitbook.io/bifravst/bifravst-on-aws/gettingstarted>`_ | `on hold <https://github.com/bifravst/bifravst/issues/25>`_ | `in progress <https://github.com/bifravst/bifravst/issues/29>`_ | Planned       |
-+-------------------+================================================================================-----------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
++-------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
 | NB-IoT: UDP+LWM2M | Planned                                                                                   | Planned                                                     | Planned                                                         | Planned       |
-+-------------------+================================================================================-----------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
++-------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
 
 For cloud providers having no native UDP+LWM2M support using a bridge, e.g.
 `Eclipse Californium <https://github.com/eclipse/californium>`_, was evaluated.
@@ -224,21 +211,21 @@ For more information see
 `Leshan LwM2M AWS IoT Gateway <https://github.com/coderbyheart/leshan-aws>`_.
 
 IoT Cloud vendor survey results
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------------------------------------
 
-+------------+------------------------+================================================================================------------------------------------+
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 |            | Nordic internal (2019) | `Eclipse Fdtn. (2019) <https://iot.eclipse.org/resources/iot-developer-survey/iot-comm-adoption-survey-2019.pdf>`_ |
 +============+========================+====================================================================================================================+
 | AWS        | 1\. 100%               | 1\.100%                                                                                                            |
-+------------+------------------------+================================================================================------------------------------------+
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 | Google     | 2\. 79%                | 3\. 73%                                                                                                            |
-+------------+------------------------+================================================================================------------------------------------+
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 | Azure      | 3\. 66%                | 2\. 84%                                                                                                            |
-+------------+------------------------+================================================================================------------------------------------+
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 | ARM Pelion | 4\. 25%                |                                                                                                                    |
-+------------+------------------------+================================================================================------------------------------------+
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 | IBM        | 5\. 20%                |                                                                                                                    |
-+------------+------------------------+================================================================================------------------------------------+
++------------+------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 Documentation
 ================================================================================
@@ -246,6 +233,7 @@ Documentation
 .. toctree::
    :titlesonly:
 
+   docs/Support.rst
    docs/aws/Index.rst
    docs/azure/Index.rst
    docs/app/Index.rst
