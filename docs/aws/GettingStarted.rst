@@ -14,6 +14,12 @@ Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_
 with `Ubuntu 18.04
 LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
 
+.. warning::
+
+    Windows is not included in the continuous integration tests, if you
+    encounter issues, please
+    `open an issue here <https://github.com/bifravst/aws/issues/new>`_ 
+
 Clone the project and install dependencies
 ================================================================================
 
