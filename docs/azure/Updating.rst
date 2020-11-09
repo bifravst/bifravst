@@ -13,7 +13,7 @@ release, follow these steps.
     az deployment group create \
         --resource-group ${APP_NAME:-bifravst} \
         --mode Complete \
-        --name ${APP_NAME:-bifravst} \
+        --name cli-`uuidgen` \
         --template-file azuredeploy.json \
         --parameters \
             appName=${APP_NAME:-bifravst} \
