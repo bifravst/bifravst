@@ -2,11 +2,6 @@
 Getting started
 ================================================================================
 
-.. warning::
-
-    🚧 The Azure implementation is 
-    `work in progress <https://github.com/bifravst/bifravst/issues/29>`_.
-
 .. note::
 
     💵 Because the Azure solution is using 
