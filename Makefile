@@ -14,6 +14,6 @@ docs/firmware/images/%.svg: docs/firmware/images/%.sequence
 VERSION ?= 0.0.0-development
 
 html: Makefile
-	sphinx-build -M html ./ build -D release=${VERSION}
+	sphinx-build -M html ./ build -D release=${VERSION} -D version=${VERSION}
 	cp build/html/README.html build/html/index.html
 	find docs -type f -name \*.json | xargs -I@ cp -v @ build/html/@
