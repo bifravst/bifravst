@@ -47,7 +47,8 @@ This is how the file would look like:
     REACT_APP_CLOUD_FLAVOUR=AZURE
     REACT_APP_AZURE_CLIENT_ID=358162bb-b809-42ef-9b62-22f8fa42b5fb
     REACT_APP_AZURE_AD_B2C_AUTHORITY=https://bifravstprod.b2clogin.com/bifravstprod.onmicrosoft.com/B2C_1\_signup_signin
-    REACT_APP_AZURE_AD_B2C_TENANT=bifravstprod REACT_APP_VERSION=v3.6.1
+    REACT_APP_AZURE_AD_B2C_TENANT=bifravstprod
+    REACT_APP_VERSION=v3.6.1
 
 Deploy the app
 ================================================================================
