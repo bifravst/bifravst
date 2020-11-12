@@ -19,6 +19,7 @@ Documentation
    :titlesonly:
 
    Overview.rst
+   UsingPrebuildImages.rst
    Configuration.rst
    BuildingUsingDocker.rst
    BuildingUsingLocalSystem.rst
