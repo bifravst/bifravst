@@ -60,8 +60,9 @@ setting up *Bifravst* in your Azure account.
 
     export APP_URL=`az storage account show -g ${RESOURCE_GROUP_NAME} -n ${APP_NAME}app --query 'primaryEndpoints.web' --output tsv | tr -d '\n'`
     export APP_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --name ${APP_NAME}app --query 'connectionString'`
+    npm run build
     az storage blob upload-batch --connection-string ${APP_STORAGE_CONNECTION_STRING} --account-name ${APP_NAME}app -s ./app/build -d '$web'
-    echo "Done. Now open https://$APP_URL/ to view the web app."
+    echo "Done. Now open $APP_URL to view the web app."
 
 Afterwards you can open the domain name printed in :code:`APP_URL`
 to view the web app.
