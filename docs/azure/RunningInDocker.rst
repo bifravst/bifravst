@@ -38,7 +38,7 @@ Export them.
 
     az functionapp config appsettings list \
         --resource-group ${RESOURCE_GROUP_NAME:-bifravst} \
-        --name ${APP_NAME:-bifravst}API | jq -r '.[] | .name+"=""+.value+"""'
+        --name ${APP_NAME:-bifravst}API | jq -r '.[] | .name + "=\"" + .value + "\""'
 
 Run the functions app:
 
