@@ -21,6 +21,22 @@ Use the IMEI when generating the certificate:
 
     node cli create-device-cert -d "<imei>"
 
+Flashing using the CLI
+================================================================================
+
+.. note::
+
+    This requires `Segger JLink <https://www.segger.com/downloads/jlink/>`_ to
+    be installed and in your path.
+
+Use the CLI to flash the device certificates. This will also download the latest
+firmware from the `Firmware's GitHub releases page <https://github.com/bifravst/firmware/releases>`_
+and flash it to the device.
+
+.. code-block:: bash
+
+    node cli flash "<imei>"
+
 Flashing using nRF Connect for Desktop
 ================================================================================
 
