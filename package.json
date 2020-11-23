@@ -25,6 +25,7 @@
   "dependencies": {},
   "devDependencies": {
     "@bifravst/code-style": "8.0.134",
+    "@bifravst/eslint-config-typescript": "^5.0.77",
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-angular": "11.0.0",
     "@types/ajv": "1.0.0",
@@ -32,6 +33,7 @@
     "@types/jest": "26.0.15",
     "@types/node": "14.14.9",
     "ajv": "6.12.6",
+    "eslint": "^7.14.0",
     "glob": "^7.1.6",
     "husky": "4.3.0",
     "jest": "26.6.3",
