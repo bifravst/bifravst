@@ -14,7 +14,7 @@
         "firmware": {
           "type": "object",
           "properties": {
-            "status": {
+            "fwUpdateStatus": {
               "type": "string",
               "enum": [
                 "current",
@@ -40,7 +40,7 @@
               "examples": ["v1.0.1-rc1-327-g6fc8c16b239f"]
             }
           },
-          "required": ["status", "currentFwVersion", "pendingFwVersion"]
+          "required": ["fwUpdateStatus", "currentFwVersion", "pendingFwVersion"]
         }
       }
     }
