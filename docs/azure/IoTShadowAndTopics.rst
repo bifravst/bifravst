@@ -8,13 +8,13 @@ is used to send device data and configuration.
 Reported state
 ================================================================================
 
-The document is described in `this JSON schema file <../firmware/state.reported.azure.schema.json>`_.
+The document is described in `the JSON schema file for the reported state <../firmware/state.reported.azure.schema.json>`_.
 
-See `this JSON document <../firmware/state.reported.azure.json>`_ for an example device state.
+See `the JSON document containing a reported state <../firmware/state.reported.azure.json>`_ for an example.
 
 Desired state
 ================================================================================
 
-The document is described in `this JSON schema file <../firmware/state.desired.azure.schema.json>`_.
+The document is described in `the JSON schema file for the desired state <../firmware/state.desired.azure.schema.json>`_.
 
-See `this JSON document <../firmware/state.desired.azure.json>`_ for an example device state.
+See `the JSON document containing a desired state <../firmware/state.desired.azure.json>`_ for an example device state.
