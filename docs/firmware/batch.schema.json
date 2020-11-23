@@ -9,28 +9,28 @@
       "description": "Battery readings",
       "type": "array",
       "items": {
-        "$ref": "state.schema.json#/properties/bat"
+        "$ref": "state.reported.schema.json#/properties/bat"
       }
     },
     "acc": {
       "description": "Accelerometer readings",
       "type": "array",
       "items": {
-        "$ref": "state.schema.json#/properties/acc"
+        "$ref": "state.reported.schema.json#/properties/acc"
       }
     },
     "gps": {
       "description": "GPS readings",
       "type": "array",
       "items": {
-        "$ref": "state.schema.json#/properties/gps"
+        "$ref": "state.reported.schema.json#/properties/gps"
       }
     },
     "roam": {
       "description": "Roaming information updates.",
       "type": "array",
       "items": {
-        "$ref": "state.schema.json#/properties/roam"
+        "$ref": "state.reported.schema.json#/properties/roam"
       }
     },
     "btn": {
@@ -44,9 +44,8 @@
       "description": "Environmental sensors.",
       "type": "array",
       "items": {
-        "$ref": "state.schema.json#/properties/env"
+        "$ref": "state.reported.schema.json#/properties/env"
       }
     }
-  },
-  "additionalProperties": false
+  }
 }

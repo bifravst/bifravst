@@ -1,0 +1,21 @@
+{
+  "cfg": {
+    "gpst": 720,
+    "celt": 600,
+    "act": false,
+    "actwt": 60,
+    "mvres": 60,
+    "mvt": 3600,
+    "acct": 12
+  },
+  "firmware": {
+    "fwVersion": "1.2.0",
+    "fwPackageURI": "https://bifravstprodfota.blob.core.windows.net/updates/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin",
+    "fwLocation": {
+      "protocol": "https:",
+      "host": "bifravstprodfota.blob.core.windows.net",
+      "path": "updates/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin"
+    },
+    "fwFragmentSize": 1800
+  }
+}

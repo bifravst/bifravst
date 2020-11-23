@@ -1,59 +1,56 @@
 import * as Ajv from 'ajv'
-import { promises as fs } from 'fs'
+import { readFileSync } from 'fs'
 import * as path from 'path'
+import * as glob from 'glob'
+
+const f = (name: string): string =>
+	readFileSync(path.resolve(process.cwd(), 'docs', 'firmware', name), 'utf-8')
 
 describe('schemas', () => {
 	let ajv: Ajv.Ajv
 	beforeEach(async () => {
 		ajv = new Ajv({
-			schemas: [
-				JSON.parse(
-					await fs.readFile(
-						path.resolve(
-							process.cwd(),
-							'docs',
-							'firmware',
-							'batch.schema.json',
-						),
-						'utf-8',
-					),
-				),
-				JSON.parse(
-					await fs.readFile(
-						path.resolve(
-							process.cwd(),
-							'docs',
-							'firmware',
-							'state.schema.json',
-						),
-						'utf-8',
-					),
-				),
-				JSON.parse(
-					await fs.readFile(
-						path.resolve(
-							process.cwd(),
-							'docs',
-							'firmware',
-							'messages.schema.json',
-						),
-						'utf-8',
-					),
-				),
-			],
+			schemas: glob
+				.sync(
+					`${path.resolve(process.cwd(), 'docs', 'firmware')}/*.schema.json`,
+				)
+				.map((f) => JSON.parse(readFileSync(f, 'utf-8'))),
 		})
 	})
 
-	describe('state.schema.json', () => {
-		it('should validate state.json', async () => {
+	describe('state.reported.aws.schema.json', () => {
+		it('should validate state.reported.aws.json', async () => {
 			const validate = ajv.getSchema(
-				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.schema.json',
+				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.reported.aws.schema.json',
 			) as Ajv.ValidateFunction
 			expect(validate).toBeDefined()
-			const state = await fs.readFile(
-				path.resolve(process.cwd(), 'docs', 'firmware', 'state.json'),
-				'utf-8',
-			)
+			const state = f('state.reported.aws.json')
+			const valid = await validate(JSON.parse(state))
+			expect(validate.errors).toBeNull()
+			expect(valid).toBeTruthy()
+		})
+	})
+
+	describe('state.reported.azure.schema.json', () => {
+		it('should validate state.reported.azure.json', async () => {
+			const validate = ajv.getSchema(
+				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.reported.azure.schema.json',
+			) as Ajv.ValidateFunction
+			expect(validate).toBeDefined()
+			const state = f('state.reported.azure.json')
+			const valid = await validate(JSON.parse(state))
+			expect(validate.errors).toBeNull()
+			expect(valid).toBeTruthy()
+		})
+	})
+
+	describe('state.desired.azure.schema.json', () => {
+		it('should validate state.desired.azure.json', async () => {
+			const validate = ajv.getSchema(
+				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.desired.azure.schema.json',
+			) as Ajv.ValidateFunction
+			expect(validate).toBeDefined()
+			const state = f('state.desired.azure.json')
 			const valid = await validate(JSON.parse(state))
 			expect(validate.errors).toBeNull()
 			expect(valid).toBeTruthy()
@@ -66,10 +63,7 @@ describe('schemas', () => {
 				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/messages.schema.json',
 			) as Ajv.ValidateFunction
 			expect(validate).toBeDefined()
-			const message = await fs.readFile(
-				path.resolve(process.cwd(), 'docs', 'firmware', 'message.json'),
-				'utf-8',
-			)
+			const message = f('message.json')
 			const valid = await validate(JSON.parse(message))
 			expect(validate.errors).toBeNull()
 			expect(valid).toBeTruthy()
@@ -82,10 +76,7 @@ describe('schemas', () => {
 				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/batch.schema.json',
 			) as Ajv.ValidateFunction
 			expect(validate).toBeDefined()
-			const state = await fs.readFile(
-				path.resolve(process.cwd(), 'docs', 'firmware', 'batch-message.json'),
-				'utf-8',
-			)
+			const state = f('batch-message.json')
 			const valid = await validate(JSON.parse(state))
 			expect(validate.errors).toBeNull()
 			expect(valid).toBeTruthy()

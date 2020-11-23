@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.reported.aws.schema.json",
+  "title": "Bifravst Firmware Device Data and Configuration for AWS",
+  "description": "Describes the data published by the device and its configuration options of the AWS flavour of Bifravst.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.reported.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dev": {
+          "type": "object",
+          "properties": {
+            "v": {
+              "type": "object",
+              "properties": {
+                "appV": {
+                  "type": "string",
+                  "description": "Application Firmware Version",
+                  "minLength": 1,
+                  "examples": ["v1.0.0-rc1-327-g6fc8c16b239f"]
+                }
+              },
+              "required": ["appV"]
+            }
+          },
+          "required": ["v", "ts"]
+        }
+      }
+    }
+  ]
+}

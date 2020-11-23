@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/azure.fota.schema.json",
+  "description": "Schedules a firmware update for the device",
+  "type": "object",
+  "properties": {
+    "fwVersion": {
+      "type": "string",
+      "description": "Version of pending Firmware Update (FOTA). Devices may report and empty string.",
+      "minLength": 1,
+      "examples": ["v1.0.1-rc1-327-g6fc8c16b239f"]
+    },
+    "fwPackageURI": {
+      "type": "string",
+      "description": "The public download link for the firmware. May expire after 60 minutes.",
+      "pattern": "^https?://.+$",
+      "examples": [
+        "https://fw.example.com/updates/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin"
+      ]
+    },
+    "fwFragmentSize": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Specifies the maximum fragment size for the file that should be downloaded in each HTTP request. Should be around 1800 when using TLS.",
+      "examples": [1800]
+    },
+    "fwLocation": {
+      "description": "Parsed version of fwPackageURI",
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "enum": ["https:", "http:"]
+        },
+        "host": {
+          "type": "string",
+          "pattern": "^[\\.a-z0-9]+$",
+          "examples": ["fw.example.com"],
+          "description": "The hostname"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^[^/]+",
+          "examples": ["updates/79ca833d-f653-48e8-b691-e0c3cfe1400a.bin"],
+          "description": "The path. Must not include a leading slash."
+        }
+      },
+      "required": ["protocol", "host", "path"]
+    }
+  },
+  "required": ["fwVersion", "fwPackageURI", "fwFragmentSize", "fwLocation"]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.desired.azure.schema.json",
+  "title": "Bifravst Firmware Device Data and Configuration for AWS",
+  "description": "Describes the possible properties of the desired device state Azure flavour of Bifravst.",
+  "type": "object",
+  "properties": {
+    "cfg": {
+      "$ref": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/cfg.schema.json"
+    },
+    "firmware": {
+      "$ref": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/azure.fota.schema.json"
+    }
+  }
+}

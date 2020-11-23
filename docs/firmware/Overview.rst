@@ -57,7 +57,7 @@ network when in fact it is not. This is due to the use of PSM intervals
 which enables the connection intervals between the device and the
 connected cellular tower to occur less frequent. This can dramatically
 decrease the resolution of which the modem updates it cellular network
-registration state. This is not a problem, the publication functionality
+registration state.reported. This is not a problem, the publication functionality
 is non blocking and the application will not halt if it tries to publish
 without a connection.
 

@@ -9,9 +9,9 @@ is used to send device data and configuration.
 Reported state
 ================================================================================
 
-The document is described in `this JSON schema file <../firmware/state.schema.json>`_.
+The document is described in `this JSON schema file <../firmware/state.reported.aws.schema.json>`_.
 
-See `this JSON document <../firmware/state.json>`_ for an example device state.
+See `this JSON document <../firmware/state.reported.aws.json>`_ for an example device state.
 
 Desired state
 ================================================================================

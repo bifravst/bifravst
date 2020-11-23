@@ -1,51 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.schema.json",
+  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.reported.schema.json",
   "title": "Bifravst Firmware Device Data and Configuration",
   "description": "Describes the data published by the device and its configuration options.",
   "type": "object",
   "properties": {
     "cfg": {
-      "description": "Configures the device",
-      "type": "object",
-      "properties": {
-        "act": {
-          "description": "Whether to enable the active mode",
-          "type": "boolean"
-        },
-        "actwt": {
-          "description": "In active mode: wait this amount of seconds until sending the next update. The actual interval will be this time plus the time it takes to get a GPS fix.",
-          "type": "integer",
-          "minimum": 1
-        },
-        "mvres": {
-          "description": "(movement resolution) In passive mode: Time in seconds to wait after detecting movement before sending the next update",
-          "type": "integer",
-          "minimum": 1
-        },
-        "mvt": {
-          "description": "(movement timeout) In passive mode: Send update at least this often (in seconds)",
-          "type": "integer",
-          "minimum": 1
-        },
-        "gpst": {
-          "description": "GPS timeout (in seconds): timeout for GPS fix",
-          "type": "integer",
-          "minimum": 1
-        },
-        "celt": {
-          "description": "Cellular timeout (in seconds): timeout for acquiring a cellular connection",
-          "type": "integer",
-          "minimum": 1,
-          "examples": [600]
-        },
-        "acct": {
-          "description": "Accelerometer threshold: minimal absolute value for and accelerometer reading to be considered movement. Divide by 10 to get the real threshold. Integers are used because the nRF9160 has issue parsing JSON floats.",
-          "type": "integer",
-          "minimum": 0
-        }
-      },
-      "required": ["act", "actwt", "mvres", "mvt", "gpst", "acct", "celt"]
+      "$ref": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/cfg.schema.json"
     },
     "bat": {
       "description": "Battery reading in millivolt",
@@ -111,8 +72,7 @@
               "type": "number"
             }
           },
-          "required": ["x", "y", "z"],
-          "additionalProperties": false
+          "required": ["x", "y", "z"]
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
@@ -205,15 +165,9 @@
               "description": "Board Version",
               "minLength": 1,
               "examples": ["thingy91_nrf9160"]
-            },
-            "appV": {
-              "type": "string",
-              "description": "Application Firmware Version",
-              "minLength": 1,
-              "examples": ["v1.0.0-rc1-327-g6fc8c16b239f"]
             }
           },
-          "required": ["band", "nw", "iccid", "modV", "brdV", "appV"]
+          "required": ["band", "nw", "iccid", "modV", "brdV"]
         },
         "ts": {
           "description": "Timestamp as Unix epoch with millisecond precision (UTC)",

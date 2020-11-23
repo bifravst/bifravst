@@ -24,4 +24,5 @@ Documentation
    Simulator.rst
    ContinuousDeployment.rst
    ContinuousIntegration.rst
+   IoTShadowAndTopics.rst
    secure-azure-function-apps-with-microsoft-b2c.rst
