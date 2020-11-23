@@ -210,6 +210,21 @@ For cloud providers having no native UDP+LWM2M support using a bridge, e.g.
 For more information see
 `Leshan LwM2M AWS IoT Gateway <https://github.com/coderbyheart/leshan-aws>`_.
 
+.. note::
+
+    Bifravst is not a *multi-cloud* solution.
+
+    The concrete implementation will differ for each cloud provider. *Bifravst*
+    does not aim to provide a solution where you can switch seamingless between
+    cloud providers, because this would required to implement additional
+    abstraction layers, which will not add a meaningful benefit for the majority
+    of users, but required a constant translation between the vendor specific
+    concepts and the abstraction.
+
+    Instead we follow the respective cloud-vendors best practices for building
+    a *serverless* IoT solution.
+
+
 IoT Cloud vendor survey results
 --------------------------------------------------------------------------------
 
