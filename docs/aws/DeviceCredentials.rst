@@ -3,7 +3,8 @@ Device Credentials
 ================================================================================
 
 On AWS devices, connect to IoT core using `TLS version
-1.2 <https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html>`_.
+1.2 <https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html>`_
+and `Elliptic Curve Cryptography (ECC) based certificates <https://aws.amazon.com/blogs/iot/elliptic-curve-cryptography-and-forward-secrecy-support-in-aws-iot-3/>`_.
 
 Generate a CA certificate
 ================================================================================
