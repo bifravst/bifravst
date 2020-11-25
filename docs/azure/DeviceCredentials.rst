@@ -3,7 +3,9 @@ Device Credentials
 ================================================================================
 
 On Azure devices connect to IoT Hub using
-`TLS version 1.2 <https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment>`_.
+`TLS version 1.2 <https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment>`_
+and Elliptic Curve Cryptography (ECC) based certificates.
+
 
 Azure supports offline generation of device certificates through
 `Enrollment Groups <https://docs.microsoft.com/bs-latn-ba/azure/iot-dps/quick-enroll-device-x509-node>`_.
