@@ -33,7 +33,9 @@ dependencies:
 .. code-block:: bash
 
     git clone https://github.com/bifravst/azure.git bifravst-azure 
-    cd bifravst-azure npm ci npx tsc
+    cd bifravst-azure
+    npm ci
+    npx tsc
 
 Install the Azure CLI
 ================================================================================
