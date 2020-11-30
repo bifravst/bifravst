@@ -44,23 +44,19 @@ This is how the file would look like:
 
 .. code-block:: bash
 
-    REACT_APP_REGION=eu-central-1
-    REACT_APP_HISTORICALDATA_WORKGROUP_NAME=bifravst
-    REACT_APP_HISTORICALDATA_DATABASE_NAME=bifravst_historicaldata
-    REACT_APP_HISTORICALDATA_TABLE_NAME=bifravst_devicedata
-    REACT_APP_USER_IOT_POLICY_ARN=arn:aws:iot:eu-central-1:249963682018:policy/bifravst-userIotPolicy-OMYBF5CI5Q6A
+    REACT_APP_REGION=eu-west-1
+    REACT_APP_HISTORICALDATA_TABLE_INFO=historicalDatadb40B23029-Qzk2Jrr88tOy|historicalDatatableD9D795E1-zdSByjtTqoAE
+    REACT_APP_USER_IOT_POLICY_ARN=arn:aws:iot:eu-west-1:249963682018:policy/bifravst-userIotPolicy-OMYBF5CI5Q6A
     REACT_APP_DFU_BUCKET_NAME=bifravst-dfustoragebucket2cc839ff-qz8k9bslldrf
     REACT_APP_JITP_ROLE_ARN=arn:aws:iam::249963682018:role/bifravst-iotJitpRole7B509A5D-5Y6BQY6KD9TX
     REACT_APP_THING_GROUP_NAME=bifravstThings
-    REACT_APP_HISTORICAL_DATA_QUERY_RESULTS_BUCKET_NAME=bifravst-historicaldataqueryresults8289d8ea-1bbbnzbyngghl
     REACT_APP_AVATAR_BUCKET_NAME=bifravst-avatarsbucket8221a59f-1usxf1qi1qj1r
     REACT_APP_USER_POOL_CLIENT_ID=1rh4eacmu5c5ppq2pspnq8tcu5
-    REACT_APP_HISTORICAL_DATA_BUCKET_NAME=bifravst-historicaldatabucket262e8e16-1jw2m7z94ocbj
-    REACT_APP_MQTT_ENDPOINT=a3g4yd69u8cu7b-ats.iot.eu-central-1.amazonaws.com
+    REACT_APP_MQTT_ENDPOINT=a3g4yd69u8cu7b-ats.iot.eu-west-1.amazonaws.com
     REACT_APP_DEVELOPER_PROVIDER_NAME=developerAuthenticated
-    REACT_APP_THING_POLICY_ARN=arn:aws:iot:eu-central-1:249963682018:policy/bifravst-thingPolicy-1GR1TP3RXOO0G
-    REACT_APP_USER_POOL_ID=eu-central-1_FiY6h4xjd
-    REACT_APP_IDENTITY_POOL_ID=eu-central-1:52cc8188-ec90-47d7-b3ee-634187fa6413
+    REACT_APP_THING_POLICY_ARN=arn:aws:iot:eu-west-1:249963682018:policy/bifravst-thingPolicy-1GR1TP3RXOO0G
+    REACT_APP_USER_POOL_ID=eu-west-1_FiY6h4xjd
+    REACT_APP_IDENTITY_POOL_ID=eu-west-1:52cc8188-ec90-47d7-b3ee-634187fa6413
     REACT_APP_WEB_APP_DOMAIN_NAME=d250wnpv81c7q9.cloudfront.net
     REACT_APP_WEB_APP_BUCKET_NAME=bifravst-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
     REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP=EGNO6F61DSJ5Y

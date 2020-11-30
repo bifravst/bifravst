@@ -96,8 +96,10 @@ Supported regions
 The supported regions are listed below:
 
 -   :code:`us-east-1`
+-   :code:`us-east-2`
+-   :code:`us-west-1`
+-   :code:`us-west-2`
 -   :code:`eu-west-1`
--   :code:`eu-central-1`
 
 Install Bifravst into your AWS account
 ================================================================================
@@ -119,13 +121,6 @@ command:
 
     # 🤞
     npx cdk deploy '*' --require-approval never
-
-After this completed successfully the historical data resources need to
-be set up through the CLI:
-
-.. code-block:: bash
-
-    node cli historical-data --setup
 
 What's next:
 ================================================================================

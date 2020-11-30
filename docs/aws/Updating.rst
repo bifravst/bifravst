@@ -11,4 +11,3 @@ release, perform the following steps:
     npm ci
     npx tsc
     npx cdk deploy '*' 
-    node cli historical-data --setup -r

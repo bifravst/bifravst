@@ -10,7 +10,6 @@ Uninstalling Bifravst from AWS
 
     STACK_NAME=bifravst
     
-    node cli drop-athena-resources
     node cli purge-buckets
     node cli purge-iot-user-policy-principals
     node cli purge-cas
