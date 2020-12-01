@@ -51,3 +51,24 @@ Provide these environment variables for GitHub Actions of the project:
 -   :code:`AWS_ACCESS_KEY_ID`: the access key id of the user which should
     run the tests
 -   :code:`AWS_SECRET_ACCESS_KEY`: the secret access key of that user
+
+
+Know issues
+================================================================================
+
+If the stack creation fails on the :code:`AWS::ApiGatewayV2::Stage` resource
+with this error:
+
+.. epigraph::
+
+    Insufficient permissions to enable logging (Service: AmazonApiGatewayV2; 
+    Status Code: 400; Error Code: BadRequestException; 
+    Request ID: 378c255b-c3ed-4d2c-8c00-c4cec2153dbf; Proxy: null)
+
+you need to update the AWSLogDeliveryWrite20150319 policy, which is a built-in
+policy of the AWS account:
+
+.. code-block:: bash
+
+    aws logs put-resource-policy --policy-name AWSLogDeliveryWrite20150319 \
+    --policy-document '{"Version":"2012-10-17","Statement":[{"Sid":"AWSLogDeliveryWrite","Effect":"Allow","Principal":{"Service":"delivery.logs.amazonaws.com"},"Action":["logs:CreateLogStream","logs:PutLogEvents"],"Resource":["*"]}]}`
