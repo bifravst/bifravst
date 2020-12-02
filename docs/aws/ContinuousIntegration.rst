@@ -71,4 +71,4 @@ policy of the AWS account:
 .. code-block:: bash
 
     aws logs put-resource-policy --policy-name AWSLogDeliveryWrite20150319 \
-    --policy-document '{"Version":"2012-10-17","Statement":[{"Sid":"AWSLogDeliveryWrite","Effect":"Allow","Principal":{"Service":"delivery.logs.amazonaws.com"},"Action":["logs:CreateLogStream","logs:PutLogEvents"],"Resource":["*"]}]}`
+    --policy-document '{"Version":"2012-10-17","Statement":[{"Sid":"AWSLogDeliveryWrite","Effect":"Allow","Principal":{"Service":"delivery.logs.amazonaws.com"},"Action":["logs:CreateLogStream","logs:PutLogEvents"],"Resource":["*"]}]}'
