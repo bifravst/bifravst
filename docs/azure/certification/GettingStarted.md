@@ -4,17 +4,14 @@ device: Nordic Semiconductor nRF9160
 language: c
 ---
 
-# Run the nRF Connect SDK Azure IoT Hub sample on Nordic Semiconductor's nRF9160
-
----
-
 # Table of Contents
 
 - [Introduction](#Introduction)
 - [Step 1: Prerequisites](#Prerequisites)
-- [Step 2: Prepare your Device](#PrepareDevice)
-- [Step 3: Configure, Build, and Run the Sample](#Build)
-- [Next Steps](#NextSteps)
+- [Step 2: Prepare your Device](#Prepareyourdevice)
+- [Step 3: Build SDK and Run Samples](#Build)
+- [Step 4: Integration with Azure IoT Explorer](#Explorer)
+- [Additional Links](#AdditionalLinks)
 
 <a name="Introduction"></a>
 
@@ -23,8 +20,11 @@ language: c
 **About this document**
 
 This document describes how to connect Nordic Semiconductor's nRF9160 running
-Zephyr with the [Azure IoT Hub sample][ncs-azure-iot-hub-sample] from the [nRF
-Connect SDK][ncs]. This multi-step process includes:
+Zephyr with the
+[Azure IoT Hub sample](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/azure_iot_hub/README.html)
+from the
+[nRF Connect SDK](https://www.nordicsemi.com/Software-and-tools/Software/nRF-Connect-SDK).
+This multi-step process includes:
 
 - Configuring Azure IoT Hub
 - Provision the certificates onto the device
@@ -32,11 +32,14 @@ Connect SDK][ncs]. This multi-step process includes:
 
 **About the nRF Connect SDK Azure IoT Hub sample**
 
-[The sample][ncs-azure-iot-hub-sample] supports the direct connection of an IoT
-device that is already registered to an Azure IoT Hub instance. Alternatively,
-it supports the provisioning of the device using [Azure IoT Hub Device
-Provisioning Service (DPS)][dps] to an IoT hub. See the documentation on [Azure
-IoT Hub library][ncs-azure-iot-hub-library] for more information.
+[The sample](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/azure_iot_hub/README.html)
+supports the direct connection of an IoT device that is already registered to an
+Azure IoT Hub instance. Alternatively, it supports the provisioning of the
+device using
+[Azure IoT Hub Device Provisioning Service (DPS)](https://docs.microsoft.com/en-us/azure/iot-dps/)
+to an IoT hub. See the documentation on
+[Azure IoT Hub library](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/include/net/azure_iot_hub.html#lib-azure-iot-hub)
+for more information.
 
 The sample periodically publishes telemetry messages (events) to the connected
 Azure IoT Hub instance. By default, telemetry messages are sent every 20
@@ -44,21 +47,16 @@ seconds. The default interval can be configured by setting the device twin
 property `desired.telemetryInterval`, which will be interpreted by the sample in
 units of seconds. The format of a telemetry message is shown below:
 
-```json
-{
-  "temperature": 25.2,
-  "timestamp": 151325
-}
-```
+`json { "temperature": 25.2, "timestamp": 151325 } `
 
 where `temperature` is a value between `25.0` and `25.9`, and `timestamp` is the
 uptime of the device in milliseconds.
 
-The sample has implemented the handling of [Azure IoT Hub direct
-method][direct-method] with the name `led`. If the device receives a direct
-method invocation with the name led and payload `1` or `0`, LED 1 on the device
-is turned on or off, depending on the payload. On Thingy:91, the LED turns red
-if the payload is `1`.
+The sample has implemented the handling of
+[Azure IoT Hub direct method](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods)
+with the name `led`. If the device receives a direct method invocation with the
+name led and payload `1` or `0`, LED 1 on the device is turned on or off,
+depending on the payload. On Thingy:91, the LED turns red if the payload is `1`.
 
 <a name="Prerequisites"></a>
 
@@ -66,25 +64,26 @@ if the payload is `1`.
 
 You should have the following items ready before beginning the process:
 
-- [Prepare your development environment][setup-ncs] for the [nRF Connect
-  SDK][ncs]
-- [Setup your IoT hub][lnk-setup-iot-hub]
-- [Provision your device and get its credentials][lnk-manage-iot-hub]
-- acquire a nRF9160 Development Kit, for example the [Thingy:91][thingy-91] or
-  the [nRF9160 DK][nrf9160-dk]
+- [Prepare your development environment](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md)
+- [Setup your IoT hub](https://github.com/robertalorro/azure-iot-device-ecosystem/blob/master/setup_iothub.md)
+- [Provision your device over DPS](https://docs.microsoft.com/en-us/azure/iot-dps/about-iot-dps)
+- acquire a nRF9160 Development Kit, for example the
+  [Thingy:91](https://www.nordicsemi.com/Software-and-tools/Prototyping-platforms/Nordic-Thingy-91)
+  or the
+  [nRF9160 DK](https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF9160-DK)
 
-<a name="PrepareDevice"></a>
+<a name="Prepareyourdevice"></a>
 
 # Step 2: Prepare your Device
 
 The Azure IoT Hub library requires the provisioning of the following
 certificates and a private key for a successful TLS connection:
 
-1. [Baltimore CyberTrust Root certificate][root-cert] - Server certificate, used
-   to verify the server’s certificate while connecting.
-1. Device certificate - generated by the procedures described in [Creating Azure
-   IoT Hub certificates][create-certs], used by Azure IoT Hub to authenticate
-   the device.
+1. [Baltimore CyberTrust Root certificate](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) -
+   Server certificate, used to verify the server’s certificate while connecting.
+1. Device certificate - generated by the procedures described in
+   [Creating Azure IoT Hub certificates](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-security-x509-get-started,)
+   used by Azure IoT Hub to authenticate the device.
 1. Private key of the device.
 
 ## Provisioning of the certificates
@@ -92,31 +91,37 @@ certificates and a private key for a successful TLS connection:
 To provision the certificates and the private key to the nRF9160 modem, complete
 the following steps:
 
-1. Download [nRF Connect for Desktop][nrfconnect-desktop].
+1. Download
+   [nRF Connect for Desktop](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs.)
 1. Update the modem firmware on the onboard modem of the nRF9160-based device to
-   the latest version by following the steps in [Updating the nRF9160 DK
-   cellular modem][updating-modem].
-1. Build and program the [nRF9160: AT Client][at-client] sample to the
-   nRF9160-based device as explained in [Building and programming a sample
-   application][building-sample].
-1. Launch the [LTE Link Monitor application][lte-linkmonitor], which is part of
-   [nRF Connect for Desktop][nrfconnect-desktop].
+   the latest version by following the steps in
+   [Updating the nRF9160 DK cellular modem](https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_updating_modem_nrf9160dk.html.)
+1. Build and program the
+   [nRF9160: AT Client](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/at_client/README.html#at-client-sample)
+   sample to the nRF9160-based device as explained in
+   [Building and programming a sample application](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_programming.html#gs-programming.)
+1. Launch the
+   [LTE Link Monitor application](https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html,)
+   which is part of
+   [nRF Connect for Desktop](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs.)
 1. Click _Certificate manager_ located at the top right corner.
-1. Copy the [Baltimore CyberTrust Root certificate][root-cert] into the
-   `CA certificate` entry.
+1. Copy the
+   [Baltimore CyberTrust Root certificate](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem)
+   into the `CA certificate` entry.
 1. Copy and paste the device certificate and the key created using the scripts
-   located in [Creating Azure IoT Hub certificates][create-certs], into the
-   respective entries (`Client certificate`, `Private key`).
+   located in
+   [Creating Azure IoT Hub certificates](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-security-x509-get-started,)
+   into the respective entries (`Client certificate`, `Private key`).
 1. Select a desired security tag (any positive integer, for example, `42`) and
    click _Update certificates_.
 
 <a name="Build"></a>
 
-# Step 3: Configure, Build, and Run the sample
+# Step 3: Build SDK and Run Samples
 
 This sample can be found under
-[`samples/nrf9160/azure_iot_hub`][sample-location] in the nRF Connect SDK folder
-structure.
+[`samples/nrf9160/azure_iot_hub`](https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/azure_iot_hub)
+in the nRF Connect SDK folder structure.
 
 ## Step 3.1: Configure the sample
 
@@ -135,16 +140,17 @@ Check and configure the following library options that are used by the sample:
 ## Step 3.2: Build the sample
 
 The sample is built as a non-secure firmware image for the `nrf9160dk_nrf9160ns`
-build target. Because of this, it automatically includes the [Secure Partition
-Manager][spm].
+build target. Because of this, it automatically includes the
+[Secure Partition Manager](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/spm/README.html#secure-partition-manager.)
 
-See [Building and programming a sample application][building-sample] for
-information about how to build and program the application.
+See
+[Building and programming a sample application](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_programming.html#gs-programming)
+for information about how to build and program the application.
 
 The sample is configured to compile and run as a non-secure application on
-nRF91’s Cortex-M33. Therefore, it automatically includes the [Secure Partition
-Manager][spm] that prepares the required peripherals to be available for the
-application.
+nRF91’s Cortex-M33. Therefore, it automatically includes the
+[Secure Partition Manager](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/spm/README.html#secure-partition-manager)
+that prepares the required peripherals to be available for the application.
 
 ## Step 3.3: Run the sample
 
@@ -174,7 +180,7 @@ following steps:
 1. Observe that LED 1 on the development kit lights up (or switches off if `0`
    is entered as the payload).
 
-<a name="sampoutput"></a>
+<a name="SampleOutput"></a>
 
 ### Sample Output
 
@@ -207,67 +213,66 @@ Event was successfully sent
 Next event will be sent in 60 seconds
 ```
 
-<a name="NextSteps"></a>
+<a name="Explorer"></a>
 
-# Next Steps
+# Step 4: Integration with Azure IoT Explorer
 
-You have now learned how to run a sample application that collects sensor data
-and sends it to your IoT hub. To explore how to store, analyze and visualize the
-data from this application in Azure using a variety of different services,
-please click on the following lessons:
+Microsoft has created
+[Azure IoT Explorer](https://docs.microsoft.com/en-us/azure/iot-pnp/howto-use-iot-explorer)
+to interact and test devices connected to an Azure IoT Hub instance. Optionally,
+follow the instructions at
+[Azure IoT Explorer](https://docs.microsoft.com/en-us/azure/iot-pnp/howto-use-iot-explorer)
+to install and configure the tool and use it as mentioned in the below
+instructions.
 
-- [Manage cloud device messaging with iothub-explorer]
-- [Save IoT Hub messages to Azure data storage]
-- [Use Power BI to visualize real-time sensor data from Azure IoT Hub]
-- [Use Azure Web Apps to visualize real-time sensor data from Azure IoT Hub]
-- [Weather forecast using the sensor data from your IoT hub in Azure Machine
-  Learning]
-- [Remote monitoring and notifications with Logic Apps]
+After programming the sample to your development kit, test it by performing the
+following steps:
 
-[manage cloud device messaging with iothub-explorer]:
-  https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-explorer-cloud-device-messaging
-[save iot hub messages to azure data storage]:
-  https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-store-data-in-azure-table-storage
-[use power bi to visualize real-time sensor data from azure iot hub]:
-  https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi
-[use azure web apps to visualize real-time sensor data from azure iot hub]:
-  https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps
-[weather forecast using the sensor data from your iot hub in azure machine learning]:
-  https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-weather-forecast-machine-learning
-[remote monitoring and notifications with logic apps]:
-  https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps
-[lnk-setup-iot-hub]: ../../setup_iothub.md
-[lnk-manage-iot-hub]: ../../manage_iot_hub.md
-[ncs-azure-iot-hub-sample]:
-  https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/azure_iot_hub/README.html
-[setup-ncs]:
-  https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html
-[ncs]: https://www.nordicsemi.com/Software-and-tools/Software/nRF-Connect-SDK
-[thingy-91]:
-  https://www.nordicsemi.com/Software-and-tools/Prototyping-platforms/Nordic-Thingy-91
-[nrf9160-dk]:
-  https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF9160-DK
-[dps]: https://docs.microsoft.com/en-us/azure/iot-dps/
-[ncs-azure-iot-hub-library]:
-  https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/include/net/azure_iot_hub.html#lib-azure-iot-hub
-[direct-method]:
-  https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods
-[root-cert]: https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem
-[create-certs]:
-  https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-security-x509-get-started
-[nrfconnect-desktop]:
-  https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs
-[updating-modem]:
-  https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_updating_modem_nrf9160dk.html
-[at-client]:
-  https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/at_client/README.html#at-client-sample
-[building-sample]:
-  https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_programming.html#gs-programming
-[lte-linkmonitor]:
-  https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html
-[sample-location]:
-  https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/azure_iot_hub
-[spm]:
-  https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/spm/README.html#secure-partition-manager
-[connect-with-putty]:
-  https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_testing.html#putty
+1. Connect the kit to the computer using a USB cable. The kit is assigned a COM
+   port (Windows) or ttyACM device (Linux), which is visible in the Device
+   Manager.
+1. Connect to the kit with a terminal emulator (for example, PuTTY). See
+   [How to connect with PuTTY](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_testing.html#putty)
+   for the required settings.
+1. Reset the development kit.
+1. Observe the log output and verify that it is similar to the
+   [sample output](#SampleOutput).
+1. Use the
+   [Azure IoT Explorer](https://docs.microsoft.com/en-us/azure/iot-pnp/howto-use-iot-explorer),
+   or log in to the [Azure Portal](https://portal.azure.com/).
+1. Select the connected IoT hub and then your device.
+1. Change the device twin's _desired_ property `telemetryInterval` to a new
+   value, for instance `10`, and save the updated device twin. If it does not
+   exist, you can add the _desired_ property.
+1. Observe that the device receives the updated `telemetryInterval` value,
+   applies it, and starts sending new telemetry events every 10 seconds.
+1. Verify that the `reported` object in the device twin now has a
+   `telemetryInterval` property with the correct value reported back from the
+   device.
+1. In the
+   [Azure IoT Explorer](https://docs.microsoft.com/en-us/azure/iot-pnp/howto-use-iot-explorer)
+   or device page in [Azure Portal](https://portal.azure.com/), navigate to the
+   `Direct method` tab.
+1. Enter `led` as the method name. In the _payload_ field, enter the value `1`
+   (or `0`) and click _Invoke method_.
+1. Observe that LED 1 on the development kit lights up (or switches off if `0`
+   is entered as the payload). If you are using
+   [Azure IoT Explorer](https://docs.microsoft.com/en-us/azure/iot-pnp/howto-use-iot-explorer),
+   you can observe a notification in the top right corner stating if the direct
+   method was successfully invoked based on the report received from the device.
+1. If you are using the
+   [Azure IoT Explorer](https://docs.microsoft.com/en-us/azure/iot-pnp/howto-use-iot-explorer),
+   navigate to the _Telemetry_ tab and click _start_.
+1. Observe that the event messages from the device are displayed in the terminal
+   within the specified telemetry interval.
+
+<a name="AdditionalLinks"></a>
+
+# Additional Links
+
+Please refer to the below link for additional information
+
+- [Manage cloud device messaging with Azure-IoT-Explorer](https://github.com/Azure/azure-iot-explorer/releases)
+- [Azure SDK](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client/samples/prov_dev_client_sample/prov_dev_client_sample.c)
+- [Configure to connect to IoT Hub](https://docs.microsoft.com/en-us/azure/iot-pnp/quickstart-connect-device-c)
+- [How to use IoT Explorer to interact with the device](https://docs.microsoft.com/en-us/azure/iot-pnp/howto-use-iot-explorer#install-azure-iot-explorer)
