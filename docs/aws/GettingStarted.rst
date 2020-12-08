@@ -111,6 +111,9 @@ The following commands set up the necessary resources in your AWS account:
     npx cdk -a 'node dist/cdk/cloudformation-sourcecode.js' deploy
     npx cdk bootstrap
     npx cdk deploy '*'
+    # This is a fix for a bug with AWS CloudFormation and HTTP APIs
+    # See https://github.com/bifravst/aws/issues/455
+    node dist/cdk/helper/addFakeRoute.js
 
 The AWS CDK will provide a list of permission changes to your account, and you
 need to review them carefully whenever you make changes to the setup.
