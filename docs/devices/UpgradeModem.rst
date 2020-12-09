@@ -1,11 +1,11 @@
 ================================================================================
-Updating the modem firmware on an nRF9160
+Upgrading the modem firmware on an nRF9160
 ================================================================================
 
 .. note::
 
     This is a one-time operation and only needed if your have
-    not yet updated the modem to the latest firmware version.
+    not yet upgraded the modem to the latest firmware version.
 
 Flash the latest modem firmware in case you haven't done this already.
 Find it on
@@ -23,14 +23,14 @@ app.
 
 Click *Update modem* and select the ZIP file:
 
-.. figure:: ./images/update-modem-desktop.png
-   :alt: Update modem
+.. figure:: ./images/upgrade-modem-desktop.png
+   :alt: Upgrade modem
 
-   Update modem
+   Upgrade modem
 
-Click *Write* and wait until the update has finished.
+Click *Write* and wait until the upgrade has finished.
 
-.. figure:: ./images/confirm-modem-update-desktop.png
-   :alt: Write modem update
+.. figure:: ./images/confirm-modem-upgrade-desktop.png
+   :alt: Write modem upgrade
 
-   Write modem update
+   Write modem upgrade

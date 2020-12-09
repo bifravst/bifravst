@@ -60,7 +60,7 @@ questions :
 - *How do devices send data into the cloud?*
 - *How can the data be sent to the devices?*
 - *How can users and other services interact with the devices?*
-- *How can you update the application firmware of your devices while they are
+- *How can you upgrade the application firmware of your devices while they are
   deployed in the field?*
 - *How can you develop a cellular IoT product that maximizes battery life,
   minimizes data usage, and handles unreliable connectivity gracefully?*
@@ -192,7 +192,7 @@ The web application offers the following features:
 - Managing of asset trackers
   
   - Delete asset tracker
-  - Firmware update
+  - Firmware upgrade
 
 Supported Cloud Providers
 ================================================================================

@@ -133,12 +133,12 @@ sensor stops working properly.
 --------------------------------------------------------------------------------
 
 Optimizing this behavior takes time and while the devices are in the
-field sending firmware updates for every change (more about that later)
+field sending firmware upgrades for every change (more about that later)
 will be expensive. We observe firmware sizes of around 500 KB which
 will, even when compressed, be expensive because it will take a device
-some time to download and apply the updated, not to mention the costs
-for transferring the firmware update over the cellular network.
-Especially in NB-IoT-only deployments is the data rate low. Updating a
+some time to download and apply the upgrade, not to mention the costs
+for transferring the firmware upgrade over the cellular network.
+Especially in NB-IoT-only deployments is the data rate low. Upgrading a
 fleet of devices with a new firmware involves orchestrating the roll-out
 and observing for faults. All these challenges lead to the ability to
 **configure the device**, which allows to tweak the behavior of the
@@ -258,19 +258,19 @@ and will discard the oldest message once its size limit is reached.
     answer from a cloud backend to provide the action to execute based on
     the current condition.
 
-4. Firmware Updates (FOTA)
+4. Firmware Upgrades (FOTA)
 --------------------------------------------------------------------------------
 
-Arguably a firmware update *over the air* (FOTA) can be seen as
+Arguably a firmware upgrade *over the air* (FOTA) can be seen as
 configuration, however the size of a typical firmware image (500KB) is
 2-3 magnitudes larger than a control message. Therefore it can be
-beneficial to treat it differently. Typically an update is initiated by
+beneficial to treat it differently. Typically an upgrade is initiated by
 a configuration change, once acknowledged by the device will initiate
 the firmware download. The download itself is done out of band not using
 MQTT but HTTP(s) to reduce overhead.
 
-Firmware updates are so large compared to other messages that the device
-may suspend all other operation until the firmware update has been
+Firmware upgrades are so large compared to other messages that the device
+may suspend all other operation until the firmware upgrade has been
 applied to conserve resources.
 
 Summary
@@ -279,7 +279,7 @@ Summary
 *Bifravst* aims to provide robust reference implementations for
 these four kinds of device data. While the concrete implementation will
 differ per cloud provider, the general building blocks (state,
-configuration, batched past state, firmware updates) will be the same.
+configuration, batched past state, firmware upgrades) will be the same.
 
 +-------------------------------------+-------------------------+------------------+-----------+-----------------+
 | Cloud                               | State                   | Configuration    | Past data | FOTA            |

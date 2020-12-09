@@ -7,7 +7,7 @@ to connect to your account.
 
 In order for the device to connect you need to:
 
-#.  `Update the modem firmware <./UpdateModem.html>`_
+#.  `Upgrade the modem firmware <./UpgradeModem.html>`_
 #.  `Flash the certificate <./FlashingCertificate.html>`_
 #.  `Flash the application firmware <./FlashingFirmware.html>`_
 
@@ -17,7 +17,7 @@ Documentation
 .. toctree::
    :titlesonly:
 
-   UpdateModem.rst
+   UpgradeModem.rst
    FlashingCertificate.rst
    FlashingFirmware.rst
    TroubleShooting.rst

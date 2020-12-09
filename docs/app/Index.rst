@@ -14,7 +14,7 @@ Documentation
    :titlesonly:
 
    GettingStarted.rst
-   Updating.rst
+   Upgrading.rst
    AWS.rst
    Azure.rst
    Customizing.rst

@@ -35,7 +35,7 @@
             },
             "pendingFwVersion": {
               "type": "string",
-              "description": "Version of pending Firmware Update (FOTA). Devices may report and empty string.",
+              "description": "Version of pending Firmware Upgrade (FOTA). Devices may report and empty string.",
               "minLength": 0,
               "examples": ["v1.0.1-rc1-327-g6fc8c16b239f"]
             }

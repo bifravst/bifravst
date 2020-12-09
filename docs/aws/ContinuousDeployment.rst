@@ -8,7 +8,7 @@ Continuous Deployment
     account in sync with the source code repository automatically.
 
 For this to work you need to fork the source code in order to register
-the webhook listener that trigger an update to your deployment.
+the webhook listener that trigger an upgrade of your deployment.
 
 After forking, make sure to update the :code:`repository.url` in
 your forks :code:`package.json`.
@@ -16,14 +16,14 @@ your forks :code:`package.json`.
 This will set up a CodePipeline which triggers a CodeBuild project for
 every push to the :code:`saga` branch. You can configure the
 branch in the :code:`deploy.branch` property of the
-:code:`package.json`. The CodeBuild project updates the
+:code:`package.json`. The CodeBuild project upgrades the
 CloudFormation stack which contains the Bifravst resources.
 
 A second CodePipeline will be set up for the web app which triggers a
 CodeBuild project for every push to the `saga` branch. You
 can configure the repository URL and the branch for the web app in the
 :code:`deploy.webApp` property of the :code:`package.json`.
-The CodeBuild project updates the web app deployment on the S3 bucket.
+The CodeBuild project upgrades the web app deployment on the S3 bucket.
 
 Provide GitHub credentials
 ================================================================================

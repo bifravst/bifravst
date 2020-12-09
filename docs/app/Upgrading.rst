@@ -1,8 +1,8 @@
 ================================================================================
-Updating an existing installation
+Upgrading an existing installation
 ================================================================================
 
-If you already have an installation and you want to update to the latest
+If you already have an installation and you want to upgrade to the latest
 release, follow these steps.
 
 .. code-block:: bash
@@ -10,12 +10,12 @@ release, follow these steps.
     git pull
     npm ci
 
-Publishing the update to AWS
+Publishing the upgrade to AWS
 ================================================================================
 
 Now follow the `same steps <./AWS.html>`_ as with the first installation.
 
-Continuously deploy updates
+Continuously deploy upgrades
 --------------------------------------------------------------------------------
 
 If you want to automate this proces, follow

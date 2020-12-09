@@ -13,7 +13,7 @@ Documentation
    :titlesonly:
 
    GettingStarted.rst
-   Updating.rst
+   Upgrading.rst
    DeviceCredentials.rst
    Simulator.rst
    ContinuousDeployment.rst

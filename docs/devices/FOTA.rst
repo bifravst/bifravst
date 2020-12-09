@@ -1,11 +1,11 @@
 ================================================================================
-Firmware Updates over the Air (FOTA)
+Firmware over the Air (FOTA)
 ================================================================================
 
 AWS
 ================================================================================
 
-Firmware updates over the Air on AWS are implemented using AWS IoT Jobs,
+Firmware over the Air on AWS are implemented using AWS IoT Jobs,
 following the Nordic
 `FOTA example <https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/aws_fota>`_.
 

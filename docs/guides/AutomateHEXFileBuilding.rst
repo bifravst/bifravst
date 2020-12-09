@@ -9,9 +9,9 @@ Automate building of HEX files for your nRF Connect SDK application
 
 Continuous delivery is in important aspect of short time to market and
 since the nRF9160 `supports firmware over the air
-updates <https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/aws_fota>`_ we
+upgrades <https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/aws_fota>`_ we
 want to ship a new firmware to our development boards every time we
-update the application.
+change the application.
 
 .. figure:: ./images/github-release-with-hex-files.png
    

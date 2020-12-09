@@ -1,8 +1,8 @@
 ================================================================================
-Updating an existing installation
+Upgrading an existing installation
 ================================================================================
 
-If you already have an installation and you want to update to the latest
+If you already have an installation and you want to upgrade to the latest
 release, follow these steps.
 
 .. code-block:: bash
