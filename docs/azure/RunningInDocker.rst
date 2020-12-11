@@ -51,6 +51,8 @@ Run the functions app:
         -e FOTA_STORAGE_ACCOUNT_NAME \
         -e FOTA_STORAGE_ACCESS_KEY \
         -e HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING \
+        -e UNWIREDLABS_API_KEY \
+        -e UNWIREDLABS_API_ENDPOINT \
         -v ${PWD}:/workdir bifravst/azure-dev:latest \
         func start --typescript
 

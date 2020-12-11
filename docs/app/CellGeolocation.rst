@@ -25,31 +25,27 @@ cell <https://github.com/bifravst/cell-geolocation-helpers#cellfromgeolocations>
 
 In case there is no device geo location for the cell from your own
 devices, third-party services like
-UnwiredLabs_ or
+`Unwired Labs`_ or
 `RXNetworks <https://rxnetworks.com/location.io#!RT-GNSS>`_ provide a
 database of cell geo locations.
 
-UnwiredLabs API
+Unwired Labs API
 ================================================================================
 
-To use UnwiredLabs_ geolocation API,
-store your API key as an SSM parameter and redeploy the stack:
+The `Unwired Labs`_ geolocation API is a commercial third-party solution that
+provides an API for resolving cell information to a geo location. This is an
+optional feature which can be enabled.
 
-.. code-block:: bash
+This way it's possible to the a rough location of a device as soon as it sends
+it's roaming information to the cloud. The API provides the geolocation of
+nearly every cell tower and using this information, devices can be located
+within a few kilometers around the cell tower's location. Note that cellular
+signals can travel many kilometers and `our tests <https://www.youtube.com/watch?v=p1_0OAlTcuY>`_
+show that a range of 10 km and more is possible in certain conditions.
 
-    aws ssm put-parameter --name /bifravst/cellGeoLocation/unwiredlabs/apiKey \
-        --type String --value "<API Key>"
-    npx cdk deploy '*'
+Follow the configuration guide in the respective implementation to enable it:
 
-This will update the StateMachine which resolves cells from devices to
-use the UnwiredLabs API as a resolver.
+- `AWS <../aws/UnwiredLabsAPI.html>`_
+- `Azure <../azure/UnwiredLabsAPI.html>`_
 
-.. note::
-
-    The Unwired Labs' LocationAPI is free for low volumes,
-    however there is `opencellid.org <https://opencellid.org/>`_ which
-    allows to use the underlying dataset for free. If this is relevant
-    for you, please `vote in this
-    issue <https://github.com/bifravst/aws/issues/120>`_.
-
-.. _UnwiredLabs: https://unwiredlabs.com/
+.. _Unwired Labs: https://unwiredlabs.com/

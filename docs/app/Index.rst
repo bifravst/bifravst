@@ -17,4 +17,5 @@ Documentation
    Upgrading.rst
    AWS.rst
    Azure.rst
+   CellGeolocation.rst
    Customizing.rst

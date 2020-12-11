@@ -22,6 +22,6 @@ Documentation
    LimitingShadowDocumentSize.rst
    HistoricalData.rst
    ContinuousIntegration.rst
-   CellGeolocation.rst
+   UnwiredLabsAPI.rst
    Uninstalling.rst
    SNI.rst
