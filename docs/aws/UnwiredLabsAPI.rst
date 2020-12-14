@@ -1,14 +1,11 @@
-================================================================================
+.. _unwired_labs_api:
+
 Unwired Labs API
-================================================================================
+################
 
-.. note::
+You can enable the `cell geolocation lookup <https://bifravst.github.io/bifravst/docs/app/CellGeolocation.html>`_ for the app using `Unwired Labs <https://unwiredlabs.com/>`_ geolocation API in your deployment.
 
-    This enables the `cell geolocation lookup <../app/CellGeolocation.html>`_
-    for the app using the Unwired Labs API.
-
-To use `Unwired Labs`_ geolocation API,
-store your API key as an SSM parameter and redeploy the stack:
+To use `Unwired Labs`_ geolocation API, store your API key as an SSM parameter and re-deploy the stack as shown below:
 
 .. code-block:: bash
 
@@ -16,15 +13,10 @@ store your API key as an SSM parameter and redeploy the stack:
         --type String --value "<API Key>"
     npx cdk deploy '*'
 
-This will update the StateMachine which resolves cells from devices to
-use the UnwiredLabs API as a resolver.
+This will update the StateMachine, which resolves cells from devices to use the Unwired Labs API as a resolver.
 
 .. note::
 
-    The Unwired Labs' LocationAPI is free for low volumes,
-    however there is `opencellid.org <https://opencellid.org/>`_ which
-    allows to use the underlying dataset for free. If this is relevant
-    for you, please `vote in this
-    issue <https://github.com/bifravst/aws/issues/120>`_.
-
-.. _Unwired Labs: https://unwiredlabs.com/
+   Unwired Lab's LocationAPI is free for low volumes.
+   However, `opencellid.org <https://opencellid.org/>`_ allows to use the underlying dataset for free.
+   If it is relevant for you, vote in the `Integrate OpenCelliD data <https://github.com/bifravst/aws/issues/120>`_ issue.

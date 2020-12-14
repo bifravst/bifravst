@@ -1,10 +1,13 @@
-================================================================================
+.. _uninstalling_bifravst:
+
 Uninstalling Bifravst from AWS
-================================================================================
+##############################
 
-.. warning::
+To uninstall Bifravst, execute the commands described in this section.
 
-    These commands are destructive!
+.. note::
+
+    The commands must be executed with care since they are destructive.
 
 .. code-block:: bash
 
@@ -15,8 +18,8 @@ Uninstalling Bifravst from AWS
     node cli purge-cas
     
     # Delete the Bifravst Stack 
-    # Note this can take around 20 minutes, especially the CloudFormation 
-    # distributions take a long time to delete
+    # Note that the action can take around 20 minutes  
+    # The CloudFormation distributions especially take a long time to get deleted
     npx cdk destroy '*'
     
     # Delete the Source Code Stack 
