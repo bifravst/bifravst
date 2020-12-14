@@ -1,30 +1,32 @@
-================================================================================
+.. _getting_started_aws:
+
 Getting started
-================================================================================
+###############
+
+To setup *Bifravst* on AWS, complete the following steps:
+
+1. Check and make sure that you have the necessary system requirements.
+#. Clone the project and install dependencies.
+#. Provide your AWS credentials.
+#. Check and verify that the deployment is planned in one of the supported regions.
+#. Install *Bifravst* into your AWS account.
 
 System requirements
-================================================================================
+*******************
 
-You need a development environment with the `upcoming LTS release candidate
-of Node.js <https://nodejs.org/en/about/releases/>`_ (current release is version
-14).
+You need a development environment with the `upcoming LTS release candidate of Node.js <https://nodejs.org/en/about/releases/>`_ (current release is version 14).
 
-If you are using Windows, we recommend using the `Windows Subsystem for
-Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_
-with `Ubuntu 18.04
+If you are using Windows, we recommend using the `Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ with `Ubuntu 18.04
 LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
 
-.. warning::
+.. note::
 
-    Windows is not included in the continuous integration tests, if you
-    encounter issues, please
-    `open an issue here <https://github.com/bifravst/aws/issues/new>`_ 
+   Windows is not included in the continuous integration tests, and hence if you encounter issues, you can open an `issue in the Bifravst AWS project <https://github.com/bifravst/aws/issues/new>`_ 
 
 Clone the project and install dependencies
-================================================================================
+******************************************
 
-Clone the latest version of the `Bifravst AWS <https://github.com/bifravst/aws>`_
-project and install the dependencies using the following commands:
+Clone the latest version of the `Bifravst AWS <https://github.com/bifravst/aws>`_ project and install the dependencies using the following commands:
 
 .. code-block:: bash
 
@@ -34,44 +36,32 @@ project and install the dependencies using the following commands:
     npx tsc
 
 Provide your AWS credentials
-================================================================================
+****************************
 
-In order to set up Bifravst on AWS you first need to set up a new AWS account
-and provide AWS credentials.
+To set up Bifravst on AWS, you must first set up a new AWS account and provide the AWS credentials.
 
 .. note::
 
-    It is recommended to install these resources in a blank AWS account
-    to clearly separate them from your other projects. After you have
-    registered your personal account, sign up for `AWS
-    Organizations <https://aws.amazon.com/organizations/>`_ and create a
-    sub-account for Bifravst. You can have many sub-accounts, without extra costs.
+   It is recommended to install these resources in a blank AWS account to clearly separate them from your other projects.
+   After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create a sub-account for Bifravst. You can have many sub-accounts, without extra costs.
 
 To setup a new AWS account and provide credentials, complete the following steps:
 
-#.  Navigate to your `IAM console <https://console.aws.amazon.com/iam/home?region=us-east-1#/home>`_
-    and add a new user for `programmatic access <https://wa.aws.amazon.com/wat.question.SEC_3.en.html>`_ 
+1.  Navigate to your `IAM console <https://console.aws.amazon.com/iam/home?region=us-east-1#/home>`_ and add a new user for `programmatic access <https://wa.aws.amazon.com/wat.question.SEC_3.en.html>`_.
 
 #.  Attach the :code:`arn:aws:iam::aws:policy/AdministratorAccess` policy directly.
 
-    .. warning::
+    .. note::
 
-        This action will create a user which can do
-        everything in the account, therefore it should only be created in an
+       This action will create a user with full access rights to the account, and therefore it must only be created in an account dedicated for Bifravst.
 
-#.  See the `Getting Started guide <https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html>`_
-    to configure the AWS CDK.
+#.  See the `CDK Getting Started guide <https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html>`_ to configure the AWS CDK.
 
-#.  As a recommended workflow, use a `direnv <https://direnv.net/>`_ plugin
-    for your shell, which locates the environment variables in a :code:`.envrc` file in
-    the project folder and automatically exports them.
+#.  As a recommended workflow, use a `direnv <https://direnv.net/>`_ plugin for your shell, which locates the environment variables in a :file:`.envrc` file in the project folder and automatically exports them.
 
-#.  Create a new :code:`.envrc` file in the project folder and add the credentials
-    that are provided to you when you create the new user.
+#.  Create a new :file:`.envrc` file in the project folder and add the credentials that are provided to you when you create the new user.
 
-#.  Also add your preferred region and your AWS account ID (that can be found
-    under `My Account on the AWS console <https://console.aws.amazon.com/billing/home?#/account>`_),
-    to the :code:`.envrc` file, as shown in the following code:
+#.  Also add your preferred region and your AWS account ID (that can be found under `My Account on the AWS console <https://console.aws.amazon.com/billing/home?#/account>`_), to the :file:`.envrc` file, as shown in the following code:
 
     .. code-block:: bash
 
@@ -81,28 +71,27 @@ To setup a new AWS account and provide credentials, complete the following steps
 
     .. note::
 
-        You should add the :code:`.envrc` file to your global 
-        `.gitignore file <https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore>`_.
+       You must add the :file:`.envrc` file to your global `.gitignore file <https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore>`_.
 
 Supported regions
-================================================================================
+*****************
 
-.. warning::
+You must also confirm that you are deploying to a region that is supported.
 
-    Not all AWS features are available in all AWS regions. You will see a
-    warning if you are deploying to a region that has not been tested and
-    CDK might fail.
+.. note::
+
+   Not all AWS features are available in all AWS regions. You will see a warning if you are deploying to a region that has not been tested and the AWS CDK might fail.
 
 The supported regions are listed below:
 
--   :code:`us-east-1`
--   :code:`us-east-2`
--   :code:`us-west-1`
--   :code:`us-west-2`
--   :code:`eu-west-1`
+*   ``us-east-1``
+*   ``us-east-2``
+*   ``us-west-1``
+*   ``us-west-2``
+*   ``eu-west-1``
 
-Install Bifravst into your AWS account
-================================================================================
+Install *Bifravst* into your AWS account
+****************************************
 
 The following commands set up the necessary resources in your AWS account:
 
@@ -115,18 +104,14 @@ The following commands set up the necessary resources in your AWS account:
     # See https://github.com/bifravst/aws/issues/455
     node dist/cdk/helper/addFakeRoute.js
 
-The AWS CDK will provide a list of permission changes to your account, and you
-need to review them carefully whenever you make changes to the setup.
-However, this step is not mandatory, and you can skip it by using the following
-command:
+The AWS CDK will provide a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
+However, this step is not mandatory, and you can skip it by using the following command:
 
 .. code-block:: bash
 
-    # 🤞
-    npx cdk deploy '*' --require-approval never
+   npx cdk deploy '*' --require-approval never
 
-What's next:
-================================================================================
+Next steps
+**********
 
-You can now `deploy the web application <../app/AWS.html>`_ and
-`provision credentials to your devices <./DeviceCredentials.html>`_.
+You can now `deploy the web application <../app/AWS.html>`_ and :ref:`provision credentials to your devices <device_cred>`.
