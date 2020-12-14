@@ -2,11 +2,42 @@
 Connect using the simulator
 ================================================================================
 
-Set up the UI
+Running the simulator
+================================================================================
+
+The CLI provides a software implementation of a Cat Tracker for *testing purposes*:
+it allows to verify that the cloud configuration works, and this features is
+also used for testing Bifravst using `Continuous Integration <../ContinuousIntegration.html>`_.
+
+You can create certificates for a simulated device using:
+
+.. code-block:: bash
+
+    node create-device-cert
+
+You can then run a simulated device using the generated certificate by running
+this command:
+
+.. code-block:: bash
+
+    node cli connect "<id of your device>"
+
+.. note::
+
+    The device simulator will print a link to the Device Simulator Web Application. In
+    order for it to work, either `Continuous Deployment <./ContinuousDeployment.html>`_
+    needs to be enabled, or it has to be manually deployed (see below).
+
+Using the Device Simulator Web Application
 ================================================================================
 
 The device-ui_ provides a
 browser-based UI to control the simulated device.
+
+.. figure:: ./device-simulator.png
+   :alt: Device Simulator Web Application
+
+   Device Simulator Web Application
 
 Clone the project and install dependencies
 --------------------------------------------------------------------------------
@@ -21,99 +52,35 @@ install the dependencies:
     cd bifravst-device-ui
     npm ci
 
-Configure the react app
+Run the Device Simulator Web Application
 --------------------------------------------------------------------------------
-
-The app needs to be configured to be able to run against your account.
-
-In this section we will create a file called :code:`.env.local`
-which Create React App uses to make the settings in there available `as
-environment variables during build
-time <https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables>`_.
-
-Configure ids of your AWS resources
---------------------------------------------------------------------------------
-
-The web app needs to know the ids of the AWS resources that were created
-during the set-up of the stack. Run this command in the
-:code:`bifravst-device-ui` directory to copy the output to a file
-called :code:`.env.local`.
 
 .. code-block:: bash
 
-    node ../bifravst-aws/cli react-config > .env.local
+    npm run
 
-Version string
---------------------------------------------------------------------------------
+Then copy the connection string printed from :code:`node cli connect "<id of your device>"`
+(e.g. :code:`?endpoint=http%3A%2F%2Flocalhost%3A23719`) and append it to the
+browsers address: e.g. :code:`http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719`.
 
-Run this command to provide the version to the app:
-
-.. code-block:: bash
-
-    echo REACT_APP_VERSION=`git describe --tags $(git rev-list --tags --max-count=1` >> .env.local
-
-Example :code:`.env.local`
---------------------------------------------------------------------------------
-
-This is how the file would look like:
-
-.. code-block:: bash
-
-    REACT_APP_REGION=eu-west-1
-    REACT_APP_HISTORICALDATA_TABLE_INFO=historicalDatadb40B23029-Qzk2Jrr88tOy|historicalDatatableD9D795E1-zdSByjtTqoAE
-    REACT_APP_USER_IOT_POLICY_ARN=arn:aws:iot:eu-west-1:249963682018:policy/bifravst-userIotPolicy-OMYBF5CI5Q6A
-    REACT_APP_DFU_BUCKET_NAME=bifravst-dfustoragebucket2cc839ff-qz8k9bslldrf
-    REACT_APP_JITP_ROLE_ARN=arn:aws:iam::249963682018:role/bifravst-iotJitpRole7B509A5D-5Y6BQY6KD9TX
-    REACT_APP_THING_GROUP_NAME=bifravstThings
-    REACT_APP_AVATAR_BUCKET_NAME=bifravst-avatarsbucket8221a59f-1usxf1qi1qj1r
-    REACT_APP_USER_POOL_CLIENT_ID=1rh4eacmu5c5ppq2pspnq8tcu5
-    REACT_APP_MQTT_ENDPOINT=a3g4yd69u8cu7b-ats.iot.eu-west-1.amazonaws.com
-    REACT_APP_DEVELOPER_PROVIDER_NAME=developerAuthenticated
-    REACT_APP_THING_POLICY_ARN=arn:aws:iot:eu-west-1:249963682018:policy/bifravst-thingPolicy-1GR1TP3RXOO0G
-    REACT_APP_USER_POOL_ID=eu-west-1_FiY6h4xjd
-    REACT_APP_IDENTITY_POOL_ID=eu-west-1:52cc8188-ec90-47d7-b3ee-634187fa6413
-    REACT_APP_WEB_APP_DOMAIN_NAME=d250wnpv81c7q9.cloudfront.net
-    REACT_APP_WEB_APP_BUCKET_NAME=bifravst-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
-    REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP=EGNO6F61DSJ5Y
-    REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_DEVICE_UI=E1J2GON7RTXEYM
-    REACT_APP_DEVICE_UI_BUCKET_NAME=bifravst-webapps-deviceuihostingbucket5eaa1720-1v0wvr5qw1ph3
-    REACT_APP_DEVICE_UI_DOMAIN_NAME=d3b8967x1t5y3g.cloudfront.net
-    REACT_APP_VERSION=v3.6.1
-
-Deploy the app
---------------------------------------------------------------------------------
-
-This builds and deploys the app to the S3 bucket created when setting up
-*Bifravst* in your AWS account.
-
-.. code-block:: bash
-
-    export $(cat .env.local | xargs) 
-    export EXTEND_ESLINT=true 
-    npm run build 
-    aws s3 cp build s3://$REACT_APP_DEVICE_UI_BUCKET_NAME --recursive \
-        --metadata-directive REPLACE \
-        --cache-control 'public,max-age=600' \
-        --expires '' 
-    aws cloudfront create-invalidation \
-        --distribution-id $REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP \
-        --paths /,/index.html
-    echo "Done. Now open https://$REACT_APP_DEVICE_UI_DOMAIN_NAME/ to view the web app."
-
-Afterwards you can open the domain name printed in
-:code:`REACT_APP_DEVICE_UI_DOMAIN_NAME` to view the web app.
-
-Connect
+Deploying the Device Simulator Web Application
 ================================================================================
 
-Run this script to connect to the broker using the previously generated
-certificate:
+This builds and deploys the Device Simulator Web Application to the S3 bucket created
+when setting up *Bifravst* in your AWS account.
 
 .. code-block:: bash
 
-    node cli connect "<id of your device>"
+    export $(cd ../bifravst-aws && node cli device-ui-config | xargs) 
+    npm run build
+    aws s3 cp build s3://$SNOWPACK_PUBLIC_DEVICE_UI_BUCKET_NAME \
+    --recursive --metadata-directive REPLACE \
+    --cache-control 'public,max-age=600' --expires ''
+    aws cloudfront create-invalidation --distribution-id \
+    $SNOWPACK_PUBLIC_CLOUDFRONT_DISTRIBUTION_ID_DEVICE_UI --paths /,/index.html
+    echo "Done. Now open $SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL to view the web app."
 
-This script also provides a browser-based UI which you can use to
-simulate device data.
+Afterwards you can open the domain name printed in
+:code:`SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL` to view the Device Simulator Web Application.
 
 .. _device-ui: https://github.com/bifravst/device-ui

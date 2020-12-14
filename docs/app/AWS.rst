@@ -60,9 +60,6 @@ This is how the file would look like:
     REACT_APP_WEB_APP_DOMAIN_NAME=d250wnpv81c7q9.cloudfront.net
     REACT_APP_WEB_APP_BUCKET_NAME=bifravst-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
     REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP=EGNO6F61DSJ5Y
-    REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_DEVICE_UI=E1J2GON7RTXEYM
-    REACT_APP_DEVICE_UI_BUCKET_NAME=bifravst-webapps-deviceuihostingbucket5eaa1720-1v0wvr5qw1ph3
-    REACT_APP_DEVICE_UI_DOMAIN_NAME=d3b8967x1t5y3g.cloudfront.net
     REACT_APP_VERSION=v3.6.1
 
 Deploy the app

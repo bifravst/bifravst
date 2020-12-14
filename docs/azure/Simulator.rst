@@ -2,32 +2,90 @@
 Connect using the simulator
 ================================================================================
 
-Set up the UI
+Running the simulator
 ================================================================================
 
-The `device-ui <https://github.com/bifravst/device-ui>`_ provides a
-browser-based UI to control the simulated device. Set it up on your
-Azure account:
+The CLI provides a software implementation of a Cat Tracker for *testing purposes*:
+it allows to verify that the cloud configuration works, and this features is
+also used for testing Bifravst using `Continuous Integration <../ContinuousIntegration.html>`_.
+
+You can create certificates for a simulated device using:
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/device-ui
-    cd device-ui
-    npm ci
-    export EXTEND_ESLINT=true
-    npm run build
-    # Upload it to the storage account created for bifravst
-    az storage blob upload-batch -s build -d \$web --account-name bifravstdeviceui
+    node create-device-cert
 
-Connect
+You can then run a simulated device using the generated certificate by running
+this command:
+
+.. code-block:: bash
+
+    node cli connect "<id of your device>"
+
+.. note::
+
+    The device simulator will print a link to the Device Simulator Web Application. In
+    order for it to work, either `Continuous Deployment <./ContinuousDeployment.html>`_
+    needs to be enabled, or it has to be manually deployed (see below).
+
+Using the Device Simulator Web Application
 ================================================================================
 
-Run this script to connect to the broker using the previously generated
-certificate:
+The device-ui_ provides a
+browser-based UI to control the simulated device.
+
+.. figure:: ../aws/device-simulator.png
+   :alt: Device Simulator Web Application
+
+   Device Simulator Web Application
+
+Clone the project and install dependencies
+--------------------------------------------------------------------------------
+
+Clone the latest version of the
+device-ui_ project and
+install the dependencies:
+
+.. code-block:: bash
+
+    git clone https://github.com/bifravst/device-ui.git bifravst-device-ui
+    cd bifravst-device-ui
+    npm ci
+
+Run the Device Simulator Web Application
+--------------------------------------------------------------------------------
+
+.. code-block:: bash
+
+    npm run
+
+Then copy the connection string printed from :code:`node cli connect "<id of your device>"`
+(e.g. :code:`?endpoint=http%3A%2F%2Flocalhost%3A23719`) and append it to the
+browsers address: e.g. :code:`http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719`.
+
+Deploying the Device Simulator Web Application
+================================================================================
+
+This builds and deploys the Device Simulator Web Application to the S3 bucket created
+when setting up *Bifravst* in your AWS account.
 
 .. code-block:: bash
 
     cd ../bifravst-azure
-    # FIXME: move this to the connect command once https://github.com/Azure/azure-sdk-for-js/issues/6361 is fixed
-    export DEVICE_UI_LOCATION=`az storage account show -n bifravstdeviceui -g bifravst --query "primaryEndpoints.web" --output tsv`
-    node cli connect "<id of your device>"
+    export $(cd ../bifravst-azure && node cli device-ui-config | xargs)
+    export APP_NAME=${APP_NAME:-bifravst}
+    cd ../bifravst-device-ui
+    export SNOWPACK_PUBLIC_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)`
+
+    npm run build
+
+    export DEVICE_UI_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --name ${APP_NAME}deviceui --query 'connectionString'` 
+    az storage blob service-properties update --connection-string ${DEVICE_UI_STORAGE_CONNECTION_STRING} --account-name ${APP_NAME}deviceui --static-website --404-document index.html --index-document index.html
+    az storage blob upload-batch --connection-string ${DEVICE_UI_STORAGE_CONNECTION_STRING} --account-name ${APP_NAME}deviceui -s ./build -d '$web'
+
+    echo "Done. Now open $SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL to view the web app."
+
+Afterwards you can open the domain name printed in
+:code:`SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL` to view the Device Simulator Web Application.
+
+.. _device-ui: https://github.com/bifravst/device-ui

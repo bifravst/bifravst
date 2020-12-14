@@ -46,7 +46,7 @@ This is how the file would look like:
 
     REACT_APP_CLOUD_FLAVOUR=Azure
     REACT_APP_AZURE_CLIENT_ID=358162bb-b809-42ef-9b62-22f8fa42b5fb
-    REACT_APP_AZURE_AD_B2C_AUTHORITY=https://bifravstprod.b2clogin.com/bifravstprod.onmicrosoft.com/B2C_1\_signup_signin
+    REACT_APP_AZURE_AD_B2C_AUTHORITY=https://bifravstprod.b2clogin.com/bifravstprod.onmicrosoft.com/B2C_1_signup_signin
     REACT_APP_AZURE_B2C_TENANT=bifravstprod
     REACT_APP_VERSION=v3.6.1
 
@@ -61,7 +61,7 @@ setting up *Bifravst* in your Azure account.
     export APP_URL=`az storage account show -g ${RESOURCE_GROUP_NAME} -n ${APP_NAME}app --query 'primaryEndpoints.web' --output tsv | tr -d '\n'`
     export APP_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --name ${APP_NAME}app --query 'connectionString'`
     npm run build
-    az storage blob upload-batch --connection-string ${APP_STORAGE_CONNECTION_STRING} --account-name ${APP_NAME}app -s ./app/build -d '$web'
+    az storage blob upload-batch --connection-string ${APP_STORAGE_CONNECTION_STRING} --account-name ${APP_NAME}app -s ./build -d '$web'
     echo "Done. Now open $APP_URL to view the web app."
 
 Afterwards you can open the domain name printed in :code:`APP_URL`
