@@ -105,12 +105,9 @@ You can delete a device using this command:
 CI Runner
 ================================================================================
 
-#.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for
-    your platform. Use the path to the folder (e.g.
-    :code:`~/JLink_Linux_V686_arm64/`) further down.
+#.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform. Use the path to the folder (e.g. ``~/JLink_Linux_V686_arm64/``) further down.
 
-#.  Install
-    `firmware-ci-aws <https://github.com/bifravst/firmware-ci-aws.git>`_:
+#.  Install `firmware-ci-aws <https://github.com/bifravst/firmware-ci-aws.git>`_:
 
     .. code-block:: bash
 
@@ -129,13 +126,8 @@ CI Runner
         export BUCKET_NAME="<Bucket name printed above>"
         export PATH="<Path to JLINK>":$PATH
 
-    The recommended workflow is to use a
-    `direnv <https://direnv.net/>`_ plugin for your shell
-    which will automatically export the environment variables it
-    finds in a :code:`.envrc` file in the project folder: >
-    Create a new file :code:`.envrc` in the project folder and add
-    the credentials that are presented to you after you have created
-    the new user.
+    The recommended workflow is to use a `direnv <https://direnv.net/>`_ plugin for your shell which will automatically export the environment variables it finds in a ``.envrc`` file in the project folder:
+    Create a new file ``.envrc`` in the project folder and add the credentials that are presented to you after you have created the new user.
 
 #.  Copy over the JSON file containing the certificate
 
