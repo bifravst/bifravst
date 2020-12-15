@@ -143,7 +143,9 @@ CI Runner
 
     .. code-block:: bash
 
-        node cli run "<path to certificate.json>"
+        node cli run "<device>" "<path to certificate.json>"
+
+    ``<device>`` is the Linux file where the device is connected to, e.g. ``/dev/ttyACM0``.
 
 The Firmware CI will now process all schedule jobs one after another.
 
