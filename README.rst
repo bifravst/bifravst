@@ -6,7 +6,6 @@ Bifravst
 .. epigraph::
 
   *Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.*
-
   `Bifravst <https://www.lyngen.com/2020/03/the-vikings-and-the-northern-lights-bridge/>`_ is a term from the Nordic mythology and it refers to the bridge built by the gods between earth and heaven.
 
 
@@ -34,7 +33,6 @@ Bifravst
 .. image:: https://img.shields.io/badge/ESLint-TypeScript-blue.svg
    :alt: ESLint: TypeScript
    :target: https://github.com/typescript-eslint/typescript-eslint
-   
 
 Vision
 ******
@@ -44,9 +42,7 @@ Vision
 .. figure:: ./docs/logo-with-text.png
    :alt: Bifravst: Cat Tracker IoT example
 
-
 *Bifravst* enables the developers to set up a real world IoT solution using the respective cloud provider and adapt the example firmware and software quickly for a specific use case.
-
 *Bifravst* aims to provide answers and recommend best practices to the following
 questions :
 
@@ -56,7 +52,6 @@ questions :
 * How can users and other services interact with the devices?
 * How can you upgrade the application firmware of your devices while they are deployed in the field?
 * How can you develop a cellular IoT product that maximizes battery life, minimizes data usage, and handles unreliable connectivity gracefully?
-
 .. note ::
 
    In the coming weeks, we will establish the best path to provide this project through nRF Connect SDK, Nordic Semiconductor Infocenter and other established channels.
