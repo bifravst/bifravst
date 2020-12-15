@@ -1,4 +1,4 @@
-.. _sni:
+.. _sni_readme:
 
 SNI
 ###

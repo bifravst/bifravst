@@ -1,4 +1,4 @@
-.. _authentication:
+.. _authentication_readme:
 
 Authentication
 ##############
