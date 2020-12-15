@@ -110,12 +110,12 @@ CI Runner
     :code:`~/JLink_Linux_V686_arm64/`) further down.
 
 #.  Install
-    `firmware-ci <https://github.com/bifravst/firmware-ci.git>`_:
+    `firmware-ci-aws <https://github.com/bifravst/firmware-ci-aws.git>`_:
 
     .. code-block:: bash
 
-        git clone https://github.com/bifravst/firmware-ci.git
-        cd firmware-ci
+        git clone https://github.com/bifravst/firmware-ci-aws.git
+        cd firmware-ci-aws
         npm ci
         npx tsc
 
@@ -147,4 +147,4 @@ CI Runner
 
 The Firmware CI will now process all schedule jobs one after another.
 
-.. _Firmware CI runner: https://github.com/bifravst/firmware-ci
+.. _Firmware CI runner: https://github.com/bifravst/firmware-ci-aws
