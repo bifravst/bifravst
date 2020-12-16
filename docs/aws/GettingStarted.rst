@@ -49,7 +49,7 @@ To setup a new AWS account and provide credentials, complete the following steps
 
 1.  Navigate to your `IAM console <https://console.aws.amazon.com/iam/home?region=us-east-1#/home>`_ and add a new user for `programmatic access <https://wa.aws.amazon.com/wat.question.SEC_3.en.html>`_.
 
-#.  Attach the :code:`arn:aws:iam::aws:policy/AdministratorAccess` policy directly.
+#.  Attach the ``arn:aws:iam::aws:policy/AdministratorAccess`` policy directly.
 
     .. note::
 

@@ -37,8 +37,8 @@ Create a CA root certificate
 .. note::
 
     Make sure you have exported the right resource group to
-    name as :code:`$RESOURCE_GROUP_NAME`, it defaults to
-    :code:`bifravst`.
+    name as ``$RESOURCE_GROUP_NAME``, it defaults to
+    ``bifravst``.
 
 This creates a CA root certificate and registers it with the Azure IoT
 Device Provisioning Service.

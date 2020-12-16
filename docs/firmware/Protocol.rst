@@ -176,11 +176,11 @@ Timestamping
 Device **state** and **configuration** are timeless datum, they apply
 always and absolutely. The device sends a GPS position over the cellular
 connection and the digital twin is updated, we now know where the device
-is *now*. When the device configuration is changed (:code:`A -> A'`)
+is *now*. When the device configuration is changed (``A -> A'``)
 the device will eventually apply the new
 configuration, and if another configuration change was made while the
-device was not connected (:code:`A' -> A''`) the device can
-directly *jump* to :code:`A''`. To make state and
+device was not connected (``A' -> A''``) the device can
+directly *jump* to ``A''``. To make state and
 configuration changes available over time we can store all changes on
 the cloud side with the time of the change and make them available for
 retrieval in a time-series fashion.
@@ -286,13 +286,13 @@ configuration, batched past state, firmware upgrades) will be the same.
 +=====================================+=========================+==================+===========+=================+
 | :abbr:`AWS (Amazon Web Services)`   | `Device Shadow`_        | `Device Shadow`_ | MQTT      | `Jobs`_ + HTTPS |
 |                                     |                         |                  |           |                 |
-|                                     | :code:`reported`        | :code:`desired`  |           |                 |
+|                                     | ``reported``            | ``desired``      |           |                 |
 +-------------------------------------+-------------------------+------------------+-----------+-----------------+
 | :abbr:`GCP (Google Cloud Platform)` | `Device Configuration`_ | `Device State`_  | MQTT      |                 |
 +-------------------------------------+-------------------------+------------------+-----------+-----------------+
 | :abbr:`Azure (Microsoft Azure)`     | `Device twins`_         | `Device twins`_  | MQTT      | `MQTT+HTTPS`_   |
 |                                     |                         |                  |           |                 |
-|                                     | :code:`reported`        | :code:`desired`  |           |                 |
+|                                     | ``reported``            | ``desired``      |           |                 |
 +-------------------------------------+-------------------------+------------------+-----------+-----------------+
 
 .. _Device Shadow: https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html

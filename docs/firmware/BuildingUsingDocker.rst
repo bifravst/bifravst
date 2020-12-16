@@ -28,7 +28,7 @@ system.
 Building
 ================================================================================
 
-Thingy:91 (:code:`PCA20035`)
+Thingy:91 (``PCA20035``)
 --------------------------------------------------------------------------------
 
 .. code-block:: bash
@@ -36,7 +36,7 @@ Thingy:91 (:code:`PCA20035`)
     docker run --rm -v ${PWD}:/workdir/ncs/firmware bifravst-firmware-docker /bin/bash -c 'cd /workdir/ncs/firmware; west build -p always -b thingy91_nrf9160ns'
     ls -la build/zephyr/merged.hex
 
-nRF9160 DK (:code:`PCA10090`)
+nRF9160 DK (``PCA10090``)
 --------------------------------------------------------------------------------
 
 .. code-block:: bash
@@ -48,4 +48,4 @@ Location of the HEX file
 ================================================================================
 
 The built HEX file will be located in
-:code:`ncs/nrf/build/zephyr/merged.hex`.
+``ncs/nrf/build/zephyr/merged.hex``.

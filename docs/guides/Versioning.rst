@@ -17,8 +17,8 @@ messages against these rules.
 
 .. note::
 
-    The :code:`package.json` of a project should only contain
-    :code:`0.0.0-development` as  the :code:`version`
+    The ``package.json`` of a project should only contain
+    ``0.0.0-development`` as  the ``version``
     property, semantic-release will ignore the value.
     
 .. warning::
@@ -29,7 +29,7 @@ How to release a new version of a package
 ================================================================================
 
 Let's assume we have a library, which has the npm version
-:code:`2.3.4`.
+``2.3.4``.
 
 A new version will be publish by the respective project's CI run. All
 you have to do, is use commit messages that follow the `schema describe
@@ -64,7 +64,7 @@ Breaking Release:
     Note that **any other** commit message format **will not trigger** a
     release.
 
-Patch release (:code:`fix`) :code:`2.3.4 -> 2.3.5` 🐞
+Patch release (``fix``) ``2.3.4 -> 2.3.5`` 🐞
 --------------------------------------------------------------------------------
 
 .. note::
@@ -74,8 +74,8 @@ Patch release (:code:`fix`) :code:`2.3.4 -> 2.3.5` 🐞
     library. The consumer of the library must not need to change their
     implementation when installing the fixed version.
 
-To release a fix (which will update the version from :code:`2.3.4`
-to :code:`2.3.5`, use the type :code:`fix` in the commit
+To release a fix (which will update the version from ``2.3.4``
+to ``2.3.5``, use the type ``fix`` in the commit
 message:
 
 .. code-block::
@@ -91,7 +91,7 @@ identify the affected *component*.
 
 Scopes are useful when the project is rather big.
 
-Feature release (:code:`feat`) :code:`2.3.4 -> 2.4.0` 🚀
+Feature release (``feat``) ``2.3.4 -> 2.4.0`` 🚀
 --------------------------------------------------------------------------------
 
 .. note::
@@ -104,8 +104,8 @@ Feature release (:code:`feat`) :code:`2.3.4 -> 2.4.0` 🚀
     feature.
 
 To release a feature (which will update the version from
-:code:`2.3.4` to :code:`2.4.0`, use the type
-:code:`feat` in the commit message:
+``2.3.4`` to ``2.4.0``, use the type
+``feat`` in the commit message:
 
 .. code-block::
 
@@ -113,7 +113,7 @@ To release a feature (which will update the version from
 
 You can optionally add a scope as well.
 
-Breaking Release (:code:`BREAKING CHANGE:`) :code:`2.3.4 -> 3.0.0` 🚨
+Breaking Release (``BREAKING CHANGE:``) ``2.3.4 -> 3.0.0`` 🚨
 --------------------------------------------------------------------------------
 
 .. note::
@@ -128,7 +128,7 @@ Breaking Release (:code:`BREAKING CHANGE:`) :code:`2.3.4 -> 3.0.0` 🚨
     semver <https://semver.org/#spec-item-8>`_.
 
 To release a breaking release (which will update the version from
-:code:`2.3.4` to :code:`3.0.0`, use the text :code:`BREAKING
+``2.3.4`` to ``3.0.0``, use the text :code:`BREAKING
 CHANGE:` (followed by a space of two new-lines) in the
 commit message:
 
@@ -143,7 +143,7 @@ commit message:
 You can optionally add a scope as well.
 
 Not that in the case of a breaking release the message type (here
-:code:`refactor`) can be any valid type.
+``refactor``) can be any valid type.
 
 Typical changes
 ================================================================================
@@ -170,16 +170,16 @@ How releases are published
 After you have pushed your changes to the remote repository, a job will
 be run on the CI runner. If the job completes successfully (e.g. if all
 tests pass and the linter does not report any errors),
-:code:`semantic-release` will determine the next version to be
+``semantic-release`` will determine the next version to be
 released.
 
-The *"highest"* commit will *win* (:code:`fix` >
-:code:`feat` > :code:`breaking change`). This means if the
+The *"highest"* commit will *win* (``fix`` >
+``feat`` > ``breaking change``). This means if the
 list of commit messages since the last release contains *only*
 fixes, the patch version will be incremented (:code:`2.3.4 ->
 2.3.5`). If the list of commits contains at least one new
 feature, then the minor version will be incremented and the patch
-version will be set to :code:`0` (:code:`2.3.4 -> 2.4.0`).
+version will be set to ``0`` (``2.3.4 -> 2.4.0``).
 If the list of commits contains at least one breaking change, then the
 major version will be incremented and the minor and patch versions will
-be set to :code:`0` (:code:`2.3.4 -> 3.0.0`).
+be set to ``0`` (``2.3.4 -> 3.0.0``).

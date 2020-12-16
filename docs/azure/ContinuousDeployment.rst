@@ -35,7 +35,7 @@ Create an Azure Active Directory B2C
 #.  Use these settings:
 
     -   Organization name: *Bifravst (Production)*
-    -   Initial domain name: :code:`bifravstprod` (you need to
+    -   Initial domain name: ``bifravstprod`` (you need to
         pick something else that fits your project because this name is
         globally unique)
     -   Country/Region: Sweden (or pick a location that is closer to
@@ -78,8 +78,8 @@ Create an Azure Active Directory B2C
 
     -   Name: Bifravst Web App
     -   Redirect URI (make sure to select SPA):
-        :code:`https://bifravstprodapp.z16.web.core.windows.net/`
-        (instead of :code:`bifravstprodapp` you need to pick
+        ``https://bifravstprodapp.z16.web.core.windows.net/``
+        (instead of ``bifravstprodapp`` you need to pick
         something else that fits your project because this name is
         globally unique)
 
@@ -89,17 +89,17 @@ Create an Azure Active Directory B2C
             Create App Registration settings
 
 #.  In *Expose an API* set the *Application ID URI* to
-    :code:`api`
+    ``api``
 #.  Click *+ Add a scope* and create a new scope:
 
-    -   Scope name: :code:`bifravst.admin`
+    -   Scope name: ``bifravst.admin``
     -   Admin consent display name: Admin Access to the Bifravst API
     -   Admin consent description: Allows admin access to all resources
         exposed through the Bifravst API
 
 #.  In *API permissions* click *+ Add a permission* and under
     *My APIs* select the app registration
-#.  Enable the :code:`bifravst.admin` permission and click *Add permission*
+#.  Enable the ``bifravst.admin`` permission and click *Add permission*
 #.  Click *Grant admin consent for <your main directory>* 
 
     .. figure:: ./cd/add-scope.png
@@ -129,7 +129,7 @@ Create an Azure Active Directory B2C
             export APP_NAME=bifravstprodapp
 
 #.  Create the *Sign up and sign [in* user flow for local users, and
-    name it :code:`signup_signin`
+    name it ``signup_signin``
     (`Reference <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows>`_).
 #.  Switch back to the main directory
 #.  Find the Bifravst Azure Function App
@@ -139,8 +139,8 @@ Create an Azure Active Directory B2C
 #.  Click *Azure Active Directory* and configure the authentication
     using the *Advanced Management mode*:
 
-    -   Client ID: :code:`$APP_REG_CLIENT_ID`
-    -   Issuer URL: :code:`https://${B2C_TENANT}.b2clogin.com/${B2C_TENANT}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_signup_signin`
+    -   Client ID: ``$APP_REG_CLIENT_ID``
+    -   Issuer URL: ``https://${B2C_TENANT}.b2clogin.com/${B2C_TENANT}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_signup_signin``
       
         .. figure:: ./cd/function-app-settings.png
             :alt: Function App Settings
@@ -192,9 +192,9 @@ Fork the
 `Bifravst Azure project <https://github.com/bifravst/azure/settings/secrets/new>`_
 and add these secrets.
 
--   :code:`AZURE_CREDENTIALS`: store the contents of the JSON file created above
--   :code:`APP_REG_CLIENT_ID`: the *application (client) id* of the created Active Directory B2C App registration
--   :code:`B2C_TENANT`: the *initial domain name* of the created Active Directory B2C
+-   ``AZURE_CREDENTIALS``: store the contents of the JSON file created above
+-   ``APP_REG_CLIENT_ID``: the *application (client) id* of the created Active Directory B2C App registration
+-   ``B2C_TENANT``: the *initial domain name* of the created Active Directory B2C
 
 Now trigger a deploy.
 

@@ -67,8 +67,8 @@ identity provider for your Azure Function Apps.
     In the New Application blade, give the app a friendly name, Select
     *Yes* for Web App/ Web API option, in the Reply URL section,
     enter in the full Azure website name that you created in step 2, and
-    append it with: :code:`/.auth/login/aad/callback`. For example:
-    :code:`https://myAppSecuredByB2C.azurewebites.net/.auth/login/aad/callback`.
+    append it with: ``/.auth/login/aad/callback``. For example:
+    ``https://myAppSecuredByB2C.azurewebites.net/.auth/login/aad/callback``.
     Select Create.
 
     .. image:: ./secure-azure-function-apps-with-microsoft-b2c/07.png

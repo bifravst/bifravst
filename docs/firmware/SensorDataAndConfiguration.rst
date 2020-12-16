@@ -33,7 +33,7 @@ The firmware may send data as batch, using the schema described
 `in this JSON schema file <./batch.schema.json>`_. See
 `this JSON document <./batch-message.json>`_ for an example batch message.
 
-For sending batched data from the device, the topic :code:`<deviceId>/batch`
+For sending batched data from the device, the topic ``<deviceId>/batch``
 is used.
 
 Tracking Modes
@@ -49,27 +49,27 @@ This is the default mode.
 
 In passive mode the device publishes data based on movement: if it
 registers movement on the accelerometer, it will publish data. It will
-wait the amount of seconds configured in :code:`cfg.mvres` before
+wait the amount of seconds configured in ``cfg.mvres`` before
 publishing the next time.
 
 If it detects no movement for the amount of seconds specified in
-:code:`cfg.mvt`, it will also publish data once.
+``cfg.mvt``, it will also publish data once.
 
 The `nRF9160 DK (PCA10090) <https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF9160-DK>`_
 does not support *passive* mode by default. The *passive* mode
 depends on an external accelerometer (Analog Devices ADXL362) being
 connected to the GPIO ports specified in the
-:code:`nrf9160_pca10090ns.overlay` file.
+``nrf9160_pca10090ns.overlay`` file.
 
 Active Mode
 --------------------------------------------------------------------------------
 
 In active mode the device publishes data based on elapsed time. It will
-wait the amount of seconds configured in :code:`cfg.actwt` before
+wait the amount of seconds configured in ``cfg.actwt`` before
 publishing the next time.
 
 The device can be put in *active* mode by setting the
-:code:`cfg.act` to :code:`true`.
+``cfg.act`` to ``true``.
 
 GPS Timeout configuration
 ================================================================================

@@ -22,7 +22,7 @@ release, follow these steps.
             b2cTenant=${B2C_TENANT:-bifravst}
     func azure functionapp publish ${APP_NAME:-bifravst}API --typescript
 
-Docker variant (in case you get a :code:`Permission denied.` error):
+Docker variant (in case you get a ``Permission denied.`` error):
 
 .. code-block:: bash
 
