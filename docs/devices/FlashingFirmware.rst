@@ -27,7 +27,7 @@ You can find the endpoint for your installation through the CLI:
     node cli info -o mqttEndpoint
 
 Build
-================================================================================
+=====
 
 Follow the instructions on :ref:`how to build <firmware-building>`  the HEX file for your board.
 

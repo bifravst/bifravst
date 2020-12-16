@@ -53,7 +53,7 @@ Enforcement Guidelines
 Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
 
 1. Correction
-================================================================================
+=============
 
 **Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
 
@@ -61,7 +61,7 @@ Community leaders will follow these Community Impact Guidelines in determining t
 A public apology may be requested.
 
 2. Warning
-================================================================================
+==========
 
 **Community Impact**: A violation through a single incident or series of actions.
 
@@ -70,7 +70,7 @@ No interaction with the people involved, including unsolicited interaction with 
 This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
 
 Temporary Ban
-================================================================================
+=============
 
 **Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
 
@@ -79,7 +79,7 @@ No public or private interaction with the people involved, including unsolicited
 Violating these terms may lead to a permanent ban.
 
 4. Permanent Ban
-================================================================================
+================
 
 **Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
 

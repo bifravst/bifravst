@@ -5,12 +5,12 @@ Connection
 **********
 
 Error code ``-22``
-================================================================================
+==================
 
 Double check the clientID, the endpoint and the certificates.
 
 Cellular connection
-================================================================================
+===================
 
 Since 5G support is currently being deployed by mobile phone network operators there is a high chance that you might perceive connection issues in you location.
 
@@ -20,7 +20,7 @@ GPS
 ***
 
 Error: ``GPS_EVT_OPERATION_BLOCKED``
-================================================================================
+====================================
 
 This happens if the Network provider does not grant PSM (power savings mode) and the GPS takes too long to acquire a fix.
 `See this {DevZone post for more details <https://devzone.nordicsemi.com/f/nordic-q-a/51962/gps-and-lte-issue/210272#210272>`_.

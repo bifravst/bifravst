@@ -24,7 +24,7 @@ Prepare your Azure Account
     If you know how to make the whole set-up process simpler, `please provide your input here! <https://github.com/bifravst/azure/issues/1>`_
 
 Create a new tenant (Azure Active Directory)
-================================================================================
+============================================
 
 In order to separate the CI test runs from the production resources, go to the `Azure Portal <https://portal.azure.com/>`_ and create a new Azure Active Directory tenant:
 
@@ -42,7 +42,7 @@ Note down the initial domain name you used:
     export TENANT_DOMAIN="<Primary domain>" # e.g. "bifravstci"
 
 Create subscription
-================================================================================
+===================
 
 Go to the Subscriptions blade and create a new subscription for the CI tenant, this will make identifying costs for this purpose easier.
 
@@ -55,7 +55,7 @@ Note down the Subscription ID which you can find in the Subscriptions blade:
     export SUBSCRIPTION_ID="<Subscription ID>" # e.g. "1aae311f-12d6-419e-8c6b-ebcf3ec4ed15"
 
 Create another new tenant (Azure Active Directory B2C)
-================================================================================
+======================================================
 
 Create a new Azure Active Directory B2C tenant, which is used as the identity management solution for the user accounts of the Bifravst instance.
 

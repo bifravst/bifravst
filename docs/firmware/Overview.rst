@@ -17,14 +17,14 @@ Repeating Sequence
     Repeating Sequence
 
 1. Check device mode
-================================================================================
+====================
 
 The application checks the current device mode.
 If it is in "active mode" the device will immediately try to get a gps fix.
 If it is in "passive" mode the main thread will go to sleep and not continue until movement over a configurable threshold value is detected.
 
 2. Search for GPS fix
-================================================================================
+=====================
 
 The device will try to obtain a GPS position fix within the GPS timeout duration.
 If the fix is not obtained within the time limit the publication message in the next cloud publication will not contain GPS data.
@@ -32,7 +32,7 @@ If a fix is obtained within the time limit the publication message will contain 
 In addition, the time obtained from the GPS fix is used to refresh the internal UTC date time timestamp variable used to calculate timestamped attached to every publication message.
 
 3. Check current cellular network registration status
-================================================================================
+=====================================================
 
 Check if the device is still registered to the cellular network.
 This check manipulates an internal semaphore that will block cloud publication if the device is not registered to a cellular network, avoiding unnecessary call to functionality if the device is in fact not connected.
@@ -42,12 +42,12 @@ This can dramatically decrease the resolution of which the modem updates its cel
 This is not a problem, the publication functionality is non blocking and the application will not halt if it tries to publish without a connection.
 
 4. Publish data
-================================================================================
+===============
 
 Publish data according to the schema below if device is still registered to the cellular network.
 
 5. Sleep
-================================================================================
+========
 
 The main thread sleeps in the duration of the current device mode wait time.
 
@@ -72,7 +72,7 @@ Cloud Communication
     Publication of sensor/modem/GPS data and updating device configurations happens in a determined order listed below.
 
 Successful connection to cloud
-================================================================================
+==============================
 
 .. figure:: ./images/successful.svg
     :alt: Sequence: Successful connection to cloud
@@ -80,7 +80,7 @@ Successful connection to cloud
     Sequence: Successful connection to cloud
 
 Data publication
-================================================================================
+================
 
 .. figure:: ./images/data-publication.svg
     :alt: Data publication

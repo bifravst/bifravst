@@ -34,7 +34,7 @@ The device-ui_ provides a browser-based UI to control the simulated device.
    Device Simulator Web Application
 
 Clone the project and install dependencies
-================================================================================
+==========================================
 
 Clone the latest version of the device-ui_ project and install the dependencies:
 
@@ -45,7 +45,7 @@ Clone the latest version of the device-ui_ project and install the dependencies:
     npm ci
 
 Run the Device Simulator Web Application
-================================================================================
+========================================
 
 .. code-block:: bash
 

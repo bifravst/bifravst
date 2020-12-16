@@ -30,7 +30,7 @@ Tracking Modes
 The firmware implements two tracking modes: *passive* and *active*.
 
 Passive Mode
-================================================================================
+============
 
 This is the default mode.
 
@@ -43,7 +43,7 @@ The `nRF9160 DK (PCA10090) <https://www.nordicsemi.com/Software-and-tools/Develo
 The *passive* mode depends on an external accelerometer (Analog Devices ADXL362) being connected to the GPIO ports specified in the ``nrf9160_pca10090ns.overlay`` file.
 
 Active Mode
-================================================================================
+===========
 
 In active mode the device publishes data based on elapsed time.
 It will wait the amount of seconds configured in ``cfg.actwt`` before publishing the next time.

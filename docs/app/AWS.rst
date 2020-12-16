@@ -15,7 +15,7 @@ The app needs to be configured to be able to run against your account.
 In this section we will create a file called ``.env.local`` which Create React App uses to make the settings in there available `as environment variables during build time <https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables>`_.
 
 Configure ids of your AWS resources
-================================================================================
+===================================
 
 The web app needs to know the ids of the AWS resources that were created during the set-up of the stack.
 Run this command in the ``bifravst-app`` directory to copy the output to a file called ``.env.local``.
@@ -25,7 +25,7 @@ Run this command in the ``bifravst-app`` directory to copy the output to a file 
     node ../bifravst-aws/cli react-config > .env.local
 
 Version string
-================================================================================
+==============
 
 Run this command to provide the version to the app:
 
@@ -34,7 +34,7 @@ Run this command to provide the version to the app:
     echo REACT_APP_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)` >> .env.local
 
 Example ``.env.local``
-================================================================================
+======================
 
 This is how the file would look like:
 

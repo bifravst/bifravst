@@ -53,7 +53,7 @@ Breaking Release:
     Note that **any other** commit message format **will not trigger** a release.
 
 Patch release (``fix``) ``2.3.4 -> 2.3.5`` 🐞
-================================================================================
+=============================================
 
 .. note::
 
@@ -75,7 +75,7 @@ You can optionally add a scope, which is a lowercase string used to identify the
 Scopes are useful when the project is rather big.
 
 Feature release (``feat``) ``2.3.4 -> 2.4.0`` 🚀
-================================================================================
+================================================
 
 .. note::
 
@@ -91,7 +91,7 @@ To release a feature (which will update the version from ``2.3.4`` to ``2.4.0``,
 You can optionally add a scope as well.
 
 Breaking Release (``BREAKING CHANGE:``) ``2.3.4 -> 3.0.0`` 🚨
-================================================================================
+=============================================================
 
 .. note::
 
@@ -117,12 +117,12 @@ Typical changes
 ***************
 
 Updated dependencies
-================================================================================
+====================
 
 If you are manually updating dependencies in a library, you should commit the change as a fix, so that consumers are also using the updated dependencies.
 
 Refactoring
-================================================================================
+===========
 
 If you do a pure refactoring of a library without changing the features and the public API **but** want to use the refactored version in your consumers, commit the refactoring as a feature.
 After all, you are improving the library which qualifies as a feature, e.g. it could be a performance-improvement.

@@ -35,7 +35,7 @@ And an approximate position is always better then no location information at all
 Therefore it is beneficial to geolocate the current mobile network cell.
 
 Geolocating cells using other devices
-================================================================================
+=====================================
 
 Resolving the cell location on the cloud backend has unique advantages over resolving it on the device: it removes the firmware image size and memory usage and it can leverage other devices past GPS fixes.
 If many devices are closely located it saves a lot of resource because a cell's geolocation only needs to be resolved once and then can be made available to all device.
@@ -49,7 +49,7 @@ It is used as the primary mean of geolocation cells in Bifravst.
 Only if a cell has not previously been geolocated by a device will the third-party API be called, **if it is enabled**.
 
 Geolocating cells using third-party APIs
-================================================================================
+========================================
 
 Third-party APIs and services like `UnwiredLabs <https://unwiredlabs.com/>`_ and `CellMapper <https://www.cellmapper.net/>`_ have a database of cell tower locations and provide an API to query against them.
 Bifravst implements the optional resolution on the cloud side using *UnwiredLabs* on :ref:`AWS <aws-unwired-labs-api>`  for cell that have not been geolocation by devices.

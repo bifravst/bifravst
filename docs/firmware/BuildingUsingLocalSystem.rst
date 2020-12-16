@@ -42,14 +42,14 @@ Building
 Then build the actual application: change to the ``./ncs/firmware`` directory and build for your board:
 
 Thingy:91 (``PCA20035``)
-================================================================================
+========================
 
 .. code-block:: bash
 
     west build -p always -b thingy91_nrf9160ns
 
 nRF9160 DK (``PCA10090``)
-================================================================================
+=========================
 
 .. code-block:: bash
 

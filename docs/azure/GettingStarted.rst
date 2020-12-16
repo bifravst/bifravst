@@ -39,7 +39,7 @@ Afterwards you should be able to execute the ``az`` command:
     az
 
 Dockerizing the ``az`` command
-================================================================================
+==============================
 
 In case you encounter the issue where the azure CLI `requires an older Python version <https://github.com/Azure/azure-cli/issues/11239>`_, you can *dockerize* it like this:
 
