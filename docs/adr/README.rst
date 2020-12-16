@@ -1,6 +1,5 @@
-================================================================================
 Architecture Decision Records
-================================================================================
+#############################
 
 This folder contains Architecture Decision Records (ADRs) which apply to
 the entire project.

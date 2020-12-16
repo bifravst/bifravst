@@ -1,9 +1,8 @@
-================================================================================
 Connect using the simulator
-================================================================================
+###########################
 
 Running the simulator
-================================================================================
+*********************
 
 The CLI provides a software implementation of a Cat Tracker for *testing purposes*: it allows to verify that the cloud configuration works, and this features is also used for testing Bifravst using :ref:`Continuous Integration <azure-continuous-integration>` .
 
@@ -25,7 +24,7 @@ You can then run a simulated device using the generated certificate by running t
     In order for it to work, either :ref:`Continuous Deployment <azure-continuous-deployment>` needs to be enabled, or it has to be manually deployed (see below).
 
 Using the Device Simulator Web Application
-================================================================================
+******************************************
 
 The device-ui_ provides a browser-based UI to control the simulated device.
 
@@ -35,7 +34,7 @@ The device-ui_ provides a browser-based UI to control the simulated device.
    Device Simulator Web Application
 
 Clone the project and install dependencies
---------------------------------------------------------------------------------
+================================================================================
 
 Clone the latest version of the device-ui_ project and install the dependencies:
 
@@ -46,7 +45,7 @@ Clone the latest version of the device-ui_ project and install the dependencies:
     npm ci
 
 Run the Device Simulator Web Application
---------------------------------------------------------------------------------
+================================================================================
 
 .. code-block:: bash
 
@@ -55,7 +54,7 @@ Run the Device Simulator Web Application
 Then copy the connection string printed from ``node cli connect "<id of your device>"`` (e.g. ``?endpoint=http%3A%2F%2Flocalhost%3A23719``) and append it to the browsers address: e.g. ``http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719``.
 
 Deploying the Device Simulator Web Application
-================================================================================
+**********************************************
 
 This builds and deploys the Device Simulator Web Application to the S3 bucket created when setting up *Bifravst* in your AWS account.
 

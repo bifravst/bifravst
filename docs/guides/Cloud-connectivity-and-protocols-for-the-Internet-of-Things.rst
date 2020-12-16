@@ -1,6 +1,5 @@
-================================================================================
 Cloud connectivity and protocols for the Internet of Things
-================================================================================
+###########################################################
 
 This `Nordic Semiconductor Tech Webinar <https://www.nordicsemi.com/Events/Webinars>`_ should be interesting to everyone who wants to get an introduction to protocols to consider when developing a cellular IoT product.
 

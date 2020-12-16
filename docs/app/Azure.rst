@@ -1,20 +1,19 @@
-================================================================================
 Deploying to Azure
-================================================================================
+##################
 
 .. note::
 
     first make sure you have :ref:`set up the necessary AWS resources <azure-getting-started>` .
 
 Configure the react app
-================================================================================
+***********************
 
 The app needs to be configured to be able to run against your account.
 
 In this section we will create a file called ``.env.local`` which Create React App uses to make the settings in there available `as environment variables during build time <https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables>`_.
 
 Configure ids of your Azure resources
---------------------------------------------------------------------------------
+================================================================================
 
 The web app needs to know the ids of the AWS resources that were created during the set-up of the stack.
 Run this command in the ``bifravst-app`` directory to copy the output to a file called ``.env.local``.
@@ -24,7 +23,7 @@ Run this command in the ``bifravst-app`` directory to copy the output to a file 
     node ../bifravst-azure/cli react-config > .env.local
 
 Version string
---------------------------------------------------------------------------------
+================================================================================
 
 Run this command to provide the version to the app:
 
@@ -33,7 +32,7 @@ Run this command to provide the version to the app:
     echo REACT_APP_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)` >> .env.local
 
 Example ``.env.local``
---------------------------------------------------------------------------------
+================================================================================
 
 This is how the file would look like:
 
@@ -46,7 +45,7 @@ This is how the file would look like:
     REACT_APP_VERSION=v3.6.1
 
 Deploy the app
-================================================================================
+**************
 
 This builds and deploys the app to the Storage Account created when setting up *Bifravst* in your Azure account.
 
@@ -61,6 +60,6 @@ This builds and deploys the app to the Storage Account created when setting up *
 Afterwards you can open the domain name printed in ``APP_URL`` to view the web app.
 
 Registering a user
-================================================================================
+******************
 
 There are no predefined user accounts in the B2C Active Directory, so you need to register a new user.

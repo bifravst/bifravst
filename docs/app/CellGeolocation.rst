@@ -1,8 +1,7 @@
 .. _app-cellgeolocation:
 
-================================================================================
 Cell Geolocation
-================================================================================
+################
 
 Devices can be shown on the map based on the location of their cell, even without them having a GPS fix yet.
 This allows to location devices within a few kilometer radius.
@@ -11,7 +10,7 @@ Obviously for a cat this won't be very helpful, but in case of an tracking asset
 warehouses, ports, to know e.g. if a shipment has been arrived at its destination.
 
 Locating cells based on device data
-================================================================================
+***********************************
 
 .. figure:: https://github.com/bifravst/cell-geolocation-helpers/raw/saga/map.gif
    :alt: Calculating the location of a cell using device geo location data
@@ -23,7 +22,7 @@ GPS locations acquired by devices together with their cell information (cell id,
 In case there is no device geo location for the cell from your own devices, third-party services like `Unwired Labs`_ or `RXNetworks <https://rxnetworks.com/location.io#!RT-GNSS>`_ provide a database of cell geo locations.
 
 Unwired Labs API
-================================================================================
+****************
 
 The `Unwired Labs`_ geolocation API is a commercial third-party solution that provides an API for resolving cell information to a geo location.
 This is an optional feature which can be enabled.

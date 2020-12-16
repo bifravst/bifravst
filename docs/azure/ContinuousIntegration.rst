@@ -1,8 +1,7 @@
 .. _azure-continuous-integration:
 
-================================================================================
 Continuous Integration
-================================================================================
+######################
 
 .. note::
 
@@ -17,7 +16,7 @@ Since the BDD test above are purely testing based on the public API of the proje
 This also provides an easily grokable description of the available (and implemented) features, `in one folder <https://github.com/bifravst/azure/tree/saga/features>`_.
 
 Prepare your Azure Account
-================================================================================
+**************************
 
 .. warning::
 
@@ -25,7 +24,7 @@ Prepare your Azure Account
     If you know how to make the whole set-up process simpler, `please provide your input here! <https://github.com/bifravst/azure/issues/1>`_
 
 Create a new tenant (Azure Active Directory)
---------------------------------------------------------------------------------
+================================================================================
 
 In order to separate the CI test runs from the production resources, go to the `Azure Portal <https://portal.azure.com/>`_ and create a new Azure Active Directory tenant:
 
@@ -43,7 +42,7 @@ Note down the initial domain name you used:
     export TENANT_DOMAIN="<Primary domain>" # e.g. "bifravstci"
 
 Create subscription
---------------------------------------------------------------------------------
+================================================================================
 
 Go to the Subscriptions blade and create a new subscription for the CI tenant, this will make identifying costs for this purpose easier.
 
@@ -56,7 +55,7 @@ Note down the Subscription ID which you can find in the Subscriptions blade:
     export SUBSCRIPTION_ID="<Subscription ID>" # e.g. "1aae311f-12d6-419e-8c6b-ebcf3ec4ed15"
 
 Create another new tenant (Azure Active Directory B2C)
---------------------------------------------------------------------------------
+================================================================================
 
 Create a new Azure Active Directory B2C tenant, which is used as the identity management solution for the user accounts of the Bifravst instance.
 
@@ -76,7 +75,7 @@ Note down the initial domain name you used:
 Link this Azure AD B2C tenant to the subscription for CI by following `the Billing guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
 
 Create Azure Active Directory B2C application
-================================================================================
+*********************************************
 
 Follow the steps in the :ref:`Continous Deployment <azure-continuous-deployment>`  instructions to create a new App registration.
 
@@ -106,7 +105,7 @@ Create a new client secret for the App registration and note it down as
     export B2C_CLIENT_SECRET="<Client Secret Value>" # e.g. "12OzW72ie-U.vlmzik-eO5gX.x26jLTI6U"
 
 Deploy the solution
-================================================================================
+*******************
 
 Now drop into a shell and login:
 
@@ -175,7 +174,7 @@ Docker variant for publishing the functions (in case you get a ``Permission deni
         func azure functionapp publish ${APP_NAME:-bifravst}API --typescript
 
 Running during development
-================================================================================
+**************************
 
 .. code-block:: bash
 
@@ -189,7 +188,7 @@ Running during development
     Azure functions only allow one *Issuer Url* in the Active Directory authentication configuration, so you cannot interact with this instance both from the end-to-end tests **and** the web app because the user flow name differs (``B2C_1_developer`` for end-to-end tests and ``B2C_1_signup_signin`` for the web application) and it is part of the Issuer Url, e.g. ``https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer``.
 
 Set up on GitHub
-================================================================================
+****************
 
 Provide these environment variables for GitHub Actions of the project you noted down earlier:
 

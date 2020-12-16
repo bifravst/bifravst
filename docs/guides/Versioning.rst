@@ -1,6 +1,5 @@
-================================================================================
 Versioning
-================================================================================
+##########
 
 We use `semantic-release <https://github.com/semantic-release/semantic-release>`_ to automatically determine the next version of a project **and** publish a release in the GitHub project as well as release it to our `npm organization <https://www.npmjs.com/settings/bifravst/packages>`_.
 
@@ -18,7 +17,7 @@ They must follow `the Angular commit message rules <https://github.com/semantic-
 .. _guides-versionining-how-to-release-a-new-version-of-a-package:
 
 How to release a new version of a package
-================================================================================
+*****************************************
 
 Let's assume we have a library, which has the npm version ``2.3.4``.
 
@@ -54,7 +53,7 @@ Breaking Release:
     Note that **any other** commit message format **will not trigger** a release.
 
 Patch release (``fix``) ``2.3.4 -> 2.3.5`` 🐞
---------------------------------------------------------------------------------
+================================================================================
 
 .. note::
 
@@ -76,7 +75,7 @@ You can optionally add a scope, which is a lowercase string used to identify the
 Scopes are useful when the project is rather big.
 
 Feature release (``feat``) ``2.3.4 -> 2.4.0`` 🚀
---------------------------------------------------------------------------------
+================================================================================
 
 .. note::
 
@@ -92,7 +91,7 @@ To release a feature (which will update the version from ``2.3.4`` to ``2.4.0``,
 You can optionally add a scope as well.
 
 Breaking Release (``BREAKING CHANGE:``) ``2.3.4 -> 3.0.0`` 🚨
---------------------------------------------------------------------------------
+================================================================================
 
 .. note::
 
@@ -115,21 +114,21 @@ You can optionally add a scope as well.
 Not that in the case of a breaking release the message type (here ``refactor``) can be any valid type.
 
 Typical changes
-================================================================================
+***************
 
 Updated dependencies
---------------------------------------------------------------------------------
+================================================================================
 
 If you are manually updating dependencies in a library, you should commit the change as a fix, so that consumers are also using the updated dependencies.
 
 Refactoring
---------------------------------------------------------------------------------
+================================================================================
 
 If you do a pure refactoring of a library without changing the features and the public API **but** want to use the refactored version in your consumers, commit the refactoring as a feature.
 After all, you are improving the library which qualifies as a feature, e.g. it could be a performance-improvement.
 
 How releases are published
-================================================================================
+**************************
 
 After you have pushed your changes to the remote repository, a job will be run on the CI runner.
 If the job completes successfully (e.g. if all tests pass and the linter does not report any errors), ``semantic-release`` will determine the next version to be released.

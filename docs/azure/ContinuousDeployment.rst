@@ -1,13 +1,12 @@
 .. _azure-continuous-deployment:
 
-================================================================================
 Continuous Deployment
-================================================================================
+#####################
 
 Continuous Deployment should be deployed with a dedicated subscription to have clear control over permissions and costs.
 
 Create a subscription for Bifravst
-================================================================================
+**********************************
 
 #.  Go to the *Subscriptions* blade and add a new subscription for Bifravst and name it *Bifravst [CD]*.
 #.  After the subscription has been created navigate again to the *Subscriptions* blade and copy the subscription id of the newly created subscription:
@@ -17,7 +16,7 @@ Create a subscription for Bifravst
         export SUBSCRIPTION_ID="<subscription id>"
 
 Create an Azure Active Directory B2C
-================================================================================
+************************************
 
 .. note::
 
@@ -123,7 +122,7 @@ Create an Azure Active Directory B2C
             Function App Settings
 
 Acquire credentials for the CI runner
-================================================================================
+*************************************
 
 Now drop into a shell and login:
 
