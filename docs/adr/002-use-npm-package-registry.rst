@@ -1,6 +1,5 @@
-================================================================================
 2. Use NPM registry
-================================================================================
+###################
 
 In March 2020, `GitHub acquired NPM <https://github.blog/2020-03-16-npm-is-joining-github/>`_ and will keep it operational as a registry for public JavaScript packages, so as of now packages can be moved back to NPM.
 

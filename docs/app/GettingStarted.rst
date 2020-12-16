@@ -1,16 +1,15 @@
-================================================================================
 Getting started
-================================================================================
+###############
 
 System requirements
-================================================================================
+*******************
 
 You need a development environment with the `upcoming LTS release candidate of Node.js <https://nodejs.org/en/about/releases/>`_ (current release is version 14).
 
 If you are using Windows, we recommend using the `Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ with `Ubuntu 18.04 LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
 
 Clone the project and install dependencies
-================================================================================
+******************************************
 
 Clone the latest version of the `app <https://github.com/bifravst/app>`_ project and install the dependencies:
 

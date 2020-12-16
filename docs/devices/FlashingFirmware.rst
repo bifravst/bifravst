@@ -1,11 +1,10 @@
 .. _devices-flashing-firmware:
 
-================================================================================
 Flashing the latest firmware for your device
-================================================================================
+############################################
 
 Configure and build the firmware
-================================================================================
+********************************
 
 .. note::
     Removing this step is planned (see `this issue <https://github.com/bifravst/firmware/issues/12>`_), so that at some point we can provide you with pre-built HEX files for all supported devices, which we currently publish in the `GitHub releases <https://github.com/bifravst/firmware/releases>`_ for the firmware project.
@@ -28,12 +27,12 @@ You can find the endpoint for your installation through the CLI:
     node cli info -o mqttEndpoint
 
 Build
---------------------------------------------------------------------------------
+================================================================================
 
 Follow the instructions on :ref:`how to build <firmware-building>`  the HEX file for your board.
 
 Flash using the *Programmer*
-================================================================================
+****************************
 
 Flash the HEX file for your board using the *Programmer* of the `nRF Connect for Desktop <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop>`_ app.
 
@@ -50,7 +49,7 @@ Drag and Drop it (or select via *Add HEX file*), click *Erase & Write* and wait 
    nRF Connect for Desktop Programmer
 
 Flash using ``nrfjprog``
-================================================================================
+************************
 
 .. note::
 

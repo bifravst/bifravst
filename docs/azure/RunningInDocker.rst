@@ -1,6 +1,5 @@
-================================================================================
 Running the app locally with Docker
-================================================================================
+###################################
 
 In case your system has a different Node.js version you can run the app locally `in a Docker container <https://hub.docker.com/r/bifravst/azure-dev>`_.
 

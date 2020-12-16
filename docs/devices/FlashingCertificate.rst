@@ -1,11 +1,10 @@
 .. _devices-flashing-certificate:
 
-================================================================================
 Flashing the certificate
-================================================================================
+########################
 
 Generating a certificate
-================================================================================
+************************
 
 Use the CLI to generate a certificate for your device.
 The firmware will use the IMEI of the device as the MQTT client ID.
@@ -24,7 +23,7 @@ Use the IMEI when generating the certificate:
     node cli create-device-cert -d "<imei>"
 
 Flashing using the CLI
-================================================================================
+**********************
 
 .. note::
 
@@ -38,7 +37,7 @@ This will also download the latest firmware from the `Firmware's GitHub releases
     node cli flash "<imei>"
 
 Flashing using nRF Connect for Desktop
-================================================================================
+**************************************
 
 You can use the ``certificates/device-<deviceId>.json`` file with the *Certificate Manager* in the `nRF Connect for Desktop <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop>`_ app *LTE Link Monitor* to flash certificate onto the device.
 

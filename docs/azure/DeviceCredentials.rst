@@ -1,8 +1,7 @@
 .. _azure-device-credentials:
 
-================================================================================
 Device Credentials
-================================================================================
+##################
 
 On Azure devices connect to IoT Hub using `TLS version 1.2 <https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment>`_ and Elliptic Curve Cryptography (ECC) based certificates.
 
@@ -17,7 +16,7 @@ If the intermediate CA certificate is compromised, it can be deactivated so new 
 Devices that previously connected to the IoT Hub, will keep working.
 
 Device Provisioning Service (DPS)
-================================================================================
+*********************************
 
 Devices connect to IoT Hub using the Device Provisioning Service (DPS).
 This allows to better manage roaming devices.
@@ -25,7 +24,7 @@ However this requires an extra connection step: first connect to DPS to retrieve
 This is a one-time op, and the device can cache its associated IoT Hub endpoint.
 
 Create a CA root certificate
-================================================================================
+****************************
 
 .. note::
 
@@ -51,7 +50,7 @@ Proof your ownership of the CA with
     If you see the error *"A required certificate is not within its validity period when verifying against the current system clock or the timestamp in the signed file."* double check that your system's clock is correct, if it is set to a future time, this will be the cause of this error.
 
 Create a CA intermediate certificate
-================================================================================
+************************************
 
 This creates a CA intermediate certificate and creates an enrollment group for it.
 
@@ -63,7 +62,7 @@ The CA intermediate certificate is the one to be shared with the factory.
 Over time you will have multiple intermediate certificates.
 
 Create a device certificate
-================================================================================
+***************************
 
 Run this script to generate a certificate for a new device:
 

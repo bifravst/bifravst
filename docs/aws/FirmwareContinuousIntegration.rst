@@ -1,8 +1,7 @@
 .. _aws-firmware-ci:
 
-================================================================================
 Continuous Integration of Firmware
-================================================================================
+##################################
 
 .. note::
 
@@ -10,7 +9,7 @@ Continuous Integration of Firmware
     test the firmware build on real hardware.
 
 Overview
-================================================================================
+********
 
 Every commit to the `firmware <https://github.com/bifravst/firmware>`_
 repo will trigger a CI run on GitHub Actions.
@@ -38,7 +37,7 @@ The `Firmware CI runner`_ is running on a Raspberry Pi connected to AWS IoT wher
     The development model is also that firmware and cloud backend are development independently so there is limited value in running a test for a specific combination of cloud backend and firmware.
 
 Preparation
-================================================================================
+***********
 
 The purpose of end-to-end testing is ensure that the firmware is communicating correctly with Bifravst, therefore a test environment is also needed.
 During test runs, a device certificate will be created and passed alongside the firmware hexfile to the CI runner.
@@ -88,7 +87,7 @@ You can delete a device using this command:
     node cli firmware-ci -r "<deviceId>"
 
 CI Runner
-================================================================================
+*********
 
 #.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform.
     Use the path to the folder (e.g. ``~/JLink_Linux_V686_arm64/``) further down.

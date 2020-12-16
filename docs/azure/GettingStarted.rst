@@ -1,8 +1,7 @@
 .. _azure-getting-started:
 
-================================================================================
 Getting started
-================================================================================
+###############
 
 .. note::
 
@@ -10,14 +9,14 @@ Getting started
     However, `there is a free tier for new accounts <https://azure.microsoft.com/en-us/pricing/details/cosmos-db/>`_, which you might be eligible for.
 
 System requirements
-================================================================================
+*******************
 
 You need a development environment with the `upcoming LTS release candidate of Node.js <https://nodejs.org/en/about/releases/>`_ (current release is version 14).
 
 If you are using Windows, we recommend using the `Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ with `Ubuntu 18.04 LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
 
 Clone the project and install dependencies
-================================================================================
+******************************************
 
 Clone the latest version of the `azure <https://github.com/bifravst/azure>`_ project and install the dependencies:
 
@@ -29,7 +28,7 @@ Clone the latest version of the `azure <https://github.com/bifravst/azure>`_ pro
     npx tsc
 
 Install the Azure CLI
-================================================================================
+*********************
 
 Follow the instructions from the `Azure CLI documentation <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>`_ in order to install the CLI.
 
@@ -40,7 +39,7 @@ Afterwards you should be able to execute the ``az`` command:
     az
 
 Dockerizing the ``az`` command
---------------------------------------------------------------------------------
+================================================================================
 
 In case you encounter the issue where the azure CLI `requires an older Python version <https://github.com/Azure/azure-cli/issues/11239>`_, you can *dockerize* it like this:
 
@@ -57,7 +56,7 @@ In case you encounter the issue where the azure CLI `requires an older Python ve
 Put above into an executable file in your path.
 
 Install the Azure Functions Core Tools
-================================================================================
+**************************************
 
 Follow `the installation instructions <https://github.com/Azure/azure-functions-core-tools#installing>`_, afterwards you should be able to execute the ``func`` command:
 
@@ -66,7 +65,7 @@ Follow `the installation instructions <https://github.com/Azure/azure-functions-
     func
 
 Deploy the solution to your account
-================================================================================
+***********************************
 
 .. note::
 

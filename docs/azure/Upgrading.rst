@@ -1,6 +1,5 @@
-================================================================================
 Upgrading an existing installation
-================================================================================
+##################################
 
 If you already have an installation and you want to upgrade to the latest release, follow these steps.
 
@@ -29,7 +28,7 @@ Docker variant (in case you get a ``Permission denied.`` error):
         func azure functionapp publish ${APP_NAME:-bifravst}API --typescript
 
 Tip
-================================================================================
+***
 
 You can verify the validity of a template using
 

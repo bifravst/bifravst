@@ -1,8 +1,7 @@
 .. _firmware-building:
 
-================================================================================
 Building using your local system
-================================================================================
+################################
 
 .. note::
 
@@ -10,7 +9,7 @@ Building using your local system
     It is recommend to check out the alternative of using :ref:`Docker <firmware-building-docker>`  or use a :ref:`CI Runner <firmware-building-github-actions>` .
 
 Prepare your system
-================================================================================
+*******************
 
 .. note::
 
@@ -20,7 +19,7 @@ Follow the `Getting Started Guide <http://developer.nordicsemi.com/nRF_Connect_S
 Especially make sure to follow the instructions on _Installing the *nRF Connect SDK*.
 
 Clone the project and install dependencies
-================================================================================
+******************************************
 
 Create a folder, e.g. ``ncs`` and init the project:
 
@@ -38,25 +37,25 @@ Create a folder, e.g. ``ncs`` and init the project:
     source zephyr/zephyr-env.sh
 
 Building
-================================================================================
+********
 
 Then build the actual application: change to the ``./ncs/firmware`` directory and build for your board:
 
 Thingy:91 (``PCA20035``)
---------------------------------------------------------------------------------
+================================================================================
 
 .. code-block:: bash
 
     west build -p always -b thingy91_nrf9160ns
 
 nRF9160 DK (``PCA10090``)
---------------------------------------------------------------------------------
+================================================================================
 
 .. code-block:: bash
 
     west build -p always -b nrf9160_pca10090ns
 
 Location of the HEX file
-================================================================================
+************************
 
 The built HEX file will be located in ``ncs/firmware/build/zephyr/merged.hex``.

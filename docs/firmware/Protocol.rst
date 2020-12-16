@@ -1,9 +1,8 @@
-================================================================================
 Device-Cloud-Protocol
-================================================================================
+#####################
 
 Preface
-================================================================================
+*******
 
 This document will provide a general introduction in the way devices communication with the cloud in the Bifravst project.
 *Communication* is the most important aspect to optimize for when developing an ultra-low-power product because initiating and maintaining network connection is relatively expensive compared to other device operations (for example reading a sensor value).
@@ -11,26 +10,26 @@ It is therefore recommended to invest a reasonable amount of time to revisit the
 The more the modem-uptime can be reduced and the smaller the total transferred amount if data becomes, the longer will your battery and your data contingent last.
 
 NB-IoT as the cellular connection
-================================================================================
+*********************************
 
 The firmware is configured to operate in NB-IoT mode to connect to the cellular network (albeit using TLS over TCP which is most likely not available in other NB-IoT networks outside of Norway).
 
 MQTT as transport protocol
-================================================================================
+**************************
 
 Bifravst uses MQTT to connect the device to the cloud provider.
 
 The MQTT client ID defaults to the IMEI of the device.
 
 JSON as a data format
-================================================================================
+*********************
 
 Bifravst uses JSON to represent all transferred data.
 If offers very good support in tooling and is human readable.
 Especially during development its verbosity is valuable.
 
 Possible Optimizations
---------------------------------------------------------------------------------
+================================================================================
 
 As a data- and power-optimization technique it is recommended to look into denser data protocols, especially since the majority of IoT applications (like in the Cat Tracker example) will always send data in the same structure, only the values change.
 
@@ -60,7 +59,7 @@ See also: `RION Performance Benchmarks <http://tutorials.jenkov.com/rion/rion-pe
 `FlatBuffers <https://google.github.io/flatbuffers/>`_ seems like the best candidate for a resource constraint device like the 9160.
 
 The four kinds of data
-================================================================================
+**********************
 
 .. note::
 
@@ -72,7 +71,7 @@ The four kinds of data
     Data Protocols
 
 1. Device State
---------------------------------------------------------------------------------
+================================================================================
 
 The Cat Tracker example needs to communicate with the cloud in order to send position updates and information about it's health, first an foremost is the battery level a critical health indicator.
 This data is considered the **device state**.
@@ -93,7 +92,7 @@ If there is no longer movement detected, the modem will be turned off and the ap
 The passive mode is designed to conserve as much energy as possible, nevertheless we want the device to once in a while send an update, so we know about its battery condition and in case the motion sensor stops working properly.
 
 2. Device Configuration
---------------------------------------------------------------------------------
+================================================================================
 
 Optimizing this behavior takes time and while the devices are in the field sending firmware upgrades for every change (more about that later) will be expensive.
 We observe firmware sizes of around 500 KB which will, even when compressed, be expensive because it will take a device some time to download and apply the upgrade, not to mention the costs for transferring the firmware upgrade over the cellular network.
@@ -114,7 +113,7 @@ The implementation of the *digital twin* then will take care of sending only the
 .. _firmware-protocol-timestamping:
 
 Timestamping
---------------------------------------------------------------------------------
+================================================================================
 
 Device **state** and **configuration** are timeless datum, they apply always and absolutely.
 The device sends a GPS position over the cellular connection and the digital twin is updated, we now know where the device is *now*.
@@ -144,7 +143,7 @@ Once theses measurements are about to be sent (in which case there is a cellular
 This way all data is sent with precise timestamps to the cloud where the device time is used when visualizing data to accurately reflect *when* the datum was created.
 
 3. Past State
---------------------------------------------------------------------------------
+================================================================================
 
 Imagine a reindeer tracker which tracks the position of a herd.
 If position updates are only collected when a cellular connection can be established there will be an interesting observation: the reindeers are only walking along ridges, but never in valleys.
@@ -165,7 +164,7 @@ A simple approach is to use a ring buffer that stores the latest messages and wi
     They should have built-in decision rules and must not depend on an answer from a cloud backend to provide the action to execute based on the current condition.
 
 4. Firmware Upgrades (FOTA)
---------------------------------------------------------------------------------
+================================================================================
 
 Arguably a firmware upgrade *over the air* (FOTA) can be seen as configuration, however the size of a typical firmware image (500KB) is 2-3 magnitudes larger than a control message.
 Therefore it can be beneficial to treat it differently.
@@ -175,7 +174,7 @@ The download itself is done out of band not using MQTT but HTTP(s) to reduce ove
 Firmware upgrades are so large compared to other messages that the device may suspend all other operation until the firmware upgrade has been applied to conserve resources.
 
 Summary
-================================================================================
+*******
 
 *Bifravst* aims to provide robust reference implementations for these four kinds of device data.
 While the concrete implementation will differ per cloud provider, the general building blocks (state, configuration, batched past state, firmware upgrades) will be the same.

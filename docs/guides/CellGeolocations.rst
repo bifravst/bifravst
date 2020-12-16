@@ -1,6 +1,5 @@
-================================================================================
 Cell Geolocations
-================================================================================
+#################
 
 Locating a device is an important aspect of any IoT solution.
 In case of the Cat Tracker, it's one of the primary functions. But acquiring a GPS fix is sometimes not possible, e.g. when the device is indoors.
@@ -18,7 +17,7 @@ For example the Cat Tracker has no feature that depends on a location, it will o
     Since it is much more efficient to resolve cell geolocations on the cloud it's the cloud backends responsibility.
 
 Assisted GPS (AGPS)
-================================================================================
+*******************
 
 The only *location-dependend* feature on the Cat Tracker is AGPS, which tremendously speeds of the time to acquire the first GPS fix (seconds instead of minutes). 
 But there is no need to have complex location triangulation based on mobile network cells or WiFi MAC Addresses, it is sufficient to have an up-to-date `GPS almanac <https://en.wikipedia.org/wiki/GPS_signals#Almanac>`_ and know the rough location on the globe, which is provided by the mobile network operators country code.
@@ -29,14 +28,14 @@ This is sufficient to provide the GPS module with the data it needs for a quick 
     `AGPS is currently not implemented in the Cat Tracker Firmware <https://github.com/bifravst/firmware/issues/8>`_.
 
 Geolocating cells
-================================================================================
+*****************
 
 As mentioned above, on the UI the user is interested to know *where* the device is as soon as possible, even an approximate location can be sufficient: depending on the tracked subject, a few hundred meters accuracy may be enough.
 And an approximate position is always better then no location information at all (if the device is unable to acquire a GPS fix).
 Therefore it is beneficial to geolocate the current mobile network cell.
 
 Geolocating cells using other devices
---------------------------------------------------------------------------------
+================================================================================
 
 Resolving the cell location on the cloud backend has unique advantages over resolving it on the device: it removes the firmware image size and memory usage and it can leverage other devices past GPS fixes.
 If many devices are closely located it saves a lot of resource because a cell's geolocation only needs to be resolved once and then can be made available to all device.
@@ -50,7 +49,7 @@ It is used as the primary mean of geolocation cells in Bifravst.
 Only if a cell has not previously been geolocated by a device will the third-party API be called, **if it is enabled**.
 
 Geolocating cells using third-party APIs
---------------------------------------------------------------------------------
+================================================================================
 
 Third-party APIs and services like `UnwiredLabs <https://unwiredlabs.com/>`_ and `CellMapper <https://www.cellmapper.net/>`_ have a database of cell tower locations and provide an API to query against them.
 Bifravst implements the optional resolution on the cloud side using *UnwiredLabs* on :ref:`AWS <aws-unwired-labs-api>`  for cell that have not been geolocation by devices.

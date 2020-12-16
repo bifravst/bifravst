@@ -1,6 +1,5 @@
-================================================================================
 Using Azure AD B2C to secure your Azure Functions Apps
-================================================================================
+######################################################
 
 Manual Guide by `Saurabh Sharma <https://docs.microsoft.com/answers/answers/40449/view.html>`_.
 
