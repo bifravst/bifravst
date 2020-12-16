@@ -7,7 +7,7 @@ Running the simulator
 
 The CLI provides a software implementation of a Cat Tracker for *testing purposes*:
 it allows to verify that the cloud configuration works, and this features is
-also used for testing Bifravst using `Continuous Integration <../ContinuousIntegration.html>`_.
+also used for testing Bifravst using :ref:`Continuous Integration <azure-continuous-integration>` .
 
 You can create certificates for a simulated device using:
 
@@ -25,7 +25,7 @@ this command:
 .. note::
 
     The device simulator will print a link to the Device Simulator Web Application. In
-    order for it to work, either `Continuous Deployment <./ContinuousDeployment.html>`_
+    order for it to work, either :ref:`Continuous Deployment <azure-continuous-deployment>` 
     needs to be enabled, or it has to be manually deployed (see below).
 
 Using the Device Simulator Web Application

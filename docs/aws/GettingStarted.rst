@@ -1,4 +1,4 @@
-.. _getting_started_aws:
+.. _aws-getting-started:
 
 Getting started
 ###############
@@ -114,4 +114,4 @@ However, this step is not mandatory, and you can skip it by using the following 
 Next steps
 **********
 
-You can now `deploy the web application <../app/AWS.html>`_ and :ref:`provision credentials to your devices <device_cred>`.
+You can now :ref:`deploy the web application <app-aws>`  and :ref:`provision credentials to your devices <aws-device-credentials>`.

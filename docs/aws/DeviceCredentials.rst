@@ -1,4 +1,4 @@
-.. _device_cred:
+.. _aws-device-credentials:
 
 Device credentials
 ##################

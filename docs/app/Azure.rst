@@ -5,7 +5,7 @@ Deploying to Azure
 .. note::
 
     first make sure you have
-    `set up the necessary AWS resources <../azure/GettingStarted.html>`_.
+    :ref:`set up the necessary AWS resources <azure-getting-started>` .
 
 Configure the react app
 ================================================================================

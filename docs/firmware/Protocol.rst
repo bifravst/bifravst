@@ -170,6 +170,8 @@ to the device (all changes since the device did last request its
 configuration are combined into one change) thus also minimizing the
 amount of data which needs to be transferred to the device.
 
+.. _firmware-protocol-timestamping:
+
 Timestamping
 --------------------------------------------------------------------------------
 

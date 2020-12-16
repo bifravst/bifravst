@@ -90,5 +90,5 @@ Third-party APIs and services like
 `CellMapper <https://www.cellmapper.net/>`_ have a database of cell
 tower locations and provide an API to query against them. Bifravst
 implements the optional resolution on the cloud side using
-*UnwiredLabs* on `AWS <../aws/CellGeolocation.html>`_ for cell that
+*UnwiredLabs* on :ref:`AWS <aws-unwired-labs-api>`  for cell that
 have not been geolocation by devices.

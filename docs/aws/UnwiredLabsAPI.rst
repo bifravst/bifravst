@@ -1,9 +1,9 @@
-.. _unwired_labs_api:
+.. _aws-unwired-labs-api:
 
 Unwired Labs API
 ################
 
-You can enable the `cell geolocation lookup <../app/CellGeolocation.html>`_ for the app using `Unwired Labs <https://unwiredlabs.com/>`_ geolocation API in your deployment.
+You can enable the :ref:`cell geolocation lookup <app-cellgeolocation>`  for the app using `Unwired Labs <https://unwiredlabs.com/>`_ geolocation API in your deployment.
 
 To use `Unwired Labs`_ geolocation API, store your API key as an SSM parameter and re-deploy the stack as shown below:
 

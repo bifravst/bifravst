@@ -1,4 +1,4 @@
-.. _continuous_integration:
+.. _aws-continuous-integration:
 
 Continuous integration
 ######################

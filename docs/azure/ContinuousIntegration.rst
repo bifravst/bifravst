@@ -1,3 +1,5 @@
+.. _azure-continuous-integration:
+
 ================================================================================
 Continuous Integration
 ================================================================================
@@ -34,7 +36,7 @@ Prepare your Azure Account
 .. warning::
 
     Compared to the
-    `AWS continuous integration setup <../aws/ContinuousIntegration.html>`_
+    :ref:`AWS continuous integration setup <aws-continuous-integration>` 
     getting it to work on Azure is immensely more complicated and involves many
     manual steps, which unfortunately cannot be automated. If you know how to
     make the whole set-up process simpler,
@@ -106,7 +108,7 @@ Create Azure Active Directory B2C application
 ================================================================================
 
 Follow the steps in the
-`Continous Deployment <./ContinuousDeployment.html>`_ instructions to create a
+:ref:`Continous Deployment <azure-continuous-deployment>`  instructions to create a
 new App registration.
 
 -   Name: Bifravst Web App

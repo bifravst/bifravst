@@ -1,4 +1,4 @@
-.. _continuous_dep:
+.. _aws-continuous-deployment:
 
 Continuous deployment
 #####################

@@ -118,9 +118,7 @@ Timestamping
 ================================================================================
 
 All the data published to the cloud are timestamped in sample time UTC.
-For more information about how timestamping is carried out in the cat
-tracker firmware see
-`Protocol <./Protocol.html#timestamping>`_ in the handbook.
+For more information about how timestamping is carried out in the cat tracker firmware see :ref:`Protocol <firmware-protocol-timestamping>` in the handbook.
 
 Default configurations
 ================================================================================
