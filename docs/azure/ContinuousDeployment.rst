@@ -1,3 +1,5 @@
+.. _azure-continuous-deployment:
+
 ================================================================================
 Continuous Deployment
 ================================================================================
@@ -198,5 +200,5 @@ and add these secrets.
 
 Now trigger a deploy.
 
-You can now `create device credentials <./DeviceCredentials.html>`_ for
+You can now :ref:`create device credentials <azure-device-credentials>`  for
 this environment.

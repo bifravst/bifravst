@@ -25,6 +25,8 @@ messages against these rules.
 
     Only the published package on npm will contain the correct version number.
 
+.. _guides-versionining-how-to-release-a-new-version-of-a-package:
+
 How to release a new version of a package
 ================================================================================
 

@@ -13,10 +13,10 @@ release, follow these steps.
 Publishing the upgrade to AWS
 ================================================================================
 
-Now follow the `same steps <./AWS.html>`_ as with the first installation.
+Now follow the :ref:`same steps <aws-getting-started>`  as with the first installation.
 
 Continuously deploy upgrades
 --------------------------------------------------------------------------------
 
 If you want to automate this proces, follow
-`these instructions <../aws/ContinuousDeployment.html>`_.
+:ref:`these instructions <aws-continuous-deployment>` .

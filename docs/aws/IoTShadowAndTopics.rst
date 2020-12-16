@@ -1,4 +1,4 @@
-.. _awsiot_shadowtopics:
+.. _aws-iot-shadow-topics:
 
 AWS IoT Shadow and Topics
 #########################

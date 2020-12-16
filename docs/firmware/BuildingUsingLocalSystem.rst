@@ -1,3 +1,5 @@
+.. _firmware-building:
+
 ================================================================================
 Building using your local system
 ================================================================================
@@ -6,7 +8,7 @@ Building using your local system
 
     Getting your system to the required state to build firmware
     is cumbersome. It is recommend to check out the alternative of using
-    `Docker <./BuildingUsingDocker.html>`_ or use a `CI Runner <./BuildingUsingGitHub.html>`_.
+    :ref:`Docker <firmware-building-docker>`  or use a :ref:`CI Runner <firmware-building-github-actions>` .
 
 Prepare your system
 ================================================================================

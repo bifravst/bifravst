@@ -1,3 +1,5 @@
+.. _aws-firmware-ci:
+
 ================================================================================
 Continuous Integration of Firmware
 ================================================================================
@@ -62,7 +64,7 @@ AWS IoT jobs to communication with the Firmware CI runner.
     It's recommended to use a separate account for CI purposes.
 
 Set up a test instance of Bifravst with the Firmware CI resources in the
-CI account (see `Getting Started <./GettingStarted.html>`_).
+CI account (see :ref:`Getting Started <aws-getting-started>` ).
 
 .. code-block:: bash
 
@@ -71,7 +73,7 @@ CI account (see `Getting Started <./GettingStarted.html>`_).
     # Do not deploy the web apps
     npx cdk deploy '*' -c firmware-ci=1 -c webapp=0 -c deviceui=0
 
-You should also enable `Continuous Deployment <./ContinuousDeployment.html>`_ 
+You should also enable :ref:`Continuous Deployment <aws-continuous-deployment>`  
 for the test instance so it's kept in sync with the development.
 
 .. code-block:: bash

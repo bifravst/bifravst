@@ -1,3 +1,5 @@
+.. _devices-flashing-firmware:
+
 ================================================================================
 Flashing the latest firmware for your device
 ================================================================================
@@ -14,7 +16,7 @@ Configure and build the firmware
     firmware project.
     How the HEX files are automatically built for
     every commit to the GitHub project is explained
-    `here <../guides/AutomateHEXFileBuilding.html>`_.
+    :ref:`here <guides-automate-hexfile-building>` .
 
 In order to connect the cloud using the Cat Tracker firmware, it needs
 to be build needs to be build to include the MQTT endpoint for your
@@ -42,7 +44,7 @@ You can find the endpoint for your installation through the CLI:
 Build
 --------------------------------------------------------------------------------
 
-Follow the instructions on `how to build <../firmware/Building.html>`_ the
+Follow the instructions on :ref:`how to build <firmware-building>`  the
 HEX file for your board.
 
 Flash using the *Programmer*

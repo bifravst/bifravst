@@ -1,3 +1,5 @@
+.. _app-aws:
+
 ================================================================================
 Deploying to AWS
 ================================================================================
@@ -5,7 +7,7 @@ Deploying to AWS
 .. note::
 
     first make sure you have
-    `set up the necessary AWS resources <../aws/GettingStarted.html>`_.
+    :ref:`set up the necessary AWS resources <aws-getting-started>` .
 
 Configure the react app
 ================================================================================

@@ -1,3 +1,5 @@
+.. _guides-automate-hexfile-building:
+
 ================================================================================
 Automate building of HEX files for your nRF Connect SDK application
 ================================================================================
@@ -58,11 +60,7 @@ Actions <https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-
 which automatically builds HEX files and attaches them to the GitHub
 release.
 
-Following this example, all developers need to do format their commit
-messages following a certain schema (you can read more in detail about
-this process
-`here <./Versioning.html#how-to-release-a-new-version-of-a-package>`_
-to trigger a new release.
+Following this example, all developers need to do format their commit messages following a certain schema (you can read more in detail about this process :ref:`here <guides-versionining-how-to-release-a-new-version-of-a-package>` to trigger a new release.
 
 .. figure:: ./images/github-releases.png
 

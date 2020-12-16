@@ -6,6 +6,8 @@ The Cat Tracker Firmware is a reference application developed using the
 `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_. The source code for
 the Cat Tracker application is available `here <https://github.com/bifravst/firmware>`_.
 
+.. _firmware-supported-boards:
+
 The Cat Tracker firmware was developed and tested with these boards:
 ================================================================================
 

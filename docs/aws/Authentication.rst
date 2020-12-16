@@ -3,7 +3,7 @@
 Authentication
 ##############
 
-The `Cat Tracker Web Application <../app/AWS.html>`_ on AWS connects to the `AWS IoT broker <https://docs.aws.amazon.com/iot/latest/developerguide/iot-connect-devices.html>`_ using WebSockets, and the authentication is done through `AWS Cognito <https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html>`_.
+The :ref:`Cat Tracker Web Application <app-aws>`  on AWS connects to the `AWS IoT broker <https://docs.aws.amazon.com/iot/latest/developerguide/iot-connect-devices.html>`_ using WebSockets, and the authentication is done through `AWS Cognito <https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html>`_.
 
 See the AWS documentation on `Amazon Cognito identities <https://docs.aws.amazon.com/iot/latest/developerguide/cognito-identities.html>`_ and `Policies for HTTP and WebSocket clients <https://docs.aws.amazon.com/iot/latest/developerguide/pub-sub-policy.html#pub-sub-policy-cognito>`_ for more information.
 

@@ -1,3 +1,5 @@
+.. _app-cellgeolocation:
+
 ================================================================================
 Cell Geolocation
 ================================================================================
@@ -45,7 +47,7 @@ show that a range of 10 km and more is possible in certain conditions.
 
 Follow the configuration guide in the respective implementation to enable it:
 
-- `AWS <../aws/UnwiredLabsAPI.html>`_
-- `Azure <../azure/UnwiredLabsAPI.html>`_
+- :ref:`AWS <aws-unwired-labs-api>` 
+- :ref:`Azure <azure-unwired-labs-api>` 
 
 .. _Unwired Labs: https://unwiredlabs.com/

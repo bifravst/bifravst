@@ -4,7 +4,7 @@ Connect using the simulator
 ###########################
 
 The CLI provides a software implementation of Cat Tracker for *testing purposes*.
-It allows to verify that the cloud configuration works, and this feature is also used for testing Bifravst using :ref:`continuous_integration`.
+It allows to verify that the cloud configuration works, and this feature is also used for testing Bifravst using :ref:`aws-continuous-integration`.
 
 To connect to a device and control the device using the simulator, complete the following steps:
 
@@ -28,7 +28,7 @@ As the next step, you can run a simulated device using the generated certificate
 .. note::
 
    The device simulator will print a link to the Device Simulator Web Application.
-   For the link to work, either :ref:`continuous_dep` needs to be enabled, or it has to be manually deployed as described in :ref:`deploy_dev_sim_web_app`.
+   For the link to work, either :ref:`aws-continuous-deployment` needs to be enabled, or it has to be manually deployed as described in :ref:`deploy_dev_sim_web_app`.
 
 Using the Device Simulator Web Application
 ******************************************

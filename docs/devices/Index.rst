@@ -2,14 +2,14 @@
 Connect using a real device
 ================================================================================
 
-You can use any of the `supported boards <../firmware/SupportedBoards.html>`_ 
+You can use any of the :ref:`supported boards <firmware-supported-boards>`  
 to connect to your account.
 
 In order for the device to connect you need to:
 
-#.  `Upgrade the modem firmware <./UpgradeModem.html>`_
-#.  `Flash the certificate <./FlashingCertificate.html>`_
-#.  `Flash the application firmware <./FlashingFirmware.html>`_
+#.  :ref:`Upgrade the modem firmware <devices-upgrade-modem>` 
+#.  :ref:`Flash the certificate <devices-flashing-certificate>` 
+#.  :ref:`Flash the application firmware <devices-flashing-firmware>` 
 
 Documentation
 ================================================================================
