@@ -5,9 +5,7 @@ Firmware over the Air (FOTA)
 AWS
 ================================================================================
 
-Firmware over the Air on AWS are implemented using AWS IoT Jobs,
-following the Nordic
-`FOTA example <https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/aws_fota>`_.
+Firmware over the Air on AWS are implemented using AWS IoT Jobs, following the Nordic `FOTA example <https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/aws_fota>`_.
 
 See also
 ================================================================================

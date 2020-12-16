@@ -9,14 +9,10 @@ Building using Docker
     Read more about this aproach `here <https://github.com/coderbyheart/fw-nrfconnect-nrf-docker>`_.
 
 This is the simplest way to build the project on your local system.
-Install `Docker <https://www.docker.com/>`_ and use it to contain all
-dependencies in the image, without needing to install them in your
-system.
+Install `Docker <https://www.docker.com/>`_ and use it to contain all dependencies in the image, without needing to install them in your system.
 
-The docker image is not intended to be shared, but to simplify building
-locally. It is used to cache all dependencies so you can build and
-develop locally without needing to install dependencies directly in your
-system.
+The docker image is not intended to be shared, but to simplify building locally.
+It is used to cache all dependencies so you can build and develop locally without needing to install dependencies directly in your system.
 
 .. code-block:: bash
 
@@ -49,5 +45,4 @@ nRF9160 DK (``PCA10090``)
 Location of the HEX file
 ================================================================================
 
-The built HEX file will be located in
-``ncs/nrf/build/zephyr/merged.hex``.
+The built HEX file will be located in ``ncs/nrf/build/zephyr/merged.hex``.

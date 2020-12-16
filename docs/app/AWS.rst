@@ -6,25 +6,20 @@ Deploying to AWS
 
 .. note::
 
-    first make sure you have
-    :ref:`set up the necessary AWS resources <aws-getting-started>` .
+    first make sure you have :ref:`set up the necessary AWS resources <aws-getting-started>` .
 
 Configure the react app
 ================================================================================
 
 The app needs to be configured to be able to run against your account.
 
-In this section we will create a file called ``.env.local``
-which Create React App uses to make the settings in there available
-`as environment variables during build time <https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables>`_.
+In this section we will create a file called ``.env.local`` which Create React App uses to make the settings in there available `as environment variables during build time <https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables>`_.
 
 Configure ids of your AWS resources
 --------------------------------------------------------------------------------
 
-The web app needs to know the ids of the AWS resources that were created
-during the set-up of the stack. Run this command in the
-``bifravst-app`` directory to copy the output to a file called
-``.env.local``.
+The web app needs to know the ids of the AWS resources that were created during the set-up of the stack.
+Run this command in the ``bifravst-app`` directory to copy the output to a file called ``.env.local``.
 
 .. code-block:: bash
 
@@ -67,8 +62,7 @@ This is how the file would look like:
 Deploy the app
 ================================================================================
 
-This builds and deploys the app to the S3 bucket created when setting up
-*Bifravst* in your AWS account.
+This builds and deploys the app to the S3 bucket created when setting up *Bifravst* in your AWS account.
 
 .. code-block:: bash
 
@@ -82,14 +76,12 @@ This builds and deploys the app to the S3 bucket created when setting up
     $REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP --paths /,/index.html
     echo "Done. Now open https://$REACT_APP_WEB_APP_DOMAIN_NAME/ to view the web app."
 
-Afterwards you can open the domain name printed in
-``REACT_APP_WEB_APP_DOMAIN_NAME`` to view the web app.
+Afterwards you can open the domain name printed in ``REACT_APP_WEB_APP_DOMAIN_NAME`` to view the web app.
 
 Registering a user
 ================================================================================
 
-There are no predefined user accounts in the userpool, so you need to
-register a new user.
+There are no predefined user accounts in the userpool, so you need to register a new user.
 
 .. note::
 

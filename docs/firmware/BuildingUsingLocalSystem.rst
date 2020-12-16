@@ -6,24 +6,18 @@ Building using your local system
 
 .. note::
 
-    Getting your system to the required state to build firmware
-    is cumbersome. It is recommend to check out the alternative of using
-    :ref:`Docker <firmware-building-docker>`  or use a :ref:`CI Runner <firmware-building-github-actions>` .
+    Getting your system to the required state to build firmware is cumbersome.
+    It is recommend to check out the alternative of using :ref:`Docker <firmware-building-docker>`  or use a :ref:`CI Runner <firmware-building-github-actions>` .
 
 Prepare your system
 ================================================================================
 
 .. note::
 
-    You can always check out the
-    `GitHub Actions workflow <https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml>`_
-    as a reference, which sets up a blank Ubuntu image to build the firmware.
+    You can always check out the `GitHub Actions workflow <https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml>`_ as a reference, which sets up a blank Ubuntu image to build the firmware.
 
-Follow the
-`Getting Started Guide <http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html>`_
-of the Nordic Connect SDK to set up your system for building the
-project. Especially make sure to follow the instructions on _Installing
-the *nRF Connect SDK*.
+Follow the `Getting Started Guide <http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html>`_ of the Nordic Connect SDK to set up your system for building the project.
+Especially make sure to follow the instructions on _Installing the *nRF Connect SDK*.
 
 Clone the project and install dependencies
 ================================================================================
@@ -46,8 +40,7 @@ Create a folder, e.g. ``ncs`` and init the project:
 Building
 ================================================================================
 
-Then build the actual application: change to the
-``./ncs/firmware`` directory and build for your board:
+Then build the actual application: change to the ``./ncs/firmware`` directory and build for your board:
 
 Thingy:91 (``PCA20035``)
 --------------------------------------------------------------------------------
@@ -66,5 +59,4 @@ nRF9160 DK (``PCA10090``)
 Location of the HEX file
 ================================================================================
 
-The built HEX file will be located in
-``ncs/firmware/build/zephyr/merged.hex``.
+The built HEX file will be located in ``ncs/firmware/build/zephyr/merged.hex``.

@@ -89,12 +89,12 @@ Core principles
 
 * *Being offline is not an exception*
 
-  * Highly mobile cellular IoT products need to handle unreliable connections gracefully, by implementing mechanisms to retry the failed sending of data. This also means that the sensor measurements need to be timestamped when they are created, and not when they arrive at the cloud.
+  * Highly mobile cellular IoT products need to handle unreliable connections gracefully, by implementing mechanisms to retry the failed sending of data.
+    This also means that the sensor measurements need to be timestamped when they are created, and not when they arrive at the cloud.
 
 * *Maximize power saving*
 
   * The firmware examples should highlight power saving features of the nRF9160 DK because this is critical for developing very small form-factor devices.
-
 
 .. note::
 

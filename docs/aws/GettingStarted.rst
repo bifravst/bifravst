@@ -43,7 +43,8 @@ To set up Bifravst on AWS, you must first set up a new AWS account and provide t
 .. note::
 
    It is recommended to install these resources in a blank AWS account to clearly separate them from your other projects.
-   After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create a sub-account for Bifravst. You can have many sub-accounts, without extra costs.
+   After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create a sub-account for Bifravst.
+   You can have many sub-accounts, without extra costs.
 
 To setup a new AWS account and provide credentials, complete the following steps:
 
@@ -80,7 +81,8 @@ You must also confirm that you are deploying to a region that is supported.
 
 .. note::
 
-   Not all AWS features are available in all AWS regions. You will see a warning if you are deploying to a region that has not been tested and the AWS CDK might fail.
+   Not all AWS features are available in all AWS regions.
+   You will see a warning if you are deploying to a region that has not been tested and the AWS CDK might fail.
 
 The supported regions are listed below:
 

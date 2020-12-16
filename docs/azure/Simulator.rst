@@ -5,9 +5,7 @@ Connect using the simulator
 Running the simulator
 ================================================================================
 
-The CLI provides a software implementation of a Cat Tracker for *testing purposes*:
-it allows to verify that the cloud configuration works, and this features is
-also used for testing Bifravst using :ref:`Continuous Integration <azure-continuous-integration>` .
+The CLI provides a software implementation of a Cat Tracker for *testing purposes*: it allows to verify that the cloud configuration works, and this features is also used for testing Bifravst using :ref:`Continuous Integration <azure-continuous-integration>` .
 
 You can create certificates for a simulated device using:
 
@@ -15,8 +13,7 @@ You can create certificates for a simulated device using:
 
     node create-device-cert
 
-You can then run a simulated device using the generated certificate by running
-this command:
+You can then run a simulated device using the generated certificate by running this command:
 
 .. code-block:: bash
 
@@ -24,15 +21,13 @@ this command:
 
 .. note::
 
-    The device simulator will print a link to the Device Simulator Web Application. In
-    order for it to work, either :ref:`Continuous Deployment <azure-continuous-deployment>` 
-    needs to be enabled, or it has to be manually deployed (see below).
+    The device simulator will print a link to the Device Simulator Web Application.
+    In order for it to work, either :ref:`Continuous Deployment <azure-continuous-deployment>` needs to be enabled, or it has to be manually deployed (see below).
 
 Using the Device Simulator Web Application
 ================================================================================
 
-The device-ui_ provides a
-browser-based UI to control the simulated device.
+The device-ui_ provides a browser-based UI to control the simulated device.
 
 .. figure:: ../aws/device-simulator.png
    :alt: Device Simulator Web Application
@@ -42,9 +37,7 @@ browser-based UI to control the simulated device.
 Clone the project and install dependencies
 --------------------------------------------------------------------------------
 
-Clone the latest version of the
-device-ui_ project and
-install the dependencies:
+Clone the latest version of the device-ui_ project and install the dependencies:
 
 .. code-block:: bash
 
@@ -59,15 +52,12 @@ Run the Device Simulator Web Application
 
     npm run
 
-Then copy the connection string printed from ``node cli connect "<id of your device>"``
-(e.g. ``?endpoint=http%3A%2F%2Flocalhost%3A23719``) and append it to the
-browsers address: e.g. ``http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719``.
+Then copy the connection string printed from ``node cli connect "<id of your device>"`` (e.g. ``?endpoint=http%3A%2F%2Flocalhost%3A23719``) and append it to the browsers address: e.g. ``http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719``.
 
 Deploying the Device Simulator Web Application
 ================================================================================
 
-This builds and deploys the Device Simulator Web Application to the S3 bucket created
-when setting up *Bifravst* in your AWS account.
+This builds and deploys the Device Simulator Web Application to the S3 bucket created when setting up *Bifravst* in your AWS account.
 
 .. code-block:: bash
 
@@ -85,7 +75,6 @@ when setting up *Bifravst* in your AWS account.
 
     echo "Done. Now open $SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL to view the web app."
 
-Afterwards you can open the domain name printed in
-``SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL`` to view the Device Simulator Web Application.
+Afterwards you can open the domain name printed in ``SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL`` to view the Device Simulator Web Application.
 
 .. _device-ui: https://github.com/bifravst/device-ui

@@ -2,8 +2,7 @@
 Upgrading an existing installation
 ================================================================================
 
-If you already have an installation and you want to upgrade to the latest
-release, follow these steps.
+If you already have an installation and you want to upgrade to the latest release, follow these steps.
 
 .. code-block:: bash
 
@@ -18,5 +17,4 @@ Now follow the :ref:`same steps <aws-getting-started>`  as with the first instal
 Continuously deploy upgrades
 --------------------------------------------------------------------------------
 
-If you want to automate this proces, follow
-:ref:`these instructions <aws-continuous-deployment>` .
+If you want to automate this proces, follow :ref:`these instructions <aws-continuous-deployment>` .

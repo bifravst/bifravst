@@ -2,8 +2,7 @@
 Connect using a real device
 ================================================================================
 
-You can use any of the :ref:`supported boards <firmware-supported-boards>`  
-to connect to your account.
+You can use any of the :ref:`supported boards <firmware-supported-boards>` to connect to your account.
 
 In order for the device to connect you need to:
 
