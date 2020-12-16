@@ -45,8 +45,7 @@ Vision
    :alt: Bifravst: Cat Tracker IoT example
 
 *Bifravst* enables the developers to set up a real world IoT solution using the respective cloud provider and adapt the example firmware and software quickly for a specific use case.
-*Bifravst* aims to provide answers and recommend best practices to the following
-questions :
+*Bifravst* aims to provide answers and recommend best practices to the following questions:
 
 * How can you connect Nordic's cellular IoT chips to your cloud provider?
 * How do devices send data into the cloud?*
