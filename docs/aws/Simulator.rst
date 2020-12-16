@@ -12,7 +12,6 @@ To connect to a device and control the device using the simulator, complete the 
 * Connect to the device
 * Use the Device Simulator Web Application to control the device
 
-
 To create certificates for a simulated device, run the following command:
 
 .. code-block:: bash

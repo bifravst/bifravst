@@ -2,8 +2,7 @@
 Azure IoT Shadow and Topics
 ================================================================================
 
-On Azure the `IoT Hub Device Twins <https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins>`_
-is used to send device data and configuration.
+On Azure the `IoT Hub Device Twins <https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins>`_ is used to send device data and configuration.
 
 Reported state
 ================================================================================

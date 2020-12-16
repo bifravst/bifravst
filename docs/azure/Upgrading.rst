@@ -2,8 +2,7 @@
 Upgrading an existing installation
 ================================================================================
 
-If you already have an installation and you want to upgrade to the latest
-release, follow these steps.
+If you already have an installation and you want to upgrade to the latest release, follow these steps.
 
 .. code-block:: bash
 
