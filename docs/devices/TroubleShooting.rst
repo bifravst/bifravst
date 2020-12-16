@@ -5,7 +5,7 @@ Troubleshooting
 Connection
 ================================================================================
 
-Error code :code:`-22`
+Error code ``-22``
 --------------------------------------------------------------------------------
 
 Double check the clientID, the endpoint and the certificates.
@@ -23,7 +23,7 @@ vendors in case you experience connectivity issues.
 GPS
 ================================================================================
 
-Error: :code:`GPS_EVT_OPERATION_BLOCKED`
+Error: ``GPS_EVT_OPERATION_BLOCKED``
 --------------------------------------------------------------------------------
 
 This happens if the Network provider does not grant PSM (power savings

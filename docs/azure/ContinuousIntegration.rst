@@ -47,8 +47,8 @@ In order to separate the CI test runs from the production resources, go
 to the `Azure Portal <https://portal.azure.com/>`_ and create a new
 Azure Active Directory tenant:
 
--   Organization name: :code:`Bifravst (CI)`
--   Initial domain name: :code:`bifravstci` (since this is
+-   Organization name: ``Bifravst (CI)``
+-   Initial domain name: ``bifravstci`` (since this is
     globally unique customize this)
 -   Country: pick your preferred country
 
@@ -88,8 +88,8 @@ Follow
 `the Create Tenant guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant>`_
 to create a new Azure AD B2C tenant:
 
--   Organization name: :code:`Bifravst (CI) Users`
--   Initial domain name: :code:`bifravstciusers` (since this is
+-   Organization name: ``Bifravst (CI) Users``
+-   Initial domain name: ``bifravstciusers`` (since this is
     globally unique customize this)
 -   Country: pick your preferred country
 
@@ -111,8 +111,8 @@ new App registration.
 
 -   Name: Bifravst Web App
 -   Redirect URI (make sure to select SPA):
-    :code:`https://bifravstciapp.z16.web.core.windows.net/`
-    (instead of :code:`bifravstciapp` you need to pick something
+    ``https://bifravstciapp.z16.web.core.windows.net/``
+    (instead of ``bifravstciapp`` you need to pick something
     else that fits your project because this name is globally unique)
 
 Note down the *Application (client) ID* and the *Directory (tenant) ID* of the
@@ -128,12 +128,12 @@ resource owner password credentials (ROPC) flow
 `needs to be enabled <https://docs.microsoft.com/EN-US/azure/active-directory-b2c/configure-ropc?tabs=app-reg-ga>`_
 with these settings:
 
--   Name: :code:`B2C_1_developer`
+-   Name: ``B2C_1_developer``
 -   Application claims: select *Show more ...* and then mark
     *Email Addresses* as a return claim
 
 Add the permission to manager user accounts (Microsoft Graph >
-:code:`User.ReadWrite.All`) and grant admin consent.
+``User.ReadWrite.All``) and grant admin consent.
 
 In Authentication allow the Implicit grant for Access and ID tokens and
 select *Yes* for *Treat application as a public client*.
@@ -207,7 +207,7 @@ Publish the functions:
     func azure functionapp publish ${APP_NAME:-bifravst}API --typescript
 
 Docker variant for publishing the functions (in case you get a
-:code:`Permission denied` error):
+``Permission denied`` error):
 
 .. code-block:: bash
 
@@ -229,10 +229,10 @@ Running during development
     Azure functions only allow one *Issuer Url* in the
     Active Directory authentication configuration, so you cannot interact
     with this instance both from the end-to-end tests **and** the web app
-    because the user flow name differs (:code:`B2C_1_developer`
-    for end-to-end tests and :code:`B2C_1_signup_signin` for the
+    because the user flow name differs (``B2C_1_developer``
+    for end-to-end tests and ``B2C_1_signup_signin`` for the
     web application) and it is part of the Issuer Url, e.g.
-    :code:`https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer`.
+    ``https://${TENANT_DOMAIN}.b2clogin.com/${TENANT_DOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_developer``.
 
 Set up on GitHub
 ================================================================================
@@ -240,7 +240,7 @@ Set up on GitHub
 Provide these environment variables for GitHub Actions of the project
 you noted down earlier:
 
--   :code:`E2E_APP_REG_CLIENT_ID`
--   :code:`E2E_AZURE_CREDENTIALS` (the contents of :code:`ci-credentials.json`)
--   :code:`E2E_B2C_CLIENT_SECRET`
--   :code:`E2E_B2C_TENANT_ID`
+-   ``E2E_APP_REG_CLIENT_ID``
+-   ``E2E_AZURE_CREDENTIALS`` (the contents of ``ci-credentials.json``)
+-   ``E2E_B2C_CLIENT_SECRET``
+-   ``E2E_B2C_TENANT_ID``

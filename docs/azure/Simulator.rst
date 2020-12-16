@@ -59,9 +59,9 @@ Run the Device Simulator Web Application
 
     npm run
 
-Then copy the connection string printed from :code:`node cli connect "<id of your device>"`
-(e.g. :code:`?endpoint=http%3A%2F%2Flocalhost%3A23719`) and append it to the
-browsers address: e.g. :code:`http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719`.
+Then copy the connection string printed from ``node cli connect "<id of your device>"``
+(e.g. ``?endpoint=http%3A%2F%2Flocalhost%3A23719``) and append it to the
+browsers address: e.g. ``http://localhost:8080/?endpoint=http%3A%2F%2Flocalhost%3A23719``.
 
 Deploying the Device Simulator Web Application
 ================================================================================
@@ -86,6 +86,6 @@ when setting up *Bifravst* in your AWS account.
     echo "Done. Now open $SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL to view the web app."
 
 Afterwards you can open the domain name printed in
-:code:`SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL` to view the Device Simulator Web Application.
+``SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL`` to view the Device Simulator Web Application.
 
 .. _device-ui: https://github.com/bifravst/device-ui

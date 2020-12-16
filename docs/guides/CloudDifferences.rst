@@ -23,12 +23,12 @@ Digital Twin
 GCP has Configuration (*AWS: desired*) and State (*AWS: reported*).
 
 Devices receive their configuration by subscribing to the
-:code:`/devices/${deviceId}/config` topic. On successfull
+``/devices/${deviceId}/config`` topic. On successfull
 subscription they will receive their configuration on this topic. If the
 configuration is changed, the updated config will be published to the
 topic. There is no *delta*.
 
-Devices publish their state to :code:`/devices/${deviceId}/state`
+Devices publish their state to ``/devices/${deviceId}/state``
 topic. They always must publish the *entire state*, there is no
 native support for partial update
 

@@ -14,7 +14,7 @@ and look for the *Actions* tab in your repo, there you will find the
 the Action runs.
 
 Go to your repo's settings and configure a new Secret called
-:code:`BROKER_HOSTNAME`. Put the hostname of your AWS IoT Core
+``BROKER_HOSTNAME``. Put the hostname of your AWS IoT Core
 MQTT broker in there. You can retrieve it using this command:
 
 .. code-block:: bash

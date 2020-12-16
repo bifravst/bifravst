@@ -8,12 +8,12 @@ locally `in a Docker container <https://hub.docker.com/r/bifravst/azure-dev>`_.
 Export the IotHub connection string, the Avatar storage environment
 variables (can be found in the function app's configuration) to the
 environment variables
-:code:`IOT_HUB_CONNECTION_STRING`, :code:`AVATAR_STORAGE_ACCOUNT_NAME`,
-:code:`AVATAR_STORAGE_ACCESS_KEY`, :code:`FOTA_STORAGE_ACCOUNT_NAME`,
-:code:`FOTA_STORAGE_ACCESS_KEY`,
-:code:`HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING`.
+``IOT_HUB_CONNECTION_STRING``, ``AVATAR_STORAGE_ACCOUNT_NAME``,
+``AVATAR_STORAGE_ACCESS_KEY``, ``FOTA_STORAGE_ACCOUNT_NAME``,
+``FOTA_STORAGE_ACCESS_KEY``,
+``HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING``.
 
-Make sure to include these settings in your :code:`local.settings.json`:
+Make sure to include these settings in your ``local.settings.json``:
 
 .. code-block:: json
 
@@ -56,5 +56,5 @@ Run the functions app:
         -v ${PWD}:/workdir bifravst/azure-dev:latest \
         func start --typescript
 
-You can then use :code:`http://localhost:7071/` as your
-:code:`REACT_APP_AZURE_API_ENDPOINT` for the app.
+You can then use ``http://localhost:7071/`` as your
+``REACT_APP_AZURE_API_ENDPOINT`` for the app.

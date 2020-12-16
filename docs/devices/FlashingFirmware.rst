@@ -20,7 +20,7 @@ In order to connect the cloud using the Cat Tracker firmware, it needs
 to be build needs to be build to include the MQTT endpoint for your
 cloud account.
 
-This is done through the config :code:`CONFIG_AWS_IOT_BROKER_HOST_NAME` setting.
+This is done through the config ``CONFIG_AWS_IOT_BROKER_HOST_NAME`` setting.
 
 In order to use your endpoint, add a new entry to
 `prj_nrf9160dk_nrf9160ns.conf <https://github.com/bifravst/firmware/prj_nrf9160dk_nrf9160ns.conf>`_
@@ -64,14 +64,14 @@ Drag and Drop it (or select via *Add HEX file*), click *Erase & Write* and wait 
 
    nRF Connect for Desktop Programmer
 
-Flash using :code:`nrfjprog`
+Flash using ``nrfjprog``
 ================================================================================
 
 .. note::
 
     The nRF9160
     `should be programmed using nrfjprog <http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160.html#board-controller>`_.
-    :code:`west flash` is not supported.
+    ``west flash`` is not supported.
 
 .. code-block:: bash
 

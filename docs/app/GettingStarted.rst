@@ -27,16 +27,16 @@ dependencies:
     cd bifravst-app
     npm ci
 
-Set the environment :code:`EXTEND_ESLINT` to :code:`true`
+Set the environment ``EXTEND_ESLINT`` to ``true``
 (this is needed for Create React App to pick up the
 `custom eslint configuration <https://create-react-app.dev/docs/setting-up-your-editor/#experimental-extending-the-eslint-config>`_).
 
 The recommended workflow is to use a
 `direvn <https://direnv.net/>` plugin for your shell which will
 automatically export the environment variables it finds in a
-:code:`.envrc` file in the project folder:
+``.envrc`` file in the project folder:
 
-Create a new :code:`.envrc` file in the project folder and add
+Create a new ``.envrc`` file in the project folder and add
 these environment variables.
 
 .. code-block:: bash

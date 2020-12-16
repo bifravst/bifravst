@@ -26,7 +26,7 @@ the *nRF Connect SDK*.
 Clone the project and install dependencies
 ================================================================================
 
-Create a folder, e.g. :code:`ncs` and init the project:
+Create a folder, e.g. ``ncs`` and init the project:
 
 .. code-block:: bash
 
@@ -45,16 +45,16 @@ Building
 ================================================================================
 
 Then build the actual application: change to the
-:code:`./ncs/firmware` directory and build for your board:
+``./ncs/firmware`` directory and build for your board:
 
-Thingy:91 (:code:`PCA20035`)
+Thingy:91 (``PCA20035``)
 --------------------------------------------------------------------------------
 
 .. code-block:: bash
 
     west build -p always -b thingy91_nrf9160ns
 
-nRF9160 DK (:code:`PCA10090`)
+nRF9160 DK (``PCA10090``)
 --------------------------------------------------------------------------------
 
 .. code-block:: bash
@@ -65,4 +65,4 @@ Location of the HEX file
 ================================================================================
 
 The built HEX file will be located in
-:code:`ncs/firmware/build/zephyr/merged.hex`.
+``ncs/firmware/build/zephyr/merged.hex``.

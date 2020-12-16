@@ -7,7 +7,7 @@ Unwired Labs API
     This enables the `cell geolocation lookup <../app/CellGeolocation.html>`_
     for the app using the Unwired Labs API.
 
-To use `Unwired Labs`_ geolocation API, provide the :code:`unwiredlabsApiKey`
+To use `Unwired Labs`_ geolocation API, provide the ``unwiredlabsApiKey``
 parameter when deploying the solution:
 
 .. code-block:: bash
@@ -22,8 +22,8 @@ parameter when deploying the solution:
             unwiredlabsApiKey="<your API key>"
 
 This will enable the `geolocateCellFromUnwiredLabs` function to resolve cells,
-otherwise this function will return a status :code:`402` on the API route
-:code:`cellgeolocation/unwired`.
+otherwise this function will return a status ``402`` on the API route
+``cellgeolocation/unwired``.
 
 .. note::
 

@@ -7,7 +7,7 @@ Generating a certificate
 
 Use the CLI to generate a certificate for your device. The firmware will
 use the IMEI of the device as the MQTT client ID. You can read the IMEI
-of your device using the AT command :code:`AT+CGSN`.
+of your device using the AT command ``AT+CGSN``.
 
 The output will look like this
 
@@ -40,7 +40,7 @@ and flash it to the device.
 Flashing using nRF Connect for Desktop
 ================================================================================
 
-You can use the :code:`certificates/device-<deviceId>.json` file
+You can use the ``certificates/device-<deviceId>.json`` file
 with the *Certificate Manager* in the
 `nRF Connect for Desktop <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop>`_
 app *LTE Link Monitor* to flash certificate onto the device.
@@ -88,9 +88,9 @@ Drag and Drop or select the JSON file.
 
 .. note::
 
-    Change the security tag to :code:`42`. The modem can
+    Change the security tag to ``42``. The modem can
     hold multiple credentials, and the default security tag
-    :code:`16842753` is reserved for
+    ``16842753`` is reserved for
     `nRF Connect for Cloud <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud>`_
     credentials.
 

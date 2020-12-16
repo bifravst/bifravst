@@ -44,13 +44,13 @@ Follow the instructions from the
 `Azure CLI documentation <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>`_
 in order to install the CLI.
 
-Afterwards you should be able to execute the :code:`az` command:
+Afterwards you should be able to execute the ``az`` command:
 
 .. code-block:: bash
 
     az
 
-Dockerizing the :code:`az` command
+Dockerizing the ``az`` command
 --------------------------------------------------------------------------------
 
 In case you encounter the issue where the azure CLI
@@ -74,7 +74,7 @@ Install the Azure Functions Core Tools
 
 Follow
 `the installation instructions <https://github.com/Azure/azure-functions-core-tools#installing>`_,
-afterwards you should be able to execute the :code:`func` command:
+afterwards you should be able to execute the ``func`` command:
 
 .. code-block:: bash
 
@@ -101,19 +101,19 @@ Authenticate the CLI:
 
     az login
 
-Pick a name for the solution and export it as :code:`APP_NAME`, in
-this example we use :code:`bifravst` as the default.
+Pick a name for the solution and export it as ``APP_NAME``, in
+this example we use ``bifravst`` as the default.
 
 Deploy the solution in your preferred location (you can list them using
-:code:`az account list-locations`) and export it on the
-environment variable :code:`LOCATION`.
+``az account list-locations``) and export it on the
+environment variable ``LOCATION``.
 
 The recommended workflow is to use a
 `direnv <https://direnv.net/>`_) plugin for your shell which will
 automatically export the environment variables it finds in a
-:code:`.envrc` file in the project folder:
+``.envrc`` file in the project folder:
 
-Create a new file :code:`.envrc` in the project folder and add
+Create a new file ``.envrc`` in the project folder and add
 these environment variables.
 
 .. code-block:: bash
@@ -131,20 +131,20 @@ to create Active Directory B2C and application through the ARM template, you nee
 to follow
 `these instructions <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_
 and create a B2C tenant and an application. Use
-:code:`http://localhost:3000/` (for local development) and
-:code:`https://${APP_NAME:-bifravst}app.z16.web.core.windows.net/`
+``http://localhost:3000/`` (for local development) and
+``https://${APP_NAME:-bifravst}app.z16.web.core.windows.net/``
 as the redirect URLs.
 
 Save the *directory (tenant) id* of the created Active Directory B2C
 and the *application (client) id* to the environment variable
-:code:`APP_REG_CLIENT_ID` in the :code:`.envrc` file:
+``APP_REG_CLIENT_ID`` in the ``.envrc`` file:
 
 .. code-block:: bash
 
     export APP_REG_CLIENT_ID=...
 
 Create the user flow for sign up and sign in and make sure to name it
-:code:`B2C_1_signup_signin`.
+``B2C_1_signup_signin``.
 
 Remember to allow the changed file:
 
