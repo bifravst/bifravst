@@ -1,4 +1,6 @@
-Customizing the app
-###################
+.. _custom_app:
 
-You can learn more about how to customize the app `here <https://facebook.github.io/create-react-app/docs/getting-started>`_.
+Customizing the Cat Tracker web application
+###########################################
+
+To learn more about how to customize the Cat Tracker web application, see the `Getting started guide on Create React App <https://create-react-app.dev/docs/getting-started/>`_.

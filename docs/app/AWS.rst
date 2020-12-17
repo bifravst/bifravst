@@ -1,42 +1,39 @@
 .. _app-aws:
 
-Deploying to AWS
-################
+Deploying Cat Tracker to AWS
+############################
+
+To deploy the Cat Tracker web application to AWS, complete the following steps:
+
+1. Configure the web application
+#. Deploy the web application
+#. Register a new user
 
 .. note::
 
-    first make sure you have :ref:`set up the necessary AWS resources <aws-getting-started>` .
+    Before you start deploying, make sure that you have :ref:`set up the necessary AWS resources <aws-getting-started>`.
 
-Configure the react app
-***********************
+Configure the web application
+*****************************
 
-The app needs to be configured to be able to run against your account.
+.. include:: ConfigureWebApp.rst
+   :start-after: configure_web_app_start
+   :end-before: configure_web_app_end
 
-In this section we will create a file called ``.env.local`` which Create React App uses to make the settings in there available `as environment variables during build time <https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables>`_.
+Configure the IDs of your AWS resources
+=======================================
 
-Configure ids of your AWS resources
-===================================
-
-The web app needs to know the ids of the AWS resources that were created during the set-up of the stack.
-Run this command in the ``bifravst-app`` directory to copy the output to a file called ``.env.local``.
+The web application requires the IDs of the AWS resources that were created during the setup of the stack.
+Run the following command in the :file:`bifravst-app` directory to copy the output that contain the IDs to the :file:`.env.local` file:
 
 .. code-block:: bash
 
     node ../bifravst-aws/cli react-config > .env.local
 
-Version string
-==============
+Example for :file:`.env.local`
+------------------------------
 
-Run this command to provide the version to the app:
-
-.. code-block:: bash
-
-    echo REACT_APP_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)` >> .env.local
-
-Example ``.env.local``
-======================
-
-This is how the file would look like:
+Below is an example for the contents of the :file:`.env.local` file:
 
 .. code-block:: bash
 
@@ -58,10 +55,17 @@ This is how the file would look like:
     REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP=EGNO6F61DSJ5Y
     REACT_APP_VERSION=v3.6.1
 
-Deploy the app
-**************
+Version string
+==============
 
-This builds and deploys the app to the S3 bucket created when setting up *Bifravst* in your AWS account.
+.. include:: ConfigureWebApp.rst
+   :start-after: provide_versionstring_start
+   :end-before: provide_versionstring_end
+
+Deploy the web application
+**************************
+
+To build and deploy the web application to the S3 bucket created while setting up *Bifravst* in your AWS account, run the following commands:
 
 .. code-block:: bash
 
@@ -75,13 +79,13 @@ This builds and deploys the app to the S3 bucket created when setting up *Bifrav
     $REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP --paths /,/index.html
     echo "Done. Now open https://$REACT_APP_WEB_APP_DOMAIN_NAME/ to view the web app."
 
-Afterwards you can open the domain name printed in ``REACT_APP_WEB_APP_DOMAIN_NAME`` to view the web app.
+After running the above commands, you can open the domain name printed in ``REACT_APP_WEB_APP_DOMAIN_NAME`` to view the web application.
 
-Registering a user
-******************
+Register a new user
+*******************
 
-There are no predefined user accounts in the userpool, so you need to register a new user.
+Since there are no predefined user accounts in the user pool, you need to register a new user.
 
 .. note::
 
-    The UserPool is configured to use the email address as the username.
+   The user pool is configured to use the email address as the username.
