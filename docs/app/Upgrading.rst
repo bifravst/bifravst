@@ -1,7 +1,9 @@
+.. _upgrading-installation:
+
 Upgrading an existing installation
 ##################################
 
-If you already have an installation and you want to upgrade to the latest release, follow these steps.
+If you already have an installation and you want to upgrade to the latest release, run the following commands:
 
 .. code-block:: bash
 
@@ -11,9 +13,9 @@ If you already have an installation and you want to upgrade to the latest releas
 Publishing the upgrade to AWS
 *****************************
 
-Now follow the :ref:`same steps <aws-getting-started>`  as with the first installation.
+If you want to publish the upgrade to AWS, perform the steps for the initial installation described in :ref:`aws-getting-started`.
 
 Continuously deploy upgrades
 ============================
 
-If you want to automate this proces, follow :ref:`these instructions <aws-continuous-deployment>` .
+If you want to automate the process of continuous deployment of upgrades, follow the instructions in :ref:`aws-continuous-deployment`.
