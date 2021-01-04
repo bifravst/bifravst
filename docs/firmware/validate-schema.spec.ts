@@ -1,4 +1,4 @@
-import * as Ajv from 'ajv'
+import Ajv from 'ajv'
 import { readFileSync } from 'fs'
 import * as path from 'path'
 import * as glob from 'glob'
@@ -7,7 +7,7 @@ const f = (name: string): string =>
 	readFileSync(path.resolve(process.cwd(), 'docs', 'firmware', name), 'utf-8')
 
 describe('schemas', () => {
-	let ajv: Ajv.Ajv
+	let ajv: Ajv
 	beforeEach(async () => {
 		ajv = new Ajv({
 			schemas: glob
@@ -22,11 +22,11 @@ describe('schemas', () => {
 		it('should validate state.reported.aws.json', async () => {
 			const validate = ajv.getSchema(
 				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.reported.aws.schema.json',
-			) as Ajv.ValidateFunction
+			)
 			expect(validate).toBeDefined()
 			const state = f('state.reported.aws.json')
-			const valid = await validate(JSON.parse(state))
-			expect(validate.errors).toBeNull()
+			const valid = await validate?.(JSON.parse(state))
+			expect(validate?.errors).toBeNull()
 			expect(valid).toBeTruthy()
 		})
 	})
@@ -35,11 +35,11 @@ describe('schemas', () => {
 		it('should validate state.reported.azure.json', async () => {
 			const validate = ajv.getSchema(
 				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.reported.azure.schema.json',
-			) as Ajv.ValidateFunction
+			)
 			expect(validate).toBeDefined()
 			const state = f('state.reported.azure.json')
-			const valid = await validate(JSON.parse(state))
-			expect(validate.errors).toBeNull()
+			const valid = await validate?.(JSON.parse(state))
+			expect(validate?.errors).toBeNull()
 			expect(valid).toBeTruthy()
 		})
 	})
@@ -48,11 +48,11 @@ describe('schemas', () => {
 		it('should validate state.desired.azure.json', async () => {
 			const validate = ajv.getSchema(
 				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.desired.azure.schema.json',
-			) as Ajv.ValidateFunction
+			)
 			expect(validate).toBeDefined()
 			const state = f('state.desired.azure.json')
-			const valid = await validate(JSON.parse(state))
-			expect(validate.errors).toBeNull()
+			const valid = await validate?.(JSON.parse(state))
+			expect(validate?.errors).toBeNull()
 			expect(valid).toBeTruthy()
 		})
 	})
@@ -61,11 +61,11 @@ describe('schemas', () => {
 		it('should validate message.json', async () => {
 			const validate = ajv.getSchema(
 				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/messages.schema.json',
-			) as Ajv.ValidateFunction
+			)
 			expect(validate).toBeDefined()
 			const message = f('message.json')
-			const valid = await validate(JSON.parse(message))
-			expect(validate.errors).toBeNull()
+			const valid = await validate?.(JSON.parse(message))
+			expect(validate?.errors).toBeNull()
 			expect(valid).toBeTruthy()
 		})
 	})
@@ -74,11 +74,11 @@ describe('schemas', () => {
 		it('should validate batch-message.json', async () => {
 			const validate = ajv.getSchema(
 				'https://github.com/bifravst/bifravst/blob/saga/docs/firmware/batch.schema.json',
-			) as Ajv.ValidateFunction
+			)
 			expect(validate).toBeDefined()
 			const state = f('batch-message.json')
-			const valid = await validate(JSON.parse(state))
-			expect(validate.errors).toBeNull()
+			const valid = await validate?.(JSON.parse(state))
+			expect(validate?.errors).toBeNull()
 			expect(valid).toBeTruthy()
 		})
 	})
