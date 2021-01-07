@@ -1,7 +1,7 @@
 .. _uninstalling_cat-tracker:
 
 Uninstalling the *Asset Tracker for AWS Example* from AWS
-##############################
+#########################################################
 
 To uninstall the *Asset Tracker for AWS Example*, execute the listed commands.
 

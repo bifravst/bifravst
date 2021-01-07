@@ -1,5 +1,5 @@
 Asset Tracker for Azure Example
-#################
+###############################
 
 .. warning::
 

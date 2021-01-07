@@ -1,7 +1,7 @@
 .. _index_aws:
 
 Asset Tracker for AWS Example
-###############
+#############################
 
 The *Asset Tracker for AWS Example*  is a reference implementation of a serverless backend for an IoT product developed using `AWS CDK <https://aws.amazon.com/cdk/>`_ in `TypeScript <https://www.typescriptlang.org/>`_.
 

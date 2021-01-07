@@ -6,7 +6,7 @@ Continuous Deployment
 Continuous Deployment should be deployed with a dedicated subscription to have clear control over permissions and costs.
 
 Create a subscription for the *Asset Tracker for Azure Example*
-**********************************
+***************************************************************
 
 #.  Go to the *Subscriptions* blade and add a new subscription for the *Asset Tracker for Azure Example* and name it *Cat Tracker [CD]*.
 #.  After the subscription has been created navigate again to the *Subscriptions* blade and copy the subscription id of the newly created subscription:

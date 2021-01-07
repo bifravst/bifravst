@@ -93,7 +93,7 @@ Following are the supported regions:
 *   ``eu-west-1``
 
 Install the *Asset Tracker for AWS Example* into your AWS account
-****************************************
+*****************************************************************
 
 The following commands set up the necessary resources in your AWS account:
 

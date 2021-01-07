@@ -1,7 +1,7 @@
 .. _bifra_readme:
 
 Asset Tracker Cloud Example
-########
+###########################
 
 
 .. image:: https://github.com/bifravst/bifravst/workflows/Test%20and%20Release/badge.svg

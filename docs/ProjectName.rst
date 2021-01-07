@@ -12,10 +12,10 @@ When individual _flavors_ are considered, the name is **Asset Tracker for [Vendo
 - ... and so forth
 
 Slug
-***************************
+****
 
 Main projects
-==============
+=============
 
 The project slugs use the following naming rules for the **main** project repositories that implement the Asset Tracker Cloud Example or contain otherwise source code *specific to the Asset Tracker Cloud Example*.
 
@@ -27,7 +27,7 @@ The project slugs use the following naming rules for the **main** project reposi
     - do not use ``example`` as part of the slug
 
 Examples
-----------------------------------------------------------------------------------
+--------
 
 +--------------------------------------------------+--------------------------------------------------------------------+
 | Project                                          | Purpose                                                            |
@@ -52,7 +52,7 @@ Examples
 +--------------------------------------------------+--------------------------------------------------------------------+
 
 Helper projects
-==============
+===============
 
 The project slugs use the following naming rules for **helper** repositories:
 
@@ -61,7 +61,7 @@ The project slugs use the following naming rules for **helper** repositories:
     Use ``cloud-[vendor]-`` as a prefix for projects that have cloud vendor specific code, but are **not specific to the asset tracker application**, e.g. helper libraries for a specific AWS service.
 
 Examples
-----------------------------------------------------------------------------------
+--------
 
 +---------------------------------------+----------------------------------------------------+
 | Project                               | Purpose                                            |
@@ -81,7 +81,7 @@ Examples
     Use ``cloud-`` as a prefix for prjects that are used with a cloud but are vendor-agnostic.
 
 Examples
-----------------------------------------------------------------------------------
+--------
 
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------+
 | Project                               | Purpose                                                                                                   |
@@ -98,7 +98,7 @@ Examples
     Use ``-[language]`` as a suffix for projects that provide libraries for a specific programming environment or language.
 
 Examples
-----------------------------------------------------------------------------------
+--------
 
 +---------------------------------+---------------------------------------------------------------------------------------------------+
 | Project                         | Purpose                                                                                           |
@@ -117,7 +117,7 @@ Examples
     Keep standalone projects as is.
 
 Examples
-----------------------------------------------------------------------------------
+--------
 
 +-------------------------+---------------------------------------------------------------------------------+
 | Project                 | Purpose                                                                         |
