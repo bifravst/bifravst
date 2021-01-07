@@ -76,6 +76,7 @@ Examples
 +---------------------------------------+----------------------------------------------------+
 | ``cloud-aws-firmware-ci``             | Firmware CI runner for AWS                         |
 +---------------------------------------+----------------------------------------------------+
+
 .. admonition:: Convention for cloud agnostic projects
 
     Use ``cloud-`` as a prefix for prjects that are used with a cloud but are vendor-agnostic.

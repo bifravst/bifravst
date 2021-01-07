@@ -3,7 +3,6 @@
 Asset Tracker Cloud Example
 ###########################
 
-
 .. image:: https://github.com/bifravst/bifravst/workflows/Test%20and%20Release/badge.svg
    :alt: GitHub Actions
    :target: https://github.com/bifravst/bifravst/actions
