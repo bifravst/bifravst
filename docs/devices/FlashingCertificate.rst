@@ -1,16 +1,22 @@
-.. _devices-flashing-certificate:
+.. _devices-provisioning-certificate:
 
-Flashing the certificate
-########################
+Provisioning the certificate
+############################
+
+You need to generate and provision certificates to your device.
+Provisioning the certificates can be done in the following ways:
+
+* Using the CLI
+* Using nRF Connect for Desktop
 
 Generating a certificate
 ************************
 
-Use the CLI to generate a certificate for your device.
+You can use the CLI to generate a certificate for your device.
 The firmware will use the IMEI of the device as the MQTT client ID.
-You can read the IMEI of your device using the AT command ``AT+CGSN``.
+You can get the IMEI of your device using the AT command ``AT+CGSN``.
 
-The output will look like this
+Following is the output of the command:
 
 .. code-block::
 
@@ -22,66 +28,73 @@ Use the IMEI when generating the certificate:
 
     node cli create-device-cert -d "<imei>"
 
-Flashing using the CLI
-**********************
+Provisioning the certificate using CLI
+**************************************
 
 .. note::
 
-    This requires `Segger JLink <https://www.segger.com/downloads/jlink/>`_ to be installed and in your path.
+   To provision the device certificate using CLI, you must have `Segger JLink <https://www.segger.com/downloads/jlink/>`_ installed in your path.
 
-Use the CLI to flash the device certificates.
-This will also download the latest firmware from the `Firmware's GitHub releases page <https://github.com/bifravst/firmware/releases>`_ and flash it to the device.
+Use the CLI to provision the device certificates:
 
 .. code-block:: bash
 
     node cli flash "<imei>"
 
-Flashing using nRF Connect for Desktop
-**************************************
+Provisioning of the certificate using CLI also results in the following actions:
 
-You can use the ``certificates/device-<deviceId>.json`` file with the *Certificate Manager* in the `nRF Connect for Desktop <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop>`_ app *LTE Link Monitor* to flash certificate onto the device.
+* Downloading of the latest firmware from the `Firmware releases GitHub page <https://github.com/bifravst/firmware/releases>`_ 
+* Programming of the firmware to the device
 
-The *Certificate Manager* uses AT commands to write the certificate information to the secure storage of the modem and you need to flash your device with a firmware that has the AT command host enabled.
+Provisioning using nRF Connect for Desktop
+******************************************
 
-Flash the AT host using the *Programmer* app:
+You can use the :file:`certificates/device-<deviceId>.json` file with *Certificate Manager* in `LTE Link Monitor <https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html>`_, which is an application implemented as part of `nRF Connect for Desktop <https://infocenter.nordicsemi.com/topic/struct_nrftools/struct/nrftools_nrfconnect.html>`_  to provision the certificate to the device.
 
--   for the Thingy:91 use `thingy91_at_client_increased_buf.hex <https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex>`_
--   for the nRF9160 DK use `91dk_at_client_increased_buf.hex <https://github.com/bifravst/bifravst/releases/download/v5.9.2/91dk_at_client_increased_buf.hex>`_
+*Certificate Manager* uses AT commands to write the certificate information to the secure storage of the modem and you need to program your device with a firmware that has the AT command host enabled.
 
-.. figure:: ./images/programmer-desktop.png
-   :alt: nRF Connect for Desktop Programmer
+To provision the certificate using LTE Link Monitor, complete the following steps:
 
-   nRF Connect for Desktop Programmer
+#. Program the AT host using `nRF Connect Programmer <https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/provisioning_certificate.html>`_ application (part of nRF Connect for Desktop). 
 
-Drag and Drop the HEX file (or select it via *Add HEX file*), click *Erase & Write* and wait until the operation has finished.
+   .. figure:: ./images/programmer-desktop.png
+      :alt: nRF Connect for Desktop Programmer
 
-.. figure:: ./images/programmer-modem-desktop.png
-   :alt: nRF Connect for Desktop Programmer
+      nRF Connect for Desktop Programmer
 
-   nRF Connect for Desktop Programmer
+   For programming, use the following files:
+ 
+   *   Thingy:91 -  `thingy91_at_client_increased_buf.hex <https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex>`_
+   *   nRF9160 DK - `91dk_at_client_increased_buf.hex <https://github.com/bifravst/bifravst/releases/download/v5.9.2/91dk_at_client_increased_buf.hex>`_
 
-Afterwards, launch the *LTE Link Monitor* app.
+   For instructions, see the following documentation:
 
-.. figure:: ./images/lte-link-monitor-desktop.png
-   :alt: nRF Connect for Desktop LTE Link Monitor
+   *  `Programming the Thingy:91 <https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_pgming_thingy91_usb.html>`_
+   *  `Programming the nRF9160 DK <https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/common/ncp_programming_applications_nrf9160dk.html>`_
 
-   nRF Connect for Desktop LTE Link Monitor
+   .. important::
 
-Use the *Certificate Manager* with the JSON file to write the certificate to the device.
+      Make sure that the selected device is directly connected and not connected via the debugger.
 
-.. figure:: ./images/certificate-manager-desktop.png
-   :alt: nRF Connect for Desktop Certificate Manager
 
-   nRF Connect for Desktop Certificate Manager
+#. Open nRF Connect for Desktop and launch the LTE Link Monitor application.
 
-Drag and Drop or select the JSON file.
+   .. figure:: ./images/launch-lte-link-monitor-desktop.png
+      :alt: nRF Connect for Desktop LTE Link Monitor
+      nRF Connect for Desktop LTE Link Monitor
 
-.. note::
+#. Click :guilabel:`Certificate Manager`.
+ 
+   .. figure:: ./images/certificate-manager-desktop.png
+      :alt: nRF Connect for Desktop Certificate Manager
 
-    Change the security tag to ``42``. The modem can hold multiple credentials, and the default security tag ``16842753`` is reserved for `nRF Connect for Cloud <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud>`_ credentials.
+      LTE Link Monitor Certificate Manager
 
-.. warning::
+#. Drag and Drop the JSON file into the Certificate Manager window or select the JSON file using the :guilabel:`Load from JSON` option.
 
-    Make sure that the selected device is directly connected and not connected via the debugger!
+   .. note::
 
-Click *Update certificates* and wait until the operation finishes.
+      Change the security tag to ``42``. The modem can hold multiple credentials, and the default security tag ``16842753`` is reserved for `nRF Connect for Cloud <https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud>`_ credentials.
+
+
+#. Click :guilabel:`Update certificates` and wait until the operation finishes.

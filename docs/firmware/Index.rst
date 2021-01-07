@@ -1,16 +1,21 @@
-Cat Tracker Firmware
+Cat Tracker firmware
 ####################
 
-The Cat Tracker Firmware is a reference application developed using the `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_.
-The source code for the Cat Tracker application is available `here <https://github.com/bifravst/firmware>`_.
+The Cat Tracker firmware is a reference application developed using the `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_.
+See the `Cat Tracker firmware GitHub repository <https://github.com/bifravst/firmware>`_ for the source code for the Cat Tracker application.
 
 .. _firmware-supported-boards:
 
-The Cat Tracker firmware was developed and tested with these boards:
-********************************************************************
+Supported development kits
+**************************
 
--   `Thingy:91 (PCA20035) <https://www.nordicsemi.com/Software-and-tools/Prototyping-platforms/Nordic-Thingy-91>`_
--   `nRF9160 DK (PCA10090) <https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF9160-DK>`_
++-----------------------------------------------------------------------------------------------------+----------+------------------+------------------------+
+|Hardware platforms                                                                                   |PCA       |Board name        |Build target            |
++=====================================================================================================+==========+==================+========================+
+|`Thingy:91 <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy91.html>`_      | PCA20035 | thingy91_nrf9160 | ``thingy91_nrf9160ns`` |
++-----------------------------------------------------------------------------------------------------+----------+------------------+------------------------+
+|`nRF9160 DK <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_nrf9160.html>`_      | PCA10090 | nrf9160dk_nrf9160| ``nrf9160dk_nrf9160ns``|
++-----------------------------------------------------------------------------------------------------+----------+------------------+------------------------+
 
 Documentation
 *************
