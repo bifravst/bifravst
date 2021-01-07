@@ -29,8 +29,8 @@ Export them.
 .. code-block:: bash
 
     az functionapp config appsettings list \
-        --resource-group ${RESOURCE_GROUP_NAME:-bifravst} \
-        --name ${APP_NAME:-bifravst}API | jq -r '.[] | .name + "=\"" + .value + "\""'
+        --resource-group ${RESOURCE_GROUP_NAME:-cat-tracker} \
+        --name ${APP_NAME:-cat-tracker}API | jq -r '.[] | .name + "=\"" + .value + "\""'
 
 Run the functions app:
 

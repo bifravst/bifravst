@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.reported.aws.schema.json",
-  "title": "Bifravst Firmware Device Data and Configuration for AWS",
-  "description": "Describes the data published by the device and its configuration options of the AWS flavour of Bifravst.",
+  "title": "Cat Tracker Firmware Device Data and Configuration for AWS",
+  "description": "Describes the data published by the device and its configuration options of the Asset Tracker for AWS Example.",
   "type": "object",
   "allOf": [
     {

@@ -4,7 +4,7 @@ Connect using the simulator
 Running the simulator
 *********************
 
-The CLI provides a software implementation of a Cat Tracker for *testing purposes*: it allows to verify that the cloud configuration works, and this features is also used for testing Bifravst using :ref:`Continuous Integration <azure-continuous-integration>` .
+The CLI provides a software implementation of a Cat Tracker for *testing purposes*: it allows to verify that the cloud configuration works, and this features is also used for testing the *Asset Tracker for Azure Example* using :ref:`Continuous Integration <azure-continuous-integration>` .
 
 You can create certificates for a simulated device using:
 
@@ -40,8 +40,8 @@ Clone the latest version of the device-ui_ project and install the dependencies:
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/device-ui.git bifravst-device-ui
-    cd bifravst-device-ui
+    git clone https://github.com/bifravst/device-ui.git cat-tracker-device-ui
+    cd cat-tracker-device-ui
     npm ci
 
 Run the Device Simulator Web Application
@@ -56,14 +56,14 @@ Then copy the connection string printed from ``node cli connect "<id of your dev
 Deploying the Device Simulator Web Application
 **********************************************
 
-This builds and deploys the Device Simulator Web Application to the S3 bucket created when setting up *Bifravst* in your AWS account.
+This builds and deploys the Device Simulator Web Application to the S3 bucket created when setting up the *Asset Tracker for AWS Example* in your AWS account.
 
 .. code-block:: bash
 
-    cd ../bifravst-azure
-    export $(cd ../bifravst-azure && node cli device-ui-config | xargs)
-    export APP_NAME=${APP_NAME:-bifravst}
-    cd ../bifravst-device-ui
+    cd ../cat-tracker-azure
+    export $(cd ../cat-tracker-azure && node cli device-ui-config | xargs)
+    export APP_NAME=${APP_NAME:-cat-tracker}
+    cd ../cat-tracker-device-ui
     export SNOWPACK_PUBLIC_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)`
 
     npm run build

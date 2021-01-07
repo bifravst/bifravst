@@ -1,7 +1,7 @@
 {
   "name": "@bifravst/bifravst",
   "version": "0.0.0-development",
-  "description": "Bifravst aims to provide a concrete end-to-end example for an IoT product in the asset tracker space, a Cat Tracker.",
+  "description": "The Asset Tracker Cloud Example aims to provide a concrete end-to-end example for an IoT product in the asset tracker space, a Cat Tracker.",
   "scripts": {
     "test": "jest"
   },
@@ -16,7 +16,7 @@
   "keywords": [
     "Cloud",
     "IoT",
-    "Bifravst",
+    "Example",
     "Asset Tracker",
     "NordicSemiconductor"
   ],

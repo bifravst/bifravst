@@ -11,11 +11,11 @@ To use `Unwired Labs`_ geolocation API, provide the ``unwiredlabsApiKey`` parame
 
 .. code-block:: bash
 
-    az deployment group create --resource-group ${APP_NAME:-bifravst} \
-        --mode Complete --name ${APP_NAME:-bifravst} \
+    az deployment group create --resource-group ${APP_NAME:-cat-tracker} \
+        --mode Complete --name ${APP_NAME:-cat-tracker} \
         --template-file azuredeploy.json \
         --parameters \
-            appName=${APP_NAME:-bifravst} \
+            appName=${APP_NAME:-cat-tracker} \
             location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT \
             unwiredlabsApiKey="<your API key>"

@@ -17,7 +17,7 @@
 
 # -- Project information ---------------------------------------------------------------------------------------------
 
-project = 'Bifravst'
+project = 'Asset Tracker Cloud Example'
 copyright = '2019-2020, Nordic Semiconductor ASA | nordicsemi.no'
 author = 'Nordic Semiconductor ASA | nordicsemi.no'
 

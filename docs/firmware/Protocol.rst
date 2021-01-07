@@ -4,7 +4,7 @@ Device-Cloud-Protocol
 Preface
 *******
 
-This document will provide a general introduction in the way devices communication with the cloud in the Bifravst project.
+This document will provide a general introduction in the way devices communication with the cloud in the *Asset Tracker Cloud Example*.
 *Communication* is the most important aspect to optimize for when developing an ultra-low-power product because initiating and maintaining network connection is relatively expensive compared to other device operations (for example reading a sensor value).
 It is therefore recommended to invest a reasonable amount of time to revisit the principles explained here and customize them to your specific needs.
 The more the modem-uptime can be reduced and the smaller the total transferred amount if data becomes, the longer will your battery and your data contingent last.
@@ -17,14 +17,14 @@ The firmware is configured to operate in NB-IoT mode to connect to the cellular 
 MQTT as transport protocol
 **************************
 
-Bifravst uses MQTT to connect the device to the cloud provider.
+The *Asset Tracker Cloud Example* uses MQTT to connect the device to the cloud provider.
 
 The MQTT client ID defaults to the IMEI of the device.
 
 JSON as a data format
 *********************
 
-Bifravst uses JSON to represent all transferred data.
+The *Asset Tracker Cloud Example* uses JSON to represent all transferred data.
 If offers very good support in tooling and is human readable.
 Especially during development its verbosity is valuable.
 
@@ -176,7 +176,7 @@ Firmware upgrades are so large compared to other messages that the device may su
 Summary
 *******
 
-*Bifravst* aims to provide robust reference implementations for these four kinds of device data.
+The *Asset Tracker Cloud Example* aims to provide robust reference implementations for these four kinds of device data.
 While the concrete implementation will differ per cloud provider, the general building blocks (state, configuration, batched past state, firmware upgrades) will be the same.
 
 +-------------------------------------+-------------------------+------------------+-----------+-----------------+

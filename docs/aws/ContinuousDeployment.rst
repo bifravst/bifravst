@@ -15,7 +15,7 @@ After forking, make sure to update the ``repository.url`` in the :file:`package.
 
 This sets up an AWS CodePipeline, which triggers a CodeBuild project for every push to the :file:`saga` branch.
 You can configure the branch in the ``deploy.branch`` property of the :file:`package.json` file.
-The CodeBuild project upgrades the CloudFormation stack, which contains the *Bifravst* resources.
+The CodeBuild project upgrades the CloudFormation stack, which contains the *Asset Tracker for AWS Example* resources.
 
 A second CodePipeline will be set up for the web application, which triggers a CodeBuild project for every push to the :file:`saga` branch.
 You can configure the repository URL and the branch for the web app in the ``deploy.webApp`` property of the :file:`package.json` file.

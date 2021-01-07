@@ -9,7 +9,7 @@ To use Unwired Labs' geolocation API, store your API key as an SSM parameter and
 
 .. code-block:: bash
 
-    aws ssm put-parameter --name /bifravst/cellGeoLocation/unwiredlabs/apiKey \
+    aws ssm put-parameter --name /cat-tracker/cellGeoLocation/unwiredlabs/apiKey \
         --type String --value "<API Key>"
     npx cdk deploy '*'
 

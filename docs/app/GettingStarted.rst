@@ -22,8 +22,8 @@ Clone the latest version of the `Cat Tracker Web Application <https://github.com
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/app.git bifravst-app
-    cd bifravst-app
+    git clone https://github.com/bifravst/app.git cat-tracker-app
+    cd cat-tracker-app
     npm ci
 
 Set the environment ``EXTEND_ESLINT`` to ``true`` (It is needed for Create React App to pick up the `custom eslint configuration <https://create-react-app.dev/docs/setting-up-your-editor/#experimental-extending-the-eslint-config>`_).
