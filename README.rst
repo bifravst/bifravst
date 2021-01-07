@@ -225,7 +225,6 @@ Below table shows the IoT Cloud vendor survey results:
    docs/app/Index.rst
    docs/firmware/Index.rst
    docs/devices/Index.rst
-   docs/ProjectName.rst
 
 .. toctree::
    :titlesonly:
@@ -245,6 +244,7 @@ Below table shows the IoT Cloud vendor survey results:
    GitHub <https://github.com/bifravst>
    DevZone <https://devzone.nordicsemi.com/search?q=AssetTrackerCloudExample#serpsort=date%20desc>
    docs/Support.rst
+   docs/ProjectName.rst
    docs/adr/README.rst
    CODE_OF_CONDUCT.rst
 
