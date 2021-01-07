@@ -11,6 +11,18 @@ When individual _flavors_ are considered, the name is **Asset Tracker for [Vendo
 - **Asset Tracker for Azure Example**
 - ... and so forth
 
+Instance
+*****
+
+Since the software / firmware itself provides the implementation of a *Cat Tracker*, in case where it is referenced in the documenation it is called **Cat Tracker**.
+
+Example
+-----
+
+    - "To deploy the Cat Tracker web application to AWS, complete the following steps ..."
+    - "In order to connect the cloud using the Cat Tracker firmware ..."
+
+
 Slug
 ****
 

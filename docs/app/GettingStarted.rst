@@ -18,7 +18,7 @@ If you are using Windows, we recommend using the `Windows Subsystem for Linux <h
 Clone the project and install the dependencies
 **********************************************
 
-Clone the latest version of the `Cat Tracker Web Application <https://github.com/bifravst/app>`_ project and install the dependencies:
+Clone the latest version of the `Cat Tracker web application <https://github.com/bifravst/app>`_ project and install the dependencies:
 
 .. code-block:: bash
 
