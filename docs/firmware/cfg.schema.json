@@ -38,7 +38,7 @@
       "description": "Accelerometer threshold in m/s²: minimal absolute value for and accelerometer reading to be considered movement.",
       "type": "number",
       "minimum": 0,
-      "maxiumum": 19.6133
+      "maximum": 19.6133
     }
   },
   "required": ["act", "actwt", "mvres", "mvt", "gpst", "acct", "celt"]
