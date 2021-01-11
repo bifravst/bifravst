@@ -53,5 +53,5 @@ The device can be put in *active* mode by setting the ``cfg.act`` to ``true``.
 GPS Timeout configuration
 *************************
 
-Since the nRF9160 currently does not support AGPS depending on the device location acquiring a GPS fix can take a long time.
-Therefore a timeout of at least 1000s should be chosen.
+Since the `firware currently does not support A-GPS <https://github.com/bifravst/firmware/issues/8>`_ depending on the device location acquiring a GPS fix can take a long time.
+Therefore a timeout of at least 1000 seconds should be chosen.
