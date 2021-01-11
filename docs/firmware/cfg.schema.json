@@ -35,9 +35,10 @@
       "examples": [600]
     },
     "acct": {
-      "description": "Accelerometer threshold: minimal absolute value for and accelerometer reading to be considered movement. Divide by 10 to get the real threshold. Integers are used because the nRF9160 has issue parsing JSON floats.",
-      "type": "integer",
-      "minimum": 0
+      "description": "Accelerometer threshold in m/s²: minimal absolute value for and accelerometer reading to be considered movement.",
+      "type": "number",
+      "minimum": 0,
+      "maxiumum": 19.6133
     }
   },
   "required": ["act", "actwt", "mvres", "mvt", "gpst", "acct", "celt"]
