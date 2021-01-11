@@ -15,15 +15,7 @@ Continuous delivery is in important aspect of short time to market and since the
 
 One precondition for that is the automation of the process that builds the HEX file of an application.
 
-In this example I'll provide the configuration for Circle CI, a continuous integration service, which allows you to run task on their service for free, if your project is open source.
-
-After signing up for `CircleCI <https://circleci.com/>`_ and connecting it to your source code provider, you need to provide a configuration file which instructs the docker-based build system to
-
--   configure the image with the necessary dependencies for Zephyr
--   initialize NCS and its dependencies
--   build the HEX files for all target devices of your application
-
-Getting all these steps right takes a while, because configuring NCS and Zephyr includes `many <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.0.0/nrf/gs_ins_linux.html>`_ `individual <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.0.0/zephyr/getting_started/installation_linux.html#linux-requirements>`_ tasks, but afterwards you have a reproducible recipe to build your HEX files, as part of your source code project.
+Getting all these steps right takes a while, because configuring NCS and Zephyr includes `many <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.4.1/nrf/gs_installing.html>`_ `individual <https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.4.1/zephyr/getting_started/installation_linux.html>`_ tasks, but afterwards you have a reproducible recipe to build your HEX files, as part of your source code project.
 
 Not only does that mean you can provide up-to-date HEX files with zero effort, but using a CI runner allows you to automate your software releases using a project called `semantic release <https://github.com/semantic-release/semantic-release>`_.
 
