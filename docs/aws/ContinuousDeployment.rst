@@ -24,7 +24,7 @@ The CodeBuild project upgrades the web app deployment on the S3 bucket.
 Provide GitHub credentials
 **************************
 
-You need to create a `developer token <https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line>`_ with ``repo``, ``admin:repo_hook`` and ``read:packages`` permissions for an account that has write permissions to your repository.
+You need to create a `developer token <https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line>`_ with ``repo`` and ``admin:repo_hook`` permissions for an account that has write permissions to your repository.
 
 .. note::
 
