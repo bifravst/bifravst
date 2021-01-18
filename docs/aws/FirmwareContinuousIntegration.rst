@@ -75,7 +75,7 @@ You can delete a device using this command:
     node cli firmware-ci -r "<deviceId>"
 
 Firmware CI runner
-*********
+******************
 
 #.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform.
     Use the path to the folder (e.g. ``~/JLink_Linux_V686_arm64/``) further down.
