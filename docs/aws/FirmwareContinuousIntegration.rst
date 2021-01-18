@@ -55,13 +55,6 @@ Print the AWS Key for the CI runner on GitHub Actions using this command:
     Access Key ID: "<AWS Access Key ID>"
     Secret Access Key: "<AWS Secret Access Key>"
 
-Configure these as secrets on the firmware GitHub repository in an environment called ``production``:
-
- - ``AWS_ACCESS_KEY_ID``
- - ``AWS_SECRET_ACCESS_KEY``
- - ``AWS_REGION``
- - ``STACK_NAME``
-
 Now you can create a new IoT Thing to be used for a Firmware CI runner (see below):
 
 .. code-block:: bash
@@ -73,6 +66,14 @@ You can delete a device using this command:
 .. code-block:: bash
 
     node cli firmware-ci -r "<deviceId>"
+
+Configure these as secrets on the firmware GitHub repository in an environment called ``production``:
+
+ - ``AWS_ACCESS_KEY_ID`` (as printed above)
+ - ``AWS_SECRET_ACCESS_KEY`` (as printed above)
+ - ``AWS_REGION`` (as printed above)
+ - ``STACK_NAME`` (the stack name of your production environment, usually ``bifravst``)
+ - ``DEVICE_ID`` (the created Firmwer CI runner device, e.g. ``firmware-ci-3c431c57-e524-4010-b269-371cb53538b6``)
 
 Firmware CI runner
 ******************
