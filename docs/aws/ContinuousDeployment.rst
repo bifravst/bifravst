@@ -40,11 +40,12 @@ You need to store this token in `AWS ParameterStore <https://docs.aws.amazon.com
 Enable Continuous Deployment
 ****************************
 
-After providing the GitHub credentials, you can set up the continuous deployment using the following command:
+After providing the GitHub credentials, you can set up the continuous deployment by enabling it through the context switch ``cd``:
 
 .. code-block:: bash
 
-    npx cdk deploy '*' -c cd=1
+    echo "cd=1" >> context.cfg
+    npx cdk deploy '*'
 
 Check the status of the Continuous Deployment
 *********************************************
