@@ -55,6 +55,9 @@
     ],
     "*.{md,json,yaml,yml}": [
       "prettier --write"
+    ],
+    "*.rst": [
+      "node scripts/headline-fixer.mjs"
     ]
   },
   "engines": {
