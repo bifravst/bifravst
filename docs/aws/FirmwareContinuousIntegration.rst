@@ -67,7 +67,7 @@ You can delete a device using this command:
 
     node cli firmware-ci -r "<deviceId>"
 
-Configure these as secrets on the firmware GitHub repository in an environment called ``production``:
+Configure these as secrets on the firmware GitHub repository:
 
  - ``AWS_ACCESS_KEY_ID`` (as printed above)
  - ``AWS_SECRET_ACCESS_KEY`` (as printed above)
