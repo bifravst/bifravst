@@ -81,6 +81,7 @@ To provision the certificate using LTE Link Monitor, complete the following step
 
    .. figure:: ./images/launch-lte-link-monitor-desktop.png
       :alt: nRF Connect for Desktop LTE Link Monitor
+      
       nRF Connect for Desktop LTE Link Monitor
 
 #. Click :guilabel:`Certificate Manager`.

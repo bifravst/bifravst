@@ -75,8 +75,8 @@ Configure these as secrets on the firmware GitHub repository in an environment c
  - ``STACK_NAME`` (the stack name of your production environment, usually ``bifravst``)
  - ``DEVICE_ID`` (the created Firmwer CI runner device, e.g. ``firmware-ci-3c431c57-e524-4010-b269-371cb53538b6``)
 
-Firmware CI runner
-******************
+Firmware CI runner setup
+************************
 
 #.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform.
     Use the path to the folder (e.g. ``~/JLink_Linux_V686_arm64/``) further down.
