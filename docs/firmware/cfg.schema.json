@@ -5,47 +5,47 @@
   "type": "object",
   "properties": {
     "act": {
-      "description": "Whether to enable the active mode",
+      "description": "Whether to enable the active mode.",
       "type": "boolean",
       "examples": [false]
     },
     "actwt": {
-      "description": "In active mode: wait this amount of seconds until sending the next update. The actual interval will be this time plus the time it takes to get a GPS fix.",
+      "description": "In active mode: Wait this amount of seconds until sending the next update. The actual interval will be this time plus the time it takes to get a GPS fix.",
       "type": "integer",
       "minimum": 1,
       "maximum": 2147483647,
       "examples": [60]
     },
     "mvres": {
-      "description": "(movement resolution) In passive mode: Time in seconds to wait after detecting movement before sending the next update",
+      "description": "(movement resolution) In passive mode: After detecting movement send an update and wait this amount of time until movement again can trigger the next update.",
       "type": "integer",
       "minimum": 1,
       "maximum": 2147483647,
       "examples": [300]
     },
     "mvt": {
-      "description": "(movement timeout) In passive mode: Send update at least this often (in seconds)",
+      "description": "(movement timeout) In passive mode: Send update at least this often (in seconds).",
       "type": "integer",
       "minimum": 1,
       "maximum": 2147483647,
       "examples": [3600]
     },
     "gpst": {
-      "description": "GPS timeout (in seconds): timeout for GPS fix",
+      "description": "GPS timeout (in seconds): Timeout for GPS fix.",
       "type": "integer",
       "minimum": 1,
       "maximum": 2147483647,
       "examples": [60]
     },
     "celt": {
-      "description": "Cellular timeout (in seconds): timeout for acquiring a cellular connection",
+      "description": "Cellular timeout (in seconds): Timeout for acquiring a cellular connection.",
       "type": "integer",
       "minimum": 1,
       "maximum": 2147483647,
       "examples": [600]
     },
     "acct": {
-      "description": "Accelerometer threshold in m/s²: minimal absolute value for and accelerometer reading to be considered movement.",
+      "description": "Accelerometer threshold in m/s²: Minimal absolute value for an accelerometer reading to be considered movement.",
       "type": "number",
       "minimum": 0,
       "maximum": 19.6133,
