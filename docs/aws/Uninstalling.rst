@@ -3,7 +3,7 @@
 Uninstalling Bifravst from AWS
 ##############################
 
-To uninstall Bifravst, execute the commands described in this section.
+To uninstall Bifravst, execute the listed commands.
 
 .. note::
 

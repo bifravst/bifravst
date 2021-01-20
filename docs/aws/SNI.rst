@@ -3,7 +3,7 @@
 SNI
 ###
 
-The `Transport security in AWS IoT <https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html>`_ documentation mentions that the Server Name Indication (SNI) extension is required for TLS both in the case of MQTT and HTTPs.
+The `Transport security in AWS IoT <https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html>`_ documentation mentions that the Server Name Indication (SNI) extension is required for TLS, both in the case of MQTT and HTTPS.
 
 However, the following facts must be noted:
 

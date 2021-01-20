@@ -16,7 +16,7 @@ System requirements
 
 You need a development environment with the `upcoming LTS release candidate of Node.js <https://nodejs.org/en/about/releases/>`_ (current release is version 14).
 
-If you are using Windows, we recommend using the `Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ with `Ubuntu 18.04
+If you are using Windows, use the `Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ with `Ubuntu 18.04
 LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
 
 .. note::
@@ -56,13 +56,13 @@ To setup a new AWS account and provide credentials, complete the following steps
 
        This action will create a user with full access rights to the account, and therefore it must only be created in an account dedicated for Bifravst.
 
-#.  See the `CDK Getting Started guide <https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html>`_ to configure the AWS CDK.
+#.  Configure the AWS CDK by referring the `CDK Getting Started guide <https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html>`_.
 
 #.  As a recommended workflow, use a `direnv <https://direnv.net/>`_ plugin for your shell, which locates the environment variables in a :file:`.envrc` file in the project folder and automatically exports them.
 
 #.  Create a new :file:`.envrc` file in the project folder and add the credentials that are provided to you when you create the new user.
 
-#.  Also add your preferred region and your AWS account ID (that can be found under `My Account on the AWS console <https://console.aws.amazon.com/billing/home?#/account>`_), to the :file:`.envrc` file, as shown in the following code:
+#.  Add your preferred region and your AWS account ID (that can be found under `My Account on the AWS console <https://console.aws.amazon.com/billing/home?#/account>`_), to the :file:`.envrc` file, as shown in the following code:
 
     .. code-block:: bash
 
@@ -84,7 +84,7 @@ You must also confirm that you are deploying to a region that is supported.
    Not all AWS features are available in all AWS regions.
    You will see a warning if you are deploying to a region that has not been tested and the AWS CDK might fail.
 
-The supported regions are listed below:
+Following are the supported regions:
 
 *   ``us-east-1``
 *   ``us-east-2``
