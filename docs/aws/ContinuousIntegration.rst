@@ -10,8 +10,8 @@ Continuous integration involves the following actions:
 * A BDD test-suite of end-to-end tests written in `Gherkin <https://cucumber.io/docs/gherkin/>`_, which describes the tests in English, is run.
 
 In this way, the tests are not tied to the implementation and during refactoring, and you cannot accidentally drop tests.
-Tests written for test-runners like `Jest <https://jestjs.io/>`_ tend to be closely tied to the API of the source-code implementation.
-In the case of bigger refactoring, the tests themselves usually need to be refactored as well.
+Tests written for test-runners like `Jest <https://jestjs.io/>`_ tend to be closely tied to the API of the source code implementation.
+In the case of bigger refactoring, usually the tests need to be refactored as well.
 Since the BDD tests are purely testing based on the public API of the project (which is the native AWS API), they can be kept unchanged during refactoring.
 
 .. note::
@@ -46,7 +46,7 @@ Provide the following environment variables for GitHub Actions of the project:
 Known issues
 ************
 
-If the stack creation fails on the ``AWS::ApiGatewayV2::Stage`` resource with the following error:
+If the stack creation fails on the ``AWS::ApiGatewayV2::Stage`` resource with the following error, you need to update the ``AWSLogDeliveryWrite20150319`` policy (a built-in policy of the AWS account):
 
 .. code-block:: console
 
@@ -54,7 +54,7 @@ If the stack creation fails on the ``AWS::ApiGatewayV2::Stage`` resource with th
     Status Code: 400; Error Code: BadRequestException; 
     Request ID: 378c255b-c3ed-4d2c-8c00-c4cec2153dbf; Proxy: null)
 
-you need to update the ``AWSLogDeliveryWrite20150319`` policy (a built-in policy of the AWS account) as shown below:
+Run the following command to update the ``AWSLogDeliveryWrite20150319`` policy:
 
 .. code-block:: bash
 
