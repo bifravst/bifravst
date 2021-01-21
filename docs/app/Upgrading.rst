@@ -13,7 +13,7 @@ If you already have an installation and you want to upgrade to the latest releas
 Publishing the upgrade to AWS
 *****************************
 
-If you want to publish the upgrade to AWS, perform the steps for the initial installation described in :ref:`aws-getting-started`.
+If you want to publish the upgrade to AWS, perform the steps for the initial installation as described in :ref:`aws-getting-started`.
 
 Continuously deploy upgrades
 ============================
