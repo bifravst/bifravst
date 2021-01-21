@@ -5,7 +5,7 @@ Connect using a real device
 
 You can use any of the :ref:`supported development kits <firmware-supported-boards>` to connect to your account.
 
-For the device to connect you need to complete the following steps:
+For the device to connect, you need to complete the following steps:
 
 1. Upgrade the modem firmware according to the instructions in the following documentation:
 
