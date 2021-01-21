@@ -33,7 +33,7 @@ Run the following command in the :file:`bifravst-app` directory to copy the outp
 Example for :file:`.env.local`
 ------------------------------
 
-Below is an example for the contents of the :file:`.env.local` file:
+Following is an example for the contents of the :file:`.env.local` file:
 
 .. code-block:: bash
 
@@ -79,7 +79,7 @@ To build and deploy the web application to the S3 bucket created while setting u
     $REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP --paths /,/index.html
     echo "Done. Now open https://$REACT_APP_WEB_APP_DOMAIN_NAME/ to view the web app."
 
-After running the above commands, you can open the domain name printed in ``REACT_APP_WEB_APP_DOMAIN_NAME`` to view the web application.
+After running the commands, you can open the domain name printed in ``REACT_APP_WEB_APP_DOMAIN_NAME`` to view the web application.
 
 Register a new user
 *******************

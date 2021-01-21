@@ -33,7 +33,7 @@ Run the following command in the :file:`bifravst-app` directory to copy the outp
 Example for :file:`.env.local`
 ------------------------------
 
-Below is an example for the contents of the :file:`.env.local` file:
+Following is an example for the contents of the :file:`.env.local` file:
 
 .. code-block:: bash
 

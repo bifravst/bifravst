@@ -37,7 +37,7 @@ Create a new :file:`.envrc` file in the project folder and add these environment
 
     export EXTEND_ESLINT=true
 
-Remember to allow the changed file:
+Run the following command to allow the changed file:
 
 .. code-block:: bash
 
