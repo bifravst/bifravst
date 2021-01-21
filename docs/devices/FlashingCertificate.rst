@@ -49,7 +49,7 @@ Provisioning of the certificate using CLI also results in the following actions:
 Provisioning using nRF Connect for Desktop
 ******************************************
 
-You can use the :file:`certificates/device-<deviceId>.json` file with *Certificate Manager* in `LTE Link Monitor <https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html>`_, which is an application implemented as part of `nRF Connect for Desktop <https://infocenter.nordicsemi.com/topic/struct_nrftools/struct/nrftools_nrfconnect.html>`_  to provision the certificate to the device.
+You can use the :file:`certificates/device-<deviceId>.json` file with *Certificate Manager* in `LTE Link Monitor <https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html>`_, which is an application implemented as part of `nRF Connect for Desktop <https://infocenter.nordicsemi.com/topic/struct_nrftools/struct/nrftools_nrfconnect.html>`_, to provision the certificate to the device.
 
 *Certificate Manager* uses AT commands to write the certificate information to the secure storage of the modem and you need to program your device with a firmware that has the AT command host enabled.
 
@@ -91,7 +91,7 @@ To provision the certificate using LTE Link Monitor, complete the following step
 
       LTE Link Monitor Certificate Manager
 
-#. Drag and Drop the JSON file into the Certificate Manager window or select the JSON file using the :guilabel:`Load from JSON` option.
+#. Drag and drop the JSON file into the *Certificate Manager* window or select the JSON file using the :guilabel:`Load from JSON` option.
 
    .. note::
 
