@@ -34,7 +34,6 @@ The project slugs use the following naming rules for the **main** project reposi
 
     - use ``asset-tracker-cloud-[vendor]`` as a prefix to denote that it contains *cloud example code*
     - append ``-[vendor]`` to the prefix if the project relates to a specific cloud vendor
-    - for the firmware repo use ``asset-tracker-firmware``
     - do not use ``example`` as part of the slug
 
 Examples
@@ -51,8 +50,6 @@ Examples
 +--------------------------------------------------+--------------------------------------------------------------------+
 | ``asset-tracker-cloud-app``                      | Web App                                                            |
 +--------------------------------------------------+--------------------------------------------------------------------+
-| ``asset-tracker-firmware``                       | Firmware                                                           |
-+--------------------------------------------------+--------------------------------------------------------------------+
 | ``asset-tracker-cloud-device-ui``                | Device Simulator Web App                                           |
 +--------------------------------------------------+--------------------------------------------------------------------+
 | ``asset-tracker-cloud-device-ui-server``         | Device Simulator Server used by the Device Simulator Web App       |
@@ -61,6 +58,12 @@ Examples
 +--------------------------------------------------+--------------------------------------------------------------------+
 | ``asset-tracker-cloud-eslint-config-typescript`` | TypeScript code style for all Asset Tracker Cloud Example projects |
 +--------------------------------------------------+--------------------------------------------------------------------+
+
+Firmware
+========
+
+The firmware is part of the `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_ in a folder named ``asset_tracker_v2`` inside the ``applications`` folder.
+It is referred to as the **Asset Tracker v2**.
 
 Helper projects
 ===============
