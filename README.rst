@@ -3,19 +3,19 @@
 Asset Tracker Cloud Example
 ###########################
 
-.. image:: https://github.com/bifravst/bifravst/workflows/Test%20and%20Release/badge.svg
+.. image:: https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/workflows/Test%20and%20Release/badge.svg
    :alt: GitHub Actions
-   :target: https://github.com/bifravst/bifravst/actions
-.. image:: https://snyk.io/test/github/bifravst/bifravst/badge.svg
+   :target: https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/actions
+.. image:: https://snyk.io/test/github/NordicSemiconductor/asset-tracker-cloud-docs/badge.svg
    :alt: Known Vulnerabilities
-   :target: https://snyk.io/test/github/bifravst/bifravst
+   :target: https://snyk.io/test/github/NordicSemiconductor/asset-tracker-cloud-docs
 .. image:: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
    :alt: semantic-release
    :target: https://github.com/semantic-release/semantic-release
 .. image:: https://img.shields.io/badge/renovate-enabled-brightgreen.svg
    :alt: Renovate
    :target: https://renovatebot.com
-.. image:: https://img.shields.io/endpoint.svg?url=https://dashboard.mergify.io/badges/bifravst/bifravst&style=flat
+.. image:: https://img.shields.io/endpoint.svg?url=https://dashboard.mergify.io/badges/NordicSemiconductor/asset-tracker-cloud-docs&style=flat
    :alt: Mergify Status
    :target: https://mergify.io
 .. image:: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
@@ -49,7 +49,7 @@ The *Asset Tracker Cloud Example* aims to provide answers and recommend best pra
 .. note ::
 
    In the coming weeks, we will establish the best path to provide this project through nRF Connect SDK, Nordic Semiconductor Infocenter and other established channels.
-   For more information, see the `GitHub issue <https://github.com/bifravst/bifravst/issues/56>`_.
+   For more information, see the `GitHub issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/56>`_.
 
 Core principles
 ***************
@@ -99,7 +99,7 @@ Instead, in the Asset Tracker Cloud Example, the best practices of the respectiv
 Project overview
 ****************
 
-The *Asset Tracker Cloud Example* is licensed under the `3-clause BSD license <./LICENSE>`_ (software) and the `Nordic 5-clause BSD license <https://github.com/bifravst/firmware/blob/saga/LICENSE>`_ (firmware).
+The *Asset Tracker Cloud Example* is licensed under the `3-clause BSD license <./LICENSE>`_.
 Below table shows the characteristics of The *Asset Tracker Cloud Example* project:
 
 +------------------------------------+----------------------+
@@ -128,7 +128,7 @@ Below table shows the characteristics of The *Asset Tracker Cloud Example* proje
 
 .. note::
 
-   Development progress is managed in the `Asset Tracker Cloud Example GitHub Project <https://github.com/orgs/bifravst/projects/1>`_.
+   Development progress is managed in the `Asset Tracker Cloud Example GitHub Project <https://github.com/orgs/NordicSemiconductor/asset-tracker-cloud-docs/projects/1>`_.
 
 System overview and technical considerations
 ********************************************
@@ -185,13 +185,13 @@ Supported cloud providers
 
 See the below table for a list of supported cloud providers:
 
-+-------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
-|                   | Amazon Web Services                                                                       | Google Cloud                                                | Microsoft Azure                                                 | Alibaba Cloud |
-+===================+===========================================================================================+=============================================================+=================================================================+===============+
-| LTE-M: TCP+MQTT   | :ref:`feature complete <aws-getting-started>`                                             | `on hold <https://github.com/bifravst/bifravst/issues/25>`_ | `in progress <https://github.com/bifravst/bifravst/issues/29>`_ | Planned       |
-+-------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
-| NB-IoT: UDP+LWM2M | Planned                                                                                   | Planned                                                     | Planned                                                         | Planned       |
-+-------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+---------------+
++-------------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------+
+|                   | Amazon Web Services                                                                       | Google Cloud                                                                           | Microsoft Azure                                                                            | Alibaba Cloud |
++===================+===========================================================================================+========================================================================================+============================================================================================+===============+
+| LTE-M: TCP+MQTT   | :ref:`feature complete <aws-getting-started>`                                             | `on hold <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/25>`_ | `in progress <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues/29>`_ | Planned       |
++-------------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------+
+| NB-IoT: UDP+LWM2M | Planned                                                                                   | Planned                                                                                | Planned                                                                                    | Planned       |
++-------------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------+
 
 For cloud providers having no native UDP+LWM2M support, using a bridge such as `Eclipse Californium <https://github.com/eclipse/californium>`_, was evaluated.
 For more information see `Leshan LwM2M AWS IoT Gateway <https://github.com/coderbyheart/leshan-aws>`_.

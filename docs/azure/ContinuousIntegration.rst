@@ -6,14 +6,14 @@ Continuous Integration
 .. note::
 
     This is an advanced topic for those who want to further develop and customize the *Asset Tracker for Azure Example* according to their needs.
-    Please see the `GitHub project page <https://github.com/bifravst/azure/>`_ of the *Asset Tracker for Azure Example* which implements the process outlined here.
+    Please see the `GitHub project page <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/>`_ of the *Asset Tracker for Azure Example* which implements the process outlined here.
 
 Every change to the project is tested against an Azure account (which has to be manually prepared, see below), and then a BDD test-suite of end-to-end tests written in `Gherkin <https://cucumber.io/docs/gherkin/>`_, which describes tests in plain english, is run.
 
 This way the tests itself are not tied to the implementation and during refactoring one cannot accidentally drop tests: tests written for test runners like Jest tend to be tied closely to the API of the source-code implementation, in a case of bigger refactoring the tests themselves usually need to be refactored as well.
 Since the BDD test above are purely testing based on the public API of the project (which is a mix of the native Azure API and a custom REST API), they can be kept unchanged during refactoring.
 
-This also provides an easily grokable description of the available (and implemented) features, `in one folder <https://github.com/bifravst/azure/tree/saga/features>`_.
+This also provides an easily grokable description of the available (and implemented) features, `in one folder <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/tree/saga/features>`_.
 
 Prepare your Azure Account
 **************************
@@ -21,7 +21,7 @@ Prepare your Azure Account
 .. warning::
 
     Compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>` getting it to work on Azure is immensely more complicated and involves many manual steps, which unfortunately cannot be automated.
-    If you know how to make the whole set-up process simpler, `please provide your input here! <https://github.com/bifravst/azure/issues/1>`_
+    If you know how to make the whole set-up process simpler, `please provide your input here! <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/issues/1>`_
 
 Create a new tenant (Azure Active Directory)
 ============================================

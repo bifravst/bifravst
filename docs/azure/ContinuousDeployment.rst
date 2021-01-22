@@ -20,8 +20,8 @@ Create an Azure Active Directory B2C
 
 .. note::
 
-     This `can currently only be achieved through the CLI <https://github.com/bifravst/azure/issues/1>`_.
-     If you know how to make the whole set-up process simpler, `please provide your input here! <https://github.com/bifravst/azure/issues/1>`_
+     This `can currently only be achieved through the CLI <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/issues/1>`_.
+     If you know how to make the whole set-up process simpler, `please provide your input here! <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/issues/1>`_
 
 #.  Go to the *Marketplace* blade and search for *Azure Active Directory [B2C]*.
 #.  Click the *Azure Active Directory [B2C]* tile, and on then click the *Create* button.
@@ -162,7 +162,7 @@ Create a resource group for the *Asset Tracker for Azure Example*
 
     az group create --name ${RESOURCE_GROUP_NAME:-cat-tracker} --location ${LOCATION:-northeurope}
 
-Fork the `Asset Tracker for Azure Example project <https://github.com/bifravst/azure/settings/secrets/new>`_ and add these secrets.
+Fork the `Asset Tracker for Azure Example project <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure>`_ and add these secrets.
 
 -   ``AZURE_CREDENTIALS``: store the contents of the JSON file created above
 -   ``APP_REG_CLIENT_ID``: the *application (client) id* of the created Active Directory B2C App registration

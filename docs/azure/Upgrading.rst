@@ -24,7 +24,7 @@ Docker variant (in case you get a ``Permission denied.`` error):
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure bifravst/azure-dev:latest \
+    docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure NordicSemiconductor/asset-tracker-cloud-azure-dev:latest \
         func azure functionapp publish ${APP_NAME:-cat-tracker}API --typescript
 
 Tip

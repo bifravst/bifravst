@@ -1,15 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.desired.azure.schema.json",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/firmware/state.desired.azure.schema.json",
   "title": "Cat Tracker Firmware Device Data and Configuration for AWS",
   "description": "Describes the possible properties of the desired device state of the Asset Tracker for Azure Example.",
   "type": "object",
   "properties": {
     "cfg": {
-      "$ref": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/cfg.schema.json"
+      "$ref": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/firmware/cfg.schema.json"
     },
     "firmware": {
-      "$ref": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/azure.fota.schema.json"
+      "$ref": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/firmware/azure.fota.schema.json"
     }
   }
 }

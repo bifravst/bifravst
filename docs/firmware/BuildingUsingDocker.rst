@@ -15,8 +15,8 @@ It is used to cache all dependencies so you can build and develop locally withou
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/firmware
-    cd firmware
+    git clone https://github.com/NordicSemiconductor/sdk-nrf
+    cd sdk-nrf/applications/asset_tracker_v2
     docker build -t cat-tracker-firmware-docker .
     BROKER_HOSTNAME=`aws iot describe-endpoint --endpoint-type iot:Data-ATS | jq -r '.endpointAddress'`
     echo "CONFIG_AWS_IOT_BROKER_HOST_NAME=\"${BROKER_HOSTNAME}\"" >> prj_nrf9160dk_nrf9160ns.conf

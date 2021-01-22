@@ -25,6 +25,6 @@ This will enable the `geolocateCellFromUnwiredLabs` function to resolve cells, o
 .. note::
 
     The Unwired Labs' LocationAPI is free for low volumes, however there is `opencellid.org <https://opencellid.org/>`_ which allows to use the underlying dataset for free.
-    If this is relevant for you, please `vote in this issue <https://github.com/bifravst/azure/issues/403>`_.
+    If this is relevant for you, please `vote in this issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/issues/403>`_.
 
 .. _Unwired Labs: https://unwiredlabs.com/

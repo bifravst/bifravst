@@ -40,7 +40,7 @@ Clone the latest version of the device-ui_ project and install the dependencies:
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/device-ui.git cat-tracker-device-ui
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui.git cat-tracker-device-ui
     cd cat-tracker-device-ui
     npm ci
 
@@ -76,4 +76,4 @@ This builds and deploys the Device Simulator Web Application to the S3 bucket cr
 
 Afterwards you can open the domain name printed in ``SNOWPACK_PUBLIC_DEVICE_UI_BASE_URL`` to view the Device Simulator Web Application.
 
-.. _device-ui: https://github.com/bifravst/device-ui
+.. _device-ui: https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui

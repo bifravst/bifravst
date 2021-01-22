@@ -10,7 +10,7 @@ Continuous Integration of Firmware
 Overview
 ********
 
-Every commit to the `firmware <https://github.com/bifravst/firmware>`_ repo will trigger a CI run on GitHub Actions.
+Every commit to the `Asset Tracker v2 of the nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf/tree/master/applications/asset_tracker_v2>`_ repo will trigger a CI run on GitHub Actions.
 
 The CI run will
 
@@ -80,11 +80,11 @@ Firmware CI runner setup
 #.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform.
     Use the path to the folder (e.g. ``~/JLink_Linux_V686_arm64/``) further down.
 
-#.  Install `firmware-ci-runner-aws <https://github.com/bifravst/firmware-ci-runner-aws.git>`_:
+#.  Install `firmware-ci-runner-aws <https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner.git>`_:
 
     .. code-block:: bash
 
-        git clone https://github.com/bifravst/firmware-ci-runner-aws.git
+        git clone https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner.git
         cd firmware-ci-runner-aws
         npm ci
         npx tsc
@@ -114,4 +114,4 @@ Firmware CI runner setup
 
 The Firmware CI will now process all schedule jobs one after another.
 
-.. _Firmware CI runner: https://github.com/bifravst/firmware-ci-runner-aws
+.. _Firmware CI runner: https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner

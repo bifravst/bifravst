@@ -1,7 +1,7 @@
 Running the app locally with Docker
 ###################################
 
-In case your system has a different Node.js version you can run the app locally `in a Docker container <https://hub.docker.com/r/bifravst/azure-dev>`_.
+In case your system has a different Node.js version you can run the app locally `in a Docker container <https://hub.docker.com/r/NordicSemiconductor/asset-tracker-cloud-azure-dev>`_.
 
 Export the IotHub connection string, the Avatar storage environment variables (can be found in the function app's configuration) to the environment variables ``IOT_HUB_CONNECTION_STRING``, ``AVATAR_STORAGE_ACCOUNT_NAME``, ``AVATAR_STORAGE_ACCESS_KEY``, ``FOTA_STORAGE_ACCOUNT_NAME``, ``FOTA_STORAGE_ACCESS_KEY``, ``HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING``.
 
@@ -45,7 +45,7 @@ Run the functions app:
         -e HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING \
         -e UNWIREDLABS_API_KEY \
         -e UNWIREDLABS_API_ENDPOINT \
-        -v ${PWD}:/workdir bifravst/azure-dev:latest \
+        -v ${PWD}:/workdir NordicSemiconductor/asset-tracker-cloud-azure-dev:latest \
         func start --typescript
 
 You can then use ``http://localhost:7071/`` as your ``REACT_APP_AZURE_API_ENDPOINT`` for the app.

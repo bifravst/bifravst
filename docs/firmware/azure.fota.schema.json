@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/azure.fota.schema.json",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/firmware/azure.fota.schema.json",
   "description": "Schedules a firmware  for the device",
   "type": "object",
   "properties": {

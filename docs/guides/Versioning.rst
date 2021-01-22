@@ -1,7 +1,7 @@
 Versioning
 ##########
 
-We use `semantic-release <https://github.com/semantic-release/semantic-release>`_ to automatically determine the next version of a project **and** publish a release in the GitHub project as well as release it to our `npm organization <https://www.npmjs.com/settings/bifravst/packages>`_.
+We use `semantic-release <https://github.com/semantic-release/semantic-release>`_ to automatically determine the next version of a project **and** publish a release in the GitHub project as well as release it to our `npm organization <https://www.npmjs.com/settings/NordicSemiconductor/asset-tracker-cloud-packages>`_.
 
 The next version is determined by scanning the commit messages.
 They must follow `the Angular commit message rules <https://github.com/semantic-release/semantic-release#commit-message-format>`_, and in every library `a hook <https://github.com/marionebl/commitlint>`_ will check commit messages against these rules.

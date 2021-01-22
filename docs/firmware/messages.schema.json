@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/messages.schema.json",
+  "$id": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/firmware/messages.schema.json",
   "title": "Cat Tracker Firmware Messages",
   "description": "Describes the messages published by the device",
   "type": "object",

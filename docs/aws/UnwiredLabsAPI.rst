@@ -19,4 +19,4 @@ This will update the StateMachine, which resolves cells from devices to use the 
 
    Unwired Labs' LocationAPI is free for low volumes.
    However, `opencellid.org <https://opencellid.org/>`_ allows to use the underlying dataset for free.
-   If you find it relevant, vote in the `Integrate OpenCelliD data <https://github.com/bifravst/aws/issues/120>`_ issue.
+   If you find it relevant, vote in the `Integrate OpenCelliD data <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws/issues/120>`_ issue.

@@ -18,11 +18,11 @@ If you are using Windows, we recommend using the `Windows Subsystem for Linux <h
 Clone the project and install dependencies
 ******************************************
 
-Clone the latest version of the `azure <https://github.com/bifravst/azure>`_ project and install the dependencies:
+Clone the latest version of the `azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure>`_ project and install the dependencies:
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/azure.git cat-tracker-azure 
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-azure.git cat-tracker-azure 
     cd cat-tracker-azure
     npm ci
     npx tsc
@@ -101,7 +101,7 @@ Now create the resource group for the solution:
 
     az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${APP_NAME:-cat-tracker}
 
-`It's currently also not possible <https://github.com/bifravst/azure/issues/1>`_ to create Active Directory B2C and application through the ARM template, you need to follow `these instructions <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application.
+`It's currently also not possible <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/issues/1>`_ to create Active Directory B2C and application through the ARM template, you need to follow `these instructions <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application.
 Use ``http://localhost:3000/`` (for local development) and ``https://${APP_NAME:-cat-tracker}app.z16.web.core.windows.net/`` as the redirect URLs.
 
 Save the *directory (tenant) id* of the created Active Directory B2C and the *application (client) id* to the environment variable ``APP_REG_CLIENT_ID`` in the ``.envrc`` file:

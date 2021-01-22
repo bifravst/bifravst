@@ -43,7 +43,7 @@ Use the CLI to provision the device certificates:
 
 Provisioning of the certificate using CLI also results in the following actions:
 
-* Downloading of the latest firmware from the `Firmware releases GitHub page <https://github.com/bifravst/firmware/releases>`_ 
+* Downloading of the latest pre-built firmware
 * Programming of the firmware to the device
 
 Provisioning using nRF Connect for Desktop
@@ -64,8 +64,8 @@ To provision the certificate using LTE Link Monitor, complete the following step
 
    For programming, use the following files:
  
-   *   Thingy:91 -  `thingy91_at_client_increased_buf.hex <https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex>`_
-   *   nRF9160 DK - `91dk_at_client_increased_buf.hex <https://github.com/bifravst/bifravst/releases/download/v5.9.2/91dk_at_client_increased_buf.hex>`_
+   *   Thingy:91 -  `thingy91_at_client_increased_buf.hex <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex>`_
+   *   nRF9160 DK - `91dk_at_client_increased_buf.hex <https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/releases/download/v5.9.2/91dk_at_client_increased_buf.hex>`_
 
    For instructions, see the following documentation:
 

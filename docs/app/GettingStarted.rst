@@ -18,11 +18,11 @@ If you are using Windows, we recommend using the `Windows Subsystem for Linux <h
 Clone the project and install the dependencies
 **********************************************
 
-Clone the latest version of the `Cat Tracker web application <https://github.com/bifravst/app>`_ project and install the dependencies:
+Clone the latest version of the `Cat Tracker web application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app>`_ project and install the dependencies:
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/app.git cat-tracker-app
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app.git cat-tracker-app
     cd cat-tracker-app
     npm ci
 

@@ -1,5 +1,5 @@
 {
-  "name": "@bifravst/bifravst",
+  "name": "@NordicSemiconductor/asset-tracker-cloud-docs",
   "version": "0.0.0-development",
   "description": "The Asset Tracker Cloud Example aims to provide a concrete end-to-end example for an IoT product in the asset tracker space, a Cat Tracker.",
   "scripts": {
@@ -7,10 +7,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bifravst/bifravst.git"
+    "url": "git+https://github.com/NordicSemiconductor/asset-tracker-cloud-docs.git"
   },
   "bugs": {
-    "url": "https://github.com/bifravst/bifravst/issues"
+    "url": "https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/issues"
   },
   "homepage": "https://bifravst.github.io/",
   "keywords": [

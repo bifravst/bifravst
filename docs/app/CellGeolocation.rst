@@ -10,11 +10,11 @@ It can be useful in the case of tracking assets like parcels, where the approxim
 Locating cells based on device data
 ***********************************
 
-GPS position fixes that are acquired by the devices and the cell information (cell id, area id, MCC/MNC) of these devices are stored together and it is used to `calculate the location of the cell <https://github.com/bifravst/cell-geolocation-helpers#cellfromgeolocations>`_.
+GPS position fixes that are acquired by the devices and the cell information (cell id, area id, MCC/MNC) of these devices are stored together and it is used to `calculate the location of the cell <https://github.com/NordicSemiconductor/asset-tracker-cloud-cell-geolocation-helpers#cellfromgeolocations>`_.
 
 The following image shows the location calculation of a device using the device geolocation data:
 
-.. figure:: https://github.com/bifravst/cell-geolocation-helpers/raw/saga/map.gif
+.. figure:: https://github.com/NordicSemiconductor/asset-tracker-cloud-cell-geolocation-helpers/raw/saga/map.gif
    :alt: Calculating the location of a cell using the device geolocation data
     
    Calculating the location of a cell using the device geolocation data

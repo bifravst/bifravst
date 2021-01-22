@@ -32,7 +32,7 @@ As the next step, you can run a simulated device using the generated certificate
 Using the Device simulator web application
 ******************************************
 
-The `device-ui <https://github.com/bifravst/device-ui>`_ provides a browser-based UI to control the simulated device.
+The `device-ui <https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui>`_ provides a browser-based UI to control the simulated device.
 
 .. figure:: ./device-simulator.png
    :alt: Device simulator web application
@@ -52,7 +52,7 @@ Clone the latest version of the `device-ui`_ project and install the dependencie
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/device-ui.git cat-tracker-device-ui
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-device-ui.git cat-tracker-device-ui
     cd cat-tracker-device-ui
     npm ci
 
