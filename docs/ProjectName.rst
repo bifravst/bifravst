@@ -64,6 +64,7 @@ Firmware
 
 The firmware is part of the `nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf>`_ in a folder named ``asset_tracker_v2`` inside the ``applications`` folder.
 It is referred to as the **Asset Tracker v2**.
+When specifying a certain release use **Asset Tracker v2 of nRF Connect SDK X.Y.Z** (**X.Y.Z** being a specific release of nRF Connect SDK, e.g. **1.5**).
 
 Helper projects
 ===============
