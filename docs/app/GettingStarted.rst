@@ -18,12 +18,12 @@ If you are using Windows, we recommend using the `Windows Subsystem for Linux <h
 Clone the project and install the dependencies
 **********************************************
 
-Clone the latest version of the `Cat Tracker Web Application <https://github.com/bifravst/app>`_ project and install the dependencies:
+Clone the latest version of the `Cat Tracker web application <https://github.com/NordicSemiconductor/asset-tracker-cloud-app>`_ project and install the dependencies:
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/app.git bifravst-app
-    cd bifravst-app
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-app.git cat-tracker-app
+    cd cat-tracker-app
     npm ci
 
 Set the environment ``EXTEND_ESLINT`` to ``true`` (It is needed for Create React App to pick up the `custom eslint configuration <https://create-react-app.dev/docs/setting-up-your-editor/#experimental-extending-the-eslint-config>`_).

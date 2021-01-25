@@ -5,15 +5,15 @@ Continuous Integration
 
 .. note::
 
-    This is an advanced topic for those who want to further develop and customize Bifravst according to their needs.
-    Please see the `GitHub project page <https://github.com/bifravst/azure/>`_ of Bifravst for Azure which implements the process outlined here.
+    This is an advanced topic for those who want to further develop and customize the *Asset Tracker for Azure Example* according to their needs.
+    Please see the `GitHub project page <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/>`_ of the *Asset Tracker for Azure Example* which implements the process outlined here.
 
 Every change to the project is tested against an Azure account (which has to be manually prepared, see below), and then a BDD test-suite of end-to-end tests written in `Gherkin <https://cucumber.io/docs/gherkin/>`_, which describes tests in plain english, is run.
 
 This way the tests itself are not tied to the implementation and during refactoring one cannot accidentally drop tests: tests written for test runners like Jest tend to be tied closely to the API of the source-code implementation, in a case of bigger refactoring the tests themselves usually need to be refactored as well.
 Since the BDD test above are purely testing based on the public API of the project (which is a mix of the native Azure API and a custom REST API), they can be kept unchanged during refactoring.
 
-This also provides an easily grokable description of the available (and implemented) features, `in one folder <https://github.com/bifravst/azure/tree/saga/features>`_.
+This also provides an easily grokable description of the available (and implemented) features, `in one folder <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/tree/saga/features>`_.
 
 Prepare your Azure Account
 **************************
@@ -21,15 +21,15 @@ Prepare your Azure Account
 .. warning::
 
     Compared to the :ref:`AWS continuous integration setup <aws-continuous-integration>` getting it to work on Azure is immensely more complicated and involves many manual steps, which unfortunately cannot be automated.
-    If you know how to make the whole set-up process simpler, `please provide your input here! <https://github.com/bifravst/azure/issues/1>`_
+    If you know how to make the whole set-up process simpler, `please provide your input here! <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/issues/1>`_
 
 Create a new tenant (Azure Active Directory)
 ============================================
 
 In order to separate the CI test runs from the production resources, go to the `Azure Portal <https://portal.azure.com/>`_ and create a new Azure Active Directory tenant:
 
--   Organization name: ``Bifravst (CI)``
--   Initial domain name: ``bifravstci`` (since this is
+-   Organization name: ``Cat Tracker (CI)``
+-   Initial domain name: ``cat-tracker-ci`` (since this is
     globally unique customize this)
 -   Country: pick your preferred country
 
@@ -39,7 +39,7 @@ Note down the initial domain name you used:
 
 .. code-block:: bash
 
-    export TENANT_DOMAIN="<Primary domain>" # e.g. "bifravstci"
+    export TENANT_DOMAIN="<Primary domain>" # e.g. "cat-tracker-ci"
 
 Create subscription
 ===================
@@ -57,12 +57,12 @@ Note down the Subscription ID which you can find in the Subscriptions blade:
 Create another new tenant (Azure Active Directory B2C)
 ======================================================
 
-Create a new Azure Active Directory B2C tenant, which is used as the identity management solution for the user accounts of the Bifravst instance.
+Create a new Azure Active Directory B2C tenant, which is used as the identity management solution for the user accounts of the *Asset Tracker for Azure Example* instance.
 
 Follow `the Create Tenant guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant>`_ to create a new Azure AD B2C tenant:
 
--   Organization name: ``Bifravst (CI) Users``
--   Initial domain name: ``bifravstciusers`` (since this is
+-   Organization name: ``Cat Tracker (CI) Users``
+-   Initial domain name: ``cat-tracker-ci-users`` (since this is
     globally unique customize this)
 -   Country: pick your preferred country
 
@@ -70,7 +70,7 @@ Note down the initial domain name you used:
 
 .. code-block:: bash
 
-    export B2C_TENANT="<Primary domain>" # e.g. "bifravstciusers"
+    export B2C_TENANT="<Primary domain>" # e.g. "cat-tracker-ci-users"
 
 Link this Azure AD B2C tenant to the subscription for CI by following `the Billing guide <https://docs.microsoft.com/en-us/azure/active-directory-b2c/billing#link-an-azure-ad-b2c-tenant-to-a-subscription>`_.
 
@@ -79,8 +79,8 @@ Create Azure Active Directory B2C application
 
 Follow the steps in the :ref:`Continous Deployment <azure-continuous-deployment>`  instructions to create a new App registration.
 
--   Name: Bifravst Web App
--   Redirect URI (make sure to select SPA): ``https://bifravstciapp.z16.web.core.windows.net/`` (instead of ``bifravstciapp`` you need to pick something else that fits your project because this name is globally unique)
+-   Name: Cat Tracker Web App
+-   Redirect URI (make sure to select SPA): ``https://cat-tracker-ci-app.z16.web.core.windows.net/`` (instead of ``cat-tracker-ci-app`` you need to pick something else that fits your project because this name is globally unique)
 
 Note down the *Application (client) ID* and the *Directory (tenant) ID* of the created Active Directory B2C App registration:
 
@@ -139,22 +139,22 @@ Now create the CI credentials:
 
     az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/${SUBSCRIPTION_ID} > ci-credentials.json
 
-Create a resource group for Bifravst
+Create a resource group for the *Asset Tracker for Azure Example*
 
 .. code-block:: bash
 
-    az group create --name ${RESOURCE_GROUP_NAME:-bifravst} --location ${LOCATION:-northeurope}
+    az group create --name ${RESOURCE_GROUP_NAME:-cat-tracker} --location ${LOCATION:-northeurope}
 
 Deploy the resources:
 
 .. code-block:: bash
 
     az deployment group create \
-    --resource-group ${RESOURCE_GROUP_NAME:-bifravst} \
+    --resource-group ${RESOURCE_GROUP_NAME:-cat-tracker} \
     --mode Complete \
     --template-file azuredeploy.json \
     --parameters \
-    appName=${APP_NAME:-bifravst} \
+    appName=${APP_NAME:-cat-tracker} \
     location=${LOCATION:-northeurope} \
     appRegistrationClientId=$APP_REG_CLIENT_ID \
     b2cTenant=$B2C_TENANT \
@@ -164,21 +164,21 @@ Publish the functions:
 
 .. code-block:: bash
 
-    func azure functionapp publish ${APP_NAME:-bifravst}API --typescript
+    func azure functionapp publish ${APP_NAME:-cat-tracker}API --typescript
 
 Docker variant for publishing the functions (in case you get a ``Permission denied`` error):
 
 .. code-block:: bash
 
-    docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure bifravst/azure-dev:latest \
-        func azure functionapp publish ${APP_NAME:-bifravst}API --typescript
+    docker run --rm -v ${PWD}:/workdir -v ${HOME}/.azure:/root/.azure cat-tracker/azure-dev:latest \
+        func azure functionapp publish ${APP_NAME:-cat-tracker}API --typescript
 
 Running during development
 **************************
 
 .. code-block:: bash
 
-    export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP_NAME} -n ${APP_NAME:-bifravst}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
+    export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP_NAME} -n ${APP_NAME:-cat-tracker}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
 
     npm ci
     npm run test:e2e

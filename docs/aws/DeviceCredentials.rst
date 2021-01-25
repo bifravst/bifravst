@@ -18,7 +18,7 @@ If you have a directory called :file:`certificates` with a :file:`rootCA.pem` fi
 
 .. note::
 
-   Note that this action will create a user with full access rights to the account, and therefore it must be created only in an account dedicated for *Bifravst*.
+   Note that this action will create a user with full access rights to the account, and therefore it must be created only in an account dedicated for the *Asset Tracker for AWS Example*.
 
 It is recommended to use your `own Certificate Authority (CA) <https://docs.aws.amazon.com/iot/latest/developerguide/device-certs-your-own.html>`_ to create certificates for your devices since it allows generating *device certificates* offline.
 

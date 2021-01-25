@@ -28,7 +28,7 @@ Create a CA root certificate
 
 .. note::
 
-    Make sure you have exported the right resource group to name as ``$RESOURCE_GROUP_NAME``, it defaults to ``bifravst``.
+    Make sure you have exported the right resource group to name as ``$RESOURCE_GROUP_NAME``, it defaults to ``cat-tracker``.
 
 This creates a CA root certificate and registers it with the Azure IoT Device Provisioning Service.
 

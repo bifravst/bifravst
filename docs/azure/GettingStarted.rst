@@ -5,7 +5,7 @@ Getting started
 
 .. note::
 
-    💵 Because the Azure solution is using `Cosmos DB <https://docs.microsoft.com/en-us/azure/cosmos-db/introduction>`_ for querying historical device data, the minimum costs to run Bifravst on Azure is around $24 per month.
+    💵 Because the Azure solution is using `Cosmos DB <https://docs.microsoft.com/en-us/azure/cosmos-db/introduction>`_ for querying historical device data, the minimum costs to run the *Asset Tracker for Azure Example* is around $24 per month.
     However, `there is a free tier for new accounts <https://azure.microsoft.com/en-us/pricing/details/cosmos-db/>`_, which you might be eligible for.
 
 System requirements
@@ -18,12 +18,12 @@ If you are using Windows, we recommend using the `Windows Subsystem for Linux <h
 Clone the project and install dependencies
 ******************************************
 
-Clone the latest version of the `azure <https://github.com/bifravst/azure>`_ project and install the dependencies:
+Clone the latest version of the `azure <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure>`_ project and install the dependencies:
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/azure.git bifravst-azure 
-    cd bifravst-azure
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-azure.git cat-tracker-azure 
+    cd cat-tracker-azure
     npm ci
     npx tsc
 
@@ -69,9 +69,9 @@ Deploy the solution to your account
 
 .. note::
 
-    Since we will be using Azure Active Directory B2C it is recommended to set up Bifravst in a dedicated subscription.
+    Since we will be using Azure Active Directory B2C it is recommended to set up the *Asset Tracker for Azure Example* in a dedicated subscription.
 
-Go to the Subscriptions blade, and add a new subscription for Bifravst, copy the subscription id.
+Go to the Subscriptions blade, and add a new subscription for the *Asset Tracker for Azure Example*, copy the subscription id.
 
 .. code-block:: bash
 
@@ -83,7 +83,7 @@ Authenticate the CLI:
 
     az login
 
-Pick a name for the solution and export it as ``APP_NAME``, in this example we use ``bifravst`` as the default.
+Pick a name for the solution and export it as ``APP_NAME``, in this example we use ``cat-tracker`` as the default.
 
 Deploy the solution in your preferred location (you can list them using ``az account list-locations``) and export it on the environment variable ``LOCATION``.
 
@@ -99,10 +99,10 @@ Now create the resource group for the solution:
 
 .. code-block:: bash
 
-    az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${APP_NAME:-bifravst}
+    az group create --subscription $SUBSCRIPTION_ID -l $LOCATION -n ${APP_NAME:-cat-tracker}
 
-`It's currently also not possible <https://github.com/bifravst/azure/issues/1>`_ to create Active Directory B2C and application through the ARM template, you need to follow `these instructions <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application.
-Use ``http://localhost:3000/`` (for local development) and ``https://${APP_NAME:-bifravst}app.z16.web.core.windows.net/`` as the redirect URLs.
+`It's currently also not possible <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/issues/1>`_ to create Active Directory B2C and application through the ARM template, you need to follow `these instructions <https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications>`_ and create a B2C tenant and an application.
+Use ``http://localhost:3000/`` (for local development) and ``https://${APP_NAME:-cat-tracker}app.z16.web.core.windows.net/`` as the redirect URLs.
 
 Save the *directory (tenant) id* of the created Active Directory B2C and the *application (client) id* to the environment variable ``APP_REG_CLIENT_ID`` in the ``.envrc`` file:
 
@@ -122,19 +122,19 @@ Now deploy the solution:
 
 .. code-block:: bash
 
-    az deployment group create --resource-group ${APP_NAME:-bifravst} \
-        --mode Complete --name ${APP_NAME:-bifravst} \
+    az deployment group create --resource-group ${APP_NAME:-cat-tracker} \
+        --mode Complete --name ${APP_NAME:-cat-tracker} \
         --template-file azuredeploy.json \
         --parameters \
-            appName=${APP_NAME:-bifravst} \
+            appName=${APP_NAME:-cat-tracker} \
             location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT
     # It's currently not possible to enable website hosting through the ARM template
     az storage blob service-properties update \
-        --account-name ${APP_NAME:-bifravst}app
+        --account-name ${APP_NAME:-cat-tracker}app
         --static-website --index-document index.html
     az storage blob service-properties update \
-        --account-name ${APP_NAME:-bifravst}deviceui \
+        --account-name ${APP_NAME:-cat-tracker}deviceui \
         --static-website --index-document index.html
     # Deploy the functions
-    func azure functionapp publish ${APP_NAME:-bifravst}API --typescript
+    func azure functionapp publish ${APP_NAME:-cat-tracker}API --typescript

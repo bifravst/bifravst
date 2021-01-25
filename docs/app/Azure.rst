@@ -24,11 +24,11 @@ Configure the IDs of your Azure resources
 =========================================
 
 The web application requires the IDs of the Azure resources that were created during the setup of the stack.
-Run the following command in the :file:`bifravst-app` directory to copy the output to the :file:`.env.local` file:
+Run the following command in the :file:`cat-tracker-app` directory to copy the output to the :file:`.env.local` file:
 
 .. code-block:: bash
 
-    node ../bifravst-azure/cli react-config > .env.local
+    node ../cat-tracker-azure/cli react-config > .env.local
 
 Example for :file:`.env.local`
 ------------------------------
@@ -39,8 +39,8 @@ Following is an example for the contents of the :file:`.env.local` file:
 
     REACT_APP_CLOUD_FLAVOUR=Azure
     REACT_APP_AZURE_CLIENT_ID=358162bb-b809-42ef-9b62-22f8fa42b5fb
-    REACT_APP_AZURE_AD_B2C_AUTHORITY=https://bifravstprod.b2clogin.com/bifravstprod.onmicrosoft.com/B2C_1_signup_signin
-    REACT_APP_AZURE_B2C_TENANT=bifravstprod
+    REACT_APP_AZURE_AD_B2C_AUTHORITY=https://cat-trackerprod.b2clogin.com/cat-trackerprod.onmicrosoft.com/B2C_1_signup_signin
+    REACT_APP_AZURE_B2C_TENANT=cat-trackerprod
     REACT_APP_VERSION=v3.6.1
 
 Version string
@@ -53,7 +53,7 @@ Version string
 Deploy the web application
 **************************
 
-To build and deploy the web application to the Storage Account created while setting up *Bifravst* in your Azure account, run the following commands:
+To build and deploy the web application to the Storage Account created while setting up the *Asset Tracker for Azure Example* in your Azure account, run the following commands:
 
 .. code-block:: bash
 

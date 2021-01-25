@@ -3,6 +3,10 @@
 Building using GitHub actions
 #############################
 
+.. warning::
+
+    This guide outdated. See `this issue <https://github.com/bifravst/firmware/issues/408>`_.
+
 Since it is a tedious effort to build the application, you can leverage GitHub Actions (which is free for open-source projects) to build the application for you.
 Using the `provided workflow <https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml>`_ you can quickly set up building for your application using a fork.
 

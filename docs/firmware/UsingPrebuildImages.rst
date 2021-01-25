@@ -1,7 +1,11 @@
 Using pre-build images
 ######################
 
-You can use the pre-build firmware released on the `Bifravst firmware project page <https://github.com/bifravst/firmware/releases>`_ to connect to your own AWS account **if it is in the same region as our environment** (currently `eu-west-1`).
+.. warning::
+
+    This guide outdated. See `this issue <https://github.com/bifravst/firmware/issues/408>`_.
+
+You can use the pre-build firmware released on the `Asset Tracker Firmware project page <https://github.com/bifravst/firmware/releases>`_ to connect to your own AWS account **if it is in the same region as our environment** (currently `eu-west-1`).
 
 This works, because the way the AWS IoT MQTT broker handles connections:
 When using a *wrong* account endpoint to connect to AWS IoT with a certificate that does not belong to that account endpoint the request will be routed to *correct* account endpoint because AWS can infer the *correct* account from the certificate, which belongs to that account.

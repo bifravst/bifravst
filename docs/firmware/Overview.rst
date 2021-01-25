@@ -2,7 +2,7 @@ Functional Overview
 ###################
 
 The cat tracker device behaviour is dictated by a sequence of repeating function calls called from the main module module after initialization.
-This repeating sequence of functions are affected by dynamic device configurations that is manipulated via the Cat Tracker Web Application.
+This repeating sequence of functions are affected by dynamic device configurations that is manipulated via the Cat Tracker web application.
 In the firmware these configurations takes form of global variables local to the main module which are checked by the respective functions in the repeating sequence.
 
 The device publishes data to a desired compatible cloud service sequentially and upon movement depending on the current device mode.

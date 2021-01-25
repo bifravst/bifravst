@@ -21,10 +21,10 @@ Not only does that mean you can provide up-to-date HEX files with zero effort, b
 
 .. note::
 
-    By default ``semantic-release`` will get the ``reposityUrl`` it uses to  determine the changes between releases from the ``package.json`` which after forking the ``firmware`` repo will still point to ``https://github.com/bifravst/firmware.git``. 
+    By default ``semantic-release`` will get the ``reposityUrl`` it uses to  determine the changes between releases from the ``package.json`` which after forking the ``firmware`` repo will still point to ``https://github.com/NordicSemiconductor/asset_tracker_v2.git``. 
     Either, update that to the URL of  your fork, or `provide it as an argument <https://semantic-release.gitbook.io/semantic-release/usage/configuration#repositoryurl>`_ to the ``semantic-release`` CLI.
 
-`Here is the workflow definition for GitHub Actions <https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml>`_ which automatically builds HEX files and attaches them to the GitHub release.
+`Here is the workflow definition for GitHub Actions <https://github.com/NordicSemiconductor/asset_tracker_v2/blob/saga/.github/workflows/build-and-release.yaml>`_ which automatically builds HEX files and attaches them to the GitHub release.
 
 Following this example, all developers need to do format their commit messages following a certain schema (you can read more in detail about this process :ref:`here <guides-versionining-how-to-release-a-new-version-of-a-package>` to trigger a new release.
 

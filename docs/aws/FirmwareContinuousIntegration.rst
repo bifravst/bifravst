@@ -5,14 +5,13 @@ Continuous Integration of Firmware
 
 .. note::
 
-    The AWS implementation of Bifravst provides resources to continuously
-    test the firmware using real hardware.
+    The *Asset Tracker for AWS Example* provides resources to continuously test the firmware using real hardware.
 
 Overview
 ********
 
-Every commit to the `firmware <https://github.com/bifravst/firmware>`_
-repo will trigger a CI run.
+Every commit to the `Asset Tracker v2 of the nRF Connect SDK <https://github.com/nrfconnect/sdk-nrf/tree/master/applications/asset_tracker_v2>`_ repo will trigger a CI run on GitHub Actions.
+
 The CI run will
 
 #.  create a new device and credentials on AWS IoT
@@ -32,12 +31,12 @@ The `Firmware CI runner`_ is running on a Raspberry Pi connected to AWS IoT wher
 
 .. note::
 
-    These devices connect to the existing instance of Bifravst, so the firmware tests will not set up a new blank Bifravst AWS environment for every test, but be run against the production environment. This is to ensure that firmware release will work against the existing, working solution. This approach is designed for `trunk-based development <https://thinkinglabs.io/talks/feature-branching-considered-evil.html>`_.
+    These devices connect to the existing instance of the *Asset Tracker for AWS Example*, so the firmware tests will not set up a new blank *Asset Tracker for AWS Example* environment for every test, but be run against the production environment. This is to ensure that firmware release will work against the existing, working solution. This approach is designed for `trunk-based development <https://thinkinglabs.io/talks/feature-branching-considered-evil.html>`_.
 
 Preparation
 ***********
 
-Enable the Firmware CI resources of Bifravst that allow GitHub Actions to create test devices, and the the `Firmware CI runner`_ to connect by enabling the context switch ``firmware-ci`` when deploying the stack (see :ref:`Getting Started <aws-getting-started>`).
+Enable the Firmware CI resources of the *Asset Tracker for AWS Example* that allow GitHub Actions to create test devices, and the the `Firmware CI runner`_ to connect by enabling the context switch ``firmware-ci`` when deploying the stack (see :ref:`Getting Started <aws-getting-started>`).
 
 .. code-block:: bash
 
@@ -81,11 +80,11 @@ Firmware CI runner setup
 #.  Download `JLink <https://www.segger.com/downloads/jlink/>`_ for your platform.
     Use the path to the folder (e.g. ``~/JLink_Linux_V686_arm64/``) further down.
 
-#.  Install `firmware-ci-runner-aws <https://github.com/bifravst/firmware-ci-runner-aws.git>`_:
+#.  Install `firmware-ci-runner-aws <https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner.git>`_:
 
     .. code-block:: bash
 
-        git clone https://github.com/bifravst/firmware-ci-runner-aws.git
+        git clone https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner.git
         cd firmware-ci-runner-aws
         npm ci
         npx tsc
@@ -115,4 +114,4 @@ Firmware CI runner setup
 
 The Firmware CI will now process all schedule jobs one after another.
 
-.. _Firmware CI runner: https://github.com/bifravst/firmware-ci-runner-aws
+.. _Firmware CI runner: https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-runner

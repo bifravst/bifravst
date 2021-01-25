@@ -3,13 +3,13 @@
 Getting started
 ###############
 
-To setup *Bifravst* on AWS, complete the following steps:
+To setup the *Asset Tracker for AWS Example*, complete the following steps:
 
 1. Check and make sure that you have the necessary system requirements.
 #. Clone the project and install dependencies.
 #. Provide your AWS credentials.
 #. Check and verify that the deployment is planned in one of the supported regions.
-#. Install *Bifravst* into your AWS account.
+#. Install the *Asset Tracker for AWS Example* into your AWS account.
 
 System requirements
 *******************
@@ -21,29 +21,29 @@ LTS <https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1>`_.
 
 .. note::
 
-   Windows is not included in the continuous integration tests, and hence if you encounter issues, you can open an `issue in the Bifravst AWS project <https://github.com/bifravst/aws/issues/new>`_ 
+   Windows is not included in the continuous integration tests, and hence if you encounter issues, you can open an `issue in the Asset Tracker for AWS Example project <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws/issues/new>`_ 
 
 Clone the project and install dependencies
 ******************************************
 
-Clone the latest version of the `Bifravst AWS <https://github.com/bifravst/aws>`_ project and install the dependencies using the following commands:
+Clone the latest version of the `the Asset Tracker for AWS Example <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws>`_ project and install the dependencies using the following commands:
 
 .. code-block:: bash
 
-    git clone https://github.com/bifravst/aws.git bifravst-aws 
-    cd bifravst-aws 
+    git clone https://github.com/NordicSemiconductor/asset-tracker-cloud-aws.git cat-tracker-aws 
+    cd cat-tracker-aws 
     npm ci
     npx tsc
 
 Provide your AWS credentials
 ****************************
 
-To set up Bifravst on AWS, you must first set up a new AWS account and provide the AWS credentials.
+To set up the *Asset Tracker for AWS Example* on AWS, you must first set up a new AWS account and provide the AWS credentials.
 
 .. note::
 
    It is recommended to install these resources in a blank AWS account to clearly separate them from your other projects.
-   After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create a sub-account for Bifravst.
+   After you have registered your personal account, sign up for `AWS Organizations <https://aws.amazon.com/organizations/>`_ and create a sub-account for the *Asset Tracker for AWS Example*.
    You can have many sub-accounts, without extra costs.
 
 To setup a new AWS account and provide credentials, complete the following steps:
@@ -54,7 +54,7 @@ To setup a new AWS account and provide credentials, complete the following steps
 
     .. note::
 
-       This action will create a user with full access rights to the account, and therefore it must only be created in an account dedicated for Bifravst.
+       This action will create a user with full access rights to the account, and therefore it must only be created in an account dedicated for the *Asset Tracker for AWS Example*.
 
 #.  Configure the AWS CDK by referring the `CDK Getting Started guide <https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html>`_.
 
@@ -92,8 +92,8 @@ Following are the supported regions:
 *   ``us-west-2``
 *   ``eu-west-1``
 
-Install *Bifravst* into your AWS account
-****************************************
+Install the *Asset Tracker for AWS Example* into your AWS account
+*****************************************************************
 
 The following commands set up the necessary resources in your AWS account:
 
@@ -103,7 +103,7 @@ The following commands set up the necessary resources in your AWS account:
     npx cdk bootstrap
     npx cdk deploy '*'
     # This is a fix for a bug with AWS CloudFormation and HTTP APIs
-    # See https://github.com/bifravst/aws/issues/455
+    # See https://github.com/NordicSemiconductor/asset-tracker-cloud-aws/issues/455
     node dist/cdk/helper/addFakeRoute.js
 
 The AWS CDK will provide a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.

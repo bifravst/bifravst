@@ -43,13 +43,13 @@ This should also be the preferred aproach when developing an IoT product that ha
 If a device knows its cell tower it is mormally safe to assume that it has an internet connection in order to request the approximate location from the cloud.
 This allows to offload expensive calculations to the cloud and reduce the resource usage on the device.
 
-In Bifravst every time a device reports a GPS fix, that position is stored together with the cell id.
+In the *Asset Tracker Cloud Example* every time a device reports a GPS fix, that position is stored together with the cell id.
 Over time this builds a cell location database that is independet from a third party API and up to date.
-It is used as the primary mean of geolocation cells in Bifravst.
+It is used as the primary mean of geolocation cells in the *Asset Tracker Cloud Example*.
 Only if a cell has not previously been geolocated by a device will the third-party API be called, **if it is enabled**.
 
 Geolocating cells using third-party APIs
 ========================================
 
 Third-party APIs and services like `UnwiredLabs <https://unwiredlabs.com/>`_ and `CellMapper <https://www.cellmapper.net/>`_ have a database of cell tower locations and provide an API to query against them.
-Bifravst implements the optional resolution on the cloud side using *UnwiredLabs* on :ref:`AWS <aws-unwired-labs-api>`  for cell that have not been geolocation by devices.
+The *Asset Tracker Cloud Example* implements the optional resolution on the cloud side using *UnwiredLabs* on :ref:`AWS <aws-unwired-labs-api>`  for cell that have not been geolocation by devices.

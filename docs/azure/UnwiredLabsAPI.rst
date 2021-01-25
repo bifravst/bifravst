@@ -11,11 +11,11 @@ To use `Unwired Labs`_ geolocation API, provide the ``unwiredlabsApiKey`` parame
 
 .. code-block:: bash
 
-    az deployment group create --resource-group ${APP_NAME:-bifravst} \
-        --mode Complete --name ${APP_NAME:-bifravst} \
+    az deployment group create --resource-group ${APP_NAME:-cat-tracker} \
+        --mode Complete --name ${APP_NAME:-cat-tracker} \
         --template-file azuredeploy.json \
         --parameters \
-            appName=${APP_NAME:-bifravst} \
+            appName=${APP_NAME:-cat-tracker} \
             location=$LOCATION appRegistrationClientId=$APP_REG_CLIENT_ID \
             b2cTenant=$B2C_TENANT \
             unwiredlabsApiKey="<your API key>"
@@ -25,6 +25,6 @@ This will enable the `geolocateCellFromUnwiredLabs` function to resolve cells, o
 .. note::
 
     The Unwired Labs' LocationAPI is free for low volumes, however there is `opencellid.org <https://opencellid.org/>`_ which allows to use the underlying dataset for free.
-    If this is relevant for you, please `vote in this issue <https://github.com/bifravst/azure/issues/403>`_.
+    If this is relevant for you, please `vote in this issue <https://github.com/NordicSemiconductor/asset-tracker-cloud-azure/issues/403>`_.
 
 .. _Unwired Labs: https://unwiredlabs.com/

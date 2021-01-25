@@ -16,10 +16,10 @@ Since the BDD tests are purely testing based on the public API of the project (w
 
 .. note::
 
-    This is an advanced topic for those who want to further develop and customize Bifravst according to their needs.
-    See the `GitHub project page of Bifravst for AWS <https://github.com/bifravst/aws/>`_ , for an implementation of the process outlined in this section.
+    This is an advanced topic for those who want to further develop and customize the *Asset Tracker for AWS Example* according to their needs.
+    See the `GitHub project page of the Asset Tracker for AWS Example <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws/>`_ , for an implementation of the process outlined in this section.
 
-The project also provides an easily understandable description of the available (and implemented) features, in a single folder called `features <https://github.com/bifravst/aws/tree/saga/features>`_.
+The project also provides an easily understandable description of the available (and implemented) features, in a single folder called `features <https://github.com/NordicSemiconductor/asset-tracker-cloud-aws/tree/saga/features>`_.
 
 Running the tests during development
 ************************************
