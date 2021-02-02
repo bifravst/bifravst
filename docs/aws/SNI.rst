@@ -7,7 +7,7 @@ The `Transport security in AWS IoT <https://docs.aws.amazon.com/iot/latest/devel
 
 However, the following facts must be noted:
 
-* SNI is required when connecting using a certificate that is created using the IoT console or the `RegisterCertificateWithoutCA <https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html>`_ api, which registers the certificate with ``certificateMode`` ``SNI_ONLY``.
+* SNI is required when connecting using a certificate that is created using the IoT console or the `RegisterCertificateWithoutCA <https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html>`_ API, which registers the certificate with ``certificateMode`` ``SNI_ONLY``.
 
   * The devices that are currently connected to AWS IoT through MQTT and not using SNI will not be affected and such devices will continue to work with AWS IoT.
 

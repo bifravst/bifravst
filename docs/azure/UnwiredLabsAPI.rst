@@ -1,13 +1,11 @@
 .. _azure-unwired-labs-api:
 
-Unwired Labs API
-################
+Unwired Labs' LocationAPI
+#########################
 
-.. note::
+:ref:`Cell geolocation lookup <app-cellgeolocation>` for the application can be enabled by using the `Unwired Labs\' geolocation API <https://unwiredlabs.com/>`_.
 
-    This enables the :ref:`cell geolocation lookup <app-cellgeolocation>` for the app using the Unwired Labs API.
-
-To use `Unwired Labs`_ geolocation API, provide the ``unwiredlabsApiKey`` parameter when deploying the solution:
+To use Unwired Labs' LocationAPI, provide the ``unwiredlabsApiKey`` parameter when deploying the solution:
 
 .. code-block:: bash
 
@@ -20,11 +18,11 @@ To use `Unwired Labs`_ geolocation API, provide the ``unwiredlabsApiKey`` parame
             b2cTenant=$B2C_TENANT \
             unwiredlabsApiKey="<your API key>"
 
-This will enable the `geolocateCellFromUnwiredLabs` function to resolve cells, otherwise this function will return a status ``402`` on the API route ``cellgeolocation/unwired``.
+This command will enable the `geolocateCellFromUnwiredLabs` function to resolve cells.
+Otherwise, this function will return a ``402`` status on the API route ``cellgeolocation/unwired``.
 
 .. note::
 
-    The Unwired Labs' LocationAPI is free for low volumes, however there is `opencellid.org <https://opencellid.org/>`_ which allows to use the underlying dataset for free.
-    If this is relevant for you, please `vote in this issue <https://github.com/bifravst/azure/issues/403>`_.
-
-.. _Unwired Labs: https://unwiredlabs.com/
+   Unwired Lab’s LocationAPI is free for low volumes.
+   However, `OpenCellid <https://opencellid.org/#zoom=16&lat=37.77889&lon=-122.41942>`_ allows free use of the underlying dataset.
+   If it is relevant for you, vote in the `Integrate OpenCelliD data issue <https://github.com/bifravst/azure/issues/403>`_.
