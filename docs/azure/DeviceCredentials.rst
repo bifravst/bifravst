@@ -1,45 +1,63 @@
 .. _azure-device-credentials:
 
-Device Credentials
+Device credentials
 ##################
 
-On Azure devices connect to IoT Hub using `TLS version 1.2 <https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment>`_ and Elliptic Curve Cryptography (ECC) based certificates.
+On Azure devices, connect to IoT Hub using `TLS version 1.2 <https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment>`_ and Elliptic Curve Cryptography (ECC) based certificates.
 
 Azure supports offline generation of device certificates through `Enrollment Groups <https://docs.microsoft.com/bs-latn-ba/azure/iot-dps/quick-enroll-device-x509-node>`_.
 
-Device certificates are signed using an intermediate CA.
-This allows to keep the CA root certificate secure and create an intermediate CA certificate to be used during device provisioning.
-This way the CA root certificate private key will never be transmitted to insecure locations (e.g. a third-party factory).
+Device certificates are signed by using an intermediate CA.
+Following are the advantages of using an intermediate CA:
 
-If the intermediate CA certificate is compromised, it can be deactivated so new devices with credentials signed by the compromised intermediate CA certificate will no longer be provisioned.
+* The CA root certificate remains secure since an intermediate CA certificate is created for use during device provisioning.
+* The CA root certificate private key will never be transmitted to insecure locations (for example, a third-party factory).
 
-Devices that previously connected to the IoT Hub, will keep working.
+If the intermediate CA certificate is compromised, it can be deactivated.
+New devices with credentials signed by the compromised intermediate CA certificate will no longer be provisioned.
 
-Device Provisioning Service (DPS)
-*********************************
+Devices that previously connected to the IoT Hub, will continue to work.
 
-Devices connect to IoT Hub using the Device Provisioning Service (DPS).
-This allows to better manage roaming devices.
-However this requires an extra connection step: first connect to DPS to retrieve the endpoint configuration, then connect to the IoT Hub endpoint.
-This is a one-time op, and the device can cache its associated IoT Hub endpoint.
+Device Provisioning Service
+***************************
+
+Devices connect to IoT Hub using the `Device Provisioning Service (DPS) <https://docs.microsoft.com/en-us/azure/iot-dps/>`_.
+DPS allows better management of roaming devices.
+However, it requires an extra connection step.
+Following are the overall connection steps:
+
+* Connect to DPS to retrieve the endpoint configuration
+* Connect to the IoT Hub endpoint.
+
+This is a one-time operation, and the device can cache its associated IoT Hub endpoint.
+
+Creating device credentials
+***************************
+
+For creating device credentials, you must generate the following certificates:
+
+* CA root certificate
+* CA intermediate certificate
+* Device certificate
 
 Create a CA root certificate
-****************************
+============================
 
 .. note::
 
-    Make sure you have exported the right resource group to name as ``$RESOURCE_GROUP_NAME``, it defaults to ``bifravst``.
+   Make sure that you have exported the right resource group name as ``$RESOURCE_GROUP_NAME``.
+   By default, it is set to ``bifravst``.
 
-This creates a CA root certificate and registers it with the Azure IoT Device Provisioning Service.
+To create a CA root certificate and register it with the Azure IoT Device Provisioning Service, run the following command:
 
 .. code-block:: bash
 
     node cli create-ca-root
 
 The CA root certificate should not be shared.
-The number of CA root certificates is typically very small, one (1) is sufficient.
+The number of CA root certificates is typically very small, and the minimum number of certificates required is one.
 
-Proof your ownership of the CA with
+Provide the proof your ownership of the CA with the following command:
 
 .. code-block:: bash
 
@@ -47,31 +65,31 @@ Proof your ownership of the CA with
 
 .. note::
 
-    If you see the error *"A required certificate is not within its validity period when verifying against the current system clock or the timestamp in the signed file."* double check that your system's clock is correct, if it is set to a future time, this will be the cause of this error.
+    If you see the error *"A required certificate is not within its validity period when verifying against the current system clock or the timestamp in the signed file."*, confirm that your system clock is accurate.
 
 Create a CA intermediate certificate
-************************************
+====================================
 
-This creates a CA intermediate certificate and creates an enrollment group for it.
+To creates a CA intermediate certificate and an enrollment group for it, run the following command:
 
 .. code-block:: bash
 
     node cli create-ca-intermediate
 
-The CA intermediate certificate is the one to be shared with the factory.
-Over time you will have multiple intermediate certificates.
+You can share the CA intermediate certificate with the factory.
+Over time, you will have multiple intermediate certificates.
 
 Create a device certificate
-***************************
+===========================
 
-Run this script to generate a certificate for a new device:
+Run the following script to generate a certificate for a new device:
 
 .. code-block:: bash
 
     node cli create-device-cert
 
-Devices will first connect to the `Device Provisioning Service <https://docs.microsoft.com/en-us/azure/iot-dps/>`_ (DPS) using the certificate and request to be provisioned.
+A device will initially connect to DPS using the certificate and place a request to be provisioned.
 The DPS registers the device on the associated IoT Hub and returns the registration information to the device, which includes the hostname of the assigned IoT Hub.
 
-Now the device can terminate the connection to the DPS and initiate a new connection to the IoT Hub endpoint.
-The device should store the registration information so that it can directly connect to the assigned IoT Hub endpoint the next time it boots.
+The device then terminates the connection to the DPS and initiate a new connection to the IoT Hub endpoint.
+The device should store the registration information so that it can directly connect to the assigned IoT Hub endpoint when the device boots up next time.

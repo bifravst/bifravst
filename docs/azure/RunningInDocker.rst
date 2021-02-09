@@ -1,51 +1,62 @@
-Running the app locally with Docker
-###################################
+.. _azure-running-app-locally:
 
-In case your system has a different Node.js version you can run the app locally `in a Docker container <https://hub.docker.com/r/bifravst/azure-dev>`_.
+Running the application locally with Docker
+###########################################
 
-Export the IotHub connection string, the Avatar storage environment variables (can be found in the function app's configuration) to the environment variables ``IOT_HUB_CONNECTION_STRING``, ``AVATAR_STORAGE_ACCOUNT_NAME``, ``AVATAR_STORAGE_ACCESS_KEY``, ``FOTA_STORAGE_ACCOUNT_NAME``, ``FOTA_STORAGE_ACCESS_KEY``, ``HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING``.
+If your system has a different version of Node.js, you can run the application locally in a `Docker container <https://hub.docker.com/r/bifravst/azure-dev>`_.
 
-Make sure to include these settings in your ``local.settings.json``:
+To run the application locally with Docker, complete the following steps:
 
-.. code-block:: json
+1. Export the IoT Hub connection string and the Avatar storage environment variables (located in the configuration of the function app) to the following environment variables:
 
-    {
-        "IsEncrypted": false,
-        "Values": {
-            "IoTHubEventHubCompatibleConnectionString": "...",
-            "AzureWebJobsStorage": "...",
-            "IoTHubEventHubName": "...",
-            "SignalRConnectionString": "..."
-        },
-        "Host": {
-            "CORS": "*",
-            "CORSCredentials": false
-        }
-    }
+   * ``IOT_HUB_CONNECTION_STRING``
+   * ``AVATAR_STORAGE_ACCOUNT_NAME``
+   * ``AVATAR_STORAGE_ACCESS_KEY``
+   * ``FOTA_STORAGE_ACCOUNT_NAME``
+   * ``FOTA_STORAGE_ACCESS_KEY``
+   * ``HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING``
 
-Run this command to list the environment variables of the function app.
-Export them.
+#. Make sure to include the following settings in your :file:`local.settings.json` file:
 
-.. code-block:: bash
+   .. code-block:: json
 
-    az functionapp config appsettings list \
-        --resource-group ${RESOURCE_GROUP_NAME:-bifravst} \
-        --name ${APP_NAME:-bifravst}API | jq -r '.[] | .name + "=\"" + .value + "\""'
+       {
+           "IsEncrypted": false,
+           "Values": {
+               "IoTHubEventHubCompatibleConnectionString": "...",
+               "AzureWebJobsStorage": "...",
+               "IoTHubEventHubName": "...",
+               "SignalRConnectionString": "..."
+           },
+           "Host": {
+               "CORS": "*",
+               "CORSCredentials": false
+           }
+       }
 
-Run the functions app:
+#. Run the following command to list the environment variables of the function app and export them:
 
-.. code-block:: bash
 
-    docker run --rm --net=host -P \
-        -e IOT_HUB_CONNECTION_STRING \
-        -e AVATAR_STORAGE_ACCOUNT_NAME \
-        -e AVATAR_STORAGE_ACCESS_KEY \
-        -e FOTA_STORAGE_ACCOUNT_NAME \
-        -e FOTA_STORAGE_ACCESS_KEY \
-        -e HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING \
-        -e UNWIREDLABS_API_KEY \
-        -e UNWIREDLABS_API_ENDPOINT \
-        -v ${PWD}:/workdir bifravst/azure-dev:latest \
-        func start --typescript
+   .. code-block:: bash
 
-You can then use ``http://localhost:7071/`` as your ``REACT_APP_AZURE_API_ENDPOINT`` for the app.
+       az functionapp config appsettings list \
+           --resource-group ${RESOURCE_GROUP_NAME:-bifravst} \
+           --name ${APP_NAME:-bifravst}API | jq -r '.[] | .name + "=\"" + .value + "\""'
+
+#. Run the function app by using the following command:
+
+   .. code-block:: bash
+
+       docker run --rm --net=host -P \
+           -e IOT_HUB_CONNECTION_STRING \
+           -e AVATAR_STORAGE_ACCOUNT_NAME \
+           -e AVATAR_STORAGE_ACCESS_KEY \
+           -e FOTA_STORAGE_ACCOUNT_NAME \
+           -e FOTA_STORAGE_ACCESS_KEY \
+           -e HISTORICAL_DATA_COSMOSDB_CONNECTION_STRING \
+           -e UNWIREDLABS_API_KEY \
+           -e UNWIREDLABS_API_ENDPOINT \
+           -v ${PWD}:/workdir bifravst/azure-dev:latest \
+           func start --typescript
+
+You can now use ``http://localhost:7071/`` as your ``REACT_APP_AZURE_API_ENDPOINT`` for the app.
