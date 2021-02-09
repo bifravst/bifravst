@@ -49,7 +49,7 @@ Note down the initial domain name that you used:
 
 .. code-block:: bash
 
-      export TENANT_DOMAIN="<Primary domain>" # For example, "bifravstci"
+   export TENANT_DOMAIN="<Primary domain>" # For example, "bifravstci"
 
 Create subscription
 ===================
@@ -64,9 +64,9 @@ To create a subscription, complete the following steps:
 
 Note down the ``Subscription ID``, which you can find in the :guilabel:`Subscriptions` blade:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      export SUBSCRIPTION_ID="<Subscription ID>" # For example, "1aae311f-12d6-419e-8c6b-ebcf3ec4ed15"
+   export SUBSCRIPTION_ID="<Subscription ID>" # For example, "1aae311f-12d6-419e-8c6b-ebcf3ec4ed15"
 
 Create a secondary tenant (Azure Active Directory B2C)
 ======================================================
@@ -195,12 +195,12 @@ Running the solution during development
 
 To run the solution during development, run the following commands:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-       export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP_NAME} -n ${APP_NAME:-bifravst}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
+      export API_ENDPOINT=https://`az functionapp show -g ${RESOURCE_GROUP_NAME} -n ${APP_NAME:-bifravst}api --query 'defaultHostName' --output tsv | tr -d '\n'`/
 
-       npm ci
-       npm run test:e2e
+      npm ci
+      npm run test:e2e
 
 .. note::
 

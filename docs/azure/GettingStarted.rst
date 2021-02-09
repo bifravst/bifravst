@@ -79,9 +79,9 @@ To deploy the solution to your account, complete the following steps:
 
 1. In the Azure portal, navigate to the :guilabel:`Subscriptions` blade, and add a new subscription for Bifravst. Export the subscription ID onto the ``SUBSCRIPTION_ID`` environment variable:
 
-	.. code-block:: bash
+   .. code-block:: bash
 
-	   export SUBSCRIPTION_ID="<Subscription ID>"
+      export SUBSCRIPTION_ID="<Subscription ID>"
 
 #. Authenticate the CLI using the following command:
 
