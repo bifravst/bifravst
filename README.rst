@@ -1,5 +1,9 @@
 .. _bifra_readme:
 
+.. warning::
+
+   Moved to `<https://github.com/NordicSemiconductor/asset-tracker-cloud-docs>`_
+
 Bifravst
 ########
 
