@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Continuous deployment &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Continuous integration" href="ContinuousIntegration.html" />
+    <link rel="prev" title="Connect using the simulator" href="Simulator.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Bifravst on Azure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningInDocker.html">Running the application locally with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs’ LocationAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-azure-function-apps-with-microsoft-b2c.html">Using Azure AD B2C to secure your Azure Functions Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Bifravst on Azure</a> &raquo;</li>
+        
+      <li>Continuous deployment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/azure/ContinuousDeployment.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="continuous-deployment">
+<span id="azure-continuous-deployment"></span><h1>Continuous deployment<a class="headerlink" href="#continuous-deployment" title="Permalink to this headline">¶</a></h1>
+<p>Continuous deployment must be deployed with a dedicated subscription to have clear control over the permissions and costs.
+For continuous deployment, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Create a subscription for Bifravst.</p></li>
+<li><p>Create an <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/overview">Azure Active Directory B2C</a>.</p></li>
+<li><p>Acquire credentials for the CI runner and deploy the project.</p></li>
+</ol>
+<div class="section" id="create-a-subscription-for-bifravst">
+<h2>Create a subscription for Bifravst<a class="headerlink" href="#create-a-subscription-for-bifravst" title="Permalink to this headline">¶</a></h2>
+<p>To create a subscription for <em>Bifravst</em>, complete the following steps:</p>
+<ol class="arabic">
+<li><p>Login to the Azure portal.</p></li>
+<li><p>Navigate to the <span class="guilabel">Subscriptions</span> blade and add a new subscription for Bifravst by clicking <span class="guilabel">Add</span>. Name the new subscription as <code class="docutils literal notranslate"><span class="pre">Bifravst</span> <span class="pre">[CD]</span></code>.</p></li>
+<li><p>After creating the subscription, navigate to the <span class="guilabel">Subscriptions</span> blade and export the subscription identifier of the newly created subscription:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">SUBSCRIPTION_ID</span><span class="o">=</span><span class="s2">&quot;&lt;subscription id&gt;&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="create-an-azure-active-directory-b2c">
+<h2>Create an Azure Active Directory B2C<a class="headerlink" href="#create-an-azure-active-directory-b2c" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, you can create an Azure Active Directory B2C only through the CLI.
+If you have ideas to simplify the setup process, <a class="reference external" href="https://github.com/bifravst/azure/issues/1">share your input</a>.</p>
+</div>
+<p>To create an Azure Active Directory B2C, complete the following steps:</p>
+<ol class="arabic">
+<li><p>After logging in to the Azure portal, navigate to the <span class="guilabel">Marketplace</span> blade and search for <code class="docutils literal notranslate"><span class="pre">Azure</span> <span class="pre">Active</span> <span class="pre">Directory</span> <span class="pre">[B2C]</span></code>.</p></li>
+<li><p>Click on the <span class="guilabel">Azure Active Directory [B2C]</span> tile, and then click the <span class="guilabel">Create</span> button.</p></li>
+<li><p>Select <span class="guilabel">Create a new Azure AD B2C Tenant</span>.</p></li>
+<li><p>Use the following settings while creating the Azure AD B2C Tenant:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Organization name - <code class="docutils literal notranslate"><span class="pre">Bifravst</span> <span class="pre">(Production)</span></code></p></li>
+<li><p>Initial domain name - <code class="docutils literal notranslate"><span class="pre">bifravstprod</span></code> (Choose a name that fits your project as the given name is globally unique)</p></li>
+<li><p>Country/Region - Sweden (or choose a location that is closer to you)</p></li>
+</ul>
+<div class="figure align-default" id="id1">
+<img alt="Create Directory settings" src="../../_images/create-directory.png" />
+<p class="caption"><span class="caption-text">Create Directory settings</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Click <span class="guilabel">Next: Review + create</span> to see the summary and then click <span class="guilabel">Create</span> to create the new Active Directory B2C. The operation will take a while to complete.</p></li>
+<li><p>Copy the initial domain name to the <code class="docutils literal notranslate"><span class="pre">B2C_TENANT</span></code> environment variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">B2C_TENANT</span><span class="o">=</span>bifravstprod
+</pre></div>
+</div>
+</li>
+<li><p>Switch to the newly created directory by following the link in the success message.</p></li>
+<li><p>You must link a subscription to the B2C Directory. Follow the link in the notification message to find the instructions as shown in the figure:</p>
+<div class="figure align-default" id="id2">
+<img alt="Link Subscription" src="../../_images/link-subscription.png" />
+<p class="caption"><span class="caption-text">Link Subscription</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Select the subscription and create a new resource group for this subscription assignment as shown in the following figure:</p>
+<div class="figure align-default" id="id3">
+<img alt="Link Subscription" src="../../_images/link-subscription2.png" />
+<p class="caption"><span class="caption-text">Link Subscription</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Switch back to the B2C directory.</p></li>
+<li><p>Create an App Registration:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Name - Bifravst Web App</p></li>
+<li><p>Redirect URI (make sure to select SPA) - <code class="docutils literal notranslate"><span class="pre">https://bifravstprodapp.z16.web.core.windows.net/</span></code> (Choose another name that fits your project instead of <code class="docutils literal notranslate"><span class="pre">bifravstprodapp</span></code>  since this name is globally unique)</p></li>
+</ul>
+<div class="figure align-default" id="id4">
+<img alt="Create App Registration settings" src="../../_images/create-app-registration.png" />
+<p class="caption"><span class="caption-text">Create App Registration settings</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Click <span class="guilabel">Expose an API</span> and  set the <code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">ID</span> <span class="pre">URI</span></code> field to <code class="docutils literal notranslate"><span class="pre">api</span></code>.</p></li>
+<li><p>Click <span class="guilabel">+ Add a scope</span> and create a new scope with the following values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Scope name - <code class="docutils literal notranslate"><span class="pre">bifravst.admin</span></code></p></li>
+<li><p>Admin consent display name - Admin Access to the Bifravst API</p></li>
+<li><p>Admin consent description - Allows admin access to all resources exposed through the Bifravst API</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Click <span class="guilabel">API permissions</span> and then click <span class="guilabel">+ Add a permission</span>. Under <span class="guilabel">My APIs</span>, select the app registration.</p></li>
+<li><p>Enable the <code class="docutils literal notranslate"><span class="pre">bifravst.admin</span></code> permission and click <span class="guilabel">Add permission</span>.</p></li>
+<li><p>Click <span class="guilabel">Grant admin consent for &lt;your main directory&gt;</span> as shown in the following figure:</p>
+<div class="figure align-default" id="id5">
+<img alt="Add Scope" src="../../_images/add-scope.png" />
+<p class="caption"><span class="caption-text">Add Scope</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Store the <code class="docutils literal notranslate"><span class="pre">application</span> <span class="pre">(client)</span> <span class="pre">id</span></code> and the <code class="docutils literal notranslate"><span class="pre">Directory</span> <span class="pre">(tenant)</span> <span class="pre">ID</span></code> of the created Active Directory B2C App registration:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">APP_REG_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;&lt;application (client) id&gt;&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Enable the implicit grant flow for <span class="guilabel">Access tokens</span> and <span class="guilabel">ID tokens</span> and click <span class="guilabel">Save</span> as shown in the following figure:</p>
+<div class="figure align-default" id="id6">
+<img alt="Enable implicit grant flow" src="../../_images/implicit-grant.png" />
+<p class="caption"><span class="caption-text">Enable implicit grant flow</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Store the subdomain name used in the Redirect URI:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">APP_NAME</span><span class="o">=</span>bifravstprodapp
+</pre></div>
+</div>
+</li>
+<li><p>Create the <em>Sign up and sign in</em> user flow for local users, and name it <code class="docutils literal notranslate"><span class="pre">signup_signin</span></code>. For more information, see the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows">Azure Active Directory B2C documentation on creating user flow</a>.</p></li>
+<li><p>Switch back to the main directory.</p></li>
+<li><p>Find the Bifravst Azure Function App.</p></li>
+<li><p>Select <span class="guilabel">Authentication / Authorization</span>.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Log</span> <span class="pre">in</span> <span class="pre">with</span> <span class="pre">Azure</span> <span class="pre">Active</span> <span class="pre">Directory</span></code> for the option <span class="guilabel">Action to take when request is not authenticated</span></p></li>
+<li><p>Click <span class="guilabel">Azure Active Directory</span> and configure the authentication using the <em>Advanced Management mode</em>:</p>
+<ul class="simple">
+<li><p>Client ID - <code class="docutils literal notranslate"><span class="pre">$APP_REG_CLIENT_ID</span></code></p></li>
+<li><p>Issuer URL - <code class="docutils literal notranslate"><span class="pre">https://${B2C_TENANT}.b2clogin.com/${B2C_TENANT}.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_signup_signin</span></code></p></li>
+</ul>
+<div class="figure align-default" id="id7">
+<img alt="Function App Settings" src="../../_images/function-app-settings.png" />
+<p class="caption"><span class="caption-text">Function App Settings</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="acquire-credentials-for-the-ci-runner">
+<h2>Acquire credentials for the CI runner<a class="headerlink" href="#acquire-credentials-for-the-ci-runner" title="Permalink to this headline">¶</a></h2>
+<p>To acquire credentials for the CI runner, complete the following steps:</p>
+<ol class="arabic">
+<li><p>Login using the shell:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az login
+</pre></div>
+</div>
+</li>
+<li><p>Make sure that you have enabled the correct subscription by running the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az account <span class="nb">set</span> --subscription <span class="nv">$SUBSCRIPTION_ID</span>
+<span class="c1"># Verify that it is set to default</span>
+az account list --output table
+</pre></div>
+</div>
+</li>
+<li><p>Enable required resources using the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az provider register --namespace Microsoft.AzureActiveDirectory
+az provider register --namespace Microsoft.Storage
+az provider register --namespace Microsoft.Insights
+az provider register --namespace Microsoft.SignalRService
+az provider register --namespace Microsoft.DocumentDB
+az provider register --namespace Microsoft.Devices
+az provider register --namespace Microsoft.Web
+</pre></div>
+</div>
+</li>
+<li><p>Create the CI credentials:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az ad sp create-for-rbac --name https://github.com/ --role Contributor --sdk-auth --scopes /subscriptions/<span class="si">${</span><span class="nv">SUBSCRIPTION_ID</span><span class="si">}</span> &gt; ci-credentials.json
+</pre></div>
+</div>
+</li>
+<li><p>Create a resource group for Bifravst:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --name <span class="si">${</span><span class="nv">RESOURCE_GROUP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span> --location <span class="si">${</span><span class="nv">LOCATION</span><span class="k">:-</span><span class="nv">northeurope</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Fork the <a class="reference external" href="https://github.com/bifravst/azure/settings/secrets/new">Bifravst Azure project</a> and add the following secrets.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AZURE_CREDENTIALS</span></code> - Store the contents of the JSON file created in the above step.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code> - The <code class="docutils literal notranslate"><span class="pre">application</span> <span class="pre">(client)</span> <span class="pre">id</span></code> of the Active Directory B2C App registration that is created.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B2C_TENANT</span></code> - The <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">domain</span> <span class="pre">name</span></code> of the Active Directory B2C that is created.</p></li>
+</ul>
+</li>
+<li><p>Start a deployment.</p></li>
+</ol>
+<p>You can now <a class="reference internal" href="DeviceCredentials.html#azure-device-credentials"><span class="std std-ref">create device credentials</span></a>  for this environment.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ContinuousIntegration.html" class="btn btn-neutral float-right" title="Continuous integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Simulator.html" class="btn btn-neutral float-left" title="Connect using the simulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/messages.schema.json",
+  "title": "Bifravst Firmware Messages",
+  "description": "Describes the messages published by the device",
+  "type": "object",
+  "properties": {
+    "btn": {
+      "description": "The number and the time a button was pushed",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "ID of the button",
+          "type": "integer",
+          "minimum": 1,
+          "examples": [1]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC) when the button was released",
+          "type": "integer",
+          "minimum": 1234567890123,
+          "examples": [1584533788029]
+        }
+      },
+      "required": ["v", "ts"]
+    }
+  }
+}

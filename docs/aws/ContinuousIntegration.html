@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Continuous integration &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Unwired Labs API" href="UnwiredLabsAPI.html" />
+    <link rel="prev" title="Storage of historical data" href="HistoricalData.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Bifravst on AWS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Shadow and Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LimitingShadowDocumentSize.html">Limiting the Shadow Document size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HistoricalData.html">Storage of historical data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Uninstalling.html">Uninstalling Bifravst from AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SNI.html">SNI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Bifravst on AWS</a> &raquo;</li>
+        
+      <li>Continuous integration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/aws/ContinuousIntegration.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="continuous-integration">
+<span id="aws-continuous-integration"></span><h1>Continuous integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h1>
+<p>Continuous integration involves the following actions:</p>
+<ul class="simple">
+<li><p>Every change to the project is tested against an AWS account.</p></li>
+<li><p>All the necessary resources are setup using AWS CDK (which ensures that the definitions work) in a separate AWS account.</p></li>
+<li><p>A BDD test-suite of end-to-end tests written in <a class="reference external" href="https://cucumber.io/docs/gherkin/">Gherkin</a>, which describes the tests in English, is run.</p></li>
+</ul>
+<p>In this way, the tests are not tied to the implementation and during refactoring, and you cannot accidentally drop tests.
+Tests written for test-runners like <a class="reference external" href="https://jestjs.io/">Jest</a> tend to be closely tied to the API of the source code implementation.
+In the case of bigger refactoring, usually the tests need to be refactored as well.
+Since the BDD tests are purely testing based on the public API of the project (which is the native AWS API), they can be kept unchanged during refactoring.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an advanced topic for those who want to further develop and customize Bifravst according to their needs.
+See the <a class="reference external" href="https://github.com/bifravst/aws/">GitHub project page of Bifravst for AWS</a> , for an implementation of the process outlined in this section.</p>
+</div>
+<p>The project also provides an easily understandable description of the available (and implemented) features, in a single folder called <a class="reference external" href="https://github.com/bifravst/aws/tree/saga/features">features</a>.</p>
+<div class="section" id="running-the-tests-during-development">
+<h2>Running the tests during development<a class="headerlink" href="#running-the-tests-during-development" title="Permalink to this headline">¶</a></h2>
+<p>You can run the following test during development:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm run test:e2e
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-the-aws-account-and-providing-the-environment-variables-in-github">
+<h2>Setting up the AWS account and providing the environment variables in GitHub<a class="headerlink" href="#setting-up-the-aws-account-and-providing-the-environment-variables-in-github" title="Permalink to this headline">¶</a></h2>
+<p>In order to run the end-to-end tests, an AWS Account needs to be set up.
+It is recommended to run the tests in a separate, blank account.</p>
+<p>Provide the following environment variables for GitHub Actions of the project:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GITHUB_TOKEN</span></code> - A GitHub token (used with <a class="reference external" href="https://github.com/semantic-release/semantic-release">semantic-release</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code> - Access key id of the user, which is used to run the tests</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_SECRET_ACCESS_KEY</span></code> - Secret access key of the user</p></li>
+</ul>
+</div>
+<div class="section" id="known-issues">
+<h2>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+<p>If the stack creation fails on the <code class="docutils literal notranslate"><span class="pre">AWS::ApiGatewayV2::Stage</span></code> resource with the following error, you need to update the <code class="docutils literal notranslate"><span class="pre">AWSLogDeliveryWrite20150319</span></code> policy (a built-in policy of the AWS account):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Insufficient permissions to enable logging (Service: AmazonApiGatewayV2;</span>
+<span class="go">Status Code: 400; Error Code: BadRequestException;</span>
+<span class="go">Request ID: 378c255b-c3ed-4d2c-8c00-c4cec2153dbf; Proxy: null)</span>
+</pre></div>
+</div>
+<p>Run the following command to update the <code class="docutils literal notranslate"><span class="pre">AWSLogDeliveryWrite20150319</span></code> policy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws logs put-resource-policy --policy-name AWSLogDeliveryWrite20150319 <span class="se">\</span>
+--policy-document <span class="s1">&#39;{&quot;Version&quot;:&quot;2012-10-17&quot;,&quot;Statement&quot;:[{&quot;Sid&quot;:&quot;AWSLogDeliveryWrite&quot;,&quot;Effect&quot;:&quot;Allow&quot;,&quot;Principal&quot;:{&quot;Service&quot;:&quot;delivery.logs.amazonaws.com&quot;},&quot;Action&quot;:[&quot;logs:CreateLogStream&quot;,&quot;logs:PutLogEvents&quot;],&quot;Resource&quot;:[&quot;*&quot;]}]}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="UnwiredLabsAPI.html" class="btn btn-neutral float-right" title="Unwired Labs API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="HistoricalData.html" class="btn btn-neutral float-left" title="Storage of historical data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

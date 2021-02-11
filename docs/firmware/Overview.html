@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Functional Overview &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using pre-build images" href="UsingPrebuildImages.html" />
+    <link rel="prev" title="Cat Tracker firmware" href="Index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Cat Tracker firmware</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Functional Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsingPrebuildImages.html">Using pre-build images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingUsingDocker.html">Building using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingUsingLocalSystem.html">Building using your local system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingUsingGitHub.html">Building using GitHub actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aws/FirmwareContinuousIntegration.html">Continuous Integration of Firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Protocol.html">Device-Cloud-Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SensorDataAndConfiguration.html">Device Data and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LEDSchema.html">LED schema</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Cat Tracker firmware</a> &raquo;</li>
+        
+      <li>Functional Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/firmware/Overview.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="functional-overview">
+<h1>Functional Overview<a class="headerlink" href="#functional-overview" title="Permalink to this headline">¶</a></h1>
+<p>The cat tracker device behaviour is dictated by a sequence of repeating function calls called from the main module module after initialization.
+This repeating sequence of functions are affected by dynamic device configurations that is manipulated via the Cat Tracker Web Application.
+In the firmware these configurations takes form of global variables local to the main module which are checked by the respective functions in the repeating sequence.</p>
+<p>The device publishes data to a desired compatible cloud service sequentially and upon movement depending on the current device mode.
+The device mode can either be “active” or “passive”. In “active” mode the device publishes data sequentially every “active wait time” interval and in “passive” mode the device publishes data every “passive wait time” as long as there is movement detected by the external accelerometer.</p>
+<div class="section" id="repeating-sequence">
+<h2>Repeating Sequence<a class="headerlink" href="#repeating-sequence" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id1">
+<img alt="Repeating Sequence" src="../../_images/sequence.png" />
+<p class="caption"><span class="caption-text">Repeating Sequence</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="check-device-mode">
+<h3>1. Check device mode<a class="headerlink" href="#check-device-mode" title="Permalink to this headline">¶</a></h3>
+<p>The application checks the current device mode.
+If it is in “active mode” the device will immediately try to get a gps fix.
+If it is in “passive” mode the main thread will go to sleep and not continue until movement over a configurable threshold value is detected.</p>
+</div>
+<div class="section" id="search-for-gps-fix">
+<h3>2. Search for GPS fix<a class="headerlink" href="#search-for-gps-fix" title="Permalink to this headline">¶</a></h3>
+<p>The device will try to obtain a GPS position fix within the GPS timeout duration.
+If the fix is not obtained within the time limit the publication message in the next cloud publication will not contain GPS data.
+If a fix is obtained within the time limit the publication message will contain GPS data.
+In addition, the time obtained from the GPS fix is used to refresh the internal UTC date time timestamp variable used to calculate timestamped attached to every publication message.</p>
+</div>
+<div class="section" id="check-current-cellular-network-registration-status">
+<h3>3. Check current cellular network registration status<a class="headerlink" href="#check-current-cellular-network-registration-status" title="Permalink to this headline">¶</a></h3>
+<p>Check if the device is still registered to the cellular network.
+This check manipulates an internal semaphore that will block cloud publication if the device is not registered to a cellular network, avoiding unnecessary call to functionality if the device is in fact not connected.
+However, the modem can believe that it is registered to a network when in fact it is not.
+This is due to the use of PSM intervals which enables the connection intervals between the device and the connected cellular tower to occur less frequent.
+This can dramatically decrease the resolution of which the modem updates its cellular network registration state.
+This is not a problem, the publication functionality is non blocking and the application will not halt if it tries to publish without a connection.</p>
+</div>
+<div class="section" id="publish-data">
+<h3>4. Publish data<a class="headerlink" href="#publish-data" title="Permalink to this headline">¶</a></h3>
+<p>Publish data according to the schema below if device is still registered to the cellular network.</p>
+</div>
+<div class="section" id="sleep">
+<h3>5. Sleep<a class="headerlink" href="#sleep" title="Permalink to this headline">¶</a></h3>
+<p>The main thread sleeps in the duration of the current device mode wait time.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>GPS fix?</p></th>
+<th class="head"><p>Sensor/Modem data published</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Active</p></td>
+<td><p>Fix</p></td>
+<td><p>Battery, modem, GPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Active</p></td>
+<td><p>No fix</p></td>
+<td><p>Battery, modem</p></td>
+</tr>
+<tr class="row-even"><td><p>Passive</p></td>
+<td><p>Fix</p></td>
+<td><p>Battery, modem, GPS, accelerometer</p></td>
+</tr>
+<tr class="row-odd"><td><p>Passive</p></td>
+<td><p>No fix</p></td>
+<td><p>Battery, modem, accelerometer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="cloud-communication">
+<h2>Cloud Communication<a class="headerlink" href="#cloud-communication" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Upon a cloud connection the device will fetch its desired configuration from the cloud, apply the configuration and report the configuration back to the cloud.</p></li>
+<li><p>Every publication to cloud the device will receive a message from the cloud if a setting has been changed in the web application.
+The device will then apply the updated configuration(s) and report its new configurations back to the cloud.
+Publication of sensor/modem/GPS data and updating device configurations happens in a determined order listed below.</p></li>
+</ul>
+<div class="section" id="successful-connection-to-cloud">
+<h3>Successful connection to cloud<a class="headerlink" href="#successful-connection-to-cloud" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="id2">
+<img alt="Sequence: Successful connection to cloud" src="../../_images/successful.svg" /><p class="caption"><span class="caption-text">Sequence: Successful connection to cloud</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="data-publication">
+<h3>Data publication<a class="headerlink" href="#data-publication" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="id3">
+<img alt="Data publication" src="../../_images/data-publication.svg" /><p class="caption"><span class="caption-text">Sequence: Data publication</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="timestamping">
+<h2>Timestamping<a class="headerlink" href="#timestamping" title="Permalink to this headline">¶</a></h2>
+<p>All the data published to the cloud are timestamped in sample time UTC.
+For more information about how timestamping is carried out in the cat tracker firmware see <a class="reference internal" href="Protocol.html#firmware-protocol-timestamping"><span class="std std-ref">Protocol</span></a> in the handbook.</p>
+</div>
+<div class="section" id="default-configurations">
+<h2>Default configurations<a class="headerlink" href="#default-configurations" title="Permalink to this headline">¶</a></h2>
+<p>If the device is unable to connect to the cloud after boot it will used the following configurations:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 76%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Configuration</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Active wait time</p></td>
+<td><p>60 sec</p></td>
+</tr>
+<tr class="row-odd"><td><p>Movement resolution (passive wait time)</p></td>
+<td><p>60 sec</p></td>
+</tr>
+<tr class="row-even"><td><p>Movement timeout</p></td>
+<td><p>3600 sec</p></td>
+</tr>
+<tr class="row-odd"><td><p>Device mode</p></td>
+<td><p>Active</p></td>
+</tr>
+<tr class="row-even"><td><p>GPS timeout</p></td>
+<td><p>60 sec</p></td>
+</tr>
+<tr class="row-odd"><td><p>Accelerometer threshold</p></td>
+<td><p>100/10 m/s²</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="UsingPrebuildImages.html" class="btn btn-neutral float-right" title="Using pre-build images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Index.html" class="btn btn-neutral float-left" title="Cat Tracker firmware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

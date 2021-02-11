@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Cell Geolocations &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cloud connectivity and protocols for the Internet of Things" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html" />
+    <link rel="prev" title="Automate building of HEX files for your nRF Connect SDK application" href="AutomateHEXFileBuilding.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Cell Geolocations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/guides/CellGeolocations.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cell-geolocations">
+<h1>Cell Geolocations<a class="headerlink" href="#cell-geolocations" title="Permalink to this headline">¶</a></h1>
+<p>Locating a device is an important aspect of any IoT solution.
+In case of the Cat Tracker, it’s one of the primary functions. But acquiring a GPS fix is sometimes not possible, e.g. when the device is indoors.
+In these situation other data can be used to approximate the device’s location.
+If the device has a cellular connection, the id of the cell(s) the device modem is communicating with can be used to triangulate its location.
+Smartphones use this technique (and even combine data from other wireless networks) to quickly estimate a location down to a few meters.
+Knowing roughly <em>where</em> the device is, is then used by the GPS module to speed up the time to the first GPS fix since it can limit the number of GPS sattelites it queries to the ones that should currently be visible on the sky.</p>
+<p>Smartphones however are multiple orders of magnitudes more powerful <em>and</em> there is a concrete need to have location information <em>on the device</em> quickly (e.g. for showing the user’s location in a navigation application while the device is indoors).
+Smartphones have location-dependend features, while most IoT devices wont have them.
+For example the Cat Tracker has no feature that depends on a location, it will only <em>report</em> the location to the cloud backend, and it’s the mobile app which is visualizing the Cat Tracker’s location tha has a need to <em>know</em> the device location.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since it is much more efficient to resolve cell geolocations on the cloud it’s the cloud backends responsibility.</p>
+</div>
+<div class="section" id="assisted-gps-agps">
+<h2>Assisted GPS (AGPS)<a class="headerlink" href="#assisted-gps-agps" title="Permalink to this headline">¶</a></h2>
+<p>The only <em>location-dependend</em> feature on the Cat Tracker is AGPS, which tremendously speeds of the time to acquire the first GPS fix (seconds instead of minutes).
+But there is no need to have complex location triangulation based on mobile network cells or WiFi MAC Addresses, it is sufficient to have an up-to-date <a class="reference external" href="https://en.wikipedia.org/wiki/GPS_signals#Almanac">GPS almanac</a> and know the rough location on the globe, which is provided by the mobile network operators country code.
+This is sufficient to provide the GPS module with the data it needs for a quick GPS fix.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://github.com/bifravst/firmware/issues/8">AGPS is currently not implemented in the Cat Tracker Firmware</a>.</p>
+</div>
+</div>
+<div class="section" id="geolocating-cells">
+<h2>Geolocating cells<a class="headerlink" href="#geolocating-cells" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned above, on the UI the user is interested to know <em>where</em> the device is as soon as possible, even an approximate location can be sufficient: depending on the tracked subject, a few hundred meters accuracy may be enough.
+And an approximate position is always better then no location information at all (if the device is unable to acquire a GPS fix).
+Therefore it is beneficial to geolocate the current mobile network cell.</p>
+<div class="section" id="geolocating-cells-using-other-devices">
+<h3>Geolocating cells using other devices<a class="headerlink" href="#geolocating-cells-using-other-devices" title="Permalink to this headline">¶</a></h3>
+<p>Resolving the cell location on the cloud backend has unique advantages over resolving it on the device: it removes the firmware image size and memory usage and it can leverage other devices past GPS fixes.
+If many devices are closely located it saves a lot of resource because a cell’s geolocation only needs to be resolved once and then can be made available to all device.
+This should also be the preferred aproach when developing an IoT product that has location-specific features that can rely on the aproximate location of cell towers to operate.
+If a device knows its cell tower it is mormally safe to assume that it has an internet connection in order to request the approximate location from the cloud.
+This allows to offload expensive calculations to the cloud and reduce the resource usage on the device.</p>
+<p>In Bifravst every time a device reports a GPS fix, that position is stored together with the cell id.
+Over time this builds a cell location database that is independet from a third party API and up to date.
+It is used as the primary mean of geolocation cells in Bifravst.
+Only if a cell has not previously been geolocated by a device will the third-party API be called, <strong>if it is enabled</strong>.</p>
+</div>
+<div class="section" id="geolocating-cells-using-third-party-apis">
+<h3>Geolocating cells using third-party APIs<a class="headerlink" href="#geolocating-cells-using-third-party-apis" title="Permalink to this headline">¶</a></h3>
+<p>Third-party APIs and services like <a class="reference external" href="https://unwiredlabs.com/">UnwiredLabs</a> and <a class="reference external" href="https://www.cellmapper.net/">CellMapper</a> have a database of cell tower locations and provide an API to query against them.
+Bifravst implements the optional resolution on the cloud side using <em>UnwiredLabs</em> on <a class="reference internal" href="../aws/UnwiredLabsAPI.html#aws-unwired-labs-api"><span class="std std-ref">AWS</span></a>  for cell that have not been geolocation by devices.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html" class="btn btn-neutral float-right" title="Cloud connectivity and protocols for the Internet of Things" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="AutomateHEXFileBuilding.html" class="btn btn-neutral float-left" title="Automate building of HEX files for your nRF Connect SDK application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

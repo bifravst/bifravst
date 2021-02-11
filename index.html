@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Bifravst &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bifravst on AWS" href="docs/aws/Index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#">
+          
+
+          
+            
+            <img src="_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/aws/Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Bifravst</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/README.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="admonition warning" id="bifra-readme">
+<p class="admonition-title">Warning</p>
+<p>Moved to <a class="reference external" href="https://github.com/NordicSemiconductor/asset-tracker-cloud-docs">https://github.com/NordicSemiconductor/asset-tracker-cloud-docs</a>.
+<a class="reference external" href="https://github.com/bifravst/bifravst/issues/56">More information</a>.</p>
+</div>
+<div class="section" id="bifravst">
+<h1>Bifravst<a class="headerlink" href="#bifravst" title="Permalink to this headline">¶</a></h1>
+<blockquote class="epigraph">
+<div><p><em>Gvðín gerþu bru af iorþu til himins, er heitir Bifravst.</em>
+Bifravst is a term from the Nordic mythology and it refers to the bridge built by the gods between earth and heaven.
+<a class="reference external" href="https://www.lyngen.com/2020/03/the-vikings-and-the-northern-lights-bridge/">Read more about it</a>.</p>
+</div></blockquote>
+<a class="reference external image-reference" href="https://github.com/bifravst/bifravst/actions"><img alt="GitHub Actions" src="https://github.com/bifravst/bifravst/workflows/Test%20and%20Release/badge.svg" /></a>
+<a class="reference external image-reference" href="https://snyk.io/test/github/bifravst/bifravst"><img alt="Known Vulnerabilities" src="https://snyk.io/test/github/bifravst/bifravst/badge.svg" /></a>
+<a class="reference external image-reference" href="https://github.com/semantic-release/semantic-release"><img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" /></a>
+<a class="reference external image-reference" href="https://renovatebot.com"><img alt="Renovate" src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" /></a>
+<a class="reference external image-reference" href="https://mergify.io"><img alt="Mergify Status" src="https://img.shields.io/endpoint.svg?url=https://dashboard.mergify.io/badges/bifravst/bifravst&amp;style=flat" /></a>
+<a class="reference external image-reference" href="http://commitizen.github.io/cz-cli/"><img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" /></a>
+<a class="reference external image-reference" href="https://github.com/prettier/prettier/"><img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" /></a>
+<a class="reference external image-reference" href="https://github.com/typescript-eslint/typescript-eslint"><img alt="ESLint: TypeScript" src="https://img.shields.io/badge/ESLint-TypeScript-blue.svg" /></a>
+<div class="section" id="vision">
+<h2>Vision<a class="headerlink" href="#vision" title="Permalink to this headline">¶</a></h2>
+<p><em>Bifravst</em> aims to provide a concrete end-to-end example for an ultra-low power cellular IoT product in the asset tracker space, namely a <em>Cat Tracker</em>.</p>
+<div class="figure align-default">
+<img alt="Bifravst: Cat Tracker IoT example" src="_images/logo-with-text.png" />
+</div>
+<p><em>Bifravst</em> enables the developers to set up a real world IoT solution using the respective cloud provider and adapt the example firmware and software quickly for a specific use case.
+<em>Bifravst</em> aims to provide answers and recommend best practices to the following questions:</p>
+<ul class="simple">
+<li><p>How can you connect Nordic’s cellular IoT chips to your cloud provider?</p></li>
+<li><p>How do devices send data into the cloud?*</p></li>
+<li><p>How can the data be sent to the devices?</p></li>
+<li><p>How can users and other services interact with the devices?</p></li>
+<li><p>How can you upgrade the application firmware of your devices while they are deployed in the field?</p></li>
+<li><p>How can you develop a cellular IoT product that maximizes battery life, minimizes data usage, and handles unreliable connectivity gracefully?</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the coming weeks, we will establish the best path to provide this project through nRF Connect SDK, Nordic Semiconductor Infocenter and other established channels.
+For more information, see the <a class="reference external" href="https://github.com/bifravst/bifravst/issues/56">GitHub issue</a>.</p>
+</div>
+</div>
+<div class="section" id="core-principles">
+<h2>Core principles<a class="headerlink" href="#core-principles" title="Permalink to this headline">¶</a></h2>
+<p><em>Bifravst</em> is built on the following principles:</p>
+<ul class="simple">
+<li><p><em>Teach by showing</em></p>
+<ul>
+<li><p>All examples are designed to solve a concrete use case (a <em>Cat Tracker</em>) instead of providing generic or abstract solutions.</p></li>
+<li><p><em>Bifravst</em> is not a framework, but it is a real application.</p></li>
+</ul>
+</li>
+<li><p><em>Err on the side of security</em></p>
+<ul>
+<li><p><em>Bifravst</em> follows the most robust security recommendations of the respective cloud provider.</p></li>
+</ul>
+</li>
+<li><p><em>Single tenancy</em></p>
+<ul>
+<li><p><em>Bifravst</em> implements a scenario in which all the authenticated users can be trusted to access all the devices.</p></li>
+<li><p>It is a typical scenario for cellular IoT products, and it simplifies the onboarding of new devices.</p></li>
+</ul>
+</li>
+<li><p><em>Serverless</em></p>
+<ul>
+<li><p><em>Bifravst</em> uses a serverless architecture as much as possible to have near-zero costs for the operation during the development, and to provide horizontal scaling of resources to be used in a production system if needed.</p></li>
+</ul>
+</li>
+<li><p><em>Cloud native</em></p>
+<ul>
+<li><p><em>Bifravst</em> examples are designed by following the best practices of the respective cloud provider to reduce development efforts due to abstraction.</p></li>
+</ul>
+</li>
+<li><p><em>Being offline is not an exception</em></p>
+<ul>
+<li><p>Highly mobile cellular IoT products need to handle unreliable connections gracefully, by implementing mechanisms to retry the failed sending of data.
+This also means that the sensor measurements need to be timestamped when they are created, and not when they arrive at the cloud.</p></li>
+</ul>
+</li>
+<li><p><em>Maximize power saving</em></p>
+<ul>
+<li><p>The firmware examples should highlight power saving features of the nRF9160 DK because this is critical for developing very small form-factor devices.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Bifravst</em> is not a <em>multi-cloud</em> solution.
+The concrete implementation will differ for each cloud provider.</p>
+</div>
+<p><em>Bifravst</em> does not aim to provide a solution where you can switch in a seamingless manner between cloud providers.
+Such a solution will require the implementation of additional abstraction layers, which instead of becoming a meaningful benefit for the majority of users, mandate a constant translation between the vendor specific concepts and the abstraction.
+Instead, in Bifravst, the best practices of the respective cloud-vendor for building a <em>serverless</em> IoT solution are followed.</p>
+</div>
+<div class="section" id="project-overview">
+<h2>Project overview<a class="headerlink" href="#project-overview" title="Permalink to this headline">¶</a></h2>
+<p><em>Bifravst</em> is licensed under the <a class="reference external" href="./LICENSE">3-clause BSD license</a> (software) and the <a class="reference external" href="https://github.com/bifravst/firmware/blob/saga/LICENSE">Nordic 5-clause BSD license</a> (firmware).
+Below table shows the characteristics of <em>Bifravst</em> project:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 62%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Characteristic</p></th>
+<th class="head"><p>Principle</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Development model</strong></p></td>
+<td><p>Open</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>License</strong></p></td>
+<td><p>Open source</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cloud vendor support</strong></p></td>
+<td><p>Multiple</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Feature set</strong></p></td>
+<td><p>Specialized, small</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Hosting</strong></p></td>
+<td><p>Self-hosted</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>User Interface</strong></p></td>
+<td><p>Mobile-first web-app</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cloud Tenancy</strong></p></td>
+<td><p>Single</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Integration of Cloud resources</strong></p></td>
+<td><p>Native</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Device paradigm</strong></p></td>
+<td><p>Offline mostly</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Sensor timestamping</strong></p></td>
+<td><p>Device-side</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Development progress is managed in the <a class="reference external" href="https://github.com/orgs/bifravst/projects/1">Bifravst GitHub Project</a>.</p>
+</div>
+</div>
+<div class="section" id="system-overview-and-technical-considerations">
+<h2>System overview and technical considerations<a class="headerlink" href="#system-overview-and-technical-considerations" title="Permalink to this headline">¶</a></h2>
+<p>Devices connect to the message broker using TLS over TCP.
+The messaging protocol is JSON over MQTT.
+The TLS certificates are generated offline by the developer to simplify the provisioning during production.</p>
+<p>See below for an overview of system components:</p>
+<div class="figure align-default" id="id1">
+<img alt="System overview" src="_images/system-overview.jpg" />
+<p class="caption"><span class="caption-text">System overview</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The cloud and the web application are developed using <a class="reference external" href="https://www.typescriptlang.org/">TypeScript</a> (a typed superset of JavaScript).
+JavaScript is the most popular language according to the <a class="reference external" href="https://insights.stackoverflow.com/survey/2019#technology">2019 Stack Overflow survey</a>.
+Most of the cloud providers provide their SDKs in JavaScript.</p>
+<p>It provides tools to configure the developer’s cloud account for use with the developer’s devices and the single-page application (SPA).
+After the cloud account has been configured, it provides the resources necessary for the asset trackers to connect to the message broker and to send and receive messages.
+It also provides the appropriate APIs for the SPA to interact with the developer’s devices.</p>
+<p>The mobile-first SPA is developed using <a class="reference external" href="https://github.com/facebook/create-react-app">create-react-app</a> and it provides a reference implementation of a user interface to control and interact with the devices.</p>
+<p>The web application offers the following features:</p>
+<ul class="simple">
+<li><p>User registration including password recovery</p>
+<ul>
+<li><p>Optional feature</p></li>
+<li><p>Requires user approval by an admin</p></li>
+</ul>
+</li>
+<li><p>Listing of asset trackers</p></li>
+<li><p>Viewing of asset trackers</p>
+<ul>
+<li><p>Current and historical device data</p>
+<ul>
+<li><p>GPS location</p></li>
+<li><p>Battery voltage</p></li>
+<li><p>Accelerometer</p></li>
+</ul>
+</li>
+<li><p>Configure asset tracker</p>
+<ul>
+<li><p>Update interval</p></li>
+<li><p>Sensor threshold</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Managing of asset trackers</p>
+<ul>
+<li><p>Delete asset tracker</p></li>
+<li><p>Firmware upgrade</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="supported-cloud-providers">
+<h2>Supported cloud providers<a class="headerlink" href="#supported-cloud-providers" title="Permalink to this headline">¶</a></h2>
+<p>See the below table for a list of supported cloud providers:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 36%" />
+<col style="width: 24%" />
+<col style="width: 26%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Amazon Web Services</p></th>
+<th class="head"><p>Google Cloud</p></th>
+<th class="head"><p>Microsoft Azure</p></th>
+<th class="head"><p>Alibaba Cloud</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LTE-M: TCP+MQTT</p></td>
+<td><p><a class="reference internal" href="docs/aws/GettingStarted.html#aws-getting-started"><span class="std std-ref">feature complete</span></a></p></td>
+<td><p><a class="reference external" href="https://github.com/bifravst/bifravst/issues/25">on hold</a></p></td>
+<td><p><a class="reference external" href="https://github.com/bifravst/bifravst/issues/29">in progress</a></p></td>
+<td><p>Planned</p></td>
+</tr>
+<tr class="row-odd"><td><p>NB-IoT: UDP+LWM2M</p></td>
+<td><p>Planned</p></td>
+<td><p>Planned</p></td>
+<td><p>Planned</p></td>
+<td><p>Planned</p></td>
+</tr>
+</tbody>
+</table>
+<p>For cloud providers having no native UDP+LWM2M support, using a bridge such as <a class="reference external" href="https://github.com/eclipse/californium">Eclipse Californium</a>, was evaluated.
+For more information see <a class="reference external" href="https://github.com/coderbyheart/leshan-aws">Leshan LwM2M AWS IoT Gateway</a>.</p>
+<div class="section" id="iot-cloud-vendor-survey-results">
+<h3>IoT Cloud vendor survey results<a class="headerlink" href="#iot-cloud-vendor-survey-results" title="Permalink to this headline">¶</a></h3>
+<p>Below table shows the IoT Cloud vendor survey results:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 15%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Nordic internal (2019)</p></th>
+<th class="head"><p><a class="reference external" href="https://iot.eclipse.org/community/resources/iot-surveys/assets/iot-comm-adoption-survey-2019.pdf">Eclipse Foundation (2019)</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AWS</p></td>
+<td><p>1. 100%</p></td>
+<td><p>1.100%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Google</p></td>
+<td><p>2. 79%</p></td>
+<td><p>3. 73%</p></td>
+</tr>
+<tr class="row-even"><td><p>Azure</p></td>
+<td><p>3. 66%</p></td>
+<td><p>2. 84%</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARM Pelion</p></td>
+<td><p>4. 25%</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>IBM</p></td>
+<td><p>5. 20%</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/aws/Index.html">Bifravst on AWS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/GettingStarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/Authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/IoTShadowAndTopics.html">AWS IoT Shadow and Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/LimitingShadowDocumentSize.html">Limiting the Shadow Document size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/HistoricalData.html">Storage of historical data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/UnwiredLabsAPI.html">Unwired Labs API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/Uninstalling.html">Uninstalling Bifravst from AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/SNI.html">SNI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/azure/Index.html">Bifravst on Azure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/azure/GettingStarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/azure/RunningInDocker.html">Running the application locally with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/azure/Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/azure/DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/azure/Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/azure/ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/azure/ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/azure/UnwiredLabsAPI.html">Unwired Labs’ LocationAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/azure/IoTShadowAndTopics.html">Azure IoT Shadow and Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/azure/secure-azure-function-apps-with-microsoft-b2c.html">Using Azure AD B2C to secure your Azure Functions Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/app/Index.html">Cat Tracker Web Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/app/GettingStarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/app/Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/app/AWS.html">Deploying Cat Tracker to AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/app/Azure.html">Deploying Cat Tracker to Azure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/app/CellGeolocation.html">Cell geolocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/app/Customizing.html">Customizing the Cat Tracker web application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/firmware/Index.html">Cat Tracker firmware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/Overview.html">Functional Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/UsingPrebuildImages.html">Using pre-build images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/Configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/BuildingUsingDocker.html">Building using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/BuildingUsingLocalSystem.html">Building using your local system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/BuildingUsingGitHub.html">Building using GitHub actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/aws/FirmwareContinuousIntegration.html">Continuous Integration of Firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/Protocol.html">Device-Cloud-Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/SensorDataAndConfiguration.html">Device Data and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/firmware/LEDSchema.html">LED schema</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/devices/Index.html">Connect using a real device</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/devices/FlashingCertificate.html">Provisioning the certificate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/devices/TroubleShooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/devices/FOTA.html">Firmware over-the-air (FOTA)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/guides/Versioning.html">Versioning</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/adr/README.html">Architecture Decision Records</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/adr/002-use-npm-package-registry.html">2. Use NPM registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/adr/003-use-saga-as-the-main-branch.html">3. Use <code class="docutils literal notranslate"><span class="pre">saga</span></code> as the name for the main branch</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="acknowledgments">
+<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h2>
+<p>Pin Icon created by Nun from the Noun Project.
+Cat Icon created by Focus Lab from the Noun Project.
+Amazon Web Services, the AWS logo are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries.
+Google and the Google logo are registered trademarks of Google LLC.
+Microsoft and Azure are registered trademarks of Microsoft Corporation in the United States and/or other countries.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="docs/aws/Index.html" class="btn btn-neutral float-right" title="Bifravst on AWS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

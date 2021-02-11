@@ -1,0 +1,22 @@
+Cyber Security for Consumer Internet of Things: Baseline Requirements
+#####################################################################
+
+ETSI `has released ETSI EN 303 645 V2.1.1 <https://www.etsi.org/newsroom/press-releases/1789-2020-06-etsi-releases-world-leading-consumer-iot-security-standard>`_ which outline 13 baseline requirements for secure consumer IoT devices:
+
+#.  No universal default passwords
+#.  Implement a means to manage reports of vulnerabilities
+#.  Keep software updated
+#.  Securely store sensitive security parameters
+#.  Communicate securely
+#.  Minimize exposed attack surfaces
+#.  Ensure software integrity
+#.  Ensure that personal data is secure
+#.  Make systems resilient to outages
+#.  Examine system telemetry data
+#.  Make it easy for users to delete user data
+#.  Make installation and maintenance of devices easy
+#.  Validate input data
+
+Since more and more B2B IoT solutions are getting commoditized this also applies to commercial solutions as well.
+
+Read the full guide `here <https://www.etsi.org/newsroom/press-releases/1789-2020-06-etsi-releases-world-leading-consumer-iot-security-standard>`_.

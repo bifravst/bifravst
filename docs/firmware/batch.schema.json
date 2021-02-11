@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/batch.schema.json",
+  "title": "Bifravst Firmware Batch Data",
+  "description": "Describes the batch data published by the device.",
+  "type": "object",
+  "properties": {
+    "bat": {
+      "description": "Battery readings",
+      "type": "array",
+      "items": {
+        "$ref": "state.reported.schema.json#/properties/bat"
+      }
+    },
+    "acc": {
+      "description": "Accelerometer readings",
+      "type": "array",
+      "items": {
+        "$ref": "state.reported.schema.json#/properties/acc"
+      }
+    },
+    "gps": {
+      "description": "GPS readings",
+      "type": "array",
+      "items": {
+        "$ref": "state.reported.schema.json#/properties/gps"
+      }
+    },
+    "roam": {
+      "description": "Roaming information updates.",
+      "type": "array",
+      "items": {
+        "$ref": "state.reported.schema.json#/properties/roam"
+      }
+    },
+    "btn": {
+      "description": "Button presses.",
+      "type": "array",
+      "items": {
+        "$ref": "messages.schema.json#/properties/btn"
+      }
+    },
+    "env": {
+      "description": "Environmental sensors.",
+      "type": "array",
+      "items": {
+        "$ref": "state.reported.schema.json#/properties/env"
+      }
+    }
+  }
+}

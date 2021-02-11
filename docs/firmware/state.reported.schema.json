@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/state.reported.schema.json",
+  "title": "Bifravst Firmware Device Data and Configuration",
+  "description": "Describes the data published by the device and its configuration options.",
+  "type": "object",
+  "properties": {
+    "cfg": {
+      "$ref": "https://github.com/bifravst/bifravst/blob/saga/docs/firmware/cfg.schema.json"
+    },
+    "bat": {
+      "description": "Battery reading in millivolt",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "Battery reading read by the modem",
+          "type": "integer",
+          "minimum": 1
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "env": {
+      "description": "Environment sensor readings",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "The individual sensor readings",
+          "type": "object",
+          "properties": {
+            "temp": {
+              "description": "Temperature reading from external sensor",
+              "type": "number"
+            },
+            "hum": {
+              "description": "Humidity reading from external sensor",
+              "type": "number",
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
+          "required": ["hum", "temp"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "acc": {
+      "description": "The accelerometer reading",
+      "type": "object",
+      "properties": {
+        "v": {
+          "description": "Accelerometer reading in m/s² per axis",
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            },
+            "z": {
+              "type": "number"
+            }
+          },
+          "required": ["x", "y", "z"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "gps": {
+      "description": "The GPS reading",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "lng": {
+              "description": "Longitude",
+              "type": "number"
+            },
+            "lat": {
+              "description": "Latitude",
+              "type": "number"
+            },
+            "acc": {
+              "description": "Accuracy (2D 1-sigma) in meters",
+              "type": "number",
+              "minimum": 0
+            },
+            "alt": {
+              "description": "Altitude above WGS-84 ellipsoid in meters",
+              "type": "number"
+            },
+            "spd": {
+              "description": "Horizontal speed in meters",
+              "type": "number",
+              "minimum": 0
+            },
+            "hdg": {
+              "description": "Heading of movement in degrees",
+              "type": "number",
+              "minimum": 0,
+              "maximum": 360
+            }
+          },
+          "required": ["lng", "lat", "acc", "alt", "spd", "hdg"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "dev": {
+      "description": "Static device information. This information shall be updated by the device once after reboot.",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "band": {
+              "type": "integer",
+              "description": "Band",
+              "minimum": 1,
+              "examples": [3]
+            },
+            "nw": {
+              "type": "string",
+              "description": "Network mode",
+              "minLength": 1,
+              "examples": ["NB-IoT GPS"]
+            },
+            "iccid": {
+              "type": "string",
+              "description": "SIM ICCID",
+              "minLength": 19,
+              "maxLength": 20,
+              "examples": ["89450421180216216095"]
+            },
+            "modV": {
+              "type": "string",
+              "description": "Modem Firmware Version",
+              "minLength": 1,
+              "examples": ["mfw_nrf9160_1.0.0"]
+            },
+            "brdV": {
+              "type": "string",
+              "description": "Board Version",
+              "minLength": 1,
+              "examples": ["thingy91_nrf9160"]
+            }
+          },
+          "required": ["band", "nw", "iccid", "modV", "brdV"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    },
+    "roam": {
+      "description": "Roaming information. This information shall be updated by the device every time it publishes primary application data. It is considered low-priority information so it should always be sent after the primary application data has been published.",
+      "type": "object",
+      "properties": {
+        "v": {
+          "type": "object",
+          "properties": {
+            "rsrp": {
+              "type": "integer",
+              "description": "Reference Signal Received Power (RSRP). The average power level received from a single reference signal in an LTE (Long-term Evolution) network. (0: RSRP < −140 dBm, 1: – When −140 dBm ≤ RSRP < −139 dBm, 2: When −139 dBm ≤ RSRP < −138 dBm,...95: When −46 dBm ≤ RSRP < −45 dBm, 96: When −45 dBm ≤ RSRP < −44 dBm, 97: When −44 dBm ≤ RSRP, 255: Not known or not detectable)",
+              "minimum": 0,
+              "maximum": 255,
+              "examples": [0, 95, 255]
+            },
+            "area": {
+              "type": "integer",
+              "description": "Area code.",
+              "minimum": 1,
+              "examples": [12]
+            },
+            "mccmnc": {
+              "type": "integer",
+              "description": "Mobile country code and mobile network code",
+              "minimum": 10000,
+              "maximum": 99999,
+              "examples": [24202]
+            },
+            "cell": {
+              "type": "integer",
+              "description": "Cell id",
+              "minimum": 1,
+              "examples": [33703719]
+            },
+            "ip": {
+              "type": "string",
+              "description": "IP address",
+              "minLength": 1,
+              "examples": [
+                "10.81.183.99",
+                "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                "2001:db8:85a3::8a2e:370:7334"
+              ]
+            }
+          },
+          "required": ["rsrp", "area", "mccmnc", "cell", "ip"]
+        },
+        "ts": {
+          "description": "Timestamp as Unix epoch with millisecond precision (UTC)",
+          "type": "integer",
+          "minimum": 1234567890123
+        }
+      },
+      "required": ["v", "ts"]
+    }
+  },
+  "required": ["cfg", "dev", "roam"]
+}

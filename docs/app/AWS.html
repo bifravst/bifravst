@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Deploying Cat Tracker to AWS &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Deploying Cat Tracker to Azure" href="Azure.html" />
+    <link rel="prev" title="Upgrading an existing installation" href="Upgrading.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Cat Tracker Web Application</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Deploying Cat Tracker to AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Azure.html">Deploying Cat Tracker to Azure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CellGeolocation.html">Cell geolocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Customizing.html">Customizing the Cat Tracker web application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Cat Tracker Web Application</a> &raquo;</li>
+        
+      <li>Deploying Cat Tracker to AWS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/app/AWS.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deploying-cat-tracker-to-aws">
+<span id="app-aws"></span><h1>Deploying Cat Tracker to AWS<a class="headerlink" href="#deploying-cat-tracker-to-aws" title="Permalink to this headline">¶</a></h1>
+<p>To deploy the Cat Tracker web application to AWS, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Configure the web application</p></li>
+<li><p>Deploy the web application</p></li>
+<li><p>Register a new user</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before you start deploying, make sure that you have <a class="reference internal" href="../aws/GettingStarted.html#aws-getting-started"><span class="std std-ref">set up the necessary AWS resources</span></a>.</p>
+</div>
+<div class="section" id="configure-the-web-application">
+<h2>Configure the web application<a class="headerlink" href="#configure-the-web-application" title="Permalink to this headline">¶</a></h2>
+<p>The web application needs to be configured to be able to run with your account.</p>
+<p>As a first step, you need to create a file called <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code>, which <a class="reference external" href="https://create-react-app.dev/docs/adding-custom-environment-variables/">Create React App</a> uses to make the settings in the file available as environment variables during build-time.</p>
+<div class="section" id="configure-the-ids-of-your-aws-resources">
+<h3>Configure the IDs of your AWS resources<a class="headerlink" href="#configure-the-ids-of-your-aws-resources" title="Permalink to this headline">¶</a></h3>
+<p>The web application requires the IDs of the AWS resources that were created during the setup of the stack.
+Run the following command in the <code class="file docutils literal notranslate"><span class="pre">bifravst-app</span></code> directory to copy the output that contain the IDs to the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node ../bifravst-aws/cli react-config &gt; .env.local
+</pre></div>
+</div>
+<div class="section" id="example-for-env-local">
+<h4>Example for <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code><a class="headerlink" href="#example-for-env-local" title="Permalink to this headline">¶</a></h4>
+<p>Following is an example for the contents of the <code class="file docutils literal notranslate"><span class="pre">.env.local</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">REACT_APP_REGION</span><span class="o">=</span>eu-west-1
+<span class="nv">REACT_APP_HISTORICALDATA_TABLE_INFO</span><span class="o">=</span>historicalDatadb40B23029-Qzk2Jrr88tOy<span class="p">|</span>historicalDatatableD9D795E1-zdSByjtTqoAE
+<span class="nv">REACT_APP_USER_IOT_POLICY_ARN</span><span class="o">=</span>arn:aws:iot:eu-west-1:249963682018:policy/bifravst-userIotPolicy-OMYBF5CI5Q6A
+<span class="nv">REACT_APP_DFU_BUCKET_NAME</span><span class="o">=</span>bifravst-dfustoragebucket2cc839ff-qz8k9bslldrf
+<span class="nv">REACT_APP_JITP_ROLE_ARN</span><span class="o">=</span>arn:aws:iam::249963682018:role/bifravst-iotJitpRole7B509A5D-5Y6BQY6KD9TX
+<span class="nv">REACT_APP_THING_GROUP_NAME</span><span class="o">=</span>bifravstThings
+<span class="nv">REACT_APP_AVATAR_BUCKET_NAME</span><span class="o">=</span>bifravst-avatarsbucket8221a59f-1usxf1qi1qj1r
+<span class="nv">REACT_APP_USER_POOL_CLIENT_ID</span><span class="o">=</span>1rh4eacmu5c5ppq2pspnq8tcu5
+<span class="nv">REACT_APP_MQTT_ENDPOINT</span><span class="o">=</span>a3g4yd69u8cu7b-ats.iot.eu-west-1.amazonaws.com
+<span class="nv">REACT_APP_DEVELOPER_PROVIDER_NAME</span><span class="o">=</span>developerAuthenticated
+<span class="nv">REACT_APP_THING_POLICY_ARN</span><span class="o">=</span>arn:aws:iot:eu-west-1:249963682018:policy/bifravst-thingPolicy-1GR1TP3RXOO0G
+<span class="nv">REACT_APP_USER_POOL_ID</span><span class="o">=</span>eu-west-1_FiY6h4xjd
+<span class="nv">REACT_APP_IDENTITY_POOL_ID</span><span class="o">=</span>eu-west-1:52cc8188-ec90-47d7-b3ee-634187fa6413
+<span class="nv">REACT_APP_WEB_APP_DOMAIN_NAME</span><span class="o">=</span>d250wnpv81c7q9.cloudfront.net
+<span class="nv">REACT_APP_WEB_APP_BUCKET_NAME</span><span class="o">=</span>bifravst-webapps-webapphostingbucketc58d3c2b-1or3is1vmmq5q
+<span class="nv">REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP</span><span class="o">=</span>EGNO6F61DSJ5Y
+<span class="nv">REACT_APP_VERSION</span><span class="o">=</span>v3.6.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="version-string">
+<h3>Version string<a class="headerlink" href="#version-string" title="Permalink to this headline">¶</a></h3>
+<p>Run the following command to provide the version to the application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">REACT_APP_VERSION</span><span class="o">=</span><span class="sb">`</span>git describe --tags <span class="k">$(</span>git rev-list --tags --max-count<span class="o">=</span><span class="m">1</span><span class="k">)</span><span class="sb">`</span> &gt;&gt; .env.local
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deploy-the-web-application">
+<h2>Deploy the web application<a class="headerlink" href="#deploy-the-web-application" title="Permalink to this headline">¶</a></h2>
+<p>To build and deploy the web application to the S3 bucket created while setting up <em>Bifravst</em> in your AWS account, run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="k">$(</span>cat .env.local <span class="p">|</span> xargs<span class="k">)</span>
+<span class="nb">export</span> <span class="nv">EXTEND_ESLINT</span><span class="o">=</span><span class="nb">true</span>
+npm run build
+aws s3 cp build s3://<span class="nv">$REACT_APP_WEB_APP_BUCKET_NAME</span> <span class="se">\</span>
+--recursive --metadata-directive REPLACE <span class="se">\</span>
+--cache-control <span class="s1">&#39;public,max-age=600&#39;</span> --expires <span class="s1">&#39;&#39;</span>
+aws cloudfront create-invalidation --distribution-id <span class="se">\</span>
+<span class="nv">$REACT_APP_CLOUDFRONT_DISTRIBUTION_ID_WEB_APP</span> --paths /,/index.html
+<span class="nb">echo</span> <span class="s2">&quot;Done. Now open https://</span><span class="nv">$REACT_APP_WEB_APP_DOMAIN_NAME</span><span class="s2">/ to view the web app.&quot;</span>
+</pre></div>
+</div>
+<p>After running the commands, you can open the domain name printed in <code class="docutils literal notranslate"><span class="pre">REACT_APP_WEB_APP_DOMAIN_NAME</span></code> to view the web application.</p>
+</div>
+<div class="section" id="register-a-new-user">
+<h2>Register a new user<a class="headerlink" href="#register-a-new-user" title="Permalink to this headline">¶</a></h2>
+<p>Since there are no predefined user accounts in the user pool, you need to register a new user.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The user pool is configured to use the email address as the username.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Azure.html" class="btn btn-neutral float-right" title="Deploying Cat Tracker to Azure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Upgrading.html" class="btn btn-neutral float-left" title="Upgrading an existing installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

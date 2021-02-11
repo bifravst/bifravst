@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Getting started &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Upgrading an existing installation" href="Upgrading.html" />
+    <link rel="prev" title="Bifravst on AWS" href="Index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Bifravst on AWS</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">AWS IoT Shadow and Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LimitingShadowDocumentSize.html">Limiting the Shadow Document size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HistoricalData.html">Storage of historical data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Uninstalling.html">Uninstalling Bifravst from AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SNI.html">SNI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Bifravst on AWS</a> &raquo;</li>
+        
+      <li>Getting started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/aws/GettingStarted.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<span id="aws-getting-started"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>To setup <em>Bifravst</em> on AWS, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Check and make sure that you have the necessary system requirements.</p></li>
+<li><p>Clone the project and install dependencies.</p></li>
+<li><p>Provide your AWS credentials.</p></li>
+<li><p>Check and verify that the deployment is planned in one of the supported regions.</p></li>
+<li><p>Install <em>Bifravst</em> into your AWS account.</p></li>
+</ol>
+<div class="section" id="system-requirements">
+<h2>System requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>You need a development environment with the <a class="reference external" href="https://nodejs.org/en/about/releases/">upcoming LTS release candidate of Node.js</a> (current release is version 14).</p>
+<p>If you are using Windows, use the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a> with <a class="reference external" href="https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1">Ubuntu 18.04
+LTS</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Windows is not included in the continuous integration tests, and hence if you encounter issues, you can open an <a class="reference external" href="https://github.com/bifravst/aws/issues/new">issue in the Bifravst AWS project</a></p>
+</div>
+</div>
+<div class="section" id="clone-the-project-and-install-dependencies">
+<h2>Clone the project and install dependencies<a class="headerlink" href="#clone-the-project-and-install-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Clone the latest version of the <a class="reference external" href="https://github.com/bifravst/aws">Bifravst AWS</a> project and install the dependencies using the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/bifravst/aws.git bifravst-aws
+<span class="nb">cd</span> bifravst-aws
+npm ci
+npx tsc
+</pre></div>
+</div>
+</div>
+<div class="section" id="provide-your-aws-credentials">
+<h2>Provide your AWS credentials<a class="headerlink" href="#provide-your-aws-credentials" title="Permalink to this headline">¶</a></h2>
+<p>To set up Bifravst on AWS, you must first set up a new AWS account and provide the AWS credentials.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to install these resources in a blank AWS account to clearly separate them from your other projects.
+After you have registered your personal account, sign up for <a class="reference external" href="https://aws.amazon.com/organizations/">AWS Organizations</a> and create a sub-account for Bifravst.
+You can have many sub-accounts, without extra costs.</p>
+</div>
+<p>To setup a new AWS account and provide credentials, complete the following steps:</p>
+<ol class="arabic">
+<li><p>Navigate to your <a class="reference external" href="https://console.aws.amazon.com/iam/home?region=us-east-1#/home">IAM console</a> and add a new user for <a class="reference external" href="https://wa.aws.amazon.com/wat.question.SEC_3.en.html">programmatic access</a>.</p></li>
+<li><p>Attach the <code class="docutils literal notranslate"><span class="pre">arn:aws:iam::aws:policy/AdministratorAccess</span></code> policy directly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This action will create a user with full access rights to the account, and therefore it must only be created in an account dedicated for Bifravst.</p>
+</div>
+</li>
+<li><p>Configure the AWS CDK by referring the <a class="reference external" href="https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html">CDK Getting Started guide</a>.</p></li>
+<li><p>As a recommended workflow, use a <a class="reference external" href="https://direnv.net/">direnv</a> plugin for your shell, which locates the environment variables in a <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file in the project folder and automatically exports them.</p></li>
+<li><p>Create a new <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file in the project folder and add the credentials that are provided to you when you create the new user.</p></li>
+<li><p>Add your preferred region and your AWS account ID (that can be found under <a class="reference external" href="https://console.aws.amazon.com/billing/home?#/account">My Account on the AWS console</a>), to the <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file, as shown in the following code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="s2">&quot;&lt;value of Access key ID&gt;&quot;</span>
+<span class="nb">export</span> <span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="s2">&quot;&lt;value of Secret access key&gt;&quot;</span>
+<span class="nb">export</span> <span class="nv">AWS_DEFAULT_REGION</span><span class="o">=</span><span class="s2">&quot;&lt;your preferred AWS region&gt;&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must add the <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file to your global <a class="reference external" href="https://help.github.com/en/github/using-git/ignoring-files#create-a-global-gitignore">.gitignore file</a>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="supported-regions">
+<h2>Supported regions<a class="headerlink" href="#supported-regions" title="Permalink to this headline">¶</a></h2>
+<p>You must also confirm that you are deploying to a region that is supported.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all AWS features are available in all AWS regions.
+You will see a warning if you are deploying to a region that has not been tested and the AWS CDK might fail.</p>
+</div>
+<p>Following are the supported regions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">us-east-1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">us-east-2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">us-west-1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">us-west-2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eu-west-1</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="install-bifravst-into-your-aws-account">
+<h2>Install <em>Bifravst</em> into your AWS account<a class="headerlink" href="#install-bifravst-into-your-aws-account" title="Permalink to this headline">¶</a></h2>
+<p>The following commands set up the necessary resources in your AWS account:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx cdk -a <span class="s1">&#39;node dist/cdk/cloudformation-sourcecode.js&#39;</span> deploy
+npx cdk bootstrap
+npx cdk deploy <span class="s1">&#39;*&#39;</span>
+<span class="c1"># This is a fix for a bug with AWS CloudFormation and HTTP APIs</span>
+<span class="c1"># See https://github.com/bifravst/aws/issues/455</span>
+node dist/cdk/helper/addFakeRoute.js
+</pre></div>
+</div>
+<p>The AWS CDK will provide a list of permission changes to your account, and you need to review them carefully whenever you make changes to the setup.
+However, this step is not mandatory, and you can skip it by using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx cdk deploy <span class="s1">&#39;*&#39;</span> --require-approval never
+</pre></div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>You can now <a class="reference internal" href="../app/AWS.html#app-aws"><span class="std std-ref">deploy the web application</span></a>  and <a class="reference internal" href="DeviceCredentials.html#aws-device-credentials"><span class="std std-ref">provision credentials to your devices</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Upgrading.html" class="btn btn-neutral float-right" title="Upgrading an existing installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Index.html" class="btn btn-neutral float-left" title="Bifravst on AWS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

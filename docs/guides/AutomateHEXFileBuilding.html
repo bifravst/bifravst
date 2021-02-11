@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Automate building of HEX files for your nRF Connect SDK application &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cell Geolocations" href="CellGeolocations.html" />
+    <link rel="prev" title="Firmware over-the-air (FOTA)" href="../devices/FOTA.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Automate building of HEX files for your nRF Connect SDK application</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/guides/AutomateHEXFileBuilding.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="automate-building-of-hex-files-for-your-nrf-connect-sdk-application">
+<span id="guides-automate-hexfile-building"></span><h1>Automate building of HEX files for your nRF Connect SDK application<a class="headerlink" href="#automate-building-of-hex-files-for-your-nrf-connect-sdk-application" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide was originally published <a class="reference external" href="https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/automate-building-of-hex-files-for-your-nrf-connect-sdk-application-using-circleci">on the {DevZone blog</a>.</p>
+</div>
+<p>Continuous delivery is in important aspect of short time to market and since the nRF9160 <a class="reference external" href="https://github.com/nrfconnect/sdk-nrf/tree/master/samples/nrf9160/aws_fota">supports firmware over the air upgrades</a> we want to ship a new firmware to our development boards every time we change the application.</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/github-release-with-hex-files.png" src="../../_images/github-release-with-hex-files.png" />
+<p class="caption"><span class="caption-text">GitHub release with attached HEX files</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>One precondition for that is the automation of the process that builds the HEX file of an application.</p>
+<p>Getting all these steps right takes a while, because configuring NCS and Zephyr includes <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.4.1/nrf/gs_installing.html">many</a> <a class="reference external" href="https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.4.1/zephyr/getting_started/installation_linux.html">individual</a> tasks, but afterwards you have a reproducible recipe to build your HEX files, as part of your source code project.</p>
+<p>Not only does that mean you can provide up-to-date HEX files with zero effort, but using a CI runner allows you to automate your software releases using a project called <a class="reference external" href="https://github.com/semantic-release/semantic-release">semantic release</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default <code class="docutils literal notranslate"><span class="pre">semantic-release</span></code> will get the <code class="docutils literal notranslate"><span class="pre">reposityUrl</span></code> it uses to  determine the changes between releases from the <code class="docutils literal notranslate"><span class="pre">package.json</span></code> which after forking the <code class="docutils literal notranslate"><span class="pre">firmware</span></code> repo will still point to <code class="docutils literal notranslate"><span class="pre">https://github.com/bifravst/firmware.git</span></code>.
+Either, update that to the URL of  your fork, or <a class="reference external" href="https://semantic-release.gitbook.io/semantic-release/usage/configuration#repositoryurl">provide it as an argument</a> to the <code class="docutils literal notranslate"><span class="pre">semantic-release</span></code> CLI.</p>
+</div>
+<p><a class="reference external" href="https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml">Here is the workflow definition for GitHub Actions</a> which automatically builds HEX files and attaches them to the GitHub release.</p>
+<p>Following this example, all developers need to do format their commit messages following a certain schema (you can read more in detail about this process <a class="reference internal" href="Versioning.html#guides-versionining-how-to-release-a-new-version-of-a-package"><span class="std std-ref">here</span></a> to trigger a new release.</p>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/github-releases.png" src="../../_images/github-releases.png" />
+<p class="caption"><span class="caption-text">GitHub releases</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="CellGeolocations.html" class="btn btn-neutral float-right" title="Cell Geolocations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../devices/FOTA.html" class="btn btn-neutral float-left" title="Firmware over-the-air (FOTA)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

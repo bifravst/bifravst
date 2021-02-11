@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Provisioning the certificate &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Troubleshooting" href="TroubleShooting.html" />
+    <link rel="prev" title="Connect using a real device" href="Index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Connect using a real device</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Provisioning the certificate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TroubleShooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FOTA.html">Firmware over-the-air (FOTA)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Connect using a real device</a> &raquo;</li>
+        
+      <li>Provisioning the certificate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/devices/FlashingCertificate.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="provisioning-the-certificate">
+<span id="devices-provisioning-certificate"></span><h1>Provisioning the certificate<a class="headerlink" href="#provisioning-the-certificate" title="Permalink to this headline">¶</a></h1>
+<p>You need to generate and provision certificates to your device.
+Provisioning the certificates can be done in the following ways:</p>
+<ul class="simple">
+<li><p>Using the CLI</p></li>
+<li><p>Using nRF Connect for Desktop</p></li>
+</ul>
+<div class="section" id="generating-a-certificate">
+<h2>Generating a certificate<a class="headerlink" href="#generating-a-certificate" title="Permalink to this headline">¶</a></h2>
+<p>You can use the CLI to generate a certificate for your device.
+The firmware will use the IMEI of the device as the MQTT client ID.
+You can get the IMEI of your device using the AT command <code class="docutils literal notranslate"><span class="pre">AT+CGSN</span></code>.</p>
+<p>Following is the output of the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">352656100248049</span> <span class="n">OK</span>
+</pre></div>
+</div>
+<p>Use the IMEI when generating the certificate:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli create-device-cert -d <span class="s2">&quot;&lt;imei&gt;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="provisioning-the-certificate-using-cli">
+<h2>Provisioning the certificate using CLI<a class="headerlink" href="#provisioning-the-certificate-using-cli" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To provision the device certificate using CLI, you must have <a class="reference external" href="https://www.segger.com/downloads/jlink/">Segger JLink</a> installed in your path.</p>
+</div>
+<p>Use the CLI to provision the device certificates:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli flash <span class="s2">&quot;&lt;imei&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Provisioning of the certificate using CLI also results in the following actions:</p>
+<ul class="simple">
+<li><p>Downloading of the latest firmware from the <a class="reference external" href="https://github.com/bifravst/firmware/releases">Firmware releases GitHub page</a></p></li>
+<li><p>Programming of the firmware to the device</p></li>
+</ul>
+</div>
+<div class="section" id="provisioning-using-nrf-connect-for-desktop">
+<h2>Provisioning using nRF Connect for Desktop<a class="headerlink" href="#provisioning-using-nrf-connect-for-desktop" title="Permalink to this headline">¶</a></h2>
+<p>You can use the <code class="file docutils literal notranslate"><span class="pre">certificates/device-&lt;deviceId&gt;.json</span></code> file with <em>Certificate Manager</em> in <a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_link_monitor/UG/link_monitor/lm_intro.html">LTE Link Monitor</a>, which is an application implemented as part of <a class="reference external" href="https://infocenter.nordicsemi.com/topic/struct_nrftools/struct/nrftools_nrfconnect.html">nRF Connect for Desktop</a>, to provision the certificate to the device.</p>
+<p><em>Certificate Manager</em> uses AT commands to write the certificate information to the secure storage of the modem and you need to program your device with a firmware that has the AT command host enabled.</p>
+<p>To provision the certificate using LTE Link Monitor, complete the following steps:</p>
+<ol class="arabic">
+<li><p>Program the AT host using <a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/provisioning_certificate.html">nRF Connect Programmer</a> application (part of nRF Connect for Desktop).</p>
+<div class="figure align-default" id="id1">
+<img alt="nRF Connect for Desktop Programmer" src="../../_images/programmer-desktop.png" />
+<p class="caption"><span class="caption-text">nRF Connect for Desktop Programmer</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>For programming, use the following files:</p>
+<ul class="simple">
+<li><p>Thingy:91 -  <a class="reference external" href="https://github.com/bifravst/bifravst/releases/download/v4.2.1/thingy91_at_client_increased_buf.hex">thingy91_at_client_increased_buf.hex</a></p></li>
+<li><p>nRF9160 DK - <a class="reference external" href="https://github.com/bifravst/bifravst/releases/download/v5.9.2/91dk_at_client_increased_buf.hex">91dk_at_client_increased_buf.hex</a></p></li>
+</ul>
+<p>For instructions, see the following documentation:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/nrf_connect_programmer/ncp_pgming_thingy91_usb.html">Programming the Thingy:91</a></p></li>
+<li><p><a class="reference external" href="https://infocenter.nordicsemi.com/topic/ug_nc_programmer/UG/common/ncp_programming_applications_nrf9160dk.html">Programming the nRF9160 DK</a></p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure that the selected device is directly connected and not connected via the debugger.</p>
+</div>
+</li>
+<li><p>Open nRF Connect for Desktop and launch the LTE Link Monitor application.</p>
+<div class="figure align-default" id="id2">
+<img alt="nRF Connect for Desktop LTE Link Monitor" src="docs/devices/./images/launch-lte-link-monitor-desktop.png" />
+<p class="caption"><span class="caption-text">nRF Connect for Desktop LTE Link Monitor</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Click <span class="guilabel">Certificate Manager</span>.</p>
+<div class="figure align-default" id="id3">
+<img alt="nRF Connect for Desktop Certificate Manager" src="../../_images/certificate-manager-desktop.png" />
+<p class="caption"><span class="caption-text">LTE Link Monitor Certificate Manager</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Drag and drop the JSON file into the <em>Certificate Manager</em> window or select the JSON file using the <span class="guilabel">Load from JSON</span> option.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Change the security tag to <code class="docutils literal notranslate"><span class="pre">42</span></code>. The modem can hold multiple credentials, and the default security tag <code class="docutils literal notranslate"><span class="pre">16842753</span></code> is reserved for <a class="reference external" href="https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-Cloud">nRF Connect for Cloud</a> credentials.</p>
+</div>
+</li>
+<li><p>Click <span class="guilabel">Update certificates</span> and wait until the operation finishes.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="TroubleShooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Index.html" class="btn btn-neutral float-left" title="Connect using a real device" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

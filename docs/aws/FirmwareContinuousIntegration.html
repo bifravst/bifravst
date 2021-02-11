@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Continuous Integration of Firmware &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Device-Cloud-Protocol" href="../firmware/Protocol.html" />
+    <link rel="prev" title="Building using GitHub actions" href="../firmware/BuildingUsingGitHub.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../firmware/Overview.html">Functional Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../firmware/UsingPrebuildImages.html">Using pre-build images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../firmware/Configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../firmware/BuildingUsingDocker.html">Building using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../firmware/BuildingUsingLocalSystem.html">Building using your local system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../firmware/BuildingUsingGitHub.html">Building using GitHub actions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Continuous Integration of Firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../firmware/Protocol.html">Device-Cloud-Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../firmware/SensorDataAndConfiguration.html">Device Data and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../firmware/LEDSchema.html">LED schema</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../firmware/Index.html">Cat Tracker firmware</a> &raquo;</li>
+        
+      <li>Continuous Integration of Firmware</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/aws/FirmwareContinuousIntegration.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="continuous-integration-of-firmware">
+<span id="aws-firmware-ci"></span><h1>Continuous Integration of Firmware<a class="headerlink" href="#continuous-integration-of-firmware" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The AWS implementation of Bifravst provides resources to continuously
+test the firmware using real hardware.</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Every commit to the <a class="reference external" href="https://github.com/bifravst/firmware">firmware</a>
+repo will trigger a CI run.
+The CI run will</p>
+<ol class="arabic simple">
+<li><p>create a new device and credentials on AWS IoT</p></li>
+<li><p>build a firmware that has the device ID hardcoded for the MQTT client ID</p></li>
+<li><p>create an AWS IoT job with the firmware and the credentials, which is picked up by a the <a class="reference external" href="https://github.com/bifravst/firmware-ci-runner-aws">Firmware CI runner</a> (see below)</p></li>
+<li><p>observe the firmware CI run until it finishes</p></li>
+<li><p>download the log result from S3</p></li>
+<li><p>run assertions against the log result</p></li>
+</ol>
+<p>The <a class="reference external" href="https://github.com/bifravst/firmware-ci-runner-aws">Firmware CI runner</a> is running on a Raspberry Pi connected to AWS IoT where it receives jobs to execute:</p>
+<ol class="arabic simple">
+<li><p>it flashes the firmware and optional credentials using the connected debugger to the connected nRF9160 DK or Thingy:91</p></li>
+<li><p>it then collects all log output until
+a.  a timeout is reached
+b.  or a stop condition is reached (wait for a log output to match a string)</p></li>
+<li><p>it uploads the logs to S3</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These devices connect to the existing instance of Bifravst, so the firmware tests will not set up a new blank Bifravst AWS environment for every test, but be run against the production environment. This is to ensure that firmware release will work against the existing, working solution. This approach is designed for <a class="reference external" href="https://thinkinglabs.io/talks/feature-branching-considered-evil.html">trunk-based development</a>.</p>
+</div>
+</div>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>Enable the Firmware CI resources of Bifravst that allow GitHub Actions to create test devices, and the the <a class="reference external" href="https://github.com/bifravst/firmware-ci-runner-aws">Firmware CI runner</a> to connect by enabling the context switch <code class="docutils literal notranslate"><span class="pre">firmware-ci</span></code> when deploying the stack (see <a class="reference internal" href="GettingStarted.html#aws-getting-started"><span class="std std-ref">Getting Started</span></a>).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;firmware-ci=1&quot;</span> &gt;&gt; context.cfg
+npx cdk deploy <span class="s1">&#39;*&#39;</span>
+</pre></div>
+</div>
+<p>Print the AWS Key for the CI runner on GitHub Actions using this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli firmware-ci -s
+
+Region: <span class="s2">&quot;&lt;Region&gt;&quot;</span>
+Bucket name: <span class="s2">&quot;&lt;Bucket name&gt;&quot;</span>
+Access Key ID: <span class="s2">&quot;&lt;AWS Access Key ID&gt;&quot;</span>
+Secret Access Key: <span class="s2">&quot;&lt;AWS Secret Access Key&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Now you can create a new IoT Thing to be used for a Firmware CI runner (see below):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli firmware-ci -c
+</pre></div>
+</div>
+<p>You can delete a device using this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli firmware-ci -r <span class="s2">&quot;&lt;deviceId&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Configure these as secrets on the firmware GitHub repository:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code> (as printed above)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_SECRET_ACCESS_KEY</span></code> (as printed above)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_REGION</span></code> (as printed above)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STACK_NAME</span></code> (the stack name of your production environment, usually <code class="docutils literal notranslate"><span class="pre">bifravst</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DEVICE_ID</span></code> (the created Firmwer CI runner device, e.g. <code class="docutils literal notranslate"><span class="pre">firmware-ci-3c431c57-e524-4010-b269-371cb53538b6</span></code>)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="firmware-ci-runner-setup">
+<h2>Firmware CI runner setup<a class="headerlink" href="#firmware-ci-runner-setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Download <a class="reference external" href="https://www.segger.com/downloads/jlink/">JLink</a> for your platform.
+Use the path to the folder (e.g. <code class="docutils literal notranslate"><span class="pre">~/JLink_Linux_V686_arm64/</span></code>) further down.</p></li>
+<li><p>Install <a class="reference external" href="https://github.com/bifravst/firmware-ci-runner-aws.git">firmware-ci-runner-aws</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/bifravst/firmware-ci-runner-aws.git
+<span class="nb">cd</span> firmware-ci-runner-aws
+npm ci
+npx tsc
+</pre></div>
+</div>
+</li>
+<li><p>Now provide these environment variables:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="s2">&quot;&lt;AWS Access Key ID printed above&gt;&quot;</span>
+<span class="nb">export</span> <span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="s2">&quot;&lt;AWS Secret Access Key printed above&gt;&quot;</span>
+<span class="nb">export</span> <span class="nv">REGION</span><span class="o">=</span><span class="s2">&quot;&lt;Region printed above&gt;&quot;</span>
+<span class="nb">export</span> <span class="nv">BUCKET_NAME</span><span class="o">=</span><span class="s2">&quot;&lt;Bucket name printed above&gt;&quot;</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;&lt;Path to JLINK&gt;&quot;</span>:<span class="nv">$PATH</span>
+</pre></div>
+</div>
+<p>The recommended workflow is to use a <a class="reference external" href="https://direnv.net/">direnv</a> plugin for your shell which will automatically export the environment variables it finds in a <code class="docutils literal notranslate"><span class="pre">.envrc</span></code> file in the project folder:
+Create a new file <code class="docutils literal notranslate"><span class="pre">.envrc</span></code> in the project folder and add the credentials that are presented to you after you have created the new user.</p>
+</li>
+<li><p>Copy over the JSON file containing the certificate</p></li>
+<li><p>Run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node cli run <span class="s2">&quot;&lt;device&gt;&quot;</span> <span class="s2">&quot;&lt;path to certificate.json&gt;&quot;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;device&gt;</span></code> is the Linux file where the device is connected to, e.g. <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM0</span></code>.</p>
+</li>
+</ol>
+<p>The Firmware CI will now process all schedule jobs one after another.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../firmware/Protocol.html" class="btn btn-neutral float-right" title="Device-Cloud-Protocol" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../firmware/BuildingUsingGitHub.html" class="btn btn-neutral float-left" title="Building using GitHub actions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

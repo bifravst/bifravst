@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Device-Cloud-Protocol &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Device Data and Configuration" href="SensorDataAndConfiguration.html" />
+    <link rel="prev" title="Continuous Integration of Firmware" href="../aws/FirmwareContinuousIntegration.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Cat Tracker firmware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Overview.html">Functional Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsingPrebuildImages.html">Using pre-build images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingUsingDocker.html">Building using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingUsingLocalSystem.html">Building using your local system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingUsingGitHub.html">Building using GitHub actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aws/FirmwareContinuousIntegration.html">Continuous Integration of Firmware</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Device-Cloud-Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SensorDataAndConfiguration.html">Device Data and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LEDSchema.html">LED schema</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Cat Tracker firmware</a> &raquo;</li>
+        
+      <li>Device-Cloud-Protocol</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/firmware/Protocol.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="device-cloud-protocol">
+<h1>Device-Cloud-Protocol<a class="headerlink" href="#device-cloud-protocol" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="preface">
+<h2>Preface<a class="headerlink" href="#preface" title="Permalink to this headline">¶</a></h2>
+<p>This document will provide a general introduction in the way devices communication with the cloud in the Bifravst project.
+<em>Communication</em> is the most important aspect to optimize for when developing an ultra-low-power product because initiating and maintaining network connection is relatively expensive compared to other device operations (for example reading a sensor value).
+It is therefore recommended to invest a reasonable amount of time to revisit the principles explained here and customize them to your specific needs.
+The more the modem-uptime can be reduced and the smaller the total transferred amount if data becomes, the longer will your battery and your data contingent last.</p>
+</div>
+<div class="section" id="nb-iot-as-the-cellular-connection">
+<h2>NB-IoT as the cellular connection<a class="headerlink" href="#nb-iot-as-the-cellular-connection" title="Permalink to this headline">¶</a></h2>
+<p>The firmware is configured to operate in NB-IoT mode to connect to the cellular network (albeit using TLS over TCP which is most likely not available in other NB-IoT networks outside of Norway).</p>
+</div>
+<div class="section" id="mqtt-as-transport-protocol">
+<h2>MQTT as transport protocol<a class="headerlink" href="#mqtt-as-transport-protocol" title="Permalink to this headline">¶</a></h2>
+<p>Bifravst uses MQTT to connect the device to the cloud provider.</p>
+<p>The MQTT client ID defaults to the IMEI of the device.</p>
+</div>
+<div class="section" id="json-as-a-data-format">
+<h2>JSON as a data format<a class="headerlink" href="#json-as-a-data-format" title="Permalink to this headline">¶</a></h2>
+<p>Bifravst uses JSON to represent all transferred data.
+If offers very good support in tooling and is human readable.
+Especially during development its verbosity is valuable.</p>
+<div class="section" id="possible-optimizations">
+<h3>Possible Optimizations<a class="headerlink" href="#possible-optimizations" title="Permalink to this headline">¶</a></h3>
+<p>As a data- and power-optimization technique it is recommended to look into denser data protocols, especially since the majority of IoT applications (like in the Cat Tracker example) will always send data in the same structure, only the values change.</p>
+<p>Consider the GPS message:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;v&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;lng&quot;</span><span class="p">:</span> <span class="mf">10.414394</span><span class="p">,</span>
+    <span class="nt">&quot;lat&quot;</span><span class="p">:</span> <span class="mf">63.430588</span><span class="p">,</span>
+    <span class="nt">&quot;acc&quot;</span><span class="p">:</span> <span class="mf">17.127758</span><span class="p">,</span>
+    <span class="nt">&quot;alt&quot;</span><span class="p">:</span> <span class="mf">221.639832</span><span class="p">,</span>
+    <span class="nt">&quot;spd&quot;</span><span class="p">:</span> <span class="mf">0.320966</span><span class="p">,</span>
+    <span class="nt">&quot;hdg&quot;</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;ts&quot;</span><span class="p">:</span> <span class="mi">1566042672382</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In JSON notation this document (without newlines) has 114 bytes.
+If the message were to be transferred using for example <a class="reference external" href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a> the data can be encoded with only 62 bytes (a 46% improvement) (<a class="reference external" href="https://gist.github.com/coderbyheart/34a8e71ffe30af882407544567971efb">source code</a>).</p>
+<p>Note that even though the savings in transferred data over the lifetime of a device are significant, there is an extra cost of maintaining the source code on the device side and on the cloud side that enables the use of a protocol that is not supported natively by the cloud provider.</p>
+<p>See also: <a class="reference external" href="http://tutorials.jenkov.com/rion/rion-performance-benchmarks.html">RION Performance Benchmarks</a></p>
+<p><a class="reference external" href="https://google.github.io/flatbuffers/">FlatBuffers</a> seems like the best candidate for a resource constraint device like the 9160.</p>
+</div>
+</div>
+<div class="section" id="the-four-kinds-of-data">
+<h2>The four kinds of data<a class="headerlink" href="#the-four-kinds-of-data" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This segment is also available as a <a class="reference external" href="https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/the-four-kinds-of-data-you-need-to-consider-when-developing-an-iot-product">stand-alone blog post on {DevZone</a>.</p>
+</div>
+<div class="figure align-default" id="id3">
+<img alt="Data Protocols" src="../../_images/data-protocols.jpg" />
+<p class="caption"><span class="caption-text">Data Protocols</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="device-state">
+<h3>1. Device State<a class="headerlink" href="#device-state" title="Permalink to this headline">¶</a></h3>
+<p>The Cat Tracker example needs to communicate with the cloud in order to send position updates and information about it’s health, first an foremost is the battery level a critical health indicator.
+This data is considered the <strong>device state</strong>.
+Because we want to always be able to quickly see the latest state of the device, a <em>digital twin</em> is used to store this state on the cloud side: whenever the device sends an update, the digital twin is updated.
+This allows the web application to access the most recent device state immediately without needing to wait for the device to connect and publish its state.</p>
+<p>It is an important criterion for the robustness of any IoT product to gracefully handle situations in which the device is not connected to the internet.
+It might even not be favorable to be connected all the time—wireless communication is relatively expensive consumes a lot of energy and therefore increases the power consumption.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>Cat Tracker</em> example is optimized for ultra low power consumption, we want to turn off the modem as quickly as possible and keep it off as long as possible.</p>
+</div>
+<p>This is achieved by making the device smart and allowing it to decide based on the situation whether it should try to send data.</p>
+<p>In <em>passive</em> mode, data is sent when movement is detected: the accelerometer <em>wakes up</em> the application thread which then tries to acquire a GPS fix and a cellular connection.
+If there is no longer movement detected, the modem will be turned off and the application goes back to sleep.
+The passive mode is designed to conserve as much energy as possible, nevertheless we want the device to once in a while send an update, so we know about its battery condition and in case the motion sensor stops working properly.</p>
+</div>
+<div class="section" id="device-configuration">
+<h3>2. Device Configuration<a class="headerlink" href="#device-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Optimizing this behavior takes time and while the devices are in the field sending firmware upgrades for every change (more about that later) will be expensive.
+We observe firmware sizes of around 500 KB which will, even when compressed, be expensive because it will take a device some time to download and apply the upgrade, not to mention the costs for transferring the firmware upgrade over the cellular network.
+Especially in NB-IoT-only deployments is the data rate low.
+Upgrading a fleet of devices with a new firmware involves orchestrating the roll-out and observing for faults.
+All these challenges lead to the ability to <strong>configure the device</strong>, which allows to tweak the behavior of the device until the inflection point is reached: battery life vs. data granularity.
+Interesting configuration options are for example the sensitivity of the motion sensor: depending on the tracked subject what is considered “movement” can vary greatly.
+Various timeout settings have an important influence on power- and data-consumption: the time the device waits to acquire a GPS fix, or the time it waits between sending updates when in motion.
+Finally the device can be put in an <em>active</em> mode, where it sends updates based on an configurable interval (of course) regardless whether motion is detected or not.
+This is great when actively developing the firmware with individual devices or when debugging the device behavior in specific areas and situations.</p>
+<p>On the other hand is <em>device configuration</em> needed if the device controls something: imaging a smart lock which needs to manipulate the state of a physical lock.
+The backend needs a way to tell the device which state that lock should be in, and this setting needs to be persisted on the cloud side, since the device could lose power, crash or otherwise lose the information if the lock should be open or closed.</p>
+<p>Here again is the <em>digital twin</em> used on the cloud side to store the latest <em>desired</em> configuration of the device immediately, so the application does not have to wait for the device to be connected to record the configuration change.
+The implementation of the <em>digital twin</em> then will take care of sending only the latest required changes to the device (all changes since the device did last request its configuration are combined into one change) thus also minimizing the amount of data which needs to be transferred to the device.</p>
+</div>
+<div class="section" id="timestamping">
+<span id="firmware-protocol-timestamping"></span><h3>Timestamping<a class="headerlink" href="#timestamping" title="Permalink to this headline">¶</a></h3>
+<p>Device <strong>state</strong> and <strong>configuration</strong> are timeless datum, they apply always and absolutely.
+The device sends a GPS position over the cellular connection and the digital twin is updated, we now know where the device is <em>now</em>.
+When the device configuration is changed (<code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">-&gt;</span> <span class="pre">A'</span></code>) the device will eventually apply the new configuration, and if another configuration change was made while the device was not connected (<code class="docutils literal notranslate"><span class="pre">A'</span> <span class="pre">-&gt;</span> <span class="pre">A''</span></code>) the device can directly <em>jump</em> to <code class="docutils literal notranslate"><span class="pre">A''</span></code>.
+To make state and configuration changes available over time we can store all changes on the cloud side with the time of the change and make them available for retrieval in a time-series fashion.</p>
+<blockquote class="epigraph">
+<div><p><em>Time is relative.</em></p>
+</div></blockquote>
+<p>This approach has an inherent problem: if we are to store the battery level measured by the device with the time it was received by the cloud, the timestamp will not be accurate.
+It can take minutes between the sampling of the battery voltage and the time the update is finally delivered on the receiving end, because for example it took the device a while to establish the cellular connection in order to send the update.
+While this might be acceptable with a sensor that has low volatility, it might not be acceptable in scenarios where it is important to exactly know <em>when</em> something happened.
+Imaging you are tracking parcels and want to track if a parcel is dropped.
+A few minutes can make a big difference to pinpoint the exact situation when the parcel is being moved by a person or even in a vehicle.</p>
+<p>The need for precise time measurement on the device is important and is achieved by combining three time sources: the relative device timestamp (a relative time with microsecond resolution that counts upwards from zero after the device is powered on), the cellular network time and the time from the GPS sensor.</p>
+<div class="figure align-default" id="id4">
+<img alt="Timestamping" src="../../_images/timestamping.jpg" />
+<p class="caption"><span class="caption-text">Timestamping</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Every time a sensor is read, the value is recorded with the device timestamp.
+Once theses measurements are about to be sent (in which case there is a cellular connection and at least the network time is known), the relative timestamps can be converted to absolute timestamps using the <em>relative</em> timestamps of the network or the GPS time.</p>
+<p>This way all data is sent with precise timestamps to the cloud where the device time is used when visualizing data to accurately reflect <em>when</em> the datum was created.</p>
+</div>
+<div class="section" id="past-state">
+<h3>3. Past State<a class="headerlink" href="#past-state" title="Permalink to this headline">¶</a></h3>
+<p>Imagine a reindeer tracker which tracks the position of a herd.
+If position updates are only collected when a cellular connection can be established there will be an interesting observation: the reindeers are only walking along ridges, but never in valleys.
+The reason is not because they don’t like the valley, but because the cellular signal does not reach deep down into remote valleys.
+The GPS signal however will be received there from the tracker because satellites are high on the horizon and can send their signal down into the valley.</p>
+<p>There are many scenarios where cellular connection might not be available or unreliable but reading sensors work.
+Robust ultra-mobile IoT products therefore must make this a normal mode of operation: the absence of a cellular connection must be treated as a temporary condition which will eventually resolve and until then business as usual ensues.
+This means devices should keep measuring and storing these measures in a ring-buffer or employ other strategies to decide which data to discard once the memory limit is reached.</p>
+<p>Once the device is successfully able to establish a connection it will then (after publishing its most recent measurements) publish past data in batch.
+Here again we need to make a compromise: the device memory is limited, so there needs to be a strategy to discard old messages.
+A simple approach is to use a ring buffer that stores the latest messages and will discard the oldest message once its size limit is reached.</p>
+<div class="admonition-on-a-side-note admonition">
+<p class="admonition-title">On a side note</p>
+<p>The same is true for devices that control a system.
+They should have built-in decision rules and must not depend on an answer from a cloud backend to provide the action to execute based on the current condition.</p>
+</div>
+</div>
+<div class="section" id="firmware-upgrades-fota">
+<h3>4. Firmware Upgrades (FOTA)<a class="headerlink" href="#firmware-upgrades-fota" title="Permalink to this headline">¶</a></h3>
+<p>Arguably a firmware upgrade <em>over the air</em> (FOTA) can be seen as configuration, however the size of a typical firmware image (500KB) is 2-3 magnitudes larger than a control message.
+Therefore it can be beneficial to treat it differently.
+Typically an upgrade is initiated by a configuration change, once acknowledged by the device will initiate the firmware download.
+The download itself is done out of band not using MQTT but HTTP(s) to reduce overhead.</p>
+<p>Firmware upgrades are so large compared to other messages that the device may suspend all other operation until the firmware upgrade has been applied to conserve resources.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p><em>Bifravst</em> aims to provide robust reference implementations for these four kinds of device data.
+While the concrete implementation will differ per cloud provider, the general building blocks (state, configuration, batched past state, firmware upgrades) will be the same.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 23%" />
+<col style="width: 17%" />
+<col style="width: 10%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Cloud</p></th>
+<th class="head"><p>State</p></th>
+<th class="head"><p>Configuration</p></th>
+<th class="head"><p>Past data</p></th>
+<th class="head"><p>FOTA</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><abbr title="Amazon Web Services">AWS</abbr></p></td>
+<td><p><a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">Device Shadow</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">reported</span></code></p>
+</td>
+<td><p><a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">Device Shadow</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">desired</span></code></p>
+</td>
+<td><p>MQTT</p></td>
+<td><p><a class="reference external" href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html">Jobs</a> + HTTPS</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="Google Cloud Platform">GCP</abbr></p></td>
+<td><p><a class="reference external" href="https://cloud.google.com/iot/docs/concepts/devices#device_configuration&gt;">Device Configuration</a></p></td>
+<td><p><a class="reference external" href="https://cloud.google.com/iot/docs/concepts/devices#device_state">Device State</a></p></td>
+<td><p>MQTT</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="Microsoft Azure">Azure</abbr></p></td>
+<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins">Device twins</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">reported</span></code></p>
+</td>
+<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins">Device twins</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">desired</span></code></p>
+</td>
+<td><p>MQTT</p></td>
+<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-firmware-update">MQTT+HTTPS</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="SensorDataAndConfiguration.html" class="btn btn-neutral float-right" title="Device Data and Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../aws/FirmwareContinuousIntegration.html" class="btn btn-neutral float-left" title="Continuous Integration of Firmware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

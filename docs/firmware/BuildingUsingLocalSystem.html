@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Building using your local system &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Building using GitHub actions" href="BuildingUsingGitHub.html" />
+    <link rel="prev" title="Building using Docker" href="BuildingUsingDocker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/Index.html">Bifravst on Azure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Cat Tracker firmware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Overview.html">Functional Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsingPrebuildImages.html">Using pre-build images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingUsingDocker.html">Building using Docker</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Building using your local system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingUsingGitHub.html">Building using GitHub actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aws/FirmwareContinuousIntegration.html">Continuous Integration of Firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Protocol.html">Device-Cloud-Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SensorDataAndConfiguration.html">Device Data and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LEDSchema.html">LED schema</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Cat Tracker firmware</a> &raquo;</li>
+        
+      <li>Building using your local system</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/firmware/BuildingUsingLocalSystem.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-using-your-local-system">
+<span id="firmware-building"></span><h1>Building using your local system<a class="headerlink" href="#building-using-your-local-system" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Getting your system to the required state to build firmware is cumbersome.
+It is recommend to check out the alternative of using <a class="reference internal" href="BuildingUsingDocker.html#firmware-building-docker"><span class="std std-ref">Docker</span></a>  or use a <a class="reference internal" href="BuildingUsingGitHub.html#firmware-building-github-actions"><span class="std std-ref">CI Runner</span></a> .</p>
+</div>
+<div class="section" id="prepare-your-system">
+<h2>Prepare your system<a class="headerlink" href="#prepare-your-system" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can always check out the <a class="reference external" href="https://github.com/bifravst/firmware/blob/saga/.github/workflows/build-and-release.yaml">GitHub Actions workflow</a> as a reference, which sets up a blank Ubuntu image to build the firmware.</p>
+</div>
+<p>Follow the <a class="reference external" href="http://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html">Getting Started Guide</a> of the Nordic Connect SDK to set up your system for building the project.
+Especially make sure to follow the instructions on _Installing the <em>nRF Connect SDK</em>.</p>
+</div>
+<div class="section" id="clone-the-project-and-install-dependencies">
+<h2>Clone the project and install dependencies<a class="headerlink" href="#clone-the-project-and-install-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Create a folder, e.g. <code class="docutils literal notranslate"><span class="pre">ncs</span></code> and init the project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ./ncs
+sudo pip3 install -U --pre west
+west init -m https://github.com/bifravst/firmware --mr saga
+west update
+sudo pip3 install -r zephyr/scripts/requirements.txt
+sudo pip3 install pc_ble_driver_py
+sudo pip3 install -r nrf/scripts/requirements.txt
+sudo pip3 install -r mcuboot/scripts/requirements.txt
+<span class="c1"># this sets $ZEPHYR_TOOLCHAIN_VARIANT and $GNUARMEMB_TOOLCHAIN_PATH</span>
+<span class="nb">source</span> zephyr/zephyr-env.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="building">
+<h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
+<p>Then build the actual application: change to the <code class="docutils literal notranslate"><span class="pre">./ncs/firmware</span></code> directory and build for your board:</p>
+<div class="section" id="thingy-91-pca20035">
+<h3>Thingy:91 (<code class="docutils literal notranslate"><span class="pre">PCA20035</span></code>)<a class="headerlink" href="#thingy-91-pca20035" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>west build -p always -b thingy91_nrf9160ns
+</pre></div>
+</div>
+</div>
+<div class="section" id="nrf9160-dk-pca10090">
+<h3>nRF9160 DK (<code class="docutils literal notranslate"><span class="pre">PCA10090</span></code>)<a class="headerlink" href="#nrf9160-dk-pca10090" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>west build -p always -b nrf9160_pca10090ns
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="location-of-the-hex-file">
+<h2>Location of the HEX file<a class="headerlink" href="#location-of-the-hex-file" title="Permalink to this headline">¶</a></h2>
+<p>The built HEX file will be located in <code class="docutils literal notranslate"><span class="pre">ncs/firmware/build/zephyr/merged.hex</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="BuildingUsingGitHub.html" class="btn btn-neutral float-right" title="Building using GitHub actions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="BuildingUsingDocker.html" class="btn btn-neutral float-left" title="Building using Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

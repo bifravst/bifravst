@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Getting started &mdash; Bifravst v10.4.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Running the application locally with Docker" href="RunningInDocker.html" />
+    <link rel="prev" title="Bifravst on Azure" href="Index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/logo-with-text-white.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v10.4.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../aws/Index.html">Bifravst on AWS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Bifravst on Azure</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningInDocker.html">Running the application locally with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Upgrading.html">Upgrading an existing installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeviceCredentials.html">Device credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulator.html">Connect using the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousDeployment.html">Continuous deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContinuousIntegration.html">Continuous integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UnwiredLabsAPI.html">Unwired Labs’ LocationAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IoTShadowAndTopics.html">Azure IoT Shadow and Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-azure-function-apps-with-microsoft-b2c.html">Using Azure AD B2C to secure your Azure Functions Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../app/Index.html">Cat Tracker Web Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware/Index.html">Cat Tracker firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/Index.html">Connect using a real device</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/AutomateHEXFileBuilding.html">Automate building of HEX files for your nRF Connect SDK application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CellGeolocations.html">Cell Geolocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Cloud-connectivity-and-protocols-for-the-Internet-of-Things.html">Cloud connectivity and protocols for the Internet of Things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/CloudDifferences.html">Cloud Differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/ETSI-EN-303-645.html">Cyber Security for Consumer Internet of Things: Baseline Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/Versioning.html">Versioning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/bifravst">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://devzone.nordicsemi.com/search?q=bifravst#serpsort=date%20desc">DevZone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/README.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Bifravst</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Index.html">Bifravst on Azure</a> &raquo;</li>
+        
+      <li>Getting started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/bifravst/bifravst/blob/saga/docs/azure/GettingStarted.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<span id="azure-getting-started"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>To setup Bifravst on Azure, complete the following steps:</p>
+<ol class="arabic simple">
+<li><p>Check and make sure that you have the necessary system requirements.</p></li>
+<li><p>Clone the project and install dependencies.</p></li>
+<li><p>Install the Azure CLI.</p></li>
+<li><p>Install the Azure Functions Core Tools.</p></li>
+<li><p>Deploy the solution to your account.</p></li>
+</ol>
+<div class="section" id="system-requirements">
+<h2>System requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>You need a development environment with the <a class="reference external" href="https://nodejs.org/en/about/releases/">upcoming LTS release candidate of Node.js</a> (current release is version 14).</p>
+<p>If you are using Windows, use the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a> with <a class="reference external" href="https://www.microsoft.com/nb-no/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1">Ubuntu 18.04 LTS</a>.</p>
+</div>
+<div class="section" id="clone-the-project-and-install-the-dependencies">
+<h2>Clone the project and install the dependencies<a class="headerlink" href="#clone-the-project-and-install-the-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Clone the latest version of the <a class="reference external" href="https://github.com/bifravst/azure">Azure</a> project and install the dependencies by running the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/bifravst/azure.git bifravst-azure
+<span class="nb">cd</span> bifravst-azure
+npm ci
+npx tsc
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-the-azure-cli">
+<h2>Install the Azure CLI<a class="headerlink" href="#install-the-azure-cli" title="Permalink to this headline">¶</a></h2>
+<p>Follow the instructions from the <a class="reference external" href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest">Azure CLI documentation</a> to install the CLI.</p>
+<p>After installing the CLI, you must be able to execute the <code class="docutils literal notranslate"><span class="pre">az</span></code> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az
+</pre></div>
+</div>
+<div class="section" id="dockerizing-the-az-command">
+<h3>Dockerizing the <code class="docutils literal notranslate"><span class="pre">az</span></code> command<a class="headerlink" href="#dockerizing-the-az-command" title="Permalink to this headline">¶</a></h3>
+<p>In case you encounter the issue where the Azure CLI requires <a class="reference external" href="https://github.com/Azure/azure-cli/issues/11239">an older Python version</a>, you can <em>dockerize</em> it as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+<span class="nb">set</span> -eu
+
+<span class="nv">command</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+
+docker run --rm --volume <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/root --volume <span class="nv">$HOME</span>/.azure:/root/.azure -w<span class="o">=</span>/root mcr.microsoft.com/azure-cli az <span class="nv">$command</span>
+</pre></div>
+</div>
+<p>Add the command to an executable file in your path.</p>
+</div>
+</div>
+<div class="section" id="install-the-azure-functions-core-tools">
+<h2>Install the Azure Functions Core Tools<a class="headerlink" href="#install-the-azure-functions-core-tools" title="Permalink to this headline">¶</a></h2>
+<p>To install the Azure Functions Core Tools, follow the <a class="reference external" href="https://github.com/Azure/azure-functions-core-tools#installing">Azure Functions Core Tools installation instructions</a>.
+After the installation, you must be able to execute the <code class="docutils literal notranslate"><span class="pre">func</span></code> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>func
+</pre></div>
+</div>
+</div>
+<div class="section" id="deploy-the-solution-to-your-account">
+<h2>Deploy the solution to your account<a class="headerlink" href="#deploy-the-solution-to-your-account" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the project uses Azure Active Directory B2C, it is recommended to set up Bifravst in a dedicated subscription.</p>
+</div>
+<p>To deploy the solution to your account, complete the following steps:</p>
+<ol class="arabic">
+<li><p>In the Azure portal, navigate to the <span class="guilabel">Subscriptions</span> blade, and add a new subscription for Bifravst. Export the subscription ID onto the <code class="docutils literal notranslate"><span class="pre">SUBSCRIPTION_ID</span></code> environment variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">SUBSCRIPTION_ID</span><span class="o">=</span><span class="s2">&quot;&lt;Subscription ID&gt;&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Authenticate the CLI using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az login
+</pre></div>
+</div>
+</li>
+<li><p>Choose a name for the solution and export it as <code class="docutils literal notranslate"><span class="pre">APP_NAME</span></code>. In this example, we use <code class="docutils literal notranslate"><span class="pre">bifravst</span></code> as the default name.</p></li>
+<li><p>Deploy the solution in your preferred location (you can list the locations using <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">account</span> <span class="pre">list-locations</span></code>) and export it on the environment variable <code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>.</p></li>
+<li><p>As the recommended workflow, use a <a class="reference external" href="https://direnv.net/">direnv</a>) plugin for your shell, which locates the environment variables in a <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file in the project folder and automatically exports them.</p></li>
+<li><p>Create a new file <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> in the project folder and add the following environment variables:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LOCATION</span><span class="o">=</span>northeurope
+</pre></div>
+</div>
+</li>
+<li><p>Create the resource group for the solution:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az group create --subscription <span class="nv">$SUBSCRIPTION_ID</span> -l <span class="nv">$LOCATION</span> -n <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>Currently, it is not possible to create Active Directory B2C and application through the ARM template (see <a class="reference external" href="https://github.com/bifravst/azure/issues/1">GitHub issue</a>).
+You must follow the instructions in the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=applications">tutorial for registering a web application in Azure Active Directory B2C</a> and create a B2C tenant and an application.
+Use <code class="docutils literal notranslate"><span class="pre">http://localhost:3000/</span></code> (for local development) and <code class="docutils literal notranslate"><span class="pre">https://${APP_NAME:-bifravst}app.z16.web.core.windows.net/</span></code> as the redirect URLs.</p>
+</li>
+<li><p>Save the <code class="docutils literal notranslate"><span class="pre">directory</span> <span class="pre">(tenant)</span> <span class="pre">id</span></code> of the created Active Directory B2C and the <code class="docutils literal notranslate"><span class="pre">application</span> <span class="pre">(client)</span> <span class="pre">id</span></code> to the environment variable <code class="docutils literal notranslate"><span class="pre">APP_REG_CLIENT_ID</span></code> in the <code class="file docutils literal notranslate"><span class="pre">.envrc</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">APP_REG_CLIENT_ID</span><span class="o">=</span>...
+</pre></div>
+</div>
+</li>
+<li><p>Create the user flow for sign up, sign in, and make sure to name the userflow as <code class="docutils literal notranslate"><span class="pre">B2C_1_signup_signin</span></code>.</p></li>
+<li><p>Run the following command to allow the changed file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>direnv allow
+</pre></div>
+</div>
+</li>
+<li><p>Deploy the solution by running the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>az deployment group create --resource-group <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span> <span class="se">\</span>
+    --mode Complete --name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span> <span class="se">\</span>
+    --template-file azuredeploy.json <span class="se">\</span>
+    --parameters <span class="se">\</span>
+        <span class="nv">appName</span><span class="o">=</span><span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span> <span class="se">\</span>
+        <span class="nv">location</span><span class="o">=</span><span class="nv">$LOCATION</span> <span class="nv">appRegistrationClientId</span><span class="o">=</span><span class="nv">$APP_REG_CLIENT_ID</span> <span class="se">\</span>
+        <span class="nv">b2cTenant</span><span class="o">=</span><span class="nv">$B2C_TENANT</span>
+<span class="c1"># Currently it is not possible to enable website hosting through the ARM template</span>
+az storage blob service-properties update <span class="se">\</span>
+    --account-name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span>app
+    --static-website --index-document index.html
+az storage blob service-properties update <span class="se">\</span>
+    --account-name <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span>deviceui <span class="se">\</span>
+    --static-website --index-document index.html
+<span class="c1"># Deploy the functions</span>
+func azure functionapp publish <span class="si">${</span><span class="nv">APP_NAME</span><span class="k">:-</span><span class="nv">bifravst</span><span class="si">}</span>API --typescript
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="RunningInDocker.html" class="btn btn-neutral float-right" title="Running the application locally with Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Index.html" class="btn btn-neutral float-left" title="Bifravst on Azure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019-2021, Nordic Semiconductor ASA | nordicsemi.no.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
