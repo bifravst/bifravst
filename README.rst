@@ -2,7 +2,8 @@
 
 .. warning::
 
-   Moved to `<https://github.com/NordicSemiconductor/asset-tracker-cloud-docs>`_
+   Moved to `<https://github.com/NordicSemiconductor/asset-tracker-cloud-docs>`_.
+   `More information <https://github.com/bifravst/bifravst/issues/56>`_.
 
 Bifravst
 ########
